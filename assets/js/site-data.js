@@ -44,11 +44,11 @@ window.AFHSite = {
         "Care conversations focus on comfort, dignity, medication support, family communication, and RN-led oversight."
       ],
       fit: ["Burien families", "Seahurst and Three Tree Point proximity", "Quiet home routines", "Garden and accessible spaces"],
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=84",
+      image: "https://lh3.googleusercontent.com/sitesv/AA5AbUAgLtNsvNmT_qCLDysjJGsZJGpa0CeLcXENhlJURMc7zVEVVkK5yIPYZKiQg_BkreT1iV8PeggmUgz24jZ2xlTowNSXm7hRR151JQNpE4CrQZvNJbRZcr1S9Y_xj1BFqjE8ZzyoFpn_FLpJOMTNdyUXJYVFG4Z1guIrBrynaEmnPTg4lrZvxg=w1280",
       gallery: [
-        "https://images.unsplash.com/photo-1600566753151-384129cf4e3e?auto=format&fit=crop&w=1200&q=84",
-        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=84",
-        "https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=1200&q=84"
+        "https://lh3.googleusercontent.com/sitesv/AA5AbUDprgr4vTb2HmbnGusRVlYsxyluxiKEg1el1z1HUSePGH2b0pU-GfPsCqeUKei2EHPIafVBlw-F-OrmToxt9QuLMMOVQle-Bgf1jHM-ba07S8jPPP37hLben9xLQzau7R7TikLnQqFlM5pNakJFTDMo747Y-E3kvTArtEmBwqLg94FSQ8slI2AH=w1280",
+        "https://lh3.googleusercontent.com/sitesv/AA5AbUDGGkE86HyCv63ocx22npGq6VvtzckZEPQR6o6JEm8zlzC2RNISvYEyXuPQA8nHoGQHxNWxMeOZ2r-7TUJSDn2j7Zx-vNa7OP_Q5O0DqQK9JRGyV3wPKfYRNE43nW0RJB4WwrzVQs_sC1RS2e-JhifgDjVgIrNIgDp1dEtQDBaoVlngVCkbphwO6jE=w1280",
+        "https://lh3.googleusercontent.com/sitesv/AA5AbUBH3N95H3qNw6ZqGJUVNZoUOaBIywGaYBp0w-sQ-IQzLszoLANUj10L8O6VIq7LIf1Yw6RszBe96deuOVK65ZRaWEZI_eiro_tdoADfJn6hyf5GvcXZSkpYvoz2IbNFG2NlFLDOIOooE-BQP-axZdfcgE64dyUCcNXS4q-nUAH3xrnbPFumDTHspfpdVaa36hzWGNzxBaX4WrqfbHs2I09lErbKNAUNlsvD=w1280"
       ]
     },
     highline: {
@@ -70,11 +70,11 @@ window.AFHSite = {
         "Care conversations focus on transition support, memory-aware routines, nutrition, and referral coordination."
       ],
       fit: ["Highline-area referrals", "Hospital or rehab transitions", "Memory-aware daily rhythm", "Professional care coordination"],
-      image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=84",
+      image: "https://lh3.googleusercontent.com/sitesv/AA5AbUBUV_dUzK6pTIT7CB9K9WaRFW8rB01AY2zbBBG-HynfKsaYbyqH6-foy0B-IcRwypExxOVpl_ayk7BaEgV-eO8j33h8QNcgrEJjo1nau7GrVxjMNApYuwo9PfRTPvSMaciK4nu0qjzqnorcM2Lk4aMetEvmSb0_bt_JCZgq_FLkm1nbD141gQhv1ToJ96yPCjTyukBOmIm5hzV1wN85_sNTsz4TYPo7LX8XRqY=w1280",
       gallery: [
-        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=84",
-        "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=84",
-        "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=84"
+        "https://lh3.googleusercontent.com/sitesv/AA5AbUD5tCnlT9r9hrwKEFByelXdhpj7jw41GVIm2PQXOb13UVTNRmW_oeeeD-ushgHY3P3YMZHOMnkWx2EZ4iKByNilBrG-GUMiGAlLD1XJ9oDm6WT5PTTzOIKuSEQPJg-X2N5-zy0iTrXW7JP1a9iZnrr0dqXbnzie0sbyqEKx9zLtRqykkIM9PXzLCXPAQh0bD7jUI40Hzq8LinZGsoo4dFvC6T12g1ehjxy9sF0=w1280",
+        "https://lh3.googleusercontent.com/sitesv/AA5AbUCAqdeGGaNDkvPPb-A9yD6FRqgHZQP6BgeiHns7oykpOfFNSCY-fQqQL70oyUq9EJg2Z4cHdFo_LtLuDOWELZZQCIcf4S32W1yelV1814l4kCcHP6fCDcbjpQuHsJIVomQpR0aSPI__OYta-0lgOZnJNpDeJ9g8ic1UgNEqxT1mCowPOqkqeAAVn3X_lM-HBucNN2cs3Rf9j3QeN7KNbvvUrYHxp-nMCd_-=w1280",
+        "https://lh3.googleusercontent.com/sitesv/AA5AbUB43DAllUPsSdPLyOTGijfRT4EUge8ne76Fj8VM8lJCDZ1g1K7-Mp1RDUP2ZNLT04-CLLwBLrnBSFIUfLfHJ6bXWeSUTJL8S41KF7hYsGRxndQOUcPWP7rtzpb76O0P_6lx3YjVbQr2YVnOb-q_7njs0b8j9XH7ynXg1ae7hsVU1fOPU3EEkRtnmt54OVWSXK-ZUqUsxf5OOtKltPwLgS2ZAguXahZNflpSWVQ=w1280"
       ]
     }
   },
@@ -126,11 +126,11 @@ window.AFHSite = {
   ],
   photos: {
     hero: "https://lh3.googleusercontent.com/sitesv/AA5AbUALh3QOkmDSG4anPJx5DKeh3ZJDz0v9Etss18pg6yepM9D4J1UjbqK-V_tLtXZdU-L6tY72vjxEeoZUj8JX7S2uCkZYSa25T2_E-uQYvcWv7g1hd_0f4aIu3K1mphclgMrOp-Atkp-OmC4Dty3MWLp8e3hG6nV8d23Du9JTYsXrrG93Yn6SDw=w1280",
-    living: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=84",
-    dining: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=84",
-    room: "https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=1200&q=84",
-    garden: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=84",
-    care: "https://images.unsplash.com/photo-1576765974135-48f9a1f8b4f1?auto=format&fit=crop&w=1200&q=84"
+    living: "https://lh3.googleusercontent.com/sitesv/AA5AbUDwWoTQQnvNAu-Otikca0SUJOc3h8KViFPukW3IKKz1W8br6Fm3T3uxZLXMOGzZpV4_5x42hT5Nv5t24D70VJ-9BQ6acmQ-Gp_D8ldHKSSd31nq9V2IjD8sLv9kybAYQVXndVU8EU7kqBp3UsAaRdwfmsyzb4O8TJGXUdVWlfBhskXBqXGFGp9Grn8=w16383",
+    dining: "https://lh3.googleusercontent.com/sitesv/AA5AbUC2ka2MflPObkN_pwbC3D87ROEwyf4AQpsyd42eh-kZtyYx6q1A14AudtcOI6q54UvJ0JLA5suVwLgdfuPUYaatW8fGu0oqnU-sYD-amTOpQm1kPyjuLxEX3gEm_bhqpS3JYrkPQ7Jjul2peXVv2jxCBXz0H5m08Ew_5wkOzpjzHvXTILCtHDmfEVyRbQCTEkOn9lMvS2Sh0F3ZxBKYkG23HrjwhsVQzZYcABY=w1280",
+    room: "https://lh3.googleusercontent.com/sitesv/AA5AbUCLswegNNQRzVwSVLywPYL9RS3viW0TWnq9A-_AX4JW-sYiLyPuzB-ZdPNYZmOL_udIVyXxMlbnzodv3Od0lGy-kN0Y80gVyASRnDn7EqRRdygKdS-Nbit3XrP0iwOkI0cLnSTIDpn3-aFGuuUzLbbgrVv9XuEL08Vu1zO9MAW3evuVaUnYcMngLzoJsuBsP-poZO1cPbSMJB6W8lP7j6kJQBj9485fHCspdAA=w1280",
+    garden: "https://lh3.googleusercontent.com/sitesv/AA5AbUAxLDLhioLR4KtbQ-nx13eZllj3VIa2G0yHPzOGmoO2nYwY8-njaI63lB70X8oxRCG5XrxUltaOZSJQyItx-ZEP0h8NsFskZc25JqqFLiurp7X3tyq2QETbOy-QF40QJBzRAQNJfZ_VDfBL8txBlkl99tnp-7CnLClv-bFVsqUBAjRzat969L0G32b-IHTubw1lzuLWQFxN504jACIiuAIjTiyZf5XoGIoCqi8=w1280",
+    care: "https://lh3.googleusercontent.com/sitesv/AA5AbUANqtyQbNZZOhZx03uyldfDCvWbi8Z43YT-Ml_02nf7o2BvPyRLiu1QsFcQqodIp5nbCod2jMX-CGBadDYc0d507RhbsQFy0IWHILoQ2twtdvQNpSeXl4URG00LazX9xZDZLgxSLtIQCbobi09C9en50adFVcHIcSp_ft7KQbOiNAVrWmbhLja5WfWQ_fwkiAA60qxEpx8_vi3WygXaDPPLm8ncEgxNoE9eDmg=w1280"
   },
   seoKeywords: [
     "Adult Family Home Burien WA",
