@@ -125,7 +125,7 @@ window.AFHSite = {
     }
   ],
   photos: {
-    hero: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1400&q=84",
+    hero: "https://lh3.googleusercontent.com/sitesv/AA5AbUALh3QOkmDSG4anPJx5DKeh3ZJDz0v9Etss18pg6yepM9D4J1UjbqK-V_tLtXZdU-L6tY72vjxEeoZUj8JX7S2uCkZYSa25T2_E-uQYvcWv7g1hd_0f4aIu3K1mphclgMrOp-Atkp-OmC4Dty3MWLp8e3hG6nV8d23Du9JTYsXrrG93Yn6SDw=w1280",
     living: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=84",
     dining: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=84",
     room: "https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=1200&q=84",
