@@ -1136,7 +1136,7 @@ textarea:focus {
 
 @media (max-width: 720px) {
   body {
-    padding-bottom: calc(126px + env(safe-area-inset-bottom));
+    padding-bottom: calc(132px + env(safe-area-inset-bottom));
   }
 
   .container {
@@ -1310,26 +1310,26 @@ textarea:focus {
     left: 12px;
     z-index: 60;
     display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.82fr) minmax(0, 0.78fr);
-    gap: 8px;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.72fr) minmax(0, 0.82fr);
+    gap: 9px;
     align-items: center;
-    padding: 9px;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: var(--radius);
-    background: rgba(20, 90, 74, 0.86);
-    box-shadow: 0 20px 52px rgba(0, 0, 0, 0.32);
-    backdrop-filter: blur(20px) saturate(1.2);
-    -webkit-backdrop-filter: blur(20px) saturate(1.2);
+    padding: 11px;
+    border: 1px solid rgba(240, 236, 230, 0.28);
+    border-radius: 16px;
+    background: rgba(31, 61, 54, 0.92);
+    box-shadow: 0 16px 36px rgba(31, 42, 42, 0.24);
+    backdrop-filter: blur(16px) saturate(1.08);
+    -webkit-backdrop-filter: blur(16px) saturate(1.08);
   }
 
   .mobile-quickbar a {
     display: grid;
-    min-height: 48px;
+    min-height: 52px;
     place-items: center;
     min-width: 0;
-    padding: 9px 8px;
-    border-radius: calc(var(--radius) - 3px);
-    color: var(--white);
+    padding: 10px 8px;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.88);
     font-size: 12px;
     font-weight: 900;
     line-height: 1.1;
@@ -1343,53 +1343,53 @@ textarea:focus {
   }
 
   .mobile-quickbar .quickbar-primary {
-    min-height: 58px;
-    padding: 11px 12px;
-    background: var(--gold);
-    color: var(--white);
-    box-shadow: 0 16px 34px rgba(200, 146, 46, 0.48);
+    min-height: 64px;
+    padding: 12px 14px;
+    background: #C9A86A;
+    color: #1F3D36;
+    box-shadow: 0 12px 24px rgba(201, 168, 106, 0.30);
   }
 
   .mobile-quickbar .quickbar-primary:hover,
   .mobile-quickbar .quickbar-primary:focus-visible {
-    background: var(--gold-hover);
-    box-shadow: 0 18px 38px rgba(200, 146, 46, 0.56);
+    background: #d5b878;
+    box-shadow: 0 14px 28px rgba(201, 168, 106, 0.36);
   }
 
   .mobile-quickbar .quickbar-title {
-    font-size: 13.5px;
+    font-size: 13px;
     font-weight: 950;
     line-height: 1.05;
   }
 
   .mobile-quickbar .quickbar-subtitle {
     margin-top: 3px;
-    color: rgba(255, 255, 255, 0.88);
+    color: rgba(31, 61, 54, 0.78);
     font-size: 10px;
     font-weight: 750;
     line-height: 1.05;
   }
 
   .mobile-quickbar .quickbar-secondary {
-    border: 1.5px solid rgba(255, 255, 255, 0.58);
-    background: rgba(255, 255, 255, 0.04);
-    color: rgba(255, 255, 255, 0.92);
+    border: 1.5px solid rgba(255, 255, 255, 0.42);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.94);
   }
 
   .mobile-quickbar .quickbar-secondary:hover,
   .mobile-quickbar .quickbar-secondary:focus-visible {
-    border-color: rgba(255, 255, 255, 0.82);
-    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(201, 168, 106, 0.58);
+    background: rgba(255, 255, 255, 0.13);
   }
 
   .mobile-quickbar .quickbar-link {
-    min-height: 46px;
+    min-height: 50px;
     padding-right: 4px;
     padding-left: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: rgba(255, 255, 255, 0.035);
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 10.5px;
     font-weight: 750;
   }
 

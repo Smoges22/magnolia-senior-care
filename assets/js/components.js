@@ -56,8 +56,8 @@
       </header>
       <div class="mobile-quickbar" aria-label="Quick contact actions">
         <a class="quickbar-secondary" href="${site.brand.phoneHref}">Call Now</a>
-        <a class="quickbar-primary" href="${localHref("contact.html")}" aria-label="Request a Tour, book a private visit">
-          <span class="quickbar-title">Request a Tour</span>
+        <a class="quickbar-primary" href="${localHref("contact.html")}" aria-label="Schedule a Tour, book a private visit">
+          <span class="quickbar-title">Schedule a Tour</span>
           <span class="quickbar-subtitle">Book a private visit</span>
         </a>
         <a class="quickbar-link" href="${localHref("referral-agents.html")}">Referrals</a>
