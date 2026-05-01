@@ -27,7 +27,7 @@ Because of that, Magnolia should not position itself as a generic "Magnolia care
 - Washington-based Adult Family Homes.
 - Burien and Des Moines locations.
 - RN-owned and RN-managed care.
-- Small residential care for up to 6 residents.
+- Private, home-like care with up to 6 residents.
 - Direct family communication.
 - Real home environment, not a large assisted living campus.
 
@@ -122,7 +122,7 @@ Use more precise language instead:
 - "Adult Family Home in Burien, WA"
 - "Adult Family Home in Des Moines, WA"
 - "RN-owned Adult Family Home care"
-- "Small 6-resident residential care"
+- "Private, home-like residential care"
 - "Washington AFH care"
 - "Magnolia Senior Loving Care"
 - "Magnolia Senior Care of Highline"
@@ -145,7 +145,7 @@ Large assisted living and memory care brands often talk about communities, campu
 Magnolia should talk about:
 
 - A real home.
-- Up to 6 residents.
+- A private, home-like setting with up to 6 residents.
 - Personalized routines.
 - Direct communication.
 - RN-owned oversight.

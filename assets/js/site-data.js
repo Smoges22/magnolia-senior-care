@@ -4,7 +4,7 @@ window.AFHSite = {
     legalName: "Magnolia Senior Care",
     shortName: "Magnolia",
     founder: "Sosena Mekuria, RN Provider",
-    tagline: "RN-owned Adult Family Home care for up to 6 residents in Burien and Des Moines.",
+    tagline: "RN-owned Adult Family Home care in a private, home-like setting with up to 6 residents in Burien and Des Moines.",
     phone: "(425) 246-6220",
     secondaryPhone: "(206) 453-5082",
     phoneHref: "tel:+14252466220",
@@ -101,8 +101,8 @@ window.AFHSite = {
     },
     {
       icon: "home",
-      title: "Small 6-Resident AFH Model",
-      text: "Care happens in a real home for up to 6 residents, making routines more personal, quieter, and easier for families to understand."
+      title: "Private Home-Like Setting",
+      text: "A private, home-like setting with up to 6 residents. This allows for more consistent care, familiar routines, and closer attention to each resident."
     },
     {
       icon: "message",
