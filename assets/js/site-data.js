@@ -72,11 +72,16 @@ window.AFHSite = {
         "Care conversations focus on transition support, memory-aware routines, nutrition, and referral coordination."
       ],
       fit: ["Hospital or rehab transitions", "South King County families", "Memory-aware daily routines", "Des Moines, North Hill, Woodmont, and Highline"],
-      image: "https://lh3.googleusercontent.com/sitesv/AA5AbUBUV_dUzK6pTIT7CB9K9WaRFW8rB01AY2zbBBG-HynfKsaYbyqH6-foy0B-IcRwypExxOVpl_ayk7BaEgV-eO8j33h8QNcgrEJjo1nau7GrVxjMNApYuwo9PfRTPvSMaciK4nu0qjzqnorcM2Lk4aMetEvmSb0_bt_JCZgq_FLkm1nbD141gQhv1ToJ96yPCjTyukBOmIm5hzV1wN85_sNTsz4TYPo7LX8XRqY=w1280",
+      image: "assets/images/des-moines-real/des-moines-living.jpg",
       gallery: [
-        "https://lh3.googleusercontent.com/sitesv/AA5AbUD5tCnlT9r9hrwKEFByelXdhpj7jw41GVIm2PQXOb13UVTNRmW_oeeeD-ushgHY3P3YMZHOMnkWx2EZ4iKByNilBrG-GUMiGAlLD1XJ9oDm6WT5PTTzOIKuSEQPJg-X2N5-zy0iTrXW7JP1a9iZnrr0dqXbnzie0sbyqEKx9zLtRqykkIM9PXzLCXPAQh0bD7jUI40Hzq8LinZGsoo4dFvC6T12g1ehjxy9sF0=w1280",
-        "https://lh3.googleusercontent.com/sitesv/AA5AbUCAqdeGGaNDkvPPb-A9yD6FRqgHZQP6BgeiHns7oykpOfFNSCY-fQqQL70oyUq9EJg2Z4cHdFo_LtLuDOWELZZQCIcf4S32W1yelV1814l4kCcHP6fCDcbjpQuHsJIVomQpR0aSPI__OYta-0lgOZnJNpDeJ9g8ic1UgNEqxT1mCowPOqkqeAAVn3X_lM-HBucNN2cs3Rf9j3QeN7KNbvvUrYHxp-nMCd_-=w1280",
-        "https://lh3.googleusercontent.com/sitesv/AA5AbUB43DAllUPsSdPLyOTGijfRT4EUge8ne76Fj8VM8lJCDZ1g1K7-Mp1RDUP2ZNLT04-CLLwBLrnBSFIUfLfHJ6bXWeSUTJL8S41KF7hYsGRxndQOUcPWP7rtzpb76O0P_6lx3YjVbQr2YVnOb-q_7njs0b8j9XH7ynXg1ae7hsVU1fOPU3EEkRtnmt54OVWSXK-ZUqUsxf5OOtKltPwLgS2ZAguXahZNflpSWVQ=w1280"
+        "assets/images/des-moines-real/des-moines-front.jpg",
+        "assets/images/des-moines-real/des-moines-living.jpg",
+        "assets/images/des-moines-real/des-moines-common-area.jpg",
+        "assets/images/des-moines-real/des-moines-bedroom.jpg",
+        "assets/images/des-moines-real/des-moines-kitchen.jpg",
+        "assets/images/des-moines-real/des-moines-bathroom-1.jpg",
+        "assets/images/des-moines-real/des-moines-bathroom-2.jpg",
+        "assets/images/des-moines-real/des-moines-outdoor-activities.jpg"
       ]
     }
   },
@@ -174,7 +179,15 @@ window.AFHSite = {
     garden: "assets/images/burien-real/burien-hallway.jpg",
     care: "assets/images/burien-real/burien-hallway.jpg",
     burienBedroom: "assets/images/burien-real/burien-bedroom.jpg",
-    desMoinesLiving: "assets/images/burien-real/burien-dining-living.jpg",
+    desMoinesLiving: "assets/images/des-moines-real/des-moines-living.jpg",
+    desMoinesLiving2: "assets/images/des-moines-real/des-moines-living-2.jpg",
+    desMoinesCommonArea: "assets/images/des-moines-real/des-moines-common-area.jpg",
+    desMoinesBedroom: "assets/images/des-moines-real/des-moines-bedroom.jpg",
+    desMoinesKitchen: "assets/images/des-moines-real/des-moines-kitchen.jpg",
+    desMoinesBathroom1: "assets/images/des-moines-real/des-moines-bathroom-1.jpg",
+    desMoinesBathroom2: "assets/images/des-moines-real/des-moines-bathroom-2.jpg",
+    desMoinesFront: "assets/images/des-moines-real/des-moines-front.jpg",
+    desMoinesOutdoorActivities: "assets/images/des-moines-real/des-moines-outdoor-activities.jpg",
     kitchenDining: "assets/images/burien-real/burien-kitchen.jpg",
     burienBathroom: "assets/images/burien-real/burien-bathroom.jpg",
     burienHallway: "assets/images/burien-real/burien-hallway.jpg",
