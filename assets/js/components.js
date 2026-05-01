@@ -177,6 +177,60 @@
     });
   }
 
+  function renderReviewCarousels() {
+    document.querySelectorAll("[data-review-carousel]").forEach((mount) => {
+      const reviews = site.googleReviews;
+      if (!reviews?.items?.length) return;
+
+      const trackId = `review-track-${Math.random().toString(36).slice(2)}`;
+      mount.innerHTML = `
+        <div class="review-carousel-shell">
+          <div class="review-score-card">
+            <div class="eyebrow">${reviews.sourceName}</div>
+            <div class="review-score">
+              <strong>${reviews.rating}</strong>
+              <span aria-label="${reviews.rating} out of 5 stars">★★★★★</span>
+            </div>
+            <p>${reviews.reviewCount} public Google reviews for ${reviews.profileName}.</p>
+            <a class="review-link" href="${reviews.sourceUrl}" target="_blank" rel="noopener">View or leave a Google review</a>
+          </div>
+          <div class="review-carousel">
+            <div class="review-track" id="${trackId}" tabindex="0" aria-label="Google review highlights">
+              ${reviews.items.map((review) => `
+                <article class="card review-card">
+                  <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                  <blockquote>
+                    <p>&ldquo;${review.quote}&rdquo;</p>
+                  </blockquote>
+                  <p>${review.summary}</p>
+                  <footer>
+                    <strong>${review.name}</strong>
+                    <span>${review.detail}</span>
+                  </footer>
+                </article>
+              `).join("")}
+            </div>
+            <div class="review-controls" aria-label="Review carousel controls">
+              <button class="review-control" type="button" data-review-prev aria-controls="${trackId}" aria-label="Previous review">‹</button>
+              <button class="review-control" type="button" data-review-next aria-controls="${trackId}" aria-label="Next review">›</button>
+            </div>
+            <p class="review-source-note">${reviews.updatedNote}</p>
+          </div>
+        </div>
+      `;
+
+      const track = mount.querySelector(".review-track");
+      const scrollByCard = (direction) => {
+        const card = track.querySelector(".review-card");
+        const amount = card ? card.getBoundingClientRect().width + 18 : 320;
+        track.scrollBy({ left: amount * direction, behavior: "smooth" });
+      };
+
+      mount.querySelector("[data-review-prev]")?.addEventListener("click", () => scrollByCard(-1));
+      mount.querySelector("[data-review-next]")?.addEventListener("click", () => scrollByCard(1));
+    });
+  }
+
   function hydrateBrandText() {
     document.querySelectorAll("[data-brand]").forEach((node) => {
       const key = node.getAttribute("data-brand");
@@ -267,6 +321,7 @@
     renderFooter();
     renderCards();
     renderLocationCards();
+    renderReviewCarousels();
     hydrateBrandText();
     applyImageFallbacks();
     initLightbox();

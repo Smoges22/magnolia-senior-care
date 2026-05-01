@@ -130,6 +130,40 @@ window.AFHSite = {
       name: "Power of attorney"
     }
   ],
+  googleReviews: {
+    sourceName: "Google reviews",
+    sourceUrl: "https://g.page/r/CYaxtDGwOoPOEAE/review",
+    profileName: "Magnolia Senior Loving Care - Burien",
+    rating: "5.0",
+    reviewCount: "4",
+    updatedNote: "Public Google review excerpts for the Burien Magnolia home.",
+    items: [
+      {
+        quote: "Peace and dignity",
+        summary: "A family reviewer shared that their loved one was cared for with peace, dignity, clean surroundings, prepared meals, and openness to family concerns.",
+        name: "John Dislers",
+        detail: "Family review"
+      },
+      {
+        quote: "Very clean and well-run",
+        summary: "Another reviewer highlighted the clean home, well-run care, delicious meals, and attentive support their mother receives.",
+        name: "Marc Barnhardt",
+        detail: "Family review"
+      },
+      {
+        quote: "Clean, bright, and full of life",
+        summary: "A reviewer who works with vulnerable adults described Magnolia as exceptionally caring, pleasant to work with, and above and beyond for residents.",
+        name: "Catherine Dunsmore",
+        detail: "Care professional and family review"
+      },
+      {
+        quote: "Professional and well organized",
+        summary: "A Google reviewer noted the home felt professional, well organized, and extremely clean.",
+        name: "Abay Yerdaw",
+        detail: "Google review"
+      }
+    ]
+  },
   photos: {
     hero: "https://lh3.googleusercontent.com/sitesv/AA5AbUALh3QOkmDSG4anPJx5DKeh3ZJDz0v9Etss18pg6yepM9D4J1UjbqK-V_tLtXZdU-L6tY72vjxEeoZUj8JX7S2uCkZYSa25T2_E-uQYvcWv7g1hd_0f4aIu3K1mphclgMrOp-Atkp-OmC4Dty3MWLp8e3hG6nV8d23Du9JTYsXrrG93Yn6SDw=w1280",
     living: "https://lh3.googleusercontent.com/sitesv/AA5AbUDwWoTQQnvNAu-Otikca0SUJOc3h8KViFPukW3IKKz1W8br6Fm3T3uxZLXMOGzZpV4_5x42hT5Nv5t24D70VJ-9BQ6acmQ-Gp_D8ldHKSSd31nq9V2IjD8sLv9kybAYQVXndVU8EU7kqBp3UsAaRdwfmsyzb4O8TJGXUdVWlfBhskXBqXGFGp9Grn8=w16383",
