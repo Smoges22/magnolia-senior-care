@@ -49,7 +49,7 @@
           <nav class="nav-links" id="site-nav" aria-label="Main navigation">${links}</nav>
           <div class="nav-actions">
             <a class="button secondary" href="${site.brand.phoneHref}">Call Now</a>
-            <a class="button" href="${localHref("contact.html")}">Request a Tour</a>
+            <a class="button" href="${localHref("contact.html")}">Schedule a Tour</a>
             <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">Menu</button>
           </div>
         </div>
@@ -168,7 +168,7 @@
               <li>${location.seoDescription}</li>
             </ul>
             <div class="section-actions">
-              <a class="button" href="${localHref("contact.html")}">Request a Tour</a>
+              <a class="button" href="${localHref("contact.html")}">Schedule a Tour</a>
               <a class="button secondary" href="${localHref(location.page)}">View Location</a>
             </div>
           </div>
