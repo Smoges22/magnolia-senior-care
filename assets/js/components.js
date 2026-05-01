@@ -44,8 +44,7 @@
       <header class="site-header">
         <div class="container nav-wrap">
           <a class="brand" href="${localHref("index.html")}" aria-label="${site.brand.name} home">
-            <span class="brand-mark" aria-hidden="true">M</span>
-            <span class="brand-name"><span class="brand-kicker">Home-Based Care</span>${site.brand.name}</span>
+            <img class="brand-logo" src="${localHref("assets/images/logo/magnolia-logo-horizontal.svg")}" alt="${site.brand.name}">
           </a>
           <nav class="nav-links" id="site-nav" aria-label="Main navigation">${links}</nav>
           <div class="nav-actions">

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220" role="img" aria-labelledby="title desc">
+  <title id="title">Magnolia Senior Care icon</title>
+  <desc id="desc">Simplified Magnolia icon with M, roof, and home care symbol.</desc>
+  <rect width="220" height="220" rx="38" fill="#FFFFFF"/>
+  <circle cx="110" cy="108" r="78" fill="#FFFFFF" stroke="#E2DDD6" stroke-width="3"/>
+  <path d="M60 102L110 62L160 102" stroke="#145A4A" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M74 104V145C74 152 80 158 87 158H133C140 158 146 152 146 145V104" stroke="#145A4A" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="110" y="135" text-anchor="middle" fill="#145A4A" font-family="Inter, Avenir Next, Segoe UI, Arial, sans-serif" font-size="54" font-weight="800">M</text>
+  <path d="M84 164C101 175 119 175 136 164" stroke="#C8922E" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="110" cy="90" r="7" fill="#2F8FA3"/>
+</svg>

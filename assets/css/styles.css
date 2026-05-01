@@ -115,42 +115,17 @@ p {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 8px 10px 8px 8px;
-  border-radius: 999px;
+  min-width: 0;
+  padding: 8px 12px;
+  border: 1px solid rgba(226, 221, 214, 0.72);
+  border-radius: 14px;
   background: var(--white);
-  font-weight: 800;
-  letter-spacing: 0;
+  box-shadow: 0 10px 24px rgba(20, 90, 74, 0.07);
 }
 
-.brand-mark {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  border: 1px solid rgba(47, 143, 163, 0.28);
-  border-radius: 50%;
-  background: var(--white);
-  color: var(--teal-dark);
-  font-family: Georgia, serif;
-  font-size: 22px;
-  box-shadow: 0 8px 18px rgba(20, 90, 74, 0.08);
-}
-
-.brand-name {
-  display: grid;
-  max-width: 230px;
-  color: var(--teal-dark);
-  font-size: 15px;
-  line-height: 1.15;
-}
-
-.brand-kicker {
-  color: var(--gold);
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.brand-logo {
+  width: clamp(198px, 21vw, 266px);
+  height: auto;
 }
 
 .nav-links {
@@ -1336,8 +1311,12 @@ textarea:focus {
     background: rgba(255, 255, 255, 0.075);
   }
 
-  .brand-name {
-    max-width: 170px;
+  .brand {
+    padding: 7px 9px;
+  }
+
+  .brand-logo {
+    width: clamp(178px, 52vw, 224px);
   }
 
   .cta-band {
