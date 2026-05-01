@@ -44,11 +44,13 @@ window.AFHSite = {
         "Care conversations focus on comfort, dignity, medication support, family communication, and RN-led oversight."
       ],
       fit: ["South Seattle and Burien families", "Quiet routines", "Easy family visits", "Seahurst, Three Tree Point, Normandy Park, and Highline"],
-      image: "https://lh3.googleusercontent.com/sitesv/AA5AbUAgLtNsvNmT_qCLDysjJGsZJGpa0CeLcXENhlJURMc7zVEVVkK5yIPYZKiQg_BkreT1iV8PeggmUgz24jZ2xlTowNSXm7hRR151JQNpE4CrQZvNJbRZcr1S9Y_xj1BFqjE8ZzyoFpn_FLpJOMTNdyUXJYVFG4Z1guIrBrynaEmnPTg4lrZvxg=w1280",
+      image: "assets/images/burien-real/burien-dining-living.jpg",
       gallery: [
-        "https://lh3.googleusercontent.com/sitesv/AA5AbUDprgr4vTb2HmbnGusRVlYsxyluxiKEg1el1z1HUSePGH2b0pU-GfPsCqeUKei2EHPIafVBlw-F-OrmToxt9QuLMMOVQle-Bgf1jHM-ba07S8jPPP37hLben9xLQzau7R7TikLnQqFlM5pNakJFTDMo747Y-E3kvTArtEmBwqLg94FSQ8slI2AH=w1280",
-        "https://lh3.googleusercontent.com/sitesv/AA5AbUDGGkE86HyCv63ocx22npGq6VvtzckZEPQR6o6JEm8zlzC2RNISvYEyXuPQA8nHoGQHxNWxMeOZ2r-7TUJSDn2j7Zx-vNa7OP_Q5O0DqQK9JRGyV3wPKfYRNE43nW0RJB4WwrzVQs_sC1RS2e-JhifgDjVgIrNIgDp1dEtQDBaoVlngVCkbphwO6jE=w1280",
-        "https://lh3.googleusercontent.com/sitesv/AA5AbUBH3N95H3qNw6ZqGJUVNZoUOaBIywGaYBp0w-sQ-IQzLszoLANUj10L8O6VIq7LIf1Yw6RszBe96deuOVK65ZRaWEZI_eiro_tdoADfJn6hyf5GvcXZSkpYvoz2IbNFG2NlFLDOIOooE-BQP-axZdfcgE64dyUCcNXS4q-nUAH3xrnbPFumDTHspfpdVaa36hzWGNzxBaX4WrqfbHs2I09lErbKNAUNlsvD=w1280"
+        "assets/images/burien-real/burien-dining-living.jpg",
+        "assets/images/burien-real/burien-bedroom.jpg",
+        "assets/images/burien-real/burien-kitchen.jpg",
+        "assets/images/burien-real/burien-bathroom.jpg",
+        "assets/images/burien-real/burien-hallway.jpg"
       ]
     },
     highline: {
@@ -165,16 +167,18 @@ window.AFHSite = {
     ]
   },
   photos: {
-    hero: "https://lh3.googleusercontent.com/sitesv/AA5AbUALh3QOkmDSG4anPJx5DKeh3ZJDz0v9Etss18pg6yepM9D4J1UjbqK-V_tLtXZdU-L6tY72vjxEeoZUj8JX7S2uCkZYSa25T2_E-uQYvcWv7g1hd_0f4aIu3K1mphclgMrOp-Atkp-OmC4Dty3MWLp8e3hG6nV8d23Du9JTYsXrrG93Yn6SDw=w1280",
-    living: "https://lh3.googleusercontent.com/sitesv/AA5AbUDwWoTQQnvNAu-Otikca0SUJOc3h8KViFPukW3IKKz1W8br6Fm3T3uxZLXMOGzZpV4_5x42hT5Nv5t24D70VJ-9BQ6acmQ-Gp_D8ldHKSSd31nq9V2IjD8sLv9kybAYQVXndVU8EU7kqBp3UsAaRdwfmsyzb4O8TJGXUdVWlfBhskXBqXGFGp9Grn8=w16383",
-    dining: "https://lh3.googleusercontent.com/sitesv/AA5AbUC2ka2MflPObkN_pwbC3D87ROEwyf4AQpsyd42eh-kZtyYx6q1A14AudtcOI6q54UvJ0JLA5suVwLgdfuPUYaatW8fGu0oqnU-sYD-amTOpQm1kPyjuLxEX3gEm_bhqpS3JYrkPQ7Jjul2peXVv2jxCBXz0H5m08Ew_5wkOzpjzHvXTILCtHDmfEVyRbQCTEkOn9lMvS2Sh0F3ZxBKYkG23HrjwhsVQzZYcABY=w1280",
-    room: "https://lh3.googleusercontent.com/sitesv/AA5AbUCLswegNNQRzVwSVLywPYL9RS3viW0TWnq9A-_AX4JW-sYiLyPuzB-ZdPNYZmOL_udIVyXxMlbnzodv3Od0lGy-kN0Y80gVyASRnDn7EqRRdygKdS-Nbit3XrP0iwOkI0cLnSTIDpn3-aFGuuUzLbbgrVv9XuEL08Vu1zO9MAW3evuVaUnYcMngLzoJsuBsP-poZO1cPbSMJB6W8lP7j6kJQBj9485fHCspdAA=w1280",
-    garden: "https://lh3.googleusercontent.com/sitesv/AA5AbUAxLDLhioLR4KtbQ-nx13eZllj3VIa2G0yHPzOGmoO2nYwY8-njaI63lB70X8oxRCG5XrxUltaOZSJQyItx-ZEP0h8NsFskZc25JqqFLiurp7X3tyq2QETbOy-QF40QJBzRAQNJfZ_VDfBL8txBlkl99tnp-7CnLClv-bFVsqUBAjRzat969L0G32b-IHTubw1lzuLWQFxN504jACIiuAIjTiyZf5XoGIoCqi8=w1280",
-    care: "https://lh3.googleusercontent.com/sitesv/AA5AbUANqtyQbNZZOhZx03uyldfDCvWbi8Z43YT-Ml_02nf7o2BvPyRLiu1QsFcQqodIp5nbCod2jMX-CGBadDYc0d507RhbsQFy0IWHILoQ2twtdvQNpSeXl4URG00LazX9xZDZLgxSLtIQCbobi09C9en50adFVcHIcSp_ft7KQbOiNAVrWmbhLja5WfWQ_fwkiAA60qxEpx8_vi3WygXaDPPLm8ncEgxNoE9eDmg=w1280",
-    burienBedroom: "https://lh3.googleusercontent.com/sitesv/AA5AbUDGGkE86HyCv63ocx22npGq6VvtzckZEPQR6o6JEm8zlzC2RNISvYEyXuPQA8nHoGQHxNWxMeOZ2r-7TUJSDn2j7Zx-vNa7OP_Q5O0DqQK9JRGyV3wPKfYRNE43nW0RJB4WwrzVQs_sC1RS2e-JhifgDjVgIrNIgDp1dEtQDBaoVlngVCkbphwO6jE=w1280",
-    desMoinesLiving: "https://lh3.googleusercontent.com/sitesv/AA5AbUD5tCnlT9r9hrwKEFByelXdhpj7jw41GVIm2PQXOb13UVTNRmW_oeeeD-ushgHY3P3YMZHOMnkWx2EZ4iKByNilBrG-GUMiGAlLD1XJ9oDm6WT5PTTzOIKuSEQPJg-X2N5-zy0iTrXW7JP1a9iZnrr0dqXbnzie0sbyqEKx9zLtRqykkIM9PXzLCXPAQh0bD7jUI40Hzq8LinZGsoo4dFvC6T12g1ehjxy9sF0=w1280",
-    kitchenDining: "https://lh3.googleusercontent.com/sitesv/AA5AbUCAqdeGGaNDkvPPb-A9yD6FRqgHZQP6BgeiHns7oykpOfFNSCY-fQqQL70oyUq9EJg2Z4cHdFo_LtLuDOWELZZQCIcf4S32W1yelV1814l4kCcHP6fCDcbjpQuHsJIVomQpR0aSPI__OYta-0lgOZnJNpDeJ9g8ic1UgNEqxT1mCowPOqkqeAAVn3X_lM-HBucNN2cs3Rf9j3QeN7KNbvvUrYHxp-nMCd_-=w1280",
-    outdoorHome: "https://lh3.googleusercontent.com/sitesv/AA5AbUDprgr4vTb2HmbnGusRVlYsxyluxiKEg1el1z1HUSePGH2b0pU-GfPsCqeUKei2EHPIafVBlw-F-OrmToxt9QuLMMOVQle-Bgf1jHM-ba07S8jPPP37hLben9xLQzau7R7TikLnQqFlM5pNakJFTDMo747Y-E3kvTArtEmBwqLg94FSQ8slI2AH=w1280"
+    hero: "assets/images/burien-real/burien-dining-living.jpg",
+    living: "assets/images/burien-real/burien-dining-living.jpg",
+    dining: "assets/images/burien-real/burien-dining-living.jpg",
+    room: "assets/images/burien-real/burien-bedroom.jpg",
+    garden: "assets/images/burien-real/burien-hallway.jpg",
+    care: "assets/images/burien-real/burien-hallway.jpg",
+    burienBedroom: "assets/images/burien-real/burien-bedroom.jpg",
+    desMoinesLiving: "assets/images/burien-real/burien-dining-living.jpg",
+    kitchenDining: "assets/images/burien-real/burien-kitchen.jpg",
+    burienBathroom: "assets/images/burien-real/burien-bathroom.jpg",
+    burienHallway: "assets/images/burien-real/burien-hallway.jpg",
+    outdoorHome: "assets/images/burien-real/burien-dining-living.jpg"
   },
   seoKeywords: [
     "Adult Family Home Burien WA",
