@@ -80,7 +80,8 @@
             <div>
               <h2>${site.brand.name}</h2>
               <p>${site.brand.tagline}</p>
-              <p>Licensed Adult Family Homes in Washington State.</p>
+              <p>Licensed Adult Family Home provider in Washington State.</p>
+              <p>Serving Burien, Des Moines, and South King County.</p>
             </div>
             <div>
               <h3>Explore</h3>
