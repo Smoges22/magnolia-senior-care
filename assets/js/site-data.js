@@ -61,7 +61,7 @@ window.AFHSite = {
       street: "1206 S 244th St",
       page: "des-moines-adult-family-home.html",
       legacySite: "https://www.magnoliaseniorcareofhighline.com/home",
-      position: "A Des Moines and Highline-area Adult Family Home for families seeking attentive care in a real home.",
+      position: "A steady, supportive home serving Des Moines, North Hill, Woodmont, and the Highline area.",
       seoDescription: "Adult Family Home Des Moines WA care with RN-managed oversight, Dementia Care AFH routines, 24/7 support, personal care, and family updates.",
       neighborhoods: ["Highline", "North Hill", "Woodmont", "Marina District", "SeaTac", "Kent Valley"],
       details: [
@@ -69,7 +69,7 @@ window.AFHSite = {
         "A tour can include home-like common areas, cozy bedrooms, serene outdoor space, wheelchair access, large bathrooms, and daily meals.",
         "Care conversations focus on transition support, memory-aware routines, nutrition, and referral coordination."
       ],
-      fit: ["Highline-area referrals", "Hospital or rehab transitions", "Memory-aware daily rhythm", "Professional care coordination"],
+      fit: ["Hospital or rehab transitions", "South King County families", "Memory-aware daily routines", "Des Moines, North Hill, Woodmont, and Highline"],
       image: "https://lh3.googleusercontent.com/sitesv/AA5AbUBUV_dUzK6pTIT7CB9K9WaRFW8rB01AY2zbBBG-HynfKsaYbyqH6-foy0B-IcRwypExxOVpl_ayk7BaEgV-eO8j33h8QNcgrEJjo1nau7GrVxjMNApYuwo9PfRTPvSMaciK4nu0qjzqnorcM2Lk4aMetEvmSb0_bt_JCZgq_FLkm1nbD141gQhv1ToJ96yPCjTyukBOmIm5hzV1wN85_sNTsz4TYPo7LX8XRqY=w1280",
       gallery: [
         "https://lh3.googleusercontent.com/sitesv/AA5AbUD5tCnlT9r9hrwKEFByelXdhpj7jw41GVIm2PQXOb13UVTNRmW_oeeeD-ushgHY3P3YMZHOMnkWx2EZ4iKByNilBrG-GUMiGAlLD1XJ9oDm6WT5PTTzOIKuSEQPJg-X2N5-zy0iTrXW7JP1a9iZnrr0dqXbnzie0sbyqEKx9zLtRqykkIM9PXzLCXPAQh0bD7jUI40Hzq8LinZGsoo4dFvC6T12g1ehjxy9sF0=w1280",
