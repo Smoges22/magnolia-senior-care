@@ -118,7 +118,7 @@ Current form opens a pre-filled email. Before full launch:
 - [ ] Verify domain ownership.
 - [ ] Track click events:
   - [ ] Call Now.
-  - [ ] Schedule Tour.
+  - [ ] Request a Tour.
   - [ ] For Referral Partners.
   - [ ] Email clicks.
 - [ ] Track form submissions or email handoffs.
