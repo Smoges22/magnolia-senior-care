@@ -14,6 +14,11 @@ window.AFHSite = {
     domain: "https://magnoliaseniorcarewa.com",
     socialLinks: [
       {
+        label: "Facebook",
+        name: "Magnolia Senior Loving Care",
+        href: "https://www.facebook.com/share/1aK52PAZtm/?mibextid=wwXIfr"
+      },
+      {
         label: "YouTube",
         name: "@MagnoliaSeniorLovingCare",
         href: "https://www.youtube.com/@MagnoliaSeniorLovingCare"
