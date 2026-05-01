@@ -141,6 +141,7 @@
     document.querySelectorAll("[data-testimonial-cards]").forEach((mount) => {
       mount.innerHTML = site.testimonials.map((item) => `
         <figure class="card testimonial-card">
+          <div class="eyebrow">Perspective</div>
           <blockquote>
             <p>&ldquo;${item.quote}&rdquo;</p>
           </blockquote>

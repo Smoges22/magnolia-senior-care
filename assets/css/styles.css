@@ -9,6 +9,12 @@
   --gold-soft: #fff5df;
   --white: #ffffff;
   --shadow: 0 18px 45px rgba(20, 55, 52, 0.10);
+  --card-padding: 30px;
+  --card-gap: 18px;
+  --card-border: rgba(15, 118, 110, 0.14);
+  --card-bg: linear-gradient(180deg, var(--white), #fbf8f1);
+  --card-shadow: 0 16px 34px rgba(20, 55, 52, 0.08);
+  --card-shadow-hover: 0 22px 44px rgba(20, 55, 52, 0.13);
   --radius: 8px;
   --max: 1180px;
 }
@@ -387,16 +393,18 @@ h3 {
 }
 
 .card {
-  border: 1px solid var(--line);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: 0 8px 22px rgba(20, 55, 52, 0.05);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
 }
 
 .service-card,
 .testimonial-card,
 .info-card {
-  padding: 24px;
+  display: grid;
+  align-content: start;
+  padding: var(--card-padding);
 }
 
 .service-card {
@@ -404,23 +412,25 @@ h3 {
   display: grid;
   min-height: 100%;
   align-content: start;
-  padding: 30px;
-  border-color: rgba(15, 118, 110, 0.14);
-  background: linear-gradient(180deg, var(--white), #fbf8f1);
-  box-shadow: 0 16px 34px rgba(20, 55, 52, 0.08);
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .service-card:hover,
 .service-card:focus-within,
-.service-card:active {
+.service-card:active,
+.location-choice-card:hover,
+.location-choice-card:focus-within,
+.gallery-section:hover,
+.gallery-section:focus-within,
+.process-step:hover,
+.process-step:focus-within {
   border-color: rgba(201, 162, 92, 0.48);
-  box-shadow: 0 22px 44px rgba(20, 55, 52, 0.13);
+  box-shadow: var(--card-shadow-hover);
   transform: translateY(-3px);
 }
 
 .card-body {
-  padding: 24px;
+  padding: var(--card-padding);
 }
 
 .location-card {
@@ -441,16 +451,23 @@ h3 {
   display: grid;
   align-content: start;
   gap: 0;
-  padding: 30px;
-  border-color: rgba(15, 118, 110, 0.14);
-  background: linear-gradient(180deg, var(--white), #fbf8f1);
-  box-shadow: 0 16px 34px rgba(20, 55, 52, 0.08);
+  padding: var(--card-padding);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .location-choice-card p {
   margin-bottom: 18px;
 }
 
+.card h2,
+.location-choice-card h2,
+.gallery-section .section-head h2 {
+  margin-bottom: 12px;
+  font-size: 30px;
+  line-height: 1.12;
+}
+
+.card h3,
 .location-choice-card h3 {
   margin-bottom: 12px;
   font-size: 24px;
@@ -473,6 +490,18 @@ h3 {
   text-transform: uppercase;
 }
 
+.card .eyebrow {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
 .tag-row {
   display: flex;
   flex-wrap: wrap;
@@ -488,12 +517,6 @@ h3 {
   color: var(--teal-dark);
   font-size: 12px;
   font-weight: 900;
-}
-
-.service-card h3 {
-  margin-bottom: 12px;
-  font-size: 24px;
-  line-height: 1.15;
 }
 
 .service-card p {
@@ -531,25 +554,12 @@ h3 {
 
 .process-step {
   position: relative;
-  padding: 24px;
-  border: 1px solid var(--line);
+  padding: var(--card-padding);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: 0 8px 22px rgba(20, 55, 52, 0.05);
-}
-
-.process-step::before {
-  counter-increment: process;
-  content: counter(process);
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  margin-bottom: 14px;
-  border-radius: 50%;
-  background: var(--gold-soft);
-  color: var(--teal-dark);
-  font-weight: 900;
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .comparison-grid {
@@ -708,7 +718,7 @@ h3 {
 }
 
 .gallery-section {
-  padding: 30px;
+  padding: var(--card-padding);
 }
 
 .gallery-section + .gallery-section {
@@ -722,8 +732,6 @@ h3 {
 
 .gallery-section .section-head h2 {
   max-width: 760px;
-  margin-bottom: 10px;
-  font-size: 34px;
 }
 
 .gallery-section .section-head p {
@@ -1067,8 +1075,13 @@ textarea:focus {
     margin-top: 18px;
   }
 
-  .gallery-section {
-    padding: 22px;
+  .service-card,
+  .info-card,
+  .testimonial-card,
+  .location-choice-card,
+  .gallery-section,
+  .process-step {
+    padding: 24px;
   }
 
   .gallery-section .section-head {
@@ -1213,13 +1226,16 @@ textarea:focus {
     gap: 16px;
   }
 
-  .service-card {
-    padding: 26px;
-  }
-
-  .service-card h3 {
+  .service-card h3,
+  .location-choice-card h3 {
     max-width: none;
     font-size: 21px;
+  }
+
+  .card h2,
+  .location-choice-card h2,
+  .gallery-section .section-head h2 {
+    font-size: 25px;
   }
 
   .split-card .card-body {
