@@ -32,7 +32,9 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--white);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(200, 146, 46, 0.08), transparent 30%),
+    linear-gradient(180deg, var(--white), #fbfaf8 46%, var(--white));
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.68;
   padding-bottom: 0;
@@ -109,14 +111,14 @@ p {
   min-height: 76px;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
 }
 
 .brand {
   display: flex;
   align-items: center;
   min-width: 0;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border: 1px solid rgba(226, 221, 214, 0.72);
   border-radius: 14px;
   background: var(--white);
@@ -124,7 +126,7 @@ p {
 }
 
 .brand-logo {
-  width: clamp(198px, 21vw, 266px);
+  width: clamp(210px, 21vw, 286px);
   height: auto;
 }
 
@@ -149,7 +151,7 @@ p {
 
 .menu-toggle {
   display: none;
-  min-width: 64px;
+  min-width: 58px;
   height: 42px;
   padding: 0 12px;
   border: 1px solid var(--line);
@@ -239,7 +241,11 @@ textarea:focus-visible {
 }
 
 .hero {
-  padding: 62px 0 46px;
+  overflow: hidden;
+  padding: 72px 0 58px;
+  background:
+    linear-gradient(90deg, rgba(247, 245, 242, 0.72), rgba(255, 255, 255, 0.82)),
+    radial-gradient(circle at 88% 18%, rgba(47, 143, 163, 0.12), transparent 34%);
 }
 
 .hero-grid {
@@ -259,11 +265,43 @@ textarea:focus-visible {
   letter-spacing: 0;
 }
 
+.hero h1 {
+  max-width: 760px;
+}
+
 .hero-lede,
 .page-lede {
   max-width: 720px;
   color: var(--muted);
   font-size: 19px;
+}
+
+.hero-response {
+  margin: 14px 0 0;
+  color: var(--teal-dark);
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.hero-proof-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.hero-proof-row span {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid rgba(47, 143, 163, 0.20);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--teal-dark);
+  font-size: 12.5px;
+  font-weight: 850;
+  box-shadow: 0 10px 22px rgba(20, 90, 74, 0.05);
 }
 
 .hero-actions,
@@ -277,12 +315,17 @@ textarea:focus-visible {
 .trust-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--card-gap);
+  gap: 16px;
   margin-top: 28px;
 }
 
+.hero-trust-row {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+}
+
 .trust-item {
-  padding: 16px;
+  padding: 18px;
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
   background: var(--card-bg);
@@ -296,22 +339,26 @@ textarea:focus-visible {
 }
 
 .trust-item span {
+  display: block;
+  margin-top: 7px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 13.5px;
+  line-height: 1.5;
 }
 
 .hero-photo {
   position: relative;
   overflow: hidden;
-  min-height: 560px;
+  min-height: 540px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  background: var(--soft);
 }
 
 .hero-photo img {
   width: 100%;
   height: 100%;
-  min-height: 560px;
+  min-height: 540px;
   object-fit: cover;
 }
 
@@ -319,7 +366,7 @@ textarea:focus-visible {
   position: absolute;
   right: 18px;
   bottom: 18px;
-  max-width: 280px;
+  max-width: 310px;
   padding: 16px;
   border: 1px solid rgba(255, 255, 255, 0.52);
   border-radius: var(--radius);
@@ -1089,7 +1136,7 @@ textarea:focus {
 
 @media (max-width: 720px) {
   body {
-    padding-bottom: calc(148px + env(safe-area-inset-bottom));
+    padding-bottom: calc(126px + env(safe-area-inset-bottom));
   }
 
   .container {
@@ -1106,14 +1153,18 @@ textarea:focus {
     padding: 46px 0;
   }
 
+  .hero {
+    padding-top: 38px;
+  }
+
   .section + .section::before {
     width: calc(100% - 24px);
   }
 
   .hero h1,
   .page-hero h1 {
-    font-size: 36px;
-    line-height: 1.02;
+    font-size: clamp(35px, 10.5vw, 44px);
+    line-height: 1.01;
   }
 
   h2,
@@ -1145,6 +1196,25 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
+  .hero-actions,
+  .section-actions {
+    gap: 10px;
+  }
+
+  .hero-actions .button {
+    flex: 1 1 138px;
+  }
+
+  .hero-proof-row {
+    gap: 8px;
+  }
+
+  .hero-proof-row span {
+    flex: 1 1 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
   .comparison-cell:first-child {
     border-right: 0;
     border-bottom: 1px solid var(--line);
@@ -1154,6 +1224,24 @@ textarea:focus {
   .photo-grid img:first-child,
   .image-panel img {
     height: 300px;
+  }
+
+  .hero-photo,
+  .hero-photo img {
+    min-height: 360px;
+  }
+
+  .hero-trust-row {
+    margin-top: 18px;
+  }
+
+  .photo-note {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    max-width: none;
+    padding: 13px 14px;
+    font-size: 13px;
   }
 
   .gallery-section + .gallery-section {
@@ -1223,9 +1311,9 @@ textarea:focus {
     z-index: 60;
     display: grid;
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.82fr) minmax(0, 0.78fr);
-    gap: 12px;
+    gap: 8px;
     align-items: center;
-    padding: 12px;
+    padding: 9px;
     border: 1px solid rgba(255, 255, 255, 0.28);
     border-radius: var(--radius);
     background: rgba(20, 90, 74, 0.86);
@@ -1236,10 +1324,10 @@ textarea:focus {
 
   .mobile-quickbar a {
     display: grid;
-    min-height: 54px;
+    min-height: 48px;
     place-items: center;
     min-width: 0;
-    padding: 11px 10px;
+    padding: 9px 8px;
     border-radius: calc(var(--radius) - 3px);
     color: var(--white);
     font-size: 12px;
@@ -1255,8 +1343,8 @@ textarea:focus {
   }
 
   .mobile-quickbar .quickbar-primary {
-    min-height: 68px;
-    padding: 14px 16px;
+    min-height: 58px;
+    padding: 11px 12px;
     background: var(--gold);
     color: var(--white);
     box-shadow: 0 16px 34px rgba(200, 146, 46, 0.48);
@@ -1269,7 +1357,7 @@ textarea:focus {
   }
 
   .mobile-quickbar .quickbar-title {
-    font-size: 15.5px;
+    font-size: 13.5px;
     font-weight: 950;
     line-height: 1.05;
   }
@@ -1277,7 +1365,7 @@ textarea:focus {
   .mobile-quickbar .quickbar-subtitle {
     margin-top: 3px;
     color: rgba(255, 255, 255, 0.88);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 750;
     line-height: 1.05;
   }
@@ -1295,7 +1383,7 @@ textarea:focus {
   }
 
   .mobile-quickbar .quickbar-link {
-    min-height: 50px;
+    min-height: 46px;
     padding-right: 4px;
     padding-left: 4px;
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1312,11 +1400,11 @@ textarea:focus {
   }
 
   .brand {
-    padding: 7px 9px;
+    padding: 6px 8px;
   }
 
   .brand-logo {
-    width: clamp(178px, 52vw, 224px);
+    width: clamp(178px, 52vw, 218px);
   }
 
   .cta-band {

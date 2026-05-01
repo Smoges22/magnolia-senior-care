@@ -1,24 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">Magnolia Senior Care photo placeholder</title>
-  <desc id="desc">Warm Magnolia Senior Care branded fallback image for home photos.</desc>
+  <title id="title">Magnolia Senior Care home setting</title>
+  <desc id="desc">Warm Magnolia Senior Care branded illustration for home photos.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#fbf8f1"/>
-      <stop offset="0.55" stop-color="#eef8f5"/>
-      <stop offset="1" stop-color="#fff"/>
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.58" stop-color="#F7F5F2"/>
+      <stop offset="1" stop-color="#F0ECE6"/>
     </linearGradient>
-    <linearGradient id="leaf" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#0f766e"/>
-      <stop offset="1" stop-color="#c9a25c"/>
+    <linearGradient id="softTeal" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2F8FA3" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#145A4A" stop-opacity="0.10"/>
     </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#145A4A" flood-opacity="0.12"/>
+    </filter>
   </defs>
   <rect width="1200" height="760" fill="url(#bg)"/>
-  <rect x="48" y="48" width="1104" height="664" rx="38" fill="none" stroke="#d8c394" stroke-width="3" opacity="0.65"/>
-  <g transform="translate(600 326)">
-    <circle r="132" fill="#fff" opacity="0.78"/>
-    <path d="M-18 74c-50-22-82-64-82-112 53 4 93 31 118 77 24-56 72-91 139-101-4 75-57 132-134 144-14 2-27-1-41-8Z" fill="url(#leaf)" opacity="0.9"/>
-    <path d="M-14 73C4 30 46-9 111-41" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" opacity="0.84"/>
+  <rect x="64" y="58" width="1072" height="644" rx="34" fill="#FFFFFF" stroke="#E2DDD6" stroke-width="3"/>
+  <path d="M64 240H1136" stroke="#F0ECE6" stroke-width="3"/>
+  <g filter="url(#shadow)">
+    <rect x="148" y="286" width="904" height="300" rx="28" fill="#FFFFFF"/>
+    <rect x="208" y="228" width="250" height="188" rx="18" fill="url(#softTeal)" stroke="#E2DDD6" stroke-width="3"/>
+    <path d="M236 376C275 319 332 293 413 302" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" opacity="0.95"/>
+    <rect x="512" y="306" width="336" height="178" rx="30" fill="#F7F5F2" stroke="#E2DDD6" stroke-width="3"/>
+    <rect x="552" y="350" width="256" height="86" rx="24" fill="#145A4A" opacity="0.94"/>
+    <circle cx="904" cy="350" r="48" fill="#F0ECE6" stroke="#E2DDD6" stroke-width="3"/>
+    <path d="M904 306V228" stroke="#C8922E" stroke-width="8" stroke-linecap="round"/>
+    <path d="M882 241H926" stroke="#C8922E" stroke-width="8" stroke-linecap="round"/>
+    <path d="M208 574H992" stroke="#C8922E" stroke-width="8" stroke-linecap="round"/>
   </g>
-  <text x="600" y="540" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="52" fill="#103431">Magnolia Senior Care</text>
-  <text x="600" y="592" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="2" fill="#7b6a43">RN-LED HOME-BASED CARE</text>
+  <g transform="translate(503 116)">
+    <path d="M0 50L97 0L194 50" stroke="#145A4A" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M32 50V90C32 98 38 104 46 104H148C156 104 162 98 162 90V50" stroke="#145A4A" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="97" cy="61" r="10" fill="#2F8FA3"/>
+    <path d="M70 92C80 76 89 70 97 70C105 70 114 76 124 92" stroke="#2F8FA3" stroke-width="9" stroke-linecap="round"/>
+    <path d="M72 109C89 119 105 119 122 109" stroke="#C8922E" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <text x="600" y="650" text-anchor="middle" font-family="Inter, Avenir Next, Segoe UI, Arial, sans-serif" font-size="38" font-weight="800" fill="#145A4A">Magnolia Senior Care</text>
+  <text x="600" y="690" text-anchor="middle" font-family="Inter, Avenir Next, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2.4" fill="#5F6F73">RN-LED ADULT FAMILY HOMES</text>
 </svg>
