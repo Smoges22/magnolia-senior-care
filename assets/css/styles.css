@@ -1314,12 +1314,12 @@ textarea:focus {
     gap: 9px;
     align-items: center;
     padding: 11px;
-    border: 1px solid rgba(240, 236, 230, 0.28);
+    border: 1px solid rgba(31, 61, 54, 0.10);
     border-radius: 16px;
-    background: rgba(31, 61, 54, 0.92);
-    box-shadow: 0 16px 36px rgba(31, 42, 42, 0.24);
-    backdrop-filter: blur(16px) saturate(1.08);
-    -webkit-backdrop-filter: blur(16px) saturate(1.08);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 16px 36px rgba(31, 42, 42, 0.16);
+    backdrop-filter: blur(18px) saturate(1.08);
+    -webkit-backdrop-filter: blur(18px) saturate(1.08);
   }
 
   .mobile-quickbar a {
@@ -1329,7 +1329,7 @@ textarea:focus {
     min-width: 0;
     padding: 10px 8px;
     border-radius: 12px;
-    color: rgba(255, 255, 255, 0.88);
+    color: #1F3D36;
     font-size: 12px;
     font-weight: 900;
     line-height: 1.1;
@@ -1347,13 +1347,13 @@ textarea:focus {
     padding: 12px 14px;
     background: #C9A86A;
     color: #1F3D36;
-    box-shadow: 0 12px 24px rgba(201, 168, 106, 0.30);
+    box-shadow: 0 12px 24px rgba(201, 168, 106, 0.28);
   }
 
   .mobile-quickbar .quickbar-primary:hover,
   .mobile-quickbar .quickbar-primary:focus-visible {
-    background: #d5b878;
-    box-shadow: 0 14px 28px rgba(201, 168, 106, 0.36);
+    background: #b99552;
+    box-shadow: 0 14px 28px rgba(201, 168, 106, 0.34);
   }
 
   .mobile-quickbar .quickbar-title {
@@ -1371,32 +1371,32 @@ textarea:focus {
   }
 
   .mobile-quickbar .quickbar-secondary {
-    border: 1.5px solid rgba(255, 255, 255, 0.42);
-    background: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.94);
+    border: 1.5px solid #1F3D36;
+    background: transparent;
+    color: #1F3D36;
   }
 
   .mobile-quickbar .quickbar-secondary:hover,
   .mobile-quickbar .quickbar-secondary:focus-visible {
-    border-color: rgba(201, 168, 106, 0.58);
-    background: rgba(255, 255, 255, 0.13);
+    border-color: #1F3D36;
+    background: rgba(31, 61, 54, 0.07);
   }
 
   .mobile-quickbar .quickbar-link {
     min-height: 50px;
     padding-right: 4px;
     padding-left: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background: rgba(255, 255, 255, 0.04);
-    color: rgba(255, 255, 255, 0.68);
+    border: 1px solid rgba(31, 61, 54, 0.16);
+    background: rgba(31, 61, 54, 0.03);
+    color: rgba(95, 111, 115, 0.86);
     font-size: 10.5px;
     font-weight: 750;
   }
 
   .mobile-quickbar .quickbar-link:hover,
   .mobile-quickbar .quickbar-link:focus-visible {
-    color: rgba(255, 255, 255, 0.9);
-    background: rgba(255, 255, 255, 0.075);
+    color: #1F3D36;
+    background: rgba(31, 61, 54, 0.06);
   }
 
   .brand {
