@@ -52,9 +52,9 @@
         </div>
       </header>
       <div class="mobile-quickbar" aria-label="Quick contact actions">
-        <a href="${site.brand.phoneHref}">Call Now</a>
-        <a href="${localHref("contact.html")}">Schedule Tour</a>
-        <a href="${localHref("referral-agents.html")}">Refer</a>
+        <a class="quickbar-secondary" href="${site.brand.phoneHref}">Call Now</a>
+        <a class="quickbar-primary" href="${localHref("contact.html")}">Schedule Tour</a>
+        <a class="quickbar-link" href="${localHref("referral-agents.html")}">For Referral Partners</a>
       </div>
     `;
 
@@ -77,7 +77,7 @@
             <div>
               <h2>${site.brand.name}</h2>
               <p>${site.brand.tagline}</p>
-              <p>${site.brand.license}</p>
+              <p>Licensed Adult Family Homes in Washington State.</p>
             </div>
             <div>
               <h3>Explore</h3>

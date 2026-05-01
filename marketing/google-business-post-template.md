@@ -14,6 +14,6 @@ Call (425) 246-6220 to schedule a private tour.
 
 Magnolia Senior Care of Highline LLC offers RN-managed Adult Family Home care in Des Moines near Highline, SeaTac, North Hill, Woodmont, and South King County.
 
-Families, POAs, referral agents, discharge planners, and case managers are welcome to call for availability, care fit, and private tour scheduling.
+Families, POAs, referral agents, discharge planners, and case managers are welcome to call for availability, care questions, and private tour scheduling.
 
 Call (425) 246-6220 or email sosena.mekuria@gmail.com.

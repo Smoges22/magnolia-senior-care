@@ -26,7 +26,7 @@ This static website upgrades the two existing Magnolia Google Sites into one pre
 - One Magnolia parent brand
 - Two distinct local Adult Family Home pages
 - RN-owned / RN-managed care message
-- Strong CTAs: Call Now, Schedule a Tour, Referral Inquiry
+- Strong CTAs: Schedule Tour, Call Now, For Referral Partners
 - AFH-specific language instead of broad, generic care-home wording
 
 ## Customize Before Launch

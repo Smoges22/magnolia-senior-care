@@ -119,7 +119,7 @@ Current form opens a pre-filled email. Before full launch:
 - [ ] Track click events:
   - [ ] Call Now.
   - [ ] Schedule Tour.
-  - [ ] Referral Inquiry.
+  - [ ] For Referral Partners.
   - [ ] Email clicks.
 - [ ] Track form submissions or email handoffs.
 - [ ] Track location page visits.

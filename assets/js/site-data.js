@@ -36,12 +36,12 @@ window.AFHSite = {
       page: "burien-adult-family-home.html",
       legacySite: "https://www.magnoliaseniorlovingcare.com/home",
       position: "A warm RN-managed Adult Family Home near Seahurst, Three Tree Point, Highline, and Normandy Park.",
-      seoDescription: "RN-owned Adult Family Home care in Burien, WA with personalized support, memory-aware routines, accessible spaces, and family communication.",
+      seoDescription: "Adult Family Home Burien WA care with RN-owned oversight, Dementia Care AFH routines, accessible spaces, and family communication.",
       neighborhoods: ["Seahurst", "Three Tree Point", "Highline", "Sunnydale", "Normandy Park", "South Seattle"],
       details: [
-        "Ideal for families who want a calm Burien residential care home with close daily attention.",
-        "Tour focus: landscaped garden, comfortable living spaces, spacious bedrooms, dining area, wheelchair access, kitchen, and accessible bathrooms.",
-        "Care conversations emphasize comfort, dignity, medication support, family communication, and RN-led oversight."
+        "A calm Burien home for families who want close daily attention.",
+        "A tour can include the landscaped garden, comfortable living spaces, spacious bedrooms, dining area, wheelchair access, kitchen, and accessible bathrooms.",
+        "Care conversations focus on comfort, dignity, medication support, family communication, and RN-led oversight."
       ],
       fit: ["Burien families", "Seahurst and Three Tree Point proximity", "Quiet home routines", "Garden and accessible spaces"],
       image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=84",
@@ -61,13 +61,13 @@ window.AFHSite = {
       street: "1206 S 244th St",
       page: "des-moines-adult-family-home.html",
       legacySite: "https://www.magnoliaseniorcareofhighline.com/home",
-      position: "A Des Moines and Highline-area Adult Family Home for families seeking attentive, residential senior care.",
-      seoDescription: "RN-managed Adult Family Home care near Des Moines and Highline, WA with 24/7 support, memory care, personal care, and family updates.",
+      position: "A Des Moines and Highline-area Adult Family Home for families seeking attentive care in a real home.",
+      seoDescription: "Adult Family Home Des Moines WA care with RN-managed oversight, Dementia Care AFH routines, 24/7 support, personal care, and family updates.",
       neighborhoods: ["Highline", "North Hill", "Woodmont", "Marina District", "SeaTac", "Kent Valley"],
       details: [
-        "Built for families comparing care near Des Moines, Highline, SeaTac, and South King County.",
-        "Tour focus: home-like common areas, cozy bedrooms, serene outdoor space, wheelchair access, large bathrooms, and daily meals.",
-        "Care conversations emphasize transition support, memory-aware routines, nutrition, and professional referral coordination."
+        "Helpful for families comparing care near Des Moines, Highline, SeaTac, and South King County.",
+        "A tour can include home-like common areas, cozy bedrooms, serene outdoor space, wheelchair access, large bathrooms, and daily meals.",
+        "Care conversations focus on transition support, memory-aware routines, nutrition, and referral coordination."
       ],
       fit: ["Highline-area referrals", "Hospital or rehab transitions", "Memory-aware daily rhythm", "Professional care coordination"],
       image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=84",
@@ -82,7 +82,7 @@ window.AFHSite = {
     {
       icon: "RN",
       title: "RN-Owned, RN-Managed Care",
-      text: "Magnolia is guided by Sosena Mekuria, RN Provider, bringing more than a decade of healthcare experience to care planning, daily observation, and direct family communication."
+      text: "Magnolia is guided by Sosena Mekuria, RN Provider, who brings more than a decade of healthcare experience to daily care, observation, and family communication."
     },
     {
       icon: "ADL",
@@ -96,8 +96,8 @@ window.AFHSite = {
     },
     {
       icon: "MEM",
-      title: "Memory-Aware Support",
-      text: "Structured routines, gentle cueing, meaningful activities, and a calm environment for residents living with dementia or Alzheimer's."
+      title: "Dementia Care AFH Support",
+      text: "Structured routines, gentle cueing, meaningful activities, and a calm AFH environment for residents living with dementia or Alzheimer's."
     },
     {
       icon: "24",
@@ -107,7 +107,7 @@ window.AFHSite = {
     {
       icon: "FAM",
       title: "Family and Referral Communication",
-      text: "Families, POAs, referral agents, discharge planners, and case managers can communicate more directly without feeling lost in a large system."
+      text: "Families, POAs, referral agents, discharge planners, and case managers can get clearer answers from people close to the care."
     }
   ],
   testimonials: [
@@ -116,7 +116,7 @@ window.AFHSite = {
       name: "Family member"
     },
     {
-      quote: "A responsive Adult Family Home option when families need clarity, compassion, and a practical tour conversation.",
+      quote: "A responsive Adult Family Home option when families need clarity, compassion, and practical next steps.",
       name: "Referral partner"
     },
     {
@@ -135,8 +135,9 @@ window.AFHSite = {
   seoKeywords: [
     "Adult Family Home Burien WA",
     "Adult Family Home Des Moines WA",
-    "RN owned adult family home",
-    "memory care adult family home",
+    "Dementia Care AFH",
+    "RN-owned Adult Family Home",
+    "memory care Adult Family Home",
     "24/7 senior care South King County",
     "Magnolia Senior Loving Care",
     "Magnolia Senior Care of Highline"
