@@ -862,26 +862,27 @@ textarea:focus {
 
   .mobile-quickbar {
     position: fixed;
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
     z-index: 60;
     display: grid;
-    grid-template-columns: 0.9fr 1.55fr 0.68fr;
-    gap: 8px;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.55fr) minmax(0, 0.78fr);
+    gap: 9px;
     align-items: center;
-    padding: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.34);
     border-radius: var(--radius);
-    background: rgba(23, 54, 52, 0.97);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+    background: rgba(23, 54, 52, 0.88);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.26);
+    backdrop-filter: blur(16px);
   }
 
   .mobile-quickbar a {
     display: grid;
-    min-height: 46px;
+    min-height: 48px;
     place-items: center;
-    padding: 8px 10px;
+    padding: 10px;
     border-radius: calc(var(--radius) - 3px);
     color: var(--white);
     font-size: 12px;
@@ -891,12 +892,13 @@ textarea:focus {
   }
 
   .mobile-quickbar .quickbar-primary {
-    min-height: 56px;
+    min-height: 58px;
+    padding: 13px 12px;
     background: var(--gold);
     color: var(--white);
-    font-size: 14px;
+    font-size: 14.5px;
     font-weight: 950;
-    box-shadow: 0 12px 28px rgba(164, 113, 28, 0.40);
+    box-shadow: 0 14px 30px rgba(164, 113, 28, 0.46);
   }
 
   .mobile-quickbar .quickbar-secondary {
@@ -906,14 +908,14 @@ textarea:focus {
   }
 
   .mobile-quickbar .quickbar-link {
-    min-height: 38px;
+    min-height: 44px;
     padding-right: 6px;
     padding-left: 6px;
-    color: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.78);
     font-size: 11px;
     font-weight: 750;
-    text-decoration: underline;
-    text-underline-offset: 3px;
   }
 
   .brand-name {
