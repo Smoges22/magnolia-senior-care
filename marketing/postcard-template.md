@@ -5,7 +5,7 @@
 Magnolia Senior Care  
 RN-Owned Adult Family Homes in Burien and Des Moines
 
-Warm residential care, memory-aware routines, medication support, meals, and 24/7 assistance in smaller home settings.
+Warm residential care, memory-aware routines, medication support, meals, and 24/7 assistance in a personal home setting.
 
 Call (425) 246-6220 to schedule a private tour.
 

@@ -4,20 +4,21 @@
   --line: #e2ddd6;
   --soft: #F7F3EE;
   --warm: #F7F3EE;
-  --teal: #2F8FA3;
+  --teal: #2F9CAA;
   --teal-dark: #005450;
   --gold: #FFC776;
   --gold-hover: #e6ad5f;
   --gold-soft: #F7F3EE;
   --white: #ffffff;
   --shadow: 0 18px 45px rgba(31, 42, 42, 0.09);
-  --card-padding: 30px;
-  --card-gap: 24px;
-  --card-border: rgba(0, 84, 80, 0.13);
+  --card-padding: 34px;
+  --card-gap: 28px;
+  --card-border: rgba(0, 84, 80, 0.12);
   --card-bg: var(--white);
-  --card-shadow: 0 16px 34px rgba(31, 42, 42, 0.07);
-  --card-shadow-hover: 0 22px 44px rgba(31, 42, 42, 0.11);
-  --radius: 8px;
+  --card-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.10);
+  --radius: 14px;
+  --card-radius: 26px;
   --max: 1180px;
 }
 
@@ -32,9 +33,7 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background:
-    radial-gradient(circle at 12% 0%, rgba(255, 199, 118, 0.12), transparent 30%),
-    linear-gradient(180deg, var(--white), #fbfaf8 46%, var(--white));
+  background: var(--white);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.74;
   padding-bottom: 0;
@@ -335,9 +334,11 @@ textarea:focus-visible {
 }
 
 .trust-item {
+  position: relative;
+  overflow: hidden;
   padding: 18px;
   border: 1px solid var(--card-border);
-  border-radius: var(--radius);
+  border-radius: var(--card-radius);
   background: var(--card-bg);
   box-shadow: var(--card-shadow);
 }
@@ -389,7 +390,7 @@ textarea:focus-visible {
 
 .section {
   position: relative;
-  padding: 84px 0;
+  padding: 92px 0;
 }
 
 .section + .section::before {
@@ -408,11 +409,16 @@ textarea:focus-visible {
 }
 
 .section.soft {
-  background: var(--soft);
+  background: #F8F6F1;
 }
 
 .section.gold-soft {
   background: var(--warm);
+}
+
+.review-highlight-section {
+  overflow: hidden;
+  background: var(--white);
 }
 
 .section-head {
@@ -460,10 +466,30 @@ h3 {
 }
 
 .card {
+  position: relative;
+  overflow: hidden;
   border: 1px solid var(--card-border);
-  border-radius: var(--radius);
-  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  background: var(--white);
   box-shadow: var(--card-shadow);
+}
+
+.card::before,
+.trust-item::before,
+.process-step::before,
+.comparison-row::before,
+.split-card::before,
+.contact-panel::before,
+.map-frame::after,
+.cta-band::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(255, 199, 118, 0), rgba(255, 199, 118, 0.94), rgba(47, 156, 170, 0.32), rgba(255, 199, 118, 0));
+  pointer-events: none;
 }
 
 .service-card,
@@ -475,6 +501,17 @@ h3 {
   display: grid;
   align-content: start;
   padding: var(--card-padding);
+}
+
+.service-card,
+.info-card,
+.location-choice-card,
+.gallery-section,
+.process-step,
+.review-card,
+.trust-item {
+  background:
+    linear-gradient(180deg, #FFFFFF 0%, #FBF8F1 100%);
 }
 
 .card,
@@ -509,7 +546,7 @@ h3 {
 .trust-item:focus-within,
 .process-step:hover,
 .process-step:focus-within {
-  border-color: rgba(47, 143, 163, 0.34);
+  border-color: rgba(47, 156, 170, 0.34);
   box-shadow: var(--card-shadow-hover);
   transform: translateY(-3px);
 }
@@ -545,6 +582,7 @@ h3 {
 .card h2,
 .location-choice-card h2,
 .gallery-section .section-head h2 {
+  color: var(--teal-dark);
   margin-bottom: 12px;
   font-size: 30px;
   line-height: 1.12;
@@ -552,6 +590,7 @@ h3 {
 
 .card h3,
 .location-choice-card h3 {
+  color: var(--teal-dark);
   margin-bottom: 12px;
   font-size: 24px;
 }
@@ -578,7 +617,7 @@ h3 {
 }
 
 .card p {
-  color: var(--muted);
+  color: #202626;
   line-height: 1.72;
 }
 
@@ -612,26 +651,30 @@ h3 {
 .service-card p,
 .info-card p,
 .testimonial-card p {
-  color: var(--muted);
+  color: #202626;
 }
 
 .review-carousel-shell {
   display: grid;
-  grid-template-columns: minmax(240px, 0.34fr) minmax(0, 0.66fr);
-  gap: var(--card-gap);
-  align-items: stretch;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 4px max(24px, calc((100vw - var(--max)) / 2)) 10px;
+  gap: 26px;
+  align-items: center;
+  background: var(--white);
 }
 
 .review-score-card {
   display: grid;
-  align-content: center;
-  padding: var(--card-padding);
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 30px 34px;
   border: 1px solid var(--card-border);
-  border-radius: var(--radius);
+  border-radius: 24px;
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(247, 245, 242, 0.92)),
     radial-gradient(circle at 18% 10%, rgba(255, 199, 118, 0.16), transparent 30%);
-  box-shadow: var(--card-shadow);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 }
 
 .review-score {
@@ -670,19 +713,22 @@ h3 {
 }
 
 .review-carousel {
+  position: relative;
   min-width: 0;
 }
 
 .review-track {
   display: grid;
-  grid-auto-columns: minmax(290px, 72%);
+  grid-auto-columns: 760px;
   grid-auto-flow: column;
-  gap: 18px;
+  justify-content: start;
+  gap: 24px;
   overflow-x: auto;
-  padding: 2px 2px 18px;
+  padding: 4px max(0px, calc((100vw - 760px) / 2)) 22px;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: none;
   scrollbar-width: none;
+  overscroll-behavior-x: contain;
 }
 
 .review-track::-webkit-scrollbar {
@@ -693,25 +739,29 @@ h3 {
   display: grid;
   min-height: 100%;
   align-content: start;
-  padding: 28px;
-  scroll-snap-align: start;
+  padding: 34px 36px;
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .review-card blockquote {
-  margin: 10px 0 12px;
+  margin: 14px 0 14px;
 }
 
 .review-card blockquote p {
   margin: 0;
   color: var(--teal-dark);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 30px;
-  line-height: 1.1;
+  font-size: clamp(30px, 4vw, 38px);
+  line-height: 1.08;
 }
 
 .review-card > p {
-  color: var(--muted);
-  font-size: 15px;
+  color: #202626;
+  font-size: 16.5px;
+  line-height: 1.72;
 }
 
 .review-card footer {
@@ -734,8 +784,9 @@ h3 {
 
 .review-controls {
   display: flex;
+  justify-content: center;
   gap: 10px;
-  margin-top: 4px;
+  margin-top: 0;
 }
 
 .review-control {
@@ -762,7 +813,37 @@ h3 {
 }
 
 .review-source-note {
+  display: block;
+  max-width: min(680px, calc(100vw - 32px));
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 12px;
+  text-align: center;
   margin-top: 12px;
+}
+
+.review-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.review-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 84, 80, 0.20);
+  cursor: pointer;
+  transition: width 180ms ease, background 180ms ease;
+}
+
+.review-dot[aria-current="true"] {
+  width: 24px;
+  border-radius: 999px;
+  background: var(--gold);
 }
 
 .feature-list {
@@ -776,7 +857,7 @@ h3 {
 .feature-list li {
   position: relative;
   padding-left: 28px;
-  color: var(--muted);
+  color: #202626;
 }
 
 .process-list {
@@ -788,8 +869,9 @@ h3 {
 
 .process-step {
   position: relative;
+  overflow: hidden;
   border: 1px solid var(--card-border);
-  border-radius: var(--radius);
+  border-radius: var(--card-radius);
   background: var(--card-bg);
   box-shadow: var(--card-shadow);
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
@@ -801,11 +883,12 @@ h3 {
 }
 
 .comparison-row {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
   border: 1px solid var(--card-border);
-  border-radius: var(--radius);
+  border-radius: var(--card-radius);
   background: var(--card-bg);
   box-shadow: var(--card-shadow);
 }
@@ -843,11 +926,12 @@ h3 {
 }
 
 .split-card {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
   border: 1px solid var(--card-border);
-  border-radius: var(--radius);
+  border-radius: var(--card-radius);
   background: var(--card-bg);
   box-shadow: var(--card-shadow);
 }
@@ -857,7 +941,10 @@ h3 {
 }
 
 .contact-panel {
+  position: relative;
+  overflow: hidden;
   border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
   background: var(--card-bg);
 }
 
@@ -895,7 +982,7 @@ h3 {
   overflow: hidden;
   margin-top: 18px;
   border: 1px solid var(--card-border);
-  border-radius: var(--radius);
+  border-radius: var(--card-radius);
   background: var(--soft);
   box-shadow: 0 10px 24px rgba(0, 84, 80, 0.08);
 }
@@ -950,9 +1037,11 @@ h3 {
 }
 
 .cta-band {
+  position: relative;
+  overflow: hidden;
   padding: 42px;
   border: 1px solid rgba(0, 84, 80, 0.12);
-  border-radius: var(--radius);
+  border-radius: var(--card-radius);
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(247, 245, 242, 0.96)),
     radial-gradient(circle at 92% 12%, rgba(47, 143, 163, 0.10), transparent 32%);
@@ -1313,6 +1402,10 @@ textarea:focus {
     min-height: 420px;
   }
 
+  .review-track {
+    grid-auto-columns: calc(100vw - 56px);
+  }
+
   .grid-3,
   .footer-grid,
   .process-list {
@@ -1343,6 +1436,12 @@ textarea:focus {
 }
 
 @media (max-width: 720px) {
+  :root {
+    --card-padding: 26px;
+    --card-gap: 18px;
+    --card-radius: 22px;
+  }
+
   body {
     padding-bottom: calc(138px + env(safe-area-inset-bottom));
   }
@@ -1492,7 +1591,16 @@ textarea:focus {
 
   .review-score-card,
   .review-card {
-    padding: 24px;
+    padding: 28px;
+  }
+
+  .review-carousel-shell {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .review-score-card {
+    width: calc(100vw - 24px);
   }
 
   .review-score strong {
@@ -1500,14 +1608,14 @@ textarea:focus {
   }
 
   .review-track {
-    grid-auto-columns: minmax(252px, 88%);
-    gap: 14px;
-    margin-right: -12px;
-    padding-bottom: 14px;
+    grid-auto-columns: calc(100vw - 24px);
+    gap: 18px;
+    margin: 0;
+    padding: 4px 12px 18px;
   }
 
   .review-card blockquote p {
-    font-size: 25px;
+    font-size: 29px;
   }
 
   .gallery-item figcaption {

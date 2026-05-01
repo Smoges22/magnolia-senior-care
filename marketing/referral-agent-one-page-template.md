@@ -13,7 +13,7 @@ Magnolia Senior Care is led by Sosena Mekuria, RN Provider, and offers two resid
 
 ## Best-Fit Referral Context
 
-- Family wants a smaller, home-like care setting
+- Family wants a private home setting with familiar routines
 - Resident needs personal care, medication reminders, meals, hydration, and daily support
 - Resident may benefit from memory-aware routines, gentle cueing, and a calm environment
 - POA or family needs responsive communication during a sensitive transition

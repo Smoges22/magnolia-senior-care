@@ -215,20 +215,52 @@
               <button class="review-control" type="button" data-review-prev aria-controls="${trackId}" aria-label="Previous review">&#8249;</button>
               <button class="review-control" type="button" data-review-next aria-controls="${trackId}" aria-label="Next review">&#8250;</button>
             </div>
+            <div class="review-dots" aria-label="Review slide selector">
+              ${reviews.items.map((_, index) => `<button class="review-dot" type="button" data-review-dot="${index}" aria-label="Show review ${index + 1}" aria-current="${index === 0 ? "true" : "false"}"></button>`).join("")}
+            </div>
             <p class="review-source-note">${reviews.updatedNote}</p>
           </div>
         </div>
       `;
 
       const track = mount.querySelector(".review-track");
+      const dots = Array.from(mount.querySelectorAll("[data-review-dot]"));
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       let autoplayTimer;
       let resumeTimer;
+      let scrollTimer;
+      let activeIndex = 0;
+
+      const cards = Array.from(track.querySelectorAll(".review-card"));
+
+      const cardLeft = (index) => {
+        if (!cards.length) return 0;
+        const firstLeft = cards[0].offsetLeft;
+        return Math.max(0, (cards[index]?.offsetLeft || firstLeft) - firstLeft);
+      };
+
+      const setActiveDot = (index) => {
+        activeIndex = Math.max(0, Math.min(reviews.items.length - 1, index));
+        dots.forEach((dot, dotIndex) => {
+          dot.setAttribute("aria-current", String(dotIndex === activeIndex));
+        });
+      };
+
+      const goToReview = (index) => {
+        const nextIndex = Math.max(0, Math.min(reviews.items.length - 1, index));
+        track.scrollTo({ left: cardLeft(nextIndex), behavior: "smooth" });
+        setActiveDot(nextIndex);
+      };
 
       const scrollByCard = (direction) => {
-        const card = track.querySelector(".review-card");
-        const amount = card ? card.getBoundingClientRect().width + 18 : 320;
-        track.scrollBy({ left: amount * direction, behavior: "smooth" });
+        const nextIndex = activeIndex + direction;
+        if (nextIndex < 0) {
+          goToReview(reviews.items.length - 1);
+        } else if (nextIndex >= reviews.items.length) {
+          goToReview(0);
+        } else {
+          goToReview(nextIndex);
+        }
       };
 
       const stopAutoplay = () => {
@@ -239,13 +271,8 @@
       const startAutoplay = () => {
         if (prefersReducedMotion || autoplayTimer || reviews.items.length < 2) return;
         autoplayTimer = window.setInterval(() => {
-          const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
-          if (atEnd) {
-            track.scrollTo({ left: 0, behavior: "smooth" });
-          } else {
-            scrollByCard(1);
-          }
-        }, 6500);
+          scrollByCard(1);
+        }, 5600);
       };
 
       const resumeAutoplaySoon = () => {
@@ -264,12 +291,32 @@
         scrollByCard(1);
         resumeAutoplaySoon();
       });
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          stopAutoplay();
+          goToReview(Number(dot.dataset.reviewDot));
+          resumeAutoplaySoon();
+        });
+      });
+
+      track.addEventListener("scroll", () => {
+        window.clearTimeout(scrollTimer);
+        scrollTimer = window.setTimeout(() => {
+          const nearest = cards.reduce((bestIndex, card, index) => {
+            const currentDistance = Math.abs(track.scrollLeft - cardLeft(index));
+            const bestDistance = Math.abs(track.scrollLeft - cardLeft(bestIndex));
+            return currentDistance < bestDistance ? index : bestIndex;
+          }, 0);
+          setActiveDot(nearest);
+        }, 80);
+      });
 
       mount.addEventListener("mouseenter", stopAutoplay);
       mount.addEventListener("mouseleave", resumeAutoplaySoon);
       mount.addEventListener("focusin", stopAutoplay);
       mount.addEventListener("focusout", resumeAutoplaySoon);
       mount.addEventListener("touchstart", stopAutoplay, { passive: true });
+      mount.addEventListener("touchend", resumeAutoplaySoon, { passive: true });
 
       startAutoplay();
     });
