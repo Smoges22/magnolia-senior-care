@@ -32,7 +32,7 @@ body {
   color: var(--ink);
   background: var(--white);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.6;
+  line-height: 1.68;
   padding-bottom: 0;
 }
 
@@ -48,6 +48,7 @@ a {
 
 p {
   margin: 0 0 1rem;
+  line-height: 1.72;
 }
 
 .container {
@@ -194,13 +195,20 @@ button.button {
   font-weight: 800;
   line-height: 1.1;
   cursor: pointer;
-  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
-.button:hover {
+.button:hover,
+button.button:hover {
   background: var(--teal-dark);
   box-shadow: 0 12px 28px rgba(15, 118, 110, 0.20);
   transform: translateY(-1px);
+}
+
+.button:active,
+button.button:active {
+  box-shadow: 0 8px 18px rgba(15, 118, 110, 0.16);
+  transform: translateY(0);
 }
 
 .button.secondary {
@@ -209,9 +217,11 @@ button.button {
   color: var(--teal-dark);
 }
 
-.button.secondary:hover {
+.button.secondary:hover,
+button.button.secondary:hover {
+  border-color: rgba(15, 118, 110, 0.34);
   background: var(--soft);
-  box-shadow: none;
+  box-shadow: 0 10px 22px rgba(20, 55, 52, 0.08);
 }
 
 .button.gold {
@@ -219,8 +229,10 @@ button.button {
   color: var(--white);
 }
 
-.button.gold:hover {
+.button.gold:hover,
+button.button.gold:hover {
   background: #7f5510;
+  box-shadow: 0 12px 28px rgba(155, 107, 22, 0.24);
 }
 
 a:focus-visible,
@@ -337,7 +349,19 @@ textarea:focus-visible {
 }
 
 .section {
+  position: relative;
   padding: 74px 0;
+}
+
+.section + .section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(calc(100% - 32px), var(--max));
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(15, 118, 110, 0.12), rgba(155, 107, 22, 0.10), transparent);
+  transform: translateX(-50%);
 }
 
 .section.micro {
@@ -507,6 +531,7 @@ h3 {
 
 .card p {
   color: var(--muted);
+  line-height: 1.72;
 }
 
 .card p:last-child {
@@ -954,6 +979,7 @@ textarea:focus {
 .form-note {
   color: var(--muted);
   font-size: 13px;
+  line-height: 1.6;
 }
 
 .form-status {
@@ -1082,7 +1108,7 @@ textarea:focus {
 
 @media (max-width: 720px) {
   body {
-    padding-bottom: calc(112px + env(safe-area-inset-bottom));
+    padding-bottom: calc(148px + env(safe-area-inset-bottom));
   }
 
   .container {
@@ -1097,6 +1123,10 @@ textarea:focus {
   .section,
   .page-hero {
     padding: 46px 0;
+  }
+
+  .section + .section::before {
+    width: calc(100% - 24px);
   }
 
   .hero h1,
@@ -1190,6 +1220,18 @@ textarea:focus {
 
   .nav-actions .button {
     display: none;
+  }
+
+  input,
+  select,
+  textarea,
+  button,
+  .button,
+  .form-field,
+  .map-card,
+  .map-frame,
+  .cta-band {
+    scroll-margin-bottom: calc(150px + env(safe-area-inset-bottom));
   }
 
   .mobile-quickbar {
