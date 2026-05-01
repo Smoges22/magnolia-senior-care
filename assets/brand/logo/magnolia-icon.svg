@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Magnolia Senior Care icon</title>
+  <desc id="desc">A simple roof, care figures, heart, and warm arc for Magnolia Senior Care.</desc>
+  <rect width="512" height="512" rx="104" fill="#ffffff"/>
+  <path d="M104 221 256 86l152 135" fill="none" stroke="#005450" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M148 362c54-28 162-28 216 0" fill="none" stroke="#FFC776" stroke-width="18" stroke-linecap="round"/>
+  <path d="M216 169c18-24 54-10 40 20-8 17-28 27-40 42-12-15-32-25-40-42-14-30 22-44 40-20Z" fill="#FFC776"/>
+  <circle cx="189" cy="254" r="29" fill="#005450"/>
+  <circle cx="323" cy="254" r="29" fill="#005450"/>
+  <path d="M164 345c2-56 23-91 58-98 11 34 24 51 34 61-20 26-52 39-92 37Z" fill="#005450"/>
+  <path d="M348 345c-2-56-23-91-58-98-11 34-24 51-34 61 20 26 52 39 92 37Z" fill="#005450"/>
+  <path d="M232 342v-44c0-16 10-29 24-29s24 13 24 29v44" fill="none" stroke="#FFC776" stroke-width="15" stroke-linecap="round"/>
+  <path d="M208 303c14 22 28 33 48 33s34-11 48-33" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
+</svg>

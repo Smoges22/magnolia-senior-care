@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" role="img" aria-labelledby="title desc">
+  <title id="title">Magnolia Senior Care wordmark</title>
+  <desc id="desc">Magnolia Senior Care wordmark without icon.</desc>
+  <rect width="760" height="220" rx="24" fill="#ffffff"/>
+  <text x="380" y="102" text-anchor="middle" fill="#005450" font-family="Georgia, 'Times New Roman', serif" font-size="86" font-weight="700" letter-spacing="-1">Magnolia</text>
+  <path d="M128 150h96M536 150h96" stroke="#FFC776" stroke-width="5" stroke-linecap="round"/>
+  <text x="380" y="164" text-anchor="middle" fill="#FFC776" font-family="Inter, Arial, sans-serif" font-size="33" font-weight="700" letter-spacing="13">SENIOR CARE</text>
+</svg>

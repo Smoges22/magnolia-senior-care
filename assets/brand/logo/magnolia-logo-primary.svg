@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 420" role="img" aria-labelledby="title desc">
+  <title id="title">Magnolia Senior Care primary logo</title>
+  <desc id="desc">Primary Magnolia Senior Care logo on a white board.</desc>
+  <rect width="1120" height="420" rx="34" fill="#ffffff"/>
+  <g transform="translate(66 54) scale(.54)">
+    <path d="M104 221 256 86l152 135" fill="none" stroke="#005450" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M148 362c54-28 162-28 216 0" fill="none" stroke="#FFC776" stroke-width="18" stroke-linecap="round"/>
+    <path d="M216 169c18-24 54-10 40 20-8 17-28 27-40 42-12-15-32-25-40-42-14-30 22-44 40-20Z" fill="#FFC776"/>
+    <circle cx="189" cy="254" r="29" fill="#005450"/>
+    <circle cx="323" cy="254" r="29" fill="#005450"/>
+    <path d="M164 345c2-56 23-91 58-98 11 34 24 51 34 61-20 26-52 39-92 37Z" fill="#005450"/>
+    <path d="M348 345c-2-56-23-91-58-98-11 34-24 51-34 61 20 26 52 39 92 37Z" fill="#005450"/>
+    <path d="M232 342v-44c0-16 10-29 24-29s24 13 24 29v44" fill="none" stroke="#FFC776" stroke-width="15" stroke-linecap="round"/>
+    <path d="M208 303c14 22 28 33 48 33s34-11 48-33" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <path d="M346 68v224" stroke="#005450" stroke-width="5" stroke-linecap="round"/>
+  <text x="414" y="168" fill="#005450" font-family="Georgia, 'Times New Roman', serif" font-size="112" font-weight="700" letter-spacing="-2">Magnolia</text>
+  <path d="M424 232h96M928 232h96" stroke="#FFC776" stroke-width="6" stroke-linecap="round"/>
+  <text x="548" y="249" fill="#FFC776" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="16">SENIOR CARE</text>
+  <text x="414" y="334" fill="#2A2A2A" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="6">PERSONAL CARE  •  REAL CONNECTION  •  PEACE OF MIND</text>
+</svg>
