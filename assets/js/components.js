@@ -54,7 +54,7 @@
       <div class="mobile-quickbar" aria-label="Quick contact actions">
         <a class="quickbar-secondary" href="${site.brand.phoneHref}">Call Now</a>
         <a class="quickbar-primary" href="${localHref("contact.html")}">Schedule Tour</a>
-        <a class="quickbar-link" href="${localHref("referral-agents.html")}">For Referral Partners</a>
+        <a class="quickbar-link" href="${localHref("referral-agents.html")}">Referrals</a>
       </div>
     `;
 

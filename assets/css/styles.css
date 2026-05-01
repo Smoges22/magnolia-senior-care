@@ -864,7 +864,7 @@ textarea:focus {
     left: 10px;
     z-index: 60;
     display: grid;
-    grid-template-columns: 0.86fr 1.35fr 0.9fr;
+    grid-template-columns: 0.9fr 1.55fr 0.68fr;
     gap: 8px;
     align-items: center;
     padding: 8px;
@@ -888,25 +888,29 @@ textarea:focus {
   }
 
   .mobile-quickbar .quickbar-primary {
-    min-height: 54px;
+    min-height: 56px;
     background: var(--gold);
     color: var(--white);
     font-size: 14px;
-    box-shadow: 0 10px 24px rgba(164, 113, 28, 0.34);
+    font-weight: 950;
+    box-shadow: 0 12px 28px rgba(164, 113, 28, 0.40);
   }
 
   .mobile-quickbar .quickbar-secondary {
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.92);
   }
 
   .mobile-quickbar .quickbar-link {
-    min-height: 42px;
+    min-height: 38px;
     padding-right: 6px;
     padding-left: 6px;
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.76);
     font-size: 11px;
-    font-weight: 800;
+    font-weight: 750;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   .brand-name {
