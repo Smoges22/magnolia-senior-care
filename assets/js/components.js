@@ -256,6 +256,58 @@
     });
   }
 
+  function initLightbox() {
+    const triggers = document.querySelectorAll(".gallery-button");
+    if (!triggers.length) return;
+
+    const lightbox = document.createElement("div");
+    lightbox.className = "lightbox";
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.setAttribute("aria-label", "Expanded gallery photo");
+    lightbox.innerHTML = `
+      <button class="lightbox-close" type="button" aria-label="Close photo">&times;</button>
+      <div class="lightbox-panel">
+        <img alt="">
+        <p></p>
+      </div>
+    `;
+    document.body.appendChild(lightbox);
+
+    const lightboxImg = lightbox.querySelector("img");
+    const lightboxCaption = lightbox.querySelector("p");
+    const closeButton = lightbox.querySelector(".lightbox-close");
+
+    const close = () => {
+      lightbox.classList.remove("open");
+      document.body.classList.remove("lightbox-open");
+    };
+
+    const open = (button) => {
+      const image = button.querySelector("img");
+      const caption = button.closest("figure")?.querySelector("figcaption")?.textContent || image.alt;
+      lightboxImg.src = image.currentSrc || image.src || fallbackImageSrc();
+      lightboxImg.alt = image.alt;
+      lightboxCaption.textContent = caption;
+      lightbox.classList.add("open");
+      document.body.classList.add("lightbox-open");
+      closeButton.focus();
+    };
+
+    triggers.forEach((button) => {
+      button.addEventListener("click", () => open(button));
+    });
+
+    closeButton.addEventListener("click", close);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) close();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lightbox.classList.contains("open")) close();
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     renderHeader();
     renderFooter();
@@ -263,5 +315,6 @@
     renderLocationCards();
     hydrateBrandText();
     applyImageFallbacks();
+    initLightbox();
   });
 })();
