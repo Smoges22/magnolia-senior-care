@@ -377,6 +377,7 @@ h3 {
 
 .service-grid {
   gap: 22px;
+  align-items: stretch;
 }
 
 .grid-2 {
@@ -403,23 +404,11 @@ h3 {
   display: grid;
   min-height: 100%;
   align-content: start;
-  overflow: hidden;
-  padding: 32px;
-  border-color: rgba(15, 118, 110, 0.13);
-  background: linear-gradient(180deg, #ffffff 0%, #fbf8f1 120%);
+  padding: 30px;
+  border-color: rgba(15, 118, 110, 0.14);
+  background: linear-gradient(180deg, var(--white), #fbf8f1);
   box-shadow: 0 16px 34px rgba(20, 55, 52, 0.08);
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
-}
-
-.service-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--gold), rgba(15, 118, 110, 0.44));
-  opacity: 0.72;
 }
 
 .service-card:hover,
@@ -501,50 +490,14 @@ h3 {
   font-weight: 900;
 }
 
-.service-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 22px;
-}
-
-.service-icon {
-  display: grid;
-  width: 58px;
-  height: 58px;
-  place-items: center;
-  flex: 0 0 auto;
-  border-radius: 50%;
-  background: linear-gradient(180deg, rgba(201, 162, 92, 0.18), rgba(15, 118, 110, 0.08));
-  color: var(--teal-dark);
-  transition: transform 180ms ease;
-}
-
-.service-icon svg {
-  width: 28px;
-  height: 28px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 .service-card h3 {
-  max-width: 270px;
   margin-bottom: 12px;
-  font-size: 23px;
+  font-size: 24px;
   line-height: 1.15;
 }
 
-.service-card:hover .service-icon,
-.service-card:focus-within .service-icon,
-.service-card:active .service-icon {
-  transform: scale(1.06);
-}
-
 .service-card p {
-  margin: 0;
+  margin: 0 0 18px;
   font-size: 15.5px;
   line-height: 1.72;
 }
@@ -1226,20 +1179,6 @@ textarea:focus {
 
   .service-card {
     padding: 26px;
-  }
-
-  .service-card-top {
-    margin-bottom: 18px;
-  }
-
-  .service-icon {
-    width: 52px;
-    height: 52px;
-  }
-
-  .service-icon svg {
-    width: 25px;
-    height: 25px;
   }
 
   .service-card h3 {

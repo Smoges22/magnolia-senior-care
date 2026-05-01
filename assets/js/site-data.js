@@ -80,34 +80,40 @@ window.AFHSite = {
   },
   services: [
     {
-      icon: "medical",
+      label: "Clinical oversight",
       title: "RN-Led Care Oversight",
-      text: "Magnolia is guided by Sosena Mekuria, RN Provider, bringing nursing perspective to observation, daily routines, and family communication."
+      text: "Magnolia is guided by Sosena Mekuria, RN Provider, bringing nursing perspective to observation, daily routines, and family communication.",
+      bestFor: ["Families who want RN involvement", "Care needs that require steady observation", "POAs who value direct updates"]
     },
     {
-      icon: "support",
+      label: "Daily support",
       title: "Personal Care",
-      text: "Dignified support with bathing, dressing, grooming, mobility, toileting, meals, hydration, and daily comfort."
+      text: "Dignified support with bathing, dressing, grooming, mobility, toileting, meals, hydration, and daily comfort.",
+      bestFor: ["Residents needing ADL support", "Gentle help with routines", "Families seeking respectful hands-on care"]
     },
     {
-      icon: "pill",
+      label: "Care coordination",
       title: "Medication Support",
-      text: "Clear medication routines, monitoring, and coordination with families and healthcare providers."
+      text: "Clear medication routines, monitoring, and coordination with families and healthcare providers.",
+      bestFor: ["Medication reminders", "Family and provider coordination", "Consistent daily routines"]
     },
     {
-      icon: "brain",
+      label: "Memory-aware care",
       title: "Memory-Aware Dementia Support",
-      text: "Calm routines, gentle cueing, meaningful activities, and familiar rhythms for residents living with dementia or Alzheimer's."
+      text: "Calm routines, gentle cueing, meaningful activities, and familiar rhythms for residents living with dementia or Alzheimer's.",
+      bestFor: ["Residents who need structure", "Gentle cueing and reassurance", "A quieter home-based care setting"]
     },
     {
-      icon: "home",
+      label: "Home setting",
       title: "Private Home-Like Setting",
-      text: "A private, home-like setting where residents can settle into familiar routines, steady relationships, and closer day-to-day attention."
+      text: "A private, home-like setting where residents can settle into familiar routines, steady relationships, and closer day-to-day attention.",
+      bestFor: ["Families avoiding large facilities", "Residents who prefer calm spaces", "More familiar day-to-day rhythms"]
     },
     {
-      icon: "message",
+      label: "Communication",
       title: "Direct Family Communication",
-      text: "Families, POAs, referral agents, discharge planners, and case managers receive clear answers from people close to the care."
+      text: "Families, POAs, referral agents, discharge planners, and case managers receive clear answers from people close to the care.",
+      bestFor: ["POAs and adult children", "Referral partners", "Discharge planners and case managers"]
     }
   ],
   testimonials: [

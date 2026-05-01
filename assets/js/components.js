@@ -120,66 +120,20 @@
     `;
   }
 
-  function serviceIcon(name) {
-    const icons = {
-      medical: `
-        <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-          <path d="M6 3v4a6 6 0 0 0 12 0V3" />
-          <path d="M8 3H5" />
-          <path d="M19 3h-3" />
-          <path d="M12 13v3a4 4 0 0 0 8 0v-1" />
-          <circle cx="20" cy="12" r="2" />
-        </svg>`,
-      support: `
-        <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-          <path d="M7 11.5V7a2 2 0 0 1 4 0v6" />
-          <path d="M11 12V6a2 2 0 0 1 4 0v7" />
-          <path d="M15 13V8a2 2 0 0 1 4 0v5.5" />
-          <path d="M7 12.5 5.4 11a2 2 0 0 0-2.8 2.8l5.7 5.7A5 5 0 0 0 11.8 21H15a5 5 0 0 0 5-5v-3" />
-        </svg>`,
-      pill: `
-        <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-          <path d="M10.5 20.5 20.5 10.5a5 5 0 0 0-7-7L3.5 13.5a5 5 0 0 0 7 7Z" />
-          <path d="m8.5 8.5 7 7" />
-        </svg>`,
-      brain: `
-        <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-          <path d="M9 4.5A3.5 3.5 0 0 0 5.5 8c0 .5.1 1 .3 1.4A4.2 4.2 0 0 0 4 13a4 4 0 0 0 4 4h1" />
-          <path d="M15 4.5A3.5 3.5 0 0 1 18.5 8c0 .5-.1 1-.3 1.4A4.2 4.2 0 0 1 20 13a4 4 0 0 1-4 4h-1" />
-          <path d="M12 4v16" />
-          <path d="M9 9h3" />
-          <path d="M12 12h4" />
-          <path d="M8 15h4" />
-        </svg>`,
-      home: `
-        <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-          <path d="M3 11.5 12 4l9 7.5" />
-          <path d="M5.5 10.5V20h13v-9.5" />
-          <path d="M9.5 20v-5h5v5" />
-        </svg>`,
-      message: `
-        <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-          <path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-6l-5 4v-4H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
-          <path d="M8 10h8" />
-          <path d="M8 13h5" />
-        </svg>`
-    };
-
-    return icons[name] || icons.home;
-  }
-
   function renderCards() {
     document.querySelectorAll("[data-service-cards]").forEach((mount) => {
       mount.classList.add("service-grid");
       mount.innerHTML = site.services.map((item) => `
-        <article class="card service-card">
-          <div class="service-card-top">
-            <span class="service-icon" aria-hidden="true">${serviceIcon(item.icon)}</span>
-          </div>
-          <div class="service-card-content">
-            <h3>${item.title}</h3>
-            <p>${item.text}</p>
-          </div>
+        <article class="card service-card location-choice-card">
+          <div class="eyebrow">${item.label || "Magnolia care"}</div>
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+          ${item.bestFor?.length ? `
+            <div class="best-for-label">Best for</div>
+            <ul class="feature-list">
+              ${item.bestFor.map((point) => `<li>${point}</li>`).join("")}
+            </ul>
+          ` : ""}
         </article>
       `).join("");
     });
