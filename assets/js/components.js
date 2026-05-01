@@ -166,11 +166,16 @@
 
   function renderCards() {
     document.querySelectorAll("[data-service-cards]").forEach((mount) => {
+      mount.classList.add("service-grid");
       mount.innerHTML = site.services.map((item) => `
         <article class="card service-card">
-          <span class="service-icon" aria-hidden="true">${serviceIcon(item.icon)}</span>
-          <h3>${item.title}</h3>
-          <p>${item.text}</p>
+          <div class="service-card-top">
+            <span class="service-icon" aria-hidden="true">${serviceIcon(item.icon)}</span>
+          </div>
+          <div class="service-card-content">
+            <h3>${item.title}</h3>
+            <p>${item.text}</p>
+          </div>
         </article>
       `).join("");
     });

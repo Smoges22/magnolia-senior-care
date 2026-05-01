@@ -375,6 +375,10 @@ h3 {
   gap: 18px;
 }
 
+.service-grid {
+  gap: 22px;
+}
+
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -395,14 +399,32 @@ h3 {
 }
 
 .service-card {
-  padding: 30px;
+  position: relative;
+  display: grid;
+  min-height: 100%;
+  align-content: start;
+  overflow: hidden;
+  padding: 32px;
   border-color: rgba(15, 118, 110, 0.13);
+  background: linear-gradient(180deg, #ffffff 0%, #fbf8f1 120%);
   box-shadow: 0 16px 34px rgba(20, 55, 52, 0.08);
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), rgba(15, 118, 110, 0.44));
+  opacity: 0.72;
+}
+
 .service-card:hover,
-.service-card:focus-within {
+.service-card:focus-within,
+.service-card:active {
   border-color: rgba(201, 162, 92, 0.48);
   box-shadow: 0 22px 44px rgba(20, 55, 52, 0.13);
   transform: translateY(-3px);
@@ -439,12 +461,19 @@ h3 {
   font-weight: 900;
 }
 
+.service-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 22px;
+}
+
 .service-icon {
   display: grid;
-  width: 54px;
-  height: 54px;
+  width: 58px;
+  height: 58px;
   place-items: center;
-  margin-bottom: 20px;
+  flex: 0 0 auto;
   border-radius: 50%;
   background: linear-gradient(180deg, rgba(201, 162, 92, 0.18), rgba(15, 118, 110, 0.08));
   color: var(--teal-dark);
@@ -452,8 +481,8 @@ h3 {
 }
 
 .service-icon svg {
-  width: 27px;
-  height: 27px;
+  width: 28px;
+  height: 28px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -462,12 +491,22 @@ h3 {
 }
 
 .service-card h3 {
+  max-width: 270px;
   margin-bottom: 12px;
+  font-size: 23px;
+  line-height: 1.15;
 }
 
 .service-card:hover .service-icon,
-.service-card:focus-within .service-icon {
+.service-card:focus-within .service-icon,
+.service-card:active .service-icon {
   transform: scale(1.06);
+}
+
+.service-card p {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.72;
 }
 
 .service-card p,
@@ -981,6 +1020,33 @@ textarea:focus {
 
   .cta-band {
     padding: 28px;
+  }
+
+  .service-grid {
+    gap: 16px;
+  }
+
+  .service-card {
+    padding: 26px;
+  }
+
+  .service-card-top {
+    margin-bottom: 18px;
+  }
+
+  .service-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .service-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .service-card h3 {
+    max-width: none;
+    font-size: 21px;
   }
 
   .split-card .card-body {
