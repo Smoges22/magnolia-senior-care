@@ -1,35 +1,41 @@
-# Magnolia Senior Care Website
+# Magnolia Senior Care Multi-Location Website
 
-Premium multi-location Adult Family Home website for the Magnolia brand.
+This static website upgrades the two existing Magnolia Google Sites into one premium, SEO-ready Magnolia brand website.
 
-## Locations
+## Source Sites Used
 
-- Magnolia Senior Loving Care - Burien, WA
-- Magnolia Senior Care of Highline - Des Moines, WA
+- `https://www.magnoliaseniorlovingcare.com/home`
+- `https://www.magnoliaseniorcareofhighline.com/home`
+
+## Magnolia Locations
+
+- Magnolia Senior Loving Care LLC  
+  14613 12th Ave SW, Burien, WA 98166
+
+- Magnolia Senior Care of Highline LLC  
+  1206 S 244th St, Des Moines, WA 98198
+
+## Shared Contact
+
+- Phone: `(425) 246-6220`
+- Secondary phone: `(206) 453-5082`
+- Email: `sosena.mekuria@gmail.com`
+
+## Positioning
+
+- One Magnolia parent brand
+- Two distinct local Adult Family Home pages
+- RN-owned / RN-managed care message
+- Strong CTAs: Call Now, Schedule a Tour, Referral Inquiry
+- AFH-specific language instead of broad, generic care-home wording
 
 ## Customize Before Launch
 
-Update real contact, domain, and licensed address details in:
+Update the final public domain in:
 
-- `src/lib/site-data.ts`
+- `assets/js/site-data.js`
+- each page canonical URL and schema URL
+- `sitemap.xml`
+- `robots.txt`
 
-The current street addresses are placeholders so the schema and page structure are ready without inventing public healthcare location data.
-
-## Run Locally
-
-```bash
-npm install
-npm run dev
-```
-
-Then visit `http://localhost:3000`.
-
-## Included
-
-- Homepage
-- Location pages with unique copy, neighborhood language, photos, care details, and local schema
-- Services, referral agents, gallery, contact/schedule tour pages
-- Reusable components
-- SEO metadata
-- Dynamic sitemap and robots
-- Marketing templates for postcards, flyers, referral-agent one-pagers, and Google Business posts
+Replace placeholder photography with approved real Magnolia photos when available. Existing Google Sites photo themes are already reflected in the gallery copy.

@@ -1,15 +1,13 @@
-# Magnolia Marketing Templates
+# Magnolia Marketing Copy
 
-These templates match the Magnolia website positioning: premium, warm, trustworthy, local, and referral-ready.
+Templates included:
 
-Replace placeholders before use:
+- `postcard-template.md`
+- `flyer-template.md`
+- `facebook-post-template.md`
+- `google-business-post-template.md`
+- `referral-agent-one-page-template.md`
 
-- `[Phone]`
-- `[Website]`
-- `[Burien address]`
-- `[Des Moines address]`
-- `[License number]`
-- `[Current room availability]`
-- `[Primary contact name]`
+The copy is written for one Magnolia brand with two distinct Adult Family Home locations.
 
-Do not include resident names, photos, medical histories, or other private information in public marketing.
+Do not include resident names, photos, medical histories, or private health details in public marketing.

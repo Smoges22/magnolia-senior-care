@@ -1,31 +1,35 @@
-# Magnolia Senior Care Flyer Template
+# Magnolia Flyer Template
 
 ## Headline
 
-Premium Adult Family Home Care in Burien and Des Moines
+RN-Owned Adult Family Home Care in Burien and Des Moines
 
 ## Opening
 
-Magnolia Senior Care offers warm residential senior care through two South King County homes: Magnolia Senior Loving Care in Burien and Magnolia Senior Care of Highline near Des Moines.
+Magnolia Senior Care provides warm residential senior care through two South King County homes: Magnolia Senior Loving Care LLC in Burien and Magnolia Senior Care of Highline LLC in Des Moines.
 
-## Why Families Call Magnolia
+Led by Sosena Mekuria, RN Provider, Magnolia brings more than a decade of healthcare experience to daily care, communication, and family-centered decision support.
 
-- Smaller home settings with attentive daily routines
-- Personal care, medication support, meals, and hydration reminders
-- Family and POA communication during sensitive care decisions
-- Referral-ready coordination for discharge planners and case managers
-- Private tours by appointment
+## Care Highlights
+
+- Personal care with bathing, dressing, grooming, mobility, meals, and comfort routines
+- Medication support and practical documentation routines
+- Memory-aware care for residents living with dementia or Alzheimer's
+- 24/7 residential supervision in a smaller Adult Family Home setting
+- Home-like rooms, comfortable living spaces, outdoor areas, dining, kitchens, and accessible bathrooms
+- Clear communication with families, POAs, referral agents, discharge planners, and case managers
 
 ## Locations
 
-Magnolia Senior Loving Care  
-Burien, WA  
-Serving families near Seahurst, Three Tree Point, Highline, Sunnydale, and Normandy Park.
+Magnolia Senior Loving Care LLC  
+14613 12th Ave SW, Burien, WA 98166
 
-Magnolia Senior Care of Highline  
-Des Moines, WA  
-Serving families near North Hill, the Marina District, Woodmont, Highline, and SeaTac.
+Magnolia Senior Care of Highline LLC  
+1206 S 244th St, Des Moines, WA 98198
 
 ## Call to Action
 
-Call [Phone] or visit [Website] to compare Magnolia locations and schedule a private tour.
+Call (425) 246-6220 to schedule a private tour or discuss care fit.
+
+Secondary phone: (206) 453-5082  
+Email: sosena.mekuria@gmail.com
