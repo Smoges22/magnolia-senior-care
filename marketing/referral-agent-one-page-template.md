@@ -6,7 +6,7 @@ RN-Owned Adult Family Homes in Burien and Des Moines
 
 ## Snapshot
 
-Magnolia Senior Care is led by Sosena Mekuria, RN Provider, and offers two residential Adult Family Home options in South King County.
+Magnolia Senior Care is led by Sosena Mekuria, RN Provider, and offers two residential care home options in South King County.
 
 - Magnolia Senior Loving Care LLC: 14613 12th Ave SW, Burien, WA 98166
 - Magnolia Senior Care of Highline LLC: 1206 S 244th St, Des Moines, WA 98198

@@ -16,7 +16,7 @@ Magnolia Senior Loving Care LLC
 
 Serving families near Seahurst, Three Tree Point, Highline, Sunnydale, Normandy Park, and South Seattle.
 
-- RN-managed Adult Family Home care
+- RN-managed home-based care
 - Personal care and daily routine support
 - Memory-aware support and medication reminders
 - Comfortable living spaces, garden areas, dining, kitchen, and accessible bathrooms
@@ -30,7 +30,7 @@ Magnolia Senior Care of Highline LLC
 
 Serving families near Highline, North Hill, Woodmont, the Marina District, SeaTac, and South King County.
 
-- RN-managed Adult Family Home care
+- RN-managed residential care
 - 24/7 residential support and personal care
 - Meals, hydration, medication support, and memory-aware routines
 - Professional communication for families and referral partners

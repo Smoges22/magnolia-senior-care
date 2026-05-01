@@ -29,7 +29,7 @@
       <a class="skip-link" href="#main">Skip to content</a>
       <div class="top-strip">
         <div class="container top-strip-inner">
-          <span>RN-owned Adult Family Homes in Burien and Des Moines</span>
+          <span>RN-owned home-based care in Burien and Des Moines</span>
           <span class="top-strip-links">
             <a href="${site.brand.phoneHref}">${site.brand.phone}</a>
             <a href="${site.brand.secondaryPhoneHref}">${site.brand.secondaryPhone}</a>
@@ -41,7 +41,7 @@
         <div class="container nav-wrap">
           <a class="brand" href="${localHref("index.html")}" aria-label="${site.brand.name} home">
             <span class="brand-mark" aria-hidden="true">M</span>
-            <span class="brand-name"><span class="brand-kicker">Adult Family Homes</span>${site.brand.name}</span>
+            <span class="brand-name"><span class="brand-kicker">Home-Based Care</span>${site.brand.name}</span>
           </a>
           <nav class="nav-links" id="site-nav" aria-label="Main navigation">${links}</nav>
           <div class="nav-actions">

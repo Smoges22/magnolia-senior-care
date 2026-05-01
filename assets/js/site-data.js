@@ -4,7 +4,7 @@ window.AFHSite = {
     legalName: "Magnolia Senior Care",
     shortName: "Magnolia",
     founder: "Sosena Mekuria, RN Provider",
-    tagline: "RN-owned Adult Family Home care in a private, home-like setting with up to 6 residents in Burien and Des Moines.",
+    tagline: "RN-owned home-based care in a private, home-like setting with up to 6 residents in Burien and Des Moines.",
     phone: "(425) 246-6220",
     secondaryPhone: "(206) 453-5082",
     phoneHref: "tel:+14252466220",
@@ -35,7 +35,7 @@ window.AFHSite = {
       street: "14613 12th Ave SW",
       page: "burien-adult-family-home.html",
       legacySite: "https://www.magnoliaseniorlovingcare.com/home",
-      position: "A calm, RN-led Adult Family Home serving Seahurst, Three Tree Point, Normandy Park, and Highline.",
+      position: "A calm, RN-led home setting serving Seahurst, Three Tree Point, Normandy Park, and Highline.",
       seoDescription: "Adult Family Home Burien WA care with RN-owned oversight, Dementia Care AFH routines, accessible spaces, and family communication.",
       neighborhoods: ["Seahurst", "Three Tree Point", "Highline", "Sunnydale", "Normandy Park", "South Seattle"],
       details: [
@@ -116,7 +116,7 @@ window.AFHSite = {
       name: "Family member"
     },
     {
-      quote: "A responsive Adult Family Home option when families need clarity, compassion, and practical next steps.",
+      quote: "A responsive residential care home option when families need clarity, compassion, and practical next steps.",
       name: "Referral partner"
     },
     {
