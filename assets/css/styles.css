@@ -6,9 +6,11 @@
   --warm: #F7F3EE;
   --teal: #2F9CAA;
   --teal-dark: #005450;
+  --teal-hover: #003f3c;
   --gold: #FFC776;
   --gold-hover: #e6ad5f;
   --gold-soft: #F7F3EE;
+  --page-bg: #F8F6F1;
   --white: #ffffff;
   --shadow: 0 18px 45px rgba(31, 42, 42, 0.09);
   --card-padding: 34px;
@@ -33,7 +35,7 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--white);
+  background: var(--page-bg);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.74;
   padding-bottom: 0;
@@ -172,8 +174,8 @@ button.button {
   padding: 12px 18px;
   border: 1px solid transparent;
   border-radius: var(--radius);
-  background: var(--gold);
-  color: var(--teal-dark);
+  background: var(--teal-dark);
+  color: var(--white);
   font: inherit;
   font-weight: 800;
   line-height: 1.1;
@@ -183,20 +185,20 @@ button.button {
 
 .button:hover,
 button.button:hover {
-  background: var(--gold-hover);
-  box-shadow: 0 12px 28px rgba(255, 199, 118, 0.32);
+  background: var(--teal-hover);
+  box-shadow: 0 12px 28px rgba(0, 84, 80, 0.20);
   transform: translateY(-1px);
 }
 
 .button:active,
 button.button:active {
-  box-shadow: 0 8px 18px rgba(255, 199, 118, 0.2);
+  box-shadow: 0 8px 18px rgba(0, 84, 80, 0.16);
   transform: translateY(0);
 }
 
 .button.secondary {
   border-color: rgba(0, 84, 80, 0.24);
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.78);
   color: var(--teal-dark);
 }
 
@@ -208,14 +210,14 @@ button.button.secondary:hover {
 }
 
 .button.gold {
-  background: var(--gold);
-  color: var(--teal-dark);
+  background: var(--teal-dark);
+  color: var(--white);
 }
 
 .button.gold:hover,
 button.button.gold:hover {
-  background: var(--gold-hover);
-  box-shadow: 0 12px 28px rgba(255, 199, 118, 0.26);
+  background: var(--teal-hover);
+  box-shadow: 0 12px 28px rgba(0, 84, 80, 0.20);
 }
 
 a:focus-visible,
@@ -244,7 +246,7 @@ textarea:focus-visible {
   overflow: hidden;
   padding: 64px 0 62px;
   background:
-    linear-gradient(90deg, rgba(247, 245, 242, 0.58), rgba(255, 255, 255, 0.90)),
+    linear-gradient(90deg, rgba(248, 246, 241, 0.98), rgba(248, 246, 241, 0.84)),
     radial-gradient(circle at 88% 18%, rgba(47, 143, 163, 0.08), transparent 34%);
 }
 
@@ -409,16 +411,16 @@ textarea:focus-visible {
 }
 
 .section.soft {
-  background: #F8F6F1;
+  background: var(--page-bg);
 }
 
 .section.gold-soft {
-  background: var(--warm);
+  background: var(--page-bg);
 }
 
 .review-highlight-section {
   overflow: hidden;
-  background: var(--white);
+  background: var(--page-bg);
 }
 
 .section-head {
@@ -661,7 +663,7 @@ h3 {
   padding: 4px max(24px, calc((100vw - var(--max)) / 2)) 10px;
   gap: 26px;
   align-items: center;
-  background: var(--white);
+  background: var(--page-bg);
 }
 
 .review-score-card {
@@ -1066,7 +1068,7 @@ h3 {
   padding: 54px 0 42px;
   border-bottom: 1px solid rgba(226, 221, 214, 0.74);
   background:
-    linear-gradient(180deg, rgba(247, 245, 242, 0.86), rgba(255, 255, 255, 0.96)),
+    linear-gradient(180deg, rgba(248, 246, 241, 0.98), rgba(248, 246, 241, 0.92)),
     radial-gradient(circle at 92% 0%, rgba(47, 143, 163, 0.08), transparent 30%);
 }
 
@@ -1689,15 +1691,15 @@ textarea:focus {
   .mobile-quickbar .quickbar-primary {
     min-height: 68px;
     padding: 13px 15px;
-    background: var(--gold);
-    color: var(--teal-dark);
-    box-shadow: 0 14px 28px rgba(255, 199, 118, 0.36), 0 0 20px rgba(255, 199, 118, 0.18);
+    background: var(--teal-dark);
+    color: var(--white);
+    box-shadow: 0 14px 28px rgba(0, 84, 80, 0.22), 0 0 20px rgba(0, 84, 80, 0.10);
   }
 
   .mobile-quickbar .quickbar-primary:hover,
   .mobile-quickbar .quickbar-primary:focus-visible {
-    background: var(--gold-hover);
-    box-shadow: 0 14px 28px rgba(255, 199, 118, 0.34);
+    background: var(--teal-hover);
+    box-shadow: 0 14px 28px rgba(0, 84, 80, 0.24);
   }
 
   .mobile-quickbar .quickbar-title {
@@ -1708,7 +1710,7 @@ textarea:focus {
 
   .mobile-quickbar .quickbar-subtitle {
     margin-top: 3px;
-    color: rgba(0, 84, 80, 0.78);
+    color: rgba(255, 255, 255, 0.78);
     font-size: 10px;
     font-weight: 750;
     line-height: 1.05;
