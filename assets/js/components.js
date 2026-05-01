@@ -15,6 +15,10 @@
     return `${pathPrefix()}${href}`;
   }
 
+  function fallbackImageSrc() {
+    return localHref("assets/images/magnolia-photo-fallback.svg");
+  }
+
   function renderHeader() {
     const mount = document.querySelector("[data-component='site-header']");
     if (!mount) return;
@@ -210,8 +214,8 @@
               <li>${location.seoDescription}</li>
             </ul>
             <div class="section-actions">
-              <a class="button" href="${localHref(location.page)}">View Location</a>
-              <a class="button secondary" href="${site.brand.phoneHref}">Call Now</a>
+              <a class="button" href="${localHref("contact.html")}">Schedule Tour</a>
+              <a class="button secondary" href="${localHref(location.page)}">View Location</a>
             </div>
           </div>
         </article>
@@ -233,11 +237,31 @@
     });
   }
 
+  function applyImageFallbacks() {
+    document.querySelectorAll("img").forEach((img) => {
+      img.loading = img.loading || "lazy";
+
+      const useFallback = () => {
+        if (img.dataset.fallbackApplied === "true") return;
+        img.dataset.fallbackApplied = "true";
+        img.classList.add("image-fallback");
+        img.src = fallbackImageSrc();
+      };
+
+      img.addEventListener("error", useFallback);
+
+      if (img.complete && img.naturalWidth === 0) {
+        useFallback();
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     renderHeader();
     renderFooter();
     renderCards();
     renderLocationCards();
     hydrateBrandText();
+    applyImageFallbacks();
   });
 })();

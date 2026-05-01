@@ -4,7 +4,7 @@ window.AFHSite = {
     legalName: "Magnolia Senior Care",
     shortName: "Magnolia",
     founder: "Sosena Mekuria, RN Provider",
-    tagline: "RN-owned home-based care in a private, home-like setting with up to 6 residents in Burien and Des Moines.",
+    tagline: "RN-led home-based care in private, home-like settings serving Burien and Des Moines.",
     phone: "(425) 246-6220",
     secondaryPhone: "(206) 453-5082",
     phoneHref: "tel:+14252466220",
@@ -35,11 +35,11 @@ window.AFHSite = {
       street: "14613 12th Ave SW",
       page: "burien-adult-family-home.html",
       legacySite: "https://www.magnoliaseniorlovingcare.com/home",
-      position: "A calm, RN-led home setting serving Seahurst, Three Tree Point, Normandy Park, and Highline.",
-      seoDescription: "Adult Family Home Burien WA care with RN-owned oversight, Dementia Care AFH routines, accessible spaces, and family communication.",
+      position: "A calm, RN-led home setting for quiet routines, frequent family visits, and familiar Burien-area neighborhoods.",
+      seoDescription: "Adult Family Home Burien WA care with RN-led oversight, memory-aware routines, accessible spaces, and family communication.",
       neighborhoods: ["Seahurst", "Three Tree Point", "Highline", "Sunnydale", "Normandy Park", "South Seattle"],
       details: [
-        "A calm Burien home for families who want close daily attention.",
+        "A calm Burien home setting for families who want close daily attention.",
         "A tour can include the landscaped garden, comfortable living spaces, spacious bedrooms, dining area, wheelchair access, kitchen, and accessible bathrooms.",
         "Care conversations focus on comfort, dignity, medication support, family communication, and RN-led oversight."
       ],
@@ -61,8 +61,8 @@ window.AFHSite = {
       street: "1206 S 244th St",
       page: "des-moines-adult-family-home.html",
       legacySite: "https://www.magnoliaseniorcareofhighline.com/home",
-      position: "A steady, supportive home serving Des Moines, North Hill, Woodmont, and the Highline area.",
-      seoDescription: "Adult Family Home Des Moines WA care with RN-managed oversight, Dementia Care AFH routines, 24/7 support, personal care, and family updates.",
+      position: "A steady, supportive home for transitions, memory-aware routines, and Highline-area care coordination.",
+      seoDescription: "Adult Family Home Des Moines WA care with RN-managed oversight, memory-aware routines, 24/7 support, personal care, and family updates.",
       neighborhoods: ["Highline", "North Hill", "Woodmont", "Marina District", "SeaTac", "Kent Valley"],
       details: [
         "Helpful for families comparing care near Des Moines, Highline, SeaTac, and South King County.",
@@ -81,13 +81,13 @@ window.AFHSite = {
   services: [
     {
       icon: "medical",
-      title: "RN-Owned, RN-Managed Care",
-      text: "Magnolia is guided by Sosena Mekuria, RN Provider, who brings more than a decade of healthcare experience to daily care, observation, and family communication."
+      title: "RN-Led Care Oversight",
+      text: "Magnolia is guided by Sosena Mekuria, RN Provider, bringing nursing perspective to observation, daily routines, and family communication."
     },
     {
       icon: "support",
       title: "Personal Care",
-      text: "Respectful help with bathing, dressing, grooming, mobility, toileting, meals, hydration, and daily comfort routines."
+      text: "Dignified support with bathing, dressing, grooming, mobility, toileting, meals, hydration, and daily comfort."
     },
     {
       icon: "pill",
@@ -96,18 +96,18 @@ window.AFHSite = {
     },
     {
       icon: "brain",
-      title: "Dementia Care AFH Support",
-      text: "Structured routines, gentle cueing, meaningful activities, and a calm AFH environment for residents living with dementia or Alzheimer's."
+      title: "Memory-Aware Dementia Support",
+      text: "Calm routines, gentle cueing, meaningful activities, and familiar rhythms for residents living with dementia or Alzheimer's."
     },
     {
       icon: "home",
       title: "Private Home-Like Setting",
-      text: "A private, home-like setting with up to 6 residents. This allows for more consistent care, familiar routines, and closer attention to each resident."
+      text: "A private, home-like setting where residents can settle into familiar routines, steady relationships, and closer day-to-day attention."
     },
     {
       icon: "message",
-      title: "Family and Referral Communication",
-      text: "Families, POAs, referral agents, discharge planners, and case managers can get clearer answers from people close to the care."
+      title: "Direct Family Communication",
+      text: "Families, POAs, referral agents, discharge planners, and case managers receive clear answers from people close to the care."
     }
   ],
   testimonials: [
