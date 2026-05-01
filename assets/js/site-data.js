@@ -92,7 +92,7 @@ window.AFHSite = {
     {
       icon: "pill",
       title: "Medication Support",
-      text: "Organized medication reminders, observation, documentation support, and practical coordination with families and care professionals."
+      text: "Clear medication routines, monitoring, and coordination with families and healthcare providers."
     },
     {
       icon: "brain",
