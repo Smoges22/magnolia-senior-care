@@ -12,6 +12,18 @@ window.AFHSite = {
     email: "sosena.mekuria@gmail.com",
     emailHref: "mailto:sosena.mekuria@gmail.com",
     domain: "https://magnoliaseniorcarewa.com",
+    socialLinks: [
+      {
+        label: "YouTube",
+        name: "@MagnoliaSeniorLovingCare",
+        href: "https://www.youtube.com/@MagnoliaSeniorLovingCare"
+      },
+      {
+        label: "LinkedIn",
+        name: "Magnolia Senior Loving Care LLC",
+        href: "https://www.linkedin.com/company/magnolia-senior-loving-care-llc"
+      }
+    ],
     hours: "Mon-Fri 9AM-8PM, Sat 9AM-6PM, Sun 10AM-4PM",
     experience: "10+ years of RN-led senior care experience"
   },

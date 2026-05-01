@@ -108,6 +108,7 @@
                 <a href="${site.brand.emailHref}">${site.brand.email}</a>
                 <span>${site.locations.burien.address}</span>
                 <span>${site.locations.highline.address}</span>
+                ${site.brand.socialLinks.map((profile) => `<a href="${profile.href}" target="_blank" rel="noopener">${profile.label}: ${profile.name}</a>`).join("")}
               </div>
             </div>
           </div>
