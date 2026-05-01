@@ -340,6 +340,10 @@ textarea:focus-visible {
   padding: 74px 0;
 }
 
+.section.micro {
+  padding: 34px 0 0;
+}
+
 .section.soft {
   background: var(--soft);
 }
@@ -640,6 +644,19 @@ h3 {
 
 .map-card-grid {
   align-items: stretch;
+}
+
+.contact-micro-card {
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.contact-micro-card h2 {
+  max-width: 680px;
+  margin-bottom: 0;
+  font-size: 32px;
+  line-height: 1.15;
 }
 
 .map-card {
@@ -1024,7 +1041,8 @@ textarea:focus {
 
   .hero-grid,
   .split,
-  .article-layout {
+  .article-layout,
+  .contact-micro-card {
     grid-template-columns: 1fr;
   }
 
@@ -1090,6 +1108,18 @@ textarea:focus {
   h2,
   .contact-panel h2 {
     font-size: 30px;
+  }
+
+  .section.micro {
+    padding-top: 28px;
+  }
+
+  .contact-micro-card {
+    gap: 20px;
+  }
+
+  .contact-micro-card h2 {
+    font-size: 28px;
   }
 
   .grid-3,
