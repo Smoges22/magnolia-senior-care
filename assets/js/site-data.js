@@ -80,32 +80,32 @@ window.AFHSite = {
   },
   services: [
     {
-      icon: "RN",
+      icon: "medical",
       title: "RN-Owned, RN-Managed Care",
       text: "Magnolia is guided by Sosena Mekuria, RN Provider, who brings more than a decade of healthcare experience to daily care, observation, and family communication."
     },
     {
-      icon: "ADL",
+      icon: "support",
       title: "Personal Care",
       text: "Respectful help with bathing, dressing, grooming, mobility, toileting, meals, hydration, and daily comfort routines."
     },
     {
-      icon: "RX",
+      icon: "pill",
       title: "Medication Support",
       text: "Organized medication reminders, observation, documentation support, and practical coordination with families and care professionals."
     },
     {
-      icon: "MEM",
+      icon: "brain",
       title: "Dementia Care AFH Support",
       text: "Structured routines, gentle cueing, meaningful activities, and a calm AFH environment for residents living with dementia or Alzheimer's."
     },
     {
-      icon: "24",
+      icon: "home",
       title: "Small 6-Resident AFH Model",
       text: "Care happens in a real home for up to 6 residents, making routines more personal, quieter, and easier for families to understand."
     },
     {
-      icon: "FAM",
+      icon: "message",
       title: "Family and Referral Communication",
       text: "Families, POAs, referral agents, discharge planners, and case managers can get clearer answers from people close to the care."
     }
