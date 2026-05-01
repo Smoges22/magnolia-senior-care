@@ -10,7 +10,7 @@
   --white: #ffffff;
   --shadow: 0 18px 45px rgba(20, 55, 52, 0.10);
   --card-padding: 30px;
-  --card-gap: 18px;
+  --card-gap: 24px;
   --card-border: rgba(15, 118, 110, 0.14);
   --card-bg: linear-gradient(180deg, var(--white), #fbf8f1);
   --card-shadow: 0 16px 34px rgba(20, 55, 52, 0.08);
@@ -284,16 +284,16 @@ textarea:focus-visible {
 .trust-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: var(--card-gap);
   margin-top: 28px;
 }
 
 .trust-item {
   padding: 16px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: 0 8px 20px rgba(20, 55, 52, 0.04);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
 }
 
 .trust-item strong {
@@ -378,11 +378,11 @@ h3 {
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: var(--card-gap);
 }
 
 .service-grid {
-  gap: 22px;
+  gap: var(--card-gap);
   align-items: stretch;
 }
 
@@ -401,7 +401,10 @@ h3 {
 
 .service-card,
 .testimonial-card,
-.info-card {
+.info-card,
+.location-choice-card,
+.gallery-section,
+.process-step {
   display: grid;
   align-content: start;
   padding: var(--card-padding);
@@ -418,10 +421,16 @@ h3 {
 .service-card:hover,
 .service-card:focus-within,
 .service-card:active,
+.location-card:hover,
+.location-card:focus-within,
 .location-choice-card:hover,
 .location-choice-card:focus-within,
 .gallery-section:hover,
 .gallery-section:focus-within,
+.gallery-item:hover,
+.gallery-item:focus-within,
+.trust-item:hover,
+.trust-item:focus-within,
 .process-step:hover,
 .process-step:focus-within {
   border-color: rgba(201, 162, 92, 0.48);
@@ -435,6 +444,7 @@ h3 {
 
 .location-card {
   overflow: hidden;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .location-card img {
@@ -448,10 +458,7 @@ h3 {
 }
 
 .location-choice-card {
-  display: grid;
-  align-content: start;
   gap: 0;
-  padding: var(--card-padding);
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
@@ -548,13 +555,12 @@ h3 {
 .process-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: var(--card-gap);
   counter-reset: process;
 }
 
 .process-step {
   position: relative;
-  padding: var(--card-padding);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
   background: var(--card-bg);
@@ -564,16 +570,17 @@ h3 {
 
 .comparison-grid {
   display: grid;
-  gap: 12px;
+  gap: var(--card-gap);
 }
 
 .comparison-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  background: var(--white);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
 }
 
 .comparison-cell {
@@ -612,19 +619,19 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: var(--shadow);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
 }
 
 .split-card .card-body {
-  padding: 34px;
+  padding: var(--card-padding);
 }
 
 .contact-panel {
-  border: 1px solid rgba(15, 118, 110, 0.16);
-  background: linear-gradient(180deg, var(--white), var(--soft));
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
 }
 
 .contact-panel h2 {
@@ -718,7 +725,7 @@ h3 {
 }
 
 .gallery-section {
-  padding: var(--card-padding);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .gallery-section + .gallery-section {
@@ -745,15 +752,16 @@ h3 {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+  gap: var(--card-gap);
 }
 
 .gallery-item {
   overflow: hidden;
-  border: 1px solid rgba(15, 118, 110, 0.12);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: 0 14px 34px rgba(20, 55, 52, 0.08);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .gallery-button {
