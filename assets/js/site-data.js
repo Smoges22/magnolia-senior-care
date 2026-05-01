@@ -35,7 +35,7 @@ window.AFHSite = {
       street: "14613 12th Ave SW",
       page: "burien-adult-family-home.html",
       legacySite: "https://www.magnoliaseniorlovingcare.com/home",
-      position: "A warm RN-managed Adult Family Home near Seahurst, Three Tree Point, Highline, and Normandy Park.",
+      position: "A calm, RN-led Adult Family Home serving Seahurst, Three Tree Point, Normandy Park, and Highline.",
       seoDescription: "Adult Family Home Burien WA care with RN-owned oversight, Dementia Care AFH routines, accessible spaces, and family communication.",
       neighborhoods: ["Seahurst", "Three Tree Point", "Highline", "Sunnydale", "Normandy Park", "South Seattle"],
       details: [
@@ -43,7 +43,7 @@ window.AFHSite = {
         "A tour can include the landscaped garden, comfortable living spaces, spacious bedrooms, dining area, wheelchair access, kitchen, and accessible bathrooms.",
         "Care conversations focus on comfort, dignity, medication support, family communication, and RN-led oversight."
       ],
-      fit: ["Burien families", "Seahurst and Three Tree Point proximity", "Quiet home routines", "Garden and accessible spaces"],
+      fit: ["South Seattle and Burien families", "Quiet routines", "Easy family visits", "Seahurst, Three Tree Point, Normandy Park, and Highline"],
       image: "https://lh3.googleusercontent.com/sitesv/AA5AbUAgLtNsvNmT_qCLDysjJGsZJGpa0CeLcXENhlJURMc7zVEVVkK5yIPYZKiQg_BkreT1iV8PeggmUgz24jZ2xlTowNSXm7hRR151JQNpE4CrQZvNJbRZcr1S9Y_xj1BFqjE8ZzyoFpn_FLpJOMTNdyUXJYVFG4Z1guIrBrynaEmnPTg4lrZvxg=w1280",
       gallery: [
         "https://lh3.googleusercontent.com/sitesv/AA5AbUDprgr4vTb2HmbnGusRVlYsxyluxiKEg1el1z1HUSePGH2b0pU-GfPsCqeUKei2EHPIafVBlw-F-OrmToxt9QuLMMOVQle-Bgf1jHM-ba07S8jPPP37hLben9xLQzau7R7TikLnQqFlM5pNakJFTDMo747Y-E3kvTArtEmBwqLg94FSQ8slI2AH=w1280",
