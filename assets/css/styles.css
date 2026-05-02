@@ -2078,9 +2078,11 @@ textarea:focus {
 .footer-brand {
   display: grid;
   justify-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.48);
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.78) 64%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.80), rgba(244, 250, 249, 0.68));
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
   text-align: center;
 }
 
@@ -2400,8 +2402,8 @@ textarea:focus {
   }
 
   .hero {
-    padding-top: 64px;
-    padding-bottom: 72px;
+    padding-top: 52px;
+    padding-bottom: 58px;
   }
 
   .section + .section::before {
@@ -2457,9 +2459,9 @@ textarea:focus {
   }
 
   .hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(86px, 24vw);
+    grid-template-columns: minmax(0, 1fr) minmax(78px, 22vw);
     align-items: start;
-    gap: 8px;
+    gap: 10px;
   }
 
   .hero-copy {
@@ -2481,14 +2483,15 @@ textarea:focus {
   }
 
   .hero-copy h1 {
-    margin-bottom: 10px;
-    font-size: clamp(42px, 10.8vw, 46px);
-    line-height: 1.08;
+    margin-bottom: 8px;
+    font-size: clamp(38px, 10.2vw, 44px);
+    line-height: 1.06;
   }
 
   .hero-copy .hero-lede {
-    font-size: 18px;
-    line-height: 1.7;
+    max-width: 34ch;
+    font-size: 17px;
+    line-height: 1.62;
   }
 
   .hero-copy .hero-actions,
@@ -2501,7 +2504,7 @@ textarea:focus {
     grid-column: 2;
     grid-row: 1 / span 3;
     margin-left: 0;
-    border-radius: 26px;
+    border-radius: 24px;
     box-shadow: 0 18px 38px rgba(0, 84, 80, 0.10), 0 10px 18px rgba(31, 42, 42, 0.06);
   }
 
@@ -2525,7 +2528,7 @@ textarea:focus {
   .about-hero-actions,
   .section-actions {
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 18px;
   }
 
   .hero-actions .button,
@@ -2535,13 +2538,40 @@ textarea:focus {
 
   .hero-actions .button {
     flex-basis: 100%;
+    min-height: 46px;
+    padding: 13px 18px;
+  }
+
+  .hero-actions .button.secondary {
+    flex-basis: auto;
+    min-height: 42px;
+    margin: -2px auto 0;
+    padding: 5px 2px;
+    border: 0;
+    background: transparent;
+    color: var(--teal-dark);
+    box-shadow: none;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  .hero-actions + .cta-microcopy {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .hero-response {
+    margin-top: 12px;
+    padding: 7px 11px;
+    font-size: 12px;
   }
 
   .hero-proof-row {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 7px;
-    margin-top: 14px;
+    margin-top: 12px;
   }
 
   .hero-proof-row span {
@@ -2573,7 +2603,7 @@ textarea:focus {
 
   .hero-photo,
   .hero-photo img {
-    min-height: 252px;
+    min-height: 218px;
   }
 
   .hero-photo img {
