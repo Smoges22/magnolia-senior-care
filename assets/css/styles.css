@@ -685,7 +685,7 @@ h3 {
 
 .testimonial-card,
 .review-card {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FAF7F2 100%);
+  background: var(--white);
 }
 
 .card,
@@ -886,7 +886,7 @@ h3 {
   padding: 6px max(24px, calc((100vw - var(--max)) / 2)) 0;
   gap: 20px;
   align-items: center;
-  background: var(--page-bg);
+  background: transparent;
 }
 
 .review-score-card {
@@ -899,9 +899,7 @@ h3 {
   padding: 38px 40px;
   border: 1px solid var(--card-border);
   border-radius: 28px;
-  background:
-    linear-gradient(180deg, rgba(255, 199, 118, 0.075), transparent 34%),
-    var(--white);
+  background: var(--white);
   box-shadow: var(--card-shadow);
   text-align: center;
 }
