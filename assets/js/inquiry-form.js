@@ -37,25 +37,14 @@
       if (submitButton) submitButton.disabled = true;
 
       try {
-        const response = await fetch(APPS_SCRIPT_URL, {
+        await fetch(APPS_SCRIPT_URL, {
           method: "POST",
+          mode: "no-cors",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "text/plain;charset=utf-8"
           },
           body: JSON.stringify(payload)
         });
-
-        if (!response.ok) {
-          throw new Error(`Request failed with status ${response.status}`);
-        }
-
-        const contentType = response.headers.get("content-type") || "";
-        if (contentType.includes("application/json")) {
-          const result = await response.json();
-          if (result && result.success === false) {
-            throw new Error(result.message || "Request was not accepted.");
-          }
-        }
 
         form.reset();
         status.textContent = SUCCESS_MESSAGE;
