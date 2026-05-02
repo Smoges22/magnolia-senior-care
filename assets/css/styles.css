@@ -2277,6 +2277,25 @@ textarea:focus {
   text-align: center;
 }
 
+.footer-credit {
+  display: block;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 750;
+}
+
+.footer-credit a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.footer-credit a:hover,
+.footer-credit a:focus-visible {
+  color: #ffffff;
+}
+
 @media (max-width: 1180px) {
   .brand-logo {
     width: clamp(286px, 30vw, 376px);
@@ -2372,7 +2391,7 @@ textarea:focus {
   }
 
   body {
-    padding-bottom: calc(150px + env(safe-area-inset-bottom));
+    padding-bottom: 0;
   }
 
   main {

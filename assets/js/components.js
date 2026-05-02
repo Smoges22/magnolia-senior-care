@@ -190,6 +190,7 @@
           </div>
           <div class="footer-bottom">
             &copy; <span data-year></span> ${site.brand.legalName}. Information on this website is not medical advice. Availability and services should be confirmed directly.
+            <span class="footer-credit"><a href="https://www.afhdesignsbysam.com/" target="_blank" rel="noopener">Web Designs By Sam</a></span>
           </div>
         </div>
       </footer>
