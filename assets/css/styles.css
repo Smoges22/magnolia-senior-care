@@ -197,16 +197,16 @@ button.button:active {
 }
 
 .button.secondary {
-  border-color: rgba(0, 84, 80, 0.24);
+  border-color: rgba(255, 199, 118, 0.78);
   background: rgba(255, 255, 255, 0.78);
   color: var(--teal-dark);
 }
 
 .button.secondary:hover,
 button.button.secondary:hover {
-  border-color: rgba(47, 143, 163, 0.42);
-  background: rgba(47, 143, 163, 0.08);
-  box-shadow: 0 10px 22px rgba(0, 84, 80, 0.08);
+  border-color: var(--gold);
+  background: rgba(255, 199, 118, 0.18);
+  box-shadow: 0 10px 22px rgba(255, 199, 118, 0.16);
 }
 
 .button.gold {
@@ -305,14 +305,25 @@ textarea:focus-visible {
   display: inline-flex;
   min-height: 32px;
   align-items: center;
-  padding: 7px 11px;
-  border: 1px solid rgba(47, 143, 163, 0.20);
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--card-border);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.76);
+  background: rgba(255, 255, 255, 0.92);
   color: var(--teal-dark);
   font-size: 12px;
   font-weight: 850;
-  box-shadow: 0 10px 22px rgba(0, 84, 80, 0.05);
+  box-shadow: 0 10px 24px rgba(31, 42, 42, 0.06);
+}
+
+.hero-proof-row span::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(255, 199, 118, 0.20);
 }
 
 .hero-actions,
@@ -363,9 +374,18 @@ textarea:focus-visible {
   position: relative;
   overflow: hidden;
   min-height: 500px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
   background: var(--soft);
+}
+
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.10));
+  pointer-events: none;
 }
 
 .hero-photo img {
@@ -374,12 +394,14 @@ textarea:focus-visible {
   min-height: 500px;
   object-fit: cover;
   object-position: center;
+  filter: brightness(1.05) saturate(1.08) sepia(0.04);
 }
 
 .photo-note {
   position: absolute;
   right: 18px;
   bottom: 18px;
+  z-index: 2;
   max-width: 310px;
   padding: 16px;
   border: 1px solid rgba(255, 255, 255, 0.52);
@@ -415,7 +437,7 @@ textarea:focus-visible {
 }
 
 .section.gold-soft {
-  background: var(--page-bg);
+  background: var(--soft);
 }
 
 .review-highlight-section {
@@ -512,8 +534,7 @@ h3 {
 .process-step,
 .review-card,
 .trust-item {
-  background:
-    linear-gradient(180deg, #FFFFFF 0%, #FBF8F1 100%);
+  background: var(--white);
 }
 
 .card,
@@ -1011,7 +1032,8 @@ h3 {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--teal);
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(255, 199, 118, 0.22);
 }
 
 .split {
@@ -1341,16 +1363,94 @@ textarea:focus {
   top: 100px;
 }
 
-.site-footer {
-  padding: 52px 0 28px;
-  background: var(--teal-dark);
+.youtube-section {
+  padding: 90px 0 72px;
+  background: var(--page-bg);
+}
+
+.youtube-card {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 46px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  background: var(--white);
+  box-shadow: var(--card-shadow);
+}
+
+.youtube-card .section-head {
+  margin-bottom: 26px;
+}
+
+.youtube-placeholder {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  min-height: 240px;
+  padding: clamp(24px, 4vw, 40px);
+  border: 1px solid rgba(0, 84, 80, 0.10);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(0, 84, 80, 0.94), rgba(0, 63, 60, 0.94)),
+    radial-gradient(circle at 78% 18%, rgba(255, 199, 118, 0.18), transparent 30%);
   color: var(--white);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.youtube-placeholder h3 {
+  color: var(--white);
+  font-size: clamp(26px, 4vw, 36px);
+}
+
+.youtube-placeholder p {
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.youtube-play {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.10);
+  color: var(--gold);
+}
+
+.youtube-play svg {
+  width: 38px;
+  height: 38px;
+  fill: currentColor;
+}
+
+.center-actions {
+  justify-content: center;
+}
+
+.site-footer {
+  position: relative;
+  padding: 72px 0 32px;
+  background: linear-gradient(135deg, #005450 0%, #003F3C 100%);
+  color: var(--white);
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gold);
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1.25fr 1fr 1fr 1fr;
-  gap: 30px;
+  gap: 42px;
+  align-items: start;
 }
 
 .site-footer h2,
@@ -1358,23 +1458,82 @@ textarea:focus {
   color: var(--white);
   font-family: inherit;
   font-size: 16px;
+  letter-spacing: 0.02em;
 }
 
 .site-footer p,
 .site-footer a,
 .footer-bottom {
-  color: rgba(255, 255, 255, 0.74);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .footer-links {
   display: grid;
-  gap: 9px;
+  gap: 10px;
+}
+
+.footer-links a {
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--gold);
+  transform: translateX(2px);
+}
+
+.footer-brand p {
+  max-width: 360px;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.social-icon {
+  display: inline-grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible {
+  border-color: rgba(255, 199, 118, 0.42);
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.social-icon svg rect,
+.social-icon svg circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+}
+
+.social-icon svg path {
+  fill: currentColor;
 }
 
 .footer-bottom {
   max-width: 760px;
-  margin: 40px auto 0;
-  padding: 24px 18px 2px;
+  margin: 52px auto 0;
+  padding: 26px 18px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
   font-size: 12px;
   line-height: 1.65;
@@ -1517,7 +1676,7 @@ textarea:focus {
 
   .hero-proof-row {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 7px;
     margin-top: 14px;
   }
@@ -1527,9 +1686,15 @@ textarea:focus {
     padding: 7px 8px;
     justify-content: center;
     border-radius: 14px;
-    font-size: 10.5px;
+    font-size: 10.8px;
     line-height: 1.25;
     text-align: center;
+  }
+
+  .hero-proof-row span::before {
+    width: 7px;
+    height: 7px;
+    box-shadow: 0 0 0 3px rgba(255, 199, 118, 0.20);
   }
 
   .comparison-cell:first-child {
@@ -1637,6 +1802,26 @@ textarea:focus {
     display: none;
   }
 
+  .youtube-section {
+    padding: 54px 0 44px;
+  }
+
+  .youtube-card {
+    padding: 24px;
+  }
+
+  .youtube-placeholder {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 18px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .youtube-play {
+    margin: 0 auto;
+  }
+
   input,
   select,
   textarea,
@@ -1717,23 +1902,23 @@ textarea:focus {
   }
 
   .mobile-quickbar .quickbar-secondary {
-    border: 1.5px solid var(--teal-dark);
+    border: 1.5px solid rgba(255, 199, 118, 0.92);
     background: transparent;
     color: var(--teal-dark);
   }
 
   .mobile-quickbar .quickbar-secondary:hover,
   .mobile-quickbar .quickbar-secondary:focus-visible {
-    border-color: var(--teal-dark);
-    background: rgba(0, 84, 80, 0.07);
+    border-color: var(--gold);
+    background: rgba(255, 199, 118, 0.14);
   }
 
   .mobile-quickbar .quickbar-link {
     min-height: 50px;
     padding-right: 4px;
     padding-left: 4px;
-    border: 1px solid rgba(0, 84, 80, 0.16);
-    background: rgba(0, 84, 80, 0.03);
+    border: 1px solid rgba(255, 199, 118, 0.62);
+    background: rgba(255, 255, 255, 0.42);
     color: rgba(95, 111, 115, 0.86);
     font-size: 10.5px;
     font-weight: 750;
@@ -1742,7 +1927,7 @@ textarea:focus {
   .mobile-quickbar .quickbar-link:hover,
   .mobile-quickbar .quickbar-link:focus-visible {
     color: var(--teal-dark);
-    background: rgba(0, 84, 80, 0.06);
+    background: rgba(255, 199, 118, 0.12);
   }
 
   .brand {

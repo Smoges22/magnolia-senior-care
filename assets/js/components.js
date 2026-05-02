@@ -19,6 +19,17 @@
     return localHref("assets/images/magnolia-photo-fallback.svg");
   }
 
+  function socialIcon(label) {
+    const icon = label.toLowerCase();
+    const icons = {
+      facebook: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3.3 0-5 1.9-5 5v2H6v4h3v5h4v-5h3.2l.8-4h-4V9c0-.7.3-1 1-1Z"/></svg>',
+      instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="1"/></svg>',
+      youtube: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12s0-3.2-.4-4.7c-.2-.8-.9-1.4-1.7-1.6C17.4 5.3 12 5.3 12 5.3s-5.4 0-6.9.4c-.8.2-1.5.8-1.7 1.6C3 8.8 3 12 3 12s0 3.2.4 4.7c.2.8.9 1.4 1.7 1.6 1.5.4 6.9.4 6.9.4s5.4 0 6.9-.4c.8-.2 1.5-.8 1.7-1.6.4-1.5.4-4.7.4-4.7Z"/><path d="m10 15 5.2-3L10 9v6Z"/></svg>',
+      linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 9.2H3V21h3.2V9.2ZM4.6 3C3.6 3 2.8 3.8 2.8 4.8s.8 1.8 1.8 1.8 1.8-.8 1.8-1.8S5.6 3 4.6 3ZM21 21h-3.2v-6.1c0-1.6-.7-2.5-2-2.5-1.1 0-1.8.7-2.1 1.4-.1.2-.1.6-.1.9V21h-3.2V9.2h3.2v1.6c.6-1 1.8-1.9 3.6-1.9 2.6 0 3.8 1.8 3.8 5V21Z"/></svg>'
+    };
+    return icons[icon] || '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 12a4.5 4.5 0 0 1 4.5-4.5h3v3h-3a1.5 1.5 0 0 0 0 3h3v3h-3A4.5 4.5 0 0 1 7.5 12Zm1.5 1.5h6v-3H9v3Zm0 3H6a4.5 4.5 0 0 1 0-9h3v3H6a1.5 1.5 0 0 0 0 3h3v3Z"/></svg>';
+  }
+
   function renderHeader() {
     const mount = document.querySelector("[data-component='site-header']");
     if (!mount) return;
@@ -77,14 +88,38 @@
     if (!mount) return;
 
     mount.innerHTML = `
+      <section class="youtube-section" aria-label="Magnolia Senior Care YouTube">
+        <div class="container">
+          <div class="youtube-card">
+            <div class="section-head center">
+              <div class="eyebrow">Magnolia on YouTube</div>
+              <h2>See life at Magnolia</h2>
+              <p>A quick look at the home, routines, and daily environment.</p>
+            </div>
+            <div class="youtube-placeholder">
+              <div class="youtube-play" aria-hidden="true">${socialIcon("YouTube")}</div>
+              <div>
+                <h3>Video tour coming soon</h3>
+                <p>Visit the Magnolia YouTube channel for updates, home views, and helpful family education.</p>
+              </div>
+            </div>
+            <div class="section-actions center-actions">
+              <a class="button secondary" href="https://www.youtube.com/@MagnoliaSeniorLovingCare" target="_blank" rel="noopener">Visit our YouTube channel</a>
+            </div>
+          </div>
+        </div>
+      </section>
       <footer class="site-footer">
         <div class="container">
           <div class="footer-grid">
-            <div>
+            <div class="footer-brand">
               <h2>${site.brand.name}</h2>
               <p>${site.brand.tagline}</p>
               <p>Licensed Adult Family Home provider in Washington State.</p>
               <p>Serving Burien, Des Moines, and South King County.</p>
+              <div class="social-icons" aria-label="Magnolia social media">
+                ${site.brand.socialLinks.map((profile) => `<a class="social-icon" href="${profile.href}" target="${profile.href === "#" ? "_self" : "_blank"}" rel="noopener" aria-label="${profile.label}">${socialIcon(profile.label)}</a>`).join("")}
+              </div>
             </div>
             <div>
               <h3>Explore</h3>
@@ -108,7 +143,6 @@
                 <a href="${site.brand.emailHref}">${site.brand.email}</a>
                 <span>${site.locations.burien.address}</span>
                 <span>${site.locations.highline.address}</span>
-                ${site.brand.socialLinks.map((profile) => `<a href="${profile.href}" target="_blank" rel="noopener">${profile.label}: ${profile.name}</a>`).join("")}
               </div>
             </div>
           </div>

@@ -24,6 +24,11 @@ window.AFHSite = {
         href: "https://www.youtube.com/@MagnoliaSeniorLovingCare"
       },
       {
+        label: "Instagram",
+        name: "Coming soon",
+        href: "#"
+      },
+      {
         label: "LinkedIn",
         name: "Magnolia Senior Loving Care LLC",
         href: "https://www.linkedin.com/company/magnolia-senior-loving-care-llc"
