@@ -81,8 +81,8 @@
             </a>
             <nav class="nav-links" id="site-nav" aria-label="Main navigation">${links}</nav>
             <div class="nav-actions">
-              <a class="button secondary" href="${site.brand.phoneHref}">Call Now</a>
-              <a class="button" href="${localHref("contact.html")}">Schedule a Tour</a>
+              <a class="button secondary" href="${site.brand.phoneHref}">Speak With Us First</a>
+              <a class="button" href="${localHref("contact.html")}">Schedule a Private Tour</a>
               <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">Menu</button>
             </div>
           </div>
@@ -90,10 +90,10 @@
         ${breadcrumbMarkup}
       </div>
       <div class="mobile-quickbar" aria-label="Quick contact actions">
-        <a class="quickbar-secondary" href="${site.brand.phoneHref}">Call Now</a>
-        <a class="quickbar-primary" href="${localHref("contact.html")}" aria-label="Schedule a Tour, book a private visit">
-          <span class="quickbar-title">Schedule a Tour</span>
-          <span class="quickbar-subtitle">Book a private visit</span>
+        <a class="quickbar-secondary" href="${site.brand.phoneHref}">Speak With Us First</a>
+        <a class="quickbar-primary" href="${localHref("contact.html")}" aria-label="Schedule a Private Tour">
+          <span class="quickbar-title">Schedule a Private Tour</span>
+          <span class="quickbar-subtitle">Private visit</span>
         </a>
         <a class="quickbar-link" href="${localHref("referral-agents.html")}">Referrals</a>
       </div>
@@ -141,11 +141,13 @@
           <div class="footer-cta">
             <div>
               <div class="eyebrow">Start with a conversation</div>
-              <h2>Tour a Magnolia home with the RN-led care team.</h2>
-              <p>Compare both locations, review fit, and get clear next steps for your family.</p>
+              <h2>Find the right Magnolia home for your loved one.</h2>
+              <p>Schedule a private tour or speak with us first so we can help you understand care fit, availability, and next steps.</p>
+              <p class="cta-microcopy">No pressure. Just clear answers for your family.</p>
             </div>
             <div class="footer-cta-actions">
-              <a class="button gold" href="${localHref("contact.html")}">Schedule a Tour</a>
+              <a class="button" href="${localHref("contact.html")}">Schedule a Private Tour</a>
+              <a class="button secondary" href="${site.brand.phoneHref}">Speak With Us First</a>
             </div>
           </div>
           <div class="footer-grid">
@@ -243,8 +245,8 @@
               <li>${location.seoDescription}</li>
             </ul>
             <div class="section-actions">
-              <a class="button" href="${localHref("contact.html")}">Schedule a Tour</a>
-              <a class="text-action-link" href="${localHref(location.page)}">View Location</a>
+              <a class="button" href="${localHref("contact.html")}">Schedule a Tour at This Home</a>
+              <a class="text-action-link" href="${localHref(location.page)}">View Location Details</a>
             </div>
           </div>
         </article>

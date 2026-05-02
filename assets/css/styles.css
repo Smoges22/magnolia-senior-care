@@ -348,6 +348,15 @@ button.button.gold:hover {
   text-decoration-color: var(--teal);
 }
 
+.cta-microcopy {
+  max-width: 620px;
+  margin: 12px 0 0;
+  color: var(--teal-dark);
+  font-size: 16px;
+  font-weight: 850;
+  line-height: 1.55;
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -421,6 +430,10 @@ textarea:focus-visible {
   font-size: 13px;
   font-weight: 850;
   box-shadow: 0 10px 22px rgba(31, 42, 42, 0.05);
+}
+
+.hero-actions + .cta-microcopy {
+  margin-top: 12px;
 }
 
 .hero-proof-row {
@@ -1394,6 +1407,13 @@ h3 {
 
 .cta-band p {
   color: var(--muted);
+}
+
+.cta-band .cta-microcopy,
+.footer-cta .cta-microcopy {
+  color: var(--teal-dark);
+  font-size: 16px;
+  font-weight: 850;
 }
 
 .cta-band .button.secondary {
