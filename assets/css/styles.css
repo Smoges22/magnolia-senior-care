@@ -1610,10 +1610,10 @@ textarea:focus {
   width: min(100%, 330px);
   height: auto;
   margin-bottom: 24px;
-  padding: 10px 12px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: none;
 }
 
 .site-footer h2,
