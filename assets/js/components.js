@@ -90,9 +90,9 @@
         ${breadcrumbMarkup}
       </div>
       <div class="mobile-quickbar" aria-label="Quick contact actions">
-        <a class="quickbar-secondary" href="${site.brand.phoneHref}">Speak With Us First</a>
-        <a class="quickbar-primary" href="${localHref("contact.html")}" aria-label="Schedule a Private Tour">
-          <span class="quickbar-title">Schedule a Private Tour</span>
+        <a class="quickbar-secondary" href="${site.brand.phoneHref}">Call Now</a>
+        <a class="quickbar-primary" href="${localHref("contact.html")}" aria-label="Schedule a Tour">
+          <span class="quickbar-title">Schedule a Tour</span>
           <span class="quickbar-subtitle">Private visit</span>
         </a>
         <a class="quickbar-link" href="${localHref("referral-agents.html")}">Referrals</a>
