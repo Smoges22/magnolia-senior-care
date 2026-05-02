@@ -2,23 +2,23 @@
   --ink: #2A2A2A;
   --muted: #5F6F73;
   --line: #e2ddd6;
-  --soft: #F7F3EE;
-  --warm: #F7F3EE;
+  --soft: #F5FBF8;
+  --warm: #F7FBF8;
   --teal: #2F9CAA;
   --teal-dark: #005450;
   --teal-hover: #003f3c;
   --gold: #FFC776;
   --gold-hover: #e6ad5f;
-  --gold-soft: #F7F3EE;
-  --page-bg: #F8F6F1;
+  --gold-soft: #FFF8EA;
+  --page-bg: #FBFFFD;
   --white: #ffffff;
-  --shadow: 0 18px 45px rgba(31, 42, 42, 0.09);
+  --shadow: 0 18px 45px rgba(0, 84, 80, 0.08);
   --card-padding: 34px;
   --card-gap: 28px;
-  --card-border: rgba(0, 84, 80, 0.12);
+  --card-border: rgba(0, 84, 80, 0.10);
   --card-bg: var(--white);
-  --card-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-  --card-shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.10);
+  --card-shadow: 0 16px 40px rgba(0, 84, 80, 0.055);
+  --card-shadow-hover: 0 22px 52px rgba(0, 84, 80, 0.10);
   --radius: 14px;
   --card-radius: 26px;
   --max: 1180px;
@@ -36,9 +36,8 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at 12% 8%, rgba(255, 199, 118, 0.16), transparent 28%),
-    radial-gradient(circle at 86% 10%, rgba(47, 156, 170, 0.12), transparent 30%),
-    linear-gradient(180deg, #fffdf9 0%, var(--page-bg) 46%, #f3eee6 100%);
+    radial-gradient(circle at 88% 6%, rgba(47, 156, 170, 0.08), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #fbfffd 42%, #f5fbf8 100%);
   background-attachment: fixed;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.74;
@@ -84,20 +83,20 @@ p {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.965);
-  border-bottom: 1px solid rgba(226, 221, 214, 0.78);
-  box-shadow: 0 8px 24px rgba(31, 42, 42, 0.035);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(0, 84, 80, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 84, 80, 0.045);
+  backdrop-filter: blur(18px) saturate(1.08);
+  -webkit-backdrop-filter: blur(18px) saturate(1.08);
 }
 
 .site-header {
   position: relative;
-  background: rgba(255, 255, 255, 0.965);
+  background: transparent;
 }
 
 .top-strip {
-  background: rgba(247, 245, 242, 0.94);
+  background: rgba(245, 251, 248, 0.78);
   color: var(--teal-dark);
   font-size: 12.5px;
   font-weight: 800;
@@ -120,7 +119,7 @@ p {
 
 .nav-wrap {
   display: flex;
-  min-height: 66px;
+  min-height: 82px;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
@@ -130,16 +129,16 @@ p {
   display: flex;
   align-items: center;
   min-width: 0;
-  padding: 7px 10px;
-  border: 1px solid rgba(226, 221, 214, 0.72);
-  border-radius: 14px;
-  background: var(--white);
-  box-shadow: 0 8px 20px rgba(31, 42, 42, 0.055);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .brand-logo {
-  width: clamp(220px, 22vw, 310px);
-  height: 72px;
+  width: clamp(340px, 31vw, 500px);
+  height: 98px;
   object-fit: contain;
 }
 
@@ -257,8 +256,8 @@ textarea:focus-visible {
   overflow: hidden;
   padding: 64px 0 62px;
   background:
-    linear-gradient(90deg, rgba(248, 246, 241, 0.98), rgba(248, 246, 241, 0.84)),
-    radial-gradient(circle at 88% 18%, rgba(47, 143, 163, 0.08), transparent 34%);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.99), rgba(245, 251, 248, 0.88)),
+    radial-gradient(circle at 88% 18%, rgba(47, 156, 170, 0.08), transparent 34%);
 }
 
 .hero-grid {
@@ -444,7 +443,7 @@ textarea:focus-visible {
 }
 
 .section.soft {
-  background: var(--page-bg);
+  background: rgba(245, 251, 248, 0.72);
 }
 
 .section.gold-soft {
@@ -453,7 +452,7 @@ textarea:focus-visible {
 
 .review-highlight-section {
   overflow: hidden;
-  background: var(--page-bg);
+  background: rgba(245, 251, 248, 0.72);
 }
 
 .section-head {
@@ -505,7 +504,7 @@ h3 {
   overflow: hidden;
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.96);
   box-shadow: var(--card-shadow);
 }
 
@@ -1108,11 +1107,11 @@ h3 {
 }
 
 .page-hero {
-  padding: 54px 0 42px;
-  border-bottom: 1px solid rgba(226, 221, 214, 0.74);
+  padding: 62px 0 50px;
+  border-bottom: 1px solid rgba(0, 84, 80, 0.08);
   background:
-    linear-gradient(180deg, rgba(248, 246, 241, 0.98), rgba(248, 246, 241, 0.92)),
-    radial-gradient(circle at 92% 0%, rgba(47, 143, 163, 0.08), transparent 30%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 251, 248, 0.82)),
+    radial-gradient(circle at 92% 0%, rgba(47, 156, 170, 0.08), transparent 30%);
 }
 
 .breadcrumb {
@@ -1611,7 +1610,7 @@ textarea:focus {
 
   .nav-links {
     position: absolute;
-    top: 66px;
+    top: 82px;
     right: 16px;
     left: 16px;
     display: none;
@@ -1644,7 +1643,7 @@ textarea:focus {
   }
 
   .container {
-    width: min(100% - 24px, var(--max));
+    width: min(100% - 12px, var(--max));
   }
 
   .top-strip {
@@ -1838,6 +1837,15 @@ textarea:focus {
     display: none;
   }
 
+  .nav-wrap {
+    min-height: 74px;
+    gap: 4px;
+  }
+
+  .nav-links {
+    top: 74px;
+  }
+
   .youtube-section {
     padding: 54px 0 44px;
   }
@@ -1967,12 +1975,12 @@ textarea:focus {
   }
 
   .brand {
-    padding: 5px 7px;
+    padding: 0;
   }
 
   .brand-logo {
-    width: clamp(176px, 54vw, 220px);
-    height: 54px;
+    width: clamp(220px, 76vw, 230px);
+    height: 66px;
   }
 
   .cta-band {
