@@ -516,10 +516,10 @@ h3 {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--card-border);
-  border-radius: 18px;
+  border-radius: 20px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(250, 253, 251, 0.96));
-  box-shadow: 0 1px 0 rgba(0, 84, 80, 0.04), var(--card-shadow);
+  box-shadow: 0 1px 0 rgba(0, 84, 80, 0.05), 0 20px 48px rgba(0, 84, 80, 0.06);
   isolation: isolate;
 }
 
@@ -535,6 +535,19 @@ h3 {
   height: 4px;
   background: linear-gradient(90deg, var(--teal-dark), var(--teal), var(--gold));
   opacity: 0.82;
+}
+
+.service-card::after,
+.info-card::after,
+.location-choice-card::after,
+.review-card::after {
+  content: "";
+  position: absolute;
+  inset: 4px 0 auto;
+  height: 84px;
+  background: linear-gradient(180deg, rgba(47, 156, 170, 0.055), transparent);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .service-card,
@@ -636,7 +649,8 @@ h3 {
 .location-choice-card h3 {
   color: var(--teal-dark);
   margin-bottom: 12px;
-  font-size: 24px;
+  font-size: 23px;
+  line-height: 1.08;
 }
 
 .location-choice-card .feature-list {
@@ -660,12 +674,22 @@ h3 {
   display: inline-flex;
   width: fit-content;
   align-items: center;
+  gap: 8px;
   margin-bottom: 10px;
   padding: 6px 10px;
   border: 1px solid rgba(0, 84, 80, 0.10);
   border-radius: 999px;
   background: rgba(245, 251, 248, 0.88);
   color: var(--teal-dark);
+  line-height: 1;
+}
+
+.card .eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
 }
 
 .card p {
@@ -909,11 +933,13 @@ h3 {
 .feature-list li {
   position: relative;
   min-height: 44px;
-  padding: 11px 14px 11px 40px;
+  padding: 12px 14px 12px 42px;
   border: 1px solid rgba(0, 84, 80, 0.08);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.72);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(245, 251, 248, 0.72));
   color: #202626;
+  box-shadow: 0 8px 20px rgba(0, 84, 80, 0.035);
 }
 
 .process-list {
@@ -1060,13 +1086,13 @@ h3 {
 .feature-list li::before {
   content: "";
   position: absolute;
-  top: 17px;
+  top: 18px;
   left: 17px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: var(--teal);
-  box-shadow: 0 0 0 4px rgba(47, 156, 170, 0.13);
+  box-shadow: 0 0 0 4px rgba(47, 156, 170, 0.12);
 }
 
 .split {
@@ -1089,8 +1115,15 @@ h3 {
   box-shadow: 0 18px 48px rgba(0, 84, 80, 0.045);
 }
 
-.founder-copy p:last-child {
+.founder-copy p:last-of-type {
   margin-bottom: 0;
+}
+
+.founder-credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
 }
 
 .image-panel {
@@ -1134,6 +1167,31 @@ h3 {
 
 .values-section .grid-3 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.value-card {
+  min-height: 100%;
+  padding-top: 58px;
+}
+
+.value-number {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: rgba(0, 84, 80, 0.12);
+  font-size: 42px;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.location-summary-section {
+  background: var(--white);
+}
+
+.location-standard-card {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255, 199, 118, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(245, 251, 248, 0.92));
 }
 
 .image-fallback {
@@ -1184,24 +1242,74 @@ h3 {
   align-items: center;
 }
 
-.about-proof-card {
-  display: grid;
+.about-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
   gap: 12px;
-  padding: 20px;
-  border: 1px solid rgba(0, 84, 80, 0.10);
-  border-radius: 24px;
-  background:
-    linear-gradient(180deg, rgba(245, 251, 248, 0.92), rgba(255, 255, 255, 0.98));
-  box-shadow: var(--card-shadow);
+  margin-top: 28px;
 }
 
-.about-proof-card div {
+.about-trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.about-trust-strip span,
+.founder-credentials span {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px solid rgba(0, 84, 80, 0.10);
+  border-radius: 999px;
+  background: rgba(245, 251, 248, 0.86);
+  color: var(--teal-dark);
+  font-size: 12.5px;
+  font-weight: 880;
+  line-height: 1.15;
+  box-shadow: 0 8px 20px rgba(0, 84, 80, 0.035);
+}
+
+.about-proof-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid rgba(0, 84, 80, 0.10);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 86% 4%, rgba(255, 199, 118, 0.18), transparent 24%),
+    linear-gradient(180deg, rgba(245, 251, 248, 0.96), rgba(255, 255, 255, 0.99));
+  box-shadow: 0 24px 68px rgba(0, 84, 80, 0.10);
+}
+
+.proof-card-label {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 4px;
+  padding: 7px 10px;
+  border: 1px solid rgba(0, 84, 80, 0.10);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--teal-dark);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.about-proof-card > div:not(.proof-card-label) {
   display: grid;
   gap: 3px;
   padding: 18px;
   border: 1px solid rgba(0, 84, 80, 0.08);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 28px rgba(0, 84, 80, 0.04);
 }
 
 .about-proof-card strong {
@@ -1940,12 +2048,14 @@ textarea:focus {
   }
 
   .hero-actions,
+  .about-hero-actions,
   .section-actions {
     gap: 10px;
     margin-top: 20px;
   }
 
-  .hero-actions .button {
+  .hero-actions .button,
+  .about-hero-actions .button {
     flex: 1 1 138px;
   }
 
@@ -2112,6 +2222,10 @@ textarea:focus {
 
   .youtube-play {
     margin: 0 auto;
+  }
+
+  .site-footer {
+    padding-bottom: calc(128px + env(safe-area-inset-bottom));
   }
 
   input,
