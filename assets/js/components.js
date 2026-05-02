@@ -123,23 +123,37 @@
       </section>
       <footer class="site-footer">
         <div class="container">
+          <div class="footer-cta">
+            <div>
+              <div class="eyebrow">Start with a conversation</div>
+              <h2>Tour a Magnolia home with the RN-led care team.</h2>
+              <p>Compare both locations, review fit, and get clear next steps for your family.</p>
+            </div>
+            <div class="footer-cta-actions">
+              <a class="button gold" href="${localHref("contact.html")}">Schedule a Tour</a>
+              <a class="button secondary" href="${site.brand.phoneHref}">Call Now</a>
+            </div>
+          </div>
           <div class="footer-grid">
             <div class="footer-brand">
-              <h2>${site.brand.name}</h2>
+              <img class="footer-logo" src="${localHref("assets/images/logo/magnolia-logo-header-display.png")}" alt="${site.brand.name}">
               <p>${site.brand.tagline}</p>
-              <p>Licensed Adult Family Home provider in Washington State.</p>
-              <p>Serving Burien, Des Moines, and South King County.</p>
+              <div class="footer-proof">
+                <span>RN-led</span>
+                <span>Licensed AFH</span>
+                <span>South King County</span>
+              </div>
               <div class="social-icons" aria-label="Magnolia social media">
                 ${site.brand.socialLinks.map((profile) => `<a class="social-icon" href="${profile.href}" target="${profile.href === "#" ? "_self" : "_blank"}" rel="noopener" aria-label="${profile.label}">${socialIcon(profile.label)}</a>`).join("")}
               </div>
             </div>
-            <div>
+            <div class="footer-panel">
               <h3>Explore</h3>
               <div class="footer-links">
                 ${site.nav.map(([label, href]) => `<a href="${localHref(href)}">${label}</a>`).join("")}
               </div>
             </div>
-            <div>
+            <div class="footer-panel">
               <h3>Local Care</h3>
               <div class="footer-links">
                 <a href="${localHref("burien-adult-family-home.html")}">${site.locations.burien.displayName}</a>
@@ -147,7 +161,7 @@
                 <a href="${localHref("blog/afh-education-template.html")}">AFH Education Blog</a>
               </div>
             </div>
-            <div>
+            <div class="footer-panel footer-contact-panel">
               <h3>Contact</h3>
               <div class="footer-links">
                 <a href="${site.brand.phoneHref}">${site.brand.phone}</a>
