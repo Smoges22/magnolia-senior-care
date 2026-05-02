@@ -15,6 +15,25 @@
     return `${pathPrefix()}${href}`;
   }
 
+  function mapHref(address) {
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+  }
+
+  function breadcrumbTrail() {
+    const active = currentPage();
+    const pageMap = {
+      "about.html": [["Home", "index.html"], ["About"]],
+      "services.html": [["Home", "index.html"], ["Services"]],
+      "rooms-photos.html": [["Home", "index.html"], ["Gallery"]],
+      "referral-agents.html": [["Home", "index.html"], ["Referrals"]],
+      "contact.html": [["Home", "index.html"], ["Contact"]],
+      "burien-adult-family-home.html": [["Home", "index.html"], ["Locations", "index.html#locations"], ["Burien"]],
+      "des-moines-adult-family-home.html": [["Home", "index.html"], ["Locations", "index.html#locations"], ["Des Moines"]],
+      "afh-education-template.html": [["Home", "index.html"], ["AFH Education Blog"]]
+    };
+    return pageMap[active] || [];
+  }
+
   function fallbackImageSrc() {
     return localHref("assets/images/magnolia-photo-fallback.svg");
   }
@@ -36,23 +55,25 @@
 
     const active = currentPage();
     const links = site.nav.map(([label, href]) => {
-      const aria = href === active ? " aria-current=\"page\"" : "";
+      const isLocationPage = ["burien-adult-family-home.html", "des-moines-adult-family-home.html"].includes(active);
+      const aria = href === active || (isLocationPage && href === "index.html#locations") ? " aria-current=\"page\"" : "";
       return `<a href="${localHref(href)}"${aria}>${label}</a>`;
     }).join("");
+    const breadcrumbs = breadcrumbTrail();
+    const breadcrumbMarkup = breadcrumbs.length ? `
+      <div class="header-breadcrumb-bar" aria-label="Breadcrumb">
+        <div class="container header-breadcrumb">
+          ${breadcrumbs.map(([label, href], index) => href
+            ? `<a href="${localHref(href)}">${label}</a>${index < breadcrumbs.length - 1 ? "<span>/</span>" : ""}`
+            : `<strong>${label}</strong>`
+          ).join("")}
+        </div>
+      </div>
+    ` : "";
 
     mount.innerHTML = `
       <a class="skip-link" href="#main">Skip to content</a>
       <div class="site-header-shell">
-        <div class="top-strip">
-          <div class="container top-strip-inner">
-            <span>RN-owned home-based care in Burien and Des Moines</span>
-            <span class="top-strip-links">
-              <a href="${site.brand.phoneHref}">${site.brand.phone}</a>
-              <a href="${site.brand.secondaryPhoneHref}">${site.brand.secondaryPhone}</a>
-              <a href="${site.brand.emailHref}">${site.brand.email}</a>
-            </span>
-          </div>
-        </div>
         <header class="site-header">
           <div class="container nav-wrap">
             <a class="brand" href="${localHref("index.html")}" aria-label="${site.brand.name} home">
@@ -66,6 +87,7 @@
             </div>
           </div>
         </header>
+        ${breadcrumbMarkup}
       </div>
       <div class="mobile-quickbar" aria-label="Quick contact actions">
         <a class="quickbar-secondary" href="${site.brand.phoneHref}">Call Now</a>
@@ -101,7 +123,7 @@
               <p>Visit our video channel for updates, tours, and a closer look at the home environment.</p>
             </div>
             <a class="youtube-video-link" href="${youtubeUrl}" target="_blank" rel="noopener" aria-label="Watch Magnolia Senior Care video on YouTube">
-              <div class="youtube-play" aria-hidden="true">${socialIcon("YouTube")}</div>
+              <div class="youtube-play youtube-play-red" aria-hidden="true">${socialIcon("YouTube")}</div>
               <div>
                 <h3>Watch the Magnolia video</h3>
                 <p>Open YouTube for a closer look at the home environment, updates, and family education.</p>
@@ -114,7 +136,7 @@
           </div>
         </div>
       </section>
-      <footer class="site-footer">
+      <footer class="site-footer" id="site-footer">
         <div class="container">
           <div class="footer-cta">
             <div>
@@ -137,7 +159,7 @@
                 <span>South King County</span>
               </div>
               <div class="social-icons" aria-label="Magnolia social media">
-                ${site.brand.socialLinks.map((profile) => `<a class="social-icon" href="${profile.href}" target="${profile.href === "#" ? "_self" : "_blank"}" rel="noopener" aria-label="${profile.label}">${socialIcon(profile.label)}</a>`).join("")}
+                ${site.brand.socialLinks.map((profile) => `<a class="social-icon social-${profile.label.toLowerCase()}" href="${profile.href}" target="${profile.href === "#" ? "_self" : "_blank"}" rel="noopener" aria-label="${profile.label}">${socialIcon(profile.label)}</a>`).join("")}
               </div>
             </div>
             <div class="footer-panel">
@@ -160,8 +182,8 @@
                 <a href="${site.brand.phoneHref}">${site.brand.phone}</a>
                 <a href="${site.brand.secondaryPhoneHref}">${site.brand.secondaryPhone}</a>
                 <a href="${site.brand.emailHref}">${site.brand.email}</a>
-                <span>${site.locations.burien.address}</span>
-                <span>${site.locations.highline.address}</span>
+                <a href="${mapHref(site.locations.burien.address)}" target="_blank" rel="noopener">${site.locations.burien.address}</a>
+                <a href="${mapHref(site.locations.highline.address)}" target="_blank" rel="noopener">${site.locations.highline.address}</a>
               </div>
             </div>
           </div>
@@ -217,7 +239,7 @@
               ${location.fit.map((item) => `<span>${item}</span>`).join("")}
             </div>
             <ul class="feature-list">
-              <li>${location.address}</li>
+              <li><a href="${mapHref(location.address)}" target="_blank" rel="noopener">${location.address}</a></li>
               <li>${location.neighborhoods.slice(0, 4).join(", ")}</li>
               <li>${location.seoDescription}</li>
             </ul>
