@@ -150,7 +150,7 @@
           </div>
           <div class="footer-grid">
             <div class="footer-brand">
-              <img class="footer-logo" src="${localHref("assets/images/logo/magnolia-logo-header-display.png")}" alt="${site.brand.name}">
+              <img class="footer-logo" src="${localHref("assets/images/logo/magnolia-logo-footer-transparent.png")}" alt="${site.brand.name}">
               <p>${site.brand.tagline}</p>
               <div class="footer-proof">
                 <span>RN-led</span>

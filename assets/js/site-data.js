@@ -180,13 +180,13 @@ window.AFHSite = {
         quote: "Very clean and well-run",
         summary: "Another reviewer highlighted the clean home, well-run care, delicious meals, and attentive support their mother receives.",
         name: "Marc Barnhardt",
-        detail: "Family review"
+        detail: "Son of resident"
       },
       {
         quote: "Clean, bright, and full of life",
         summary: "A reviewer who works with vulnerable adults described Magnolia as exceptionally caring, pleasant to work with, and above and beyond for residents.",
-        name: "Catherine Dunsmore",
-        detail: "Care professional and family review"
+        name: "Catherine Dunsomere",
+        detail: "Daughter of resident"
       },
       {
         quote: "Professional and well organized",
