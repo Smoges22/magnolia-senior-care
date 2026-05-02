@@ -89,7 +89,6 @@
     const mount = document.querySelector("[data-component='site-footer']");
     if (!mount) return;
     const youtubeUrl = site.brand.youtubeUrl || "#";
-    const youtubeEmbedUrl = site.brand.youtubeEmbedUrl;
     const facebookUrl = site.brand.facebookUrl || site.brand.socialLinks.find((profile) => profile.label === "Facebook")?.href || "#";
 
     mount.innerHTML = `
@@ -101,19 +100,13 @@
               <h2>See life at Magnolia</h2>
               <p>Visit our video channel for updates, tours, and a closer look at the home environment.</p>
             </div>
-            ${youtubeEmbedUrl ? `
-              <div class="youtube-embed">
-                <iframe src="${youtubeEmbedUrl}" title="Magnolia Senior Care video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <a class="youtube-video-link" href="${youtubeUrl}" target="_blank" rel="noopener" aria-label="Watch Magnolia Senior Care video on YouTube">
+              <div class="youtube-play" aria-hidden="true">${socialIcon("YouTube")}</div>
+              <div>
+                <h3>Watch the Magnolia video</h3>
+                <p>Open YouTube for a closer look at the home environment, updates, and family education.</p>
               </div>
-            ` : `
-              <div class="youtube-placeholder">
-                <div class="youtube-play" aria-hidden="true">${socialIcon("YouTube")}</div>
-                <div>
-                  <h3>Video tour coming soon</h3>
-                  <p>Visit the Magnolia YouTube channel for updates, home views, and helpful family education.</p>
-                </div>
-              </div>
-            `}
+            </a>
             <div class="section-actions center-actions">
               <a class="button" href="${youtubeUrl}" target="_blank" rel="noopener">Visit YouTube Channel</a>
               <a class="button secondary" href="${facebookUrl}" target="_blank" rel="noopener">Follow on Facebook</a>
