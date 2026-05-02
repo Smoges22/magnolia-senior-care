@@ -10,6 +10,8 @@
   --gold: #FFC776;
   --gold-hover: #e6ad5f;
   --gold-soft: #FFF8EA;
+  --icon-primary: var(--teal);
+  --icon-accent: var(--gold);
   --page-bg: #ffffff;
   --white: #ffffff;
   --shadow: 0 18px 45px rgba(0, 84, 80, 0.08);
@@ -434,8 +436,8 @@ textarea:focus-visible {
   height: 9px;
   flex: 0 0 auto;
   border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 0 4px rgba(255, 199, 118, 0.20);
+  background: var(--icon-primary);
+  box-shadow: 0 0 0 4px rgba(47, 156, 170, 0.16);
 }
 
 .hero-actions,
@@ -820,7 +822,7 @@ h3 {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--icon-primary);
 }
 
 .card p {
@@ -1238,7 +1240,7 @@ h3 {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--teal);
+  background: var(--icon-primary);
   box-shadow: 0 0 0 5px rgba(47, 156, 170, 0.10);
 }
 
@@ -1982,7 +1984,7 @@ textarea:focus {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--icon-accent);
 }
 
 .footer-panel,
@@ -2430,7 +2432,7 @@ textarea:focus {
   .hero-proof-row span::before {
     width: 7px;
     height: 7px;
-    box-shadow: 0 0 0 3px rgba(255, 199, 118, 0.20);
+    box-shadow: 0 0 0 3px rgba(47, 156, 170, 0.16);
   }
 
   .comparison-cell:first-child {
