@@ -43,7 +43,7 @@
     const icons = {
       facebook: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3.3 0-5 1.9-5 5v2H6v4h3v5h4v-5h3.2l.8-4h-4V9c0-.7.3-1 1-1Z"/></svg>',
       instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="1"/></svg>',
-      youtube: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12s0-3.2-.4-4.7c-.2-.8-.9-1.4-1.7-1.6C17.4 5.3 12 5.3 12 5.3s-5.4 0-6.9.4c-.8.2-1.5.8-1.7 1.6C3 8.8 3 12 3 12s0 3.2.4 4.7c.2.8.9 1.4 1.7 1.6 1.5.4 6.9.4 6.9.4s5.4 0 6.9-.4c.8-.2 1.5-.8 1.7-1.6.4-1.5.4-4.7.4-4.7Z"/><path d="m10 15 5.2-3L10 9v6Z"/></svg>',
+      youtube: '<svg class="youtube-brand-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="youtube-mark" d="M21.58 7.18a2.72 2.72 0 0 0-1.92-1.92C17.97 4.8 12 4.8 12 4.8s-5.97 0-7.66.46a2.72 2.72 0 0 0-1.92 1.92C1.96 8.88 1.96 12 1.96 12s0 3.12.46 4.82a2.72 2.72 0 0 0 1.92 1.92c1.69.46 7.66.46 7.66.46s5.97 0 7.66-.46a2.72 2.72 0 0 0 1.92-1.92c.46-1.7.46-4.82.46-4.82s0-3.12-.46-4.82Z"/><path class="youtube-play-mark" d="M9.95 15.33V8.67L15.72 12l-5.77 3.33Z"/></svg>',
       linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 9.2H3V21h3.2V9.2ZM4.6 3C3.6 3 2.8 3.8 2.8 4.8s.8 1.8 1.8 1.8 1.8-.8 1.8-1.8S5.6 3 4.6 3ZM21 21h-3.2v-6.1c0-1.6-.7-2.5-2-2.5-1.1 0-1.8.7-2.1 1.4-.1.2-.1.6-.1.9V21h-3.2V9.2h3.2v1.6c.6-1 1.8-1.9 3.6-1.9 2.6 0 3.8 1.8 3.8 5V21Z"/></svg>'
     };
     return icons[icon] || '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 12a4.5 4.5 0 0 1 4.5-4.5h3v3h-3a1.5 1.5 0 0 0 0 3h3v3h-3A4.5 4.5 0 0 1 7.5 12Zm1.5 1.5h6v-3H9v3Zm0 3H6a4.5 4.5 0 0 1 0-9h3v3H6a1.5 1.5 0 0 0 0 3h3v3Z"/></svg>';

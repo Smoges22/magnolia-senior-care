@@ -1980,13 +1980,14 @@ textarea:focus {
   gap: 28px;
   align-items: center;
   margin-bottom: 8px;
-  padding: clamp(28px, 4vw, 42px);
-  border: 1px solid rgba(255, 255, 255, 0.52);
+  padding: clamp(30px, 4vw, 46px);
+  border: 1px solid rgba(255, 255, 255, 0.64);
   border-radius: 28px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(250, 253, 251, 0.98));
+    radial-gradient(circle at 12% 0%, rgba(47, 156, 170, 0.10), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(248, 251, 250, 0.99));
   color: var(--ink);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.18), 0 1px 0 rgba(255, 255, 255, 0.95) inset;
 }
 
 .footer-cta h2 {
@@ -2096,12 +2097,24 @@ textarea:focus {
 
 .site-footer .footer-cta h2 {
   color: var(--teal-dark);
+  font-family: var(--headline-font);
+  font-size: clamp(2.15rem, 5.4vw, 3.55rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.02;
 }
 
 .site-footer .footer-cta p {
   color: var(--muted);
   font-size: 20px;
   line-height: 1.7;
+}
+
+.site-footer .footer-cta .eyebrow {
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
 }
 
 .site-footer .footer-cta .button {
@@ -2228,6 +2241,28 @@ textarea:focus {
 
 .social-icon svg path {
   fill: currentColor;
+}
+
+.social-icon .youtube-brand-icon .youtube-mark,
+.youtube-play .youtube-brand-icon .youtube-mark {
+  fill: #ff0033;
+}
+
+.social-icon .youtube-brand-icon .youtube-play-mark,
+.youtube-play .youtube-brand-icon .youtube-play-mark {
+  fill: #ffffff;
+}
+
+.social-icon:hover .youtube-brand-icon .youtube-mark,
+.social-icon:focus-visible .youtube-brand-icon .youtube-mark,
+.youtube-play-red .youtube-brand-icon .youtube-mark {
+  fill: #ffffff;
+}
+
+.social-icon:hover .youtube-brand-icon .youtube-play-mark,
+.social-icon:focus-visible .youtube-brand-icon .youtube-play-mark,
+.youtube-play-red .youtube-brand-icon .youtube-play-mark {
+  fill: #ff0033;
 }
 
 .footer-bottom {
@@ -2855,29 +2890,6 @@ textarea:focus {
 
   .split-card .card-body {
     padding: 24px;
-  }
-}
-
-@media (max-width: 520px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-copy {
-    display: block;
-  }
-
-  .hero-photo {
-    grid-column: 1;
-    grid-row: auto;
-    width: 100%;
-    max-width: 320px;
-    margin: 22px auto 0;
-  }
-
-  .hero-photo,
-  .hero-photo img {
-    min-height: 220px;
   }
 }
 
