@@ -131,7 +131,7 @@
             </a>
             <div class="section-actions center-actions">
               <a class="button" href="${youtubeUrl}" target="_blank" rel="noopener">Visit YouTube Channel</a>
-              <a class="button secondary" href="${facebookUrl}" target="_blank" rel="noopener">Follow on Facebook</a>
+              <a class="text-action-link" href="${facebookUrl}" target="_blank" rel="noopener">Follow on Facebook</a>
             </div>
           </div>
         </div>
@@ -146,7 +146,6 @@
             </div>
             <div class="footer-cta-actions">
               <a class="button gold" href="${localHref("contact.html")}">Schedule a Tour</a>
-              <a class="button secondary" href="${site.brand.phoneHref}">Call Now</a>
             </div>
           </div>
           <div class="footer-grid">
@@ -245,7 +244,7 @@
             </ul>
             <div class="section-actions">
               <a class="button" href="${localHref("contact.html")}">Schedule a Tour</a>
-              <a class="button secondary" href="${localHref(location.page)}">View Location</a>
+              <a class="text-action-link" href="${localHref(location.page)}">View Location</a>
             </div>
           </div>
         </article>

@@ -293,6 +293,27 @@ button.button.gold:hover {
   box-shadow: 0 12px 28px rgba(0, 84, 80, 0.20);
 }
 
+.text-action-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  min-height: 34px;
+  padding: 4px 2px;
+  color: var(--teal-dark);
+  font-size: 14px;
+  font-weight: 850;
+  line-height: 1.2;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 199, 118, 0.82);
+  text-underline-offset: 5px;
+}
+
+.text-action-link:hover,
+.text-action-link:focus-visible {
+  color: var(--teal-hover);
+  text-decoration-color: var(--teal);
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
