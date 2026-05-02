@@ -1,19 +1,28 @@
 :root {
-  --ink: #2A2A2A;
-  --muted: #5F6F73;
+  --msc-green: #005450;
+  --msc-teal: #2F9CAA;
+  --msc-bg: #FFFFFF;
+  --msc-soft-bg: #F4FAF9;
+  --msc-charcoal: #202626;
+  --msc-muted: #5F6B6B;
+  --msc-accent: #FFC776;
+  --headline-font: Georgia, "Times New Roman", serif;
+  --body-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ink: var(--msc-charcoal);
+  --muted: var(--msc-muted);
   --line: #e2ddd6;
-  --soft: #F4FAF9;
-  --warm: #FFFFFF;
-  --teal: #2F9CAA;
-  --teal-dark: #005450;
+  --soft: var(--msc-soft-bg);
+  --warm: var(--msc-bg);
+  --teal: var(--msc-teal);
+  --teal-dark: var(--msc-green);
   --teal-hover: #003f3c;
-  --gold: #FFC776;
+  --gold: var(--msc-accent);
   --gold-hover: #e6ad5f;
-  --gold-soft: #F4FAF9;
+  --gold-soft: var(--msc-soft-bg);
   --icon-primary: var(--teal);
   --icon-accent: var(--gold);
-  --page-bg: #ffffff;
-  --white: #ffffff;
+  --page-bg: var(--msc-bg);
+  --white: var(--msc-bg);
   --shadow: 0 18px 45px rgba(0, 84, 80, 0.08);
   --card-padding: 34px;
   --card-gap: 28px;
@@ -41,7 +50,7 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--white);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--body-font);
   line-height: 1.74;
   padding-top: var(--fixed-header-offset);
   padding-bottom: 0;
@@ -86,8 +95,11 @@ a {
 }
 
 p {
+  max-width: 760px;
   margin: 0 0 1rem;
-  line-height: 1.78;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.7;
 }
 
 .container {
@@ -292,27 +304,27 @@ button.button:disabled {
 }
 
 .button.secondary {
-  border-color: rgba(255, 199, 118, 0.78);
-  background: rgba(255, 255, 255, 0.78);
+  border: 2px solid var(--teal-dark);
+  background: var(--white);
   color: var(--teal-dark);
 }
 
 .button.secondary:hover,
 button.button.secondary:hover {
-  border-color: var(--gold);
-  background: rgba(255, 199, 118, 0.18);
-  box-shadow: 0 10px 22px rgba(255, 199, 118, 0.16);
+  border-color: var(--teal-hover);
+  background: var(--white);
+  box-shadow: 0 10px 22px rgba(0, 84, 80, 0.12);
 }
 
 .button.gold {
-  background: var(--teal-dark);
-  color: var(--white);
+  background: var(--gold);
+  color: var(--teal-dark);
 }
 
 .button.gold:hover,
 button.button.gold:hover {
-  background: var(--teal-hover);
-  box-shadow: 0 12px 28px rgba(0, 84, 80, 0.20);
+  background: var(--gold-hover);
+  box-shadow: 0 12px 28px rgba(255, 199, 118, 0.20);
 }
 
 .text-action-link {
@@ -350,17 +362,17 @@ textarea:focus-visible {
 }
 
 .eyebrow {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   color: var(--teal);
   font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .hero {
   overflow: hidden;
-  padding: 76px 0 70px;
+  padding: 96px 0;
   background: #FFFFFF;
 }
 
@@ -373,12 +385,13 @@ textarea:focus-visible {
 
 .hero h1,
 .page-hero h1 {
-  margin: 0 0 18px;
+  max-width: 900px;
+  margin: 0 0 22px;
   color: var(--teal-dark);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: clamp(54px, 6vw, 74px);
-  font-weight: 780;
-  line-height: 1;
+  font-family: var(--headline-font);
+  font-size: clamp(2.25rem, 8vw, 4.75rem);
+  font-weight: 800;
+  line-height: 1.02;
   letter-spacing: 0;
   text-wrap: balance;
 }
@@ -389,9 +402,10 @@ textarea:focus-visible {
 
 .hero-lede,
 .page-lede {
-  max-width: 680px;
+  max-width: 760px;
   color: var(--muted);
-  font-size: 18.5px;
+  font-size: 20px;
+  line-height: 1.7;
   text-wrap: pretty;
 }
 
@@ -529,7 +543,7 @@ textarea:focus-visible {
 
 .section {
   position: relative;
-  padding: 92px 0;
+  padding: 96px 0;
   background: var(--white);
 }
 
@@ -576,19 +590,22 @@ textarea:focus-visible {
 h2 {
   margin: 0 0 14px;
   color: var(--teal-dark);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 42px;
-  font-weight: 760;
-  line-height: 1.08;
+  font-family: var(--headline-font);
+  font-size: clamp(2rem, 6vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.05;
   letter-spacing: 0;
+  text-wrap: balance;
 }
 
 h3 {
   margin: 0 0 10px;
   color: var(--teal-dark);
-  font-weight: 760;
-  font-size: 22px;
-  line-height: 1.2;
+  font-family: var(--headline-font);
+  font-size: clamp(1.45rem, 4.5vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.15;
+  text-wrap: balance;
 }
 
 .grid-3 {
@@ -772,18 +789,20 @@ h3 {
 .gallery-section .section-head h2 {
   color: var(--teal-dark);
   margin-bottom: 12px;
-  font-size: 29px;
-  font-weight: 760;
-  line-height: 1.12;
+  font-family: var(--headline-font);
+  font-size: clamp(1.45rem, 4.5vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.15;
 }
 
 .card h3,
 .location-choice-card h3 {
   color: var(--teal-dark);
   margin-bottom: 12px;
-  font-size: 23px;
-  font-weight: 760;
-  line-height: 1.12;
+  font-family: var(--headline-font);
+  font-size: clamp(1.45rem, 4.5vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.15;
 }
 
 .location-choice-card .feature-list {
@@ -836,8 +855,10 @@ h3 {
 }
 
 .card p {
-  color: #202626;
-  line-height: 1.72;
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.65;
 }
 
 .card p:last-child {
@@ -869,14 +890,14 @@ h3 {
 
 .service-card p {
   margin: 0 0 18px;
-  font-size: 15.5px;
-  line-height: 1.72;
+  font-size: 18px;
+  line-height: 1.65;
 }
 
 .service-card p,
 .info-card p,
 .testimonial-card p {
-  color: #202626;
+  color: var(--muted);
 }
 
 .review-carousel-shell {
@@ -914,7 +935,7 @@ h3 {
 
 .review-score strong {
   color: var(--teal-dark);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--headline-font);
   font-size: 54px;
   line-height: 1;
 }
@@ -983,7 +1004,7 @@ h3 {
 .review-card blockquote p {
   margin: 0;
   color: var(--teal-dark);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--headline-font);
   font-size: clamp(34px, 4.35vw, 43px);
   font-style: italic;
   line-height: 1.1;
@@ -991,9 +1012,9 @@ h3 {
 
 .review-card > p {
   max-width: 620px;
-  color: #202626;
-  font-size: 16.5px;
-  line-height: 1.72;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.65;
 }
 
 .review-card footer {
@@ -1095,7 +1116,9 @@ h3 {
   border: 1px solid rgba(0, 84, 80, 0.10);
   border-radius: 18px;
   background: var(--white);
-  color: #202626;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.65;
   box-shadow: 0 12px 28px rgba(0, 84, 80, 0.045);
 }
 
@@ -1381,7 +1404,7 @@ h3 {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(78px, 8vw, 106px) 0 clamp(64px, 7vw, 92px);
+  padding: 96px 0;
   border-bottom: 1px solid rgba(0, 84, 80, 0.07);
   background: #FFFFFF;
 }
@@ -1918,7 +1941,7 @@ textarea:focus {
   max-width: 680px;
   margin-bottom: 10px;
   color: var(--teal-dark);
-  font-size: clamp(30px, 4vw, 46px);
+  font-size: clamp(2rem, 6vw, 3.75rem);
 }
 
 .footer-cta p {
@@ -2014,12 +2037,19 @@ textarea:focus {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.site-footer p {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
 .site-footer .footer-cta h2 {
   color: var(--teal-dark);
 }
 
 .site-footer .footer-cta p {
   color: var(--muted);
+  font-size: 20px;
+  line-height: 1.7;
 }
 
 .site-footer .footer-cta .button {
@@ -2274,7 +2304,7 @@ textarea:focus {
   .hero,
   .section,
   .page-hero {
-    padding: 56px 0 calc(140px + env(safe-area-inset-bottom));
+    padding: 72px 0 calc(140px + env(safe-area-inset-bottom));
   }
 
   .page-hero {
@@ -2282,7 +2312,7 @@ textarea:focus {
   }
 
   .hero {
-    padding-top: 36px;
+    padding-top: 72px;
   }
 
   .section + .section::before {
@@ -2293,22 +2323,22 @@ textarea:focus {
 
   .hero h1,
   .page-hero h1 {
-    font-size: clamp(34px, 9.2vw, 38px);
-    font-weight: 700;
-    line-height: 1.15;
+    font-size: clamp(2.25rem, 8vw, 4.75rem);
+    font-weight: 800;
+    line-height: 1.05;
   }
 
   .page-hero.gallery-hero h1,
   .page-hero.referral-hero h1,
   .page-hero.contact-hero h1 {
-    font-size: clamp(28px, 8vw, 32px);
-    font-weight: 650;
-    line-height: 1.15;
+    font-size: clamp(2.25rem, 8vw, 4.75rem);
+    font-weight: 800;
+    line-height: 1.05;
   }
 
   h2,
   .contact-panel h2 {
-    font-size: 31px;
+    font-size: clamp(2rem, 6vw, 3.75rem);
   }
 
   .section.micro {
@@ -2338,9 +2368,9 @@ textarea:focus {
   }
 
   .hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(128px, 40vw);
+    grid-template-columns: minmax(0, 1fr) minmax(86px, 24vw);
     align-items: start;
-    gap: 10px;
+    gap: 8px;
   }
 
   .hero-copy {
@@ -2357,18 +2387,18 @@ textarea:focus {
 
   .hero-copy .eyebrow {
     margin-bottom: 4px;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.2;
   }
 
   .hero-copy h1 {
     margin-bottom: 10px;
-    font-size: clamp(34px, 9.2vw, 38px);
+    font-size: clamp(2.25rem, 8vw, 4.75rem);
   }
 
   .hero-copy .hero-lede {
-    font-size: 15.5px;
-    line-height: 1.58;
+    font-size: 18px;
+    line-height: 1.7;
   }
 
   .hero-copy .hero-actions,
@@ -2380,7 +2410,7 @@ textarea:focus {
   .hero-photo {
     grid-column: 2;
     grid-row: 1 / span 3;
-    margin-left: -14px;
+    margin-left: 0;
     border-radius: 26px;
     box-shadow: 0 26px 56px rgba(0, 84, 80, 0.13), 0 12px 22px rgba(31, 42, 42, 0.08);
   }
@@ -2453,7 +2483,7 @@ textarea:focus {
 
   .hero-photo,
   .hero-photo img {
-    min-height: 292px;
+    min-height: 252px;
   }
 
   .hero-photo img {
@@ -2481,6 +2511,20 @@ textarea:focus {
     padding: 24px;
   }
 
+  p,
+  .hero-lede,
+  .page-lede {
+    font-size: 18px;
+  }
+
+  .card p,
+  .service-card p,
+  .review-card > p,
+  .feature-list li {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
   .card-body {
     padding: 24px;
   }
@@ -2490,11 +2534,11 @@ textarea:focus {
   }
 
   .gallery-section .section-head h2 {
-    font-size: 27px;
+    font-size: clamp(2rem, 6vw, 3.75rem);
   }
 
   .gallery-section .section-head p {
-    font-size: 14.5px;
+    font-size: 18px;
   }
 
   .gallery-grid {
@@ -2680,15 +2724,15 @@ textarea:focus {
   }
 
   .mobile-quickbar .quickbar-secondary {
-    border: 1.5px solid rgba(255, 199, 118, 0.92);
+    border: 1.5px solid var(--teal-dark);
     background: transparent;
     color: var(--teal-dark);
   }
 
   .mobile-quickbar .quickbar-secondary:hover,
   .mobile-quickbar .quickbar-secondary:focus-visible {
-    border-color: var(--gold);
-    background: rgba(255, 199, 118, 0.14);
+    border-color: var(--teal-hover);
+    background: rgba(0, 84, 80, 0.06);
   }
 
   .mobile-quickbar .quickbar-link {
@@ -2698,7 +2742,7 @@ textarea:focus {
   .mobile-quickbar .quickbar-link:hover,
   .mobile-quickbar .quickbar-link:focus-visible {
     color: var(--teal-dark);
-    background: rgba(255, 199, 118, 0.12);
+    background: rgba(0, 84, 80, 0.06);
   }
 
   .brand {
@@ -2743,13 +2787,13 @@ textarea:focus {
   .service-card h3,
   .location-choice-card h3 {
     max-width: none;
-    font-size: 21px;
+    font-size: clamp(1.45rem, 4.5vw, 2.1rem);
   }
 
   .card h2,
   .location-choice-card h2,
   .gallery-section .section-head h2 {
-    font-size: 25px;
+    font-size: clamp(1.45rem, 4.5vw, 2.1rem);
   }
 
   .split-card .card-body {
