@@ -86,6 +86,9 @@
   function renderFooter() {
     const mount = document.querySelector("[data-component='site-footer']");
     if (!mount) return;
+    const youtubeUrl = site.brand.youtubeUrl || "#";
+    const youtubeEmbedUrl = site.brand.youtubeEmbedUrl;
+    const facebookUrl = site.brand.facebookUrl || site.brand.socialLinks.find((profile) => profile.label === "Facebook")?.href || "#";
 
     mount.innerHTML = `
       <section class="youtube-section" aria-label="Magnolia Senior Care YouTube">
@@ -94,17 +97,24 @@
             <div class="section-head center">
               <div class="eyebrow">Magnolia on YouTube</div>
               <h2>See life at Magnolia</h2>
-              <p>A quick look at the home, routines, and daily environment.</p>
+              <p>Visit our video channel for updates, tours, and a closer look at the home environment.</p>
             </div>
-            <div class="youtube-placeholder">
-              <div class="youtube-play" aria-hidden="true">${socialIcon("YouTube")}</div>
-              <div>
-                <h3>Video tour coming soon</h3>
-                <p>Visit the Magnolia YouTube channel for updates, home views, and helpful family education.</p>
+            ${youtubeEmbedUrl ? `
+              <div class="youtube-embed">
+                <iframe src="${youtubeEmbedUrl}" title="Magnolia Senior Care video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </div>
-            </div>
+            ` : `
+              <div class="youtube-placeholder">
+                <div class="youtube-play" aria-hidden="true">${socialIcon("YouTube")}</div>
+                <div>
+                  <h3>Video tour coming soon</h3>
+                  <p>Visit the Magnolia YouTube channel for updates, home views, and helpful family education.</p>
+                </div>
+              </div>
+            `}
             <div class="section-actions center-actions">
-              <a class="button secondary" href="https://www.youtube.com/@MagnoliaSeniorLovingCare" target="_blank" rel="noopener">Visit our YouTube channel</a>
+              <a class="button" href="${youtubeUrl}" target="_blank" rel="noopener">Visit YouTube Channel</a>
+              <a class="button secondary" href="${facebookUrl}" target="_blank" rel="noopener">Follow on Facebook</a>
             </div>
           </div>
         </div>

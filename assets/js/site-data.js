@@ -12,6 +12,9 @@ window.AFHSite = {
     email: "sosena.mekuria@gmail.com",
     emailHref: "mailto:sosena.mekuria@gmail.com",
     domain: "https://magnoliaseniorcarewa.com",
+    facebookUrl: "https://www.facebook.com/share/1aK52PAZtm/?mibextid=wwXIfr",
+    youtubeUrl: "https://youtu.be/1EtG_E0lbFo?si=85rpIYFJc8ICPIrE",
+    youtubeEmbedUrl: "https://www.youtube.com/embed/1EtG_E0lbFo",
     socialLinks: [
       {
         label: "Facebook",
@@ -20,8 +23,8 @@ window.AFHSite = {
       },
       {
         label: "YouTube",
-        name: "@MagnoliaSeniorLovingCare",
-        href: "https://www.youtube.com/@MagnoliaSeniorLovingCare"
+        name: "Magnolia Senior Care video",
+        href: "https://youtu.be/1EtG_E0lbFo?si=85rpIYFJc8ICPIrE"
       },
       {
         label: "Instagram",
