@@ -141,6 +141,7 @@ p {
   display: flex;
   align-items: center;
   min-width: 0;
+  margin-left: -6px;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -149,8 +150,8 @@ p {
 }
 
 .brand-logo {
-  width: clamp(336px, 29vw, 470px);
-  height: 86px;
+  width: clamp(356px, 30vw, 492px);
+  height: 92px;
   object-fit: contain;
   image-rendering: auto;
   mix-blend-mode: multiply;
@@ -2161,7 +2162,7 @@ textarea:focus {
 
 @media (max-width: 1180px) {
   .brand-logo {
-    width: clamp(308px, 32vw, 396px);
+    width: clamp(326px, 33vw, 416px);
   }
 
   .nav-links {
@@ -2558,7 +2559,7 @@ textarea:focus {
 
   .nav-wrap {
     min-height: var(--nav-height);
-    gap: 10px;
+    gap: 6px;
     padding-block: 5px;
   }
 
@@ -2703,13 +2704,14 @@ textarea:focus {
   }
 
   .brand {
+    margin-left: -10px;
     padding: 0;
   }
 
   .brand-logo {
-    width: clamp(262px, 72vw, 330px);
-    max-width: calc(100vw - 102px);
-    height: 76px;
+    width: clamp(220px, 64vw, 260px);
+    max-width: calc(100vw - 142px);
+    height: 82px;
   }
 
   .cta-band {
