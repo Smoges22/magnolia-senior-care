@@ -22,7 +22,7 @@
   --radius: 12px;
   --card-radius: 24px;
   --max: 1180px;
-  --nav-height: 78px;
+  --nav-height: 90px;
   --breadcrumb-height: 36px;
   --fixed-header-offset: var(--nav-height);
 }
@@ -127,10 +127,11 @@ p {
 
 .nav-wrap {
   display: flex;
-  min-height: 78px;
+  min-height: var(--nav-height);
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  padding-block: 6px;
 }
 
 .brand {
@@ -145,10 +146,11 @@ p {
 }
 
 .brand-logo {
-  width: clamp(318px, 28vw, 448px);
-  height: 78px;
+  width: clamp(336px, 29vw, 470px);
+  height: 86px;
   object-fit: contain;
   image-rendering: auto;
+  mix-blend-mode: multiply;
 }
 
 .nav-links {
@@ -192,7 +194,10 @@ p {
   display: none;
   min-width: 70px;
   height: 46px;
-  padding: 0 14px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 15px;
   border: 1px solid rgba(0, 84, 80, 0.12);
   border-radius: 14px;
   background: var(--white);
@@ -200,6 +205,19 @@ p {
   font-size: 14px;
   font-weight: 900;
   box-shadow: 0 10px 24px rgba(0, 84, 80, 0.07);
+}
+
+.menu-toggle::before {
+  content: "";
+  width: 18px;
+  height: 12px;
+  flex: 0 0 auto;
+  background:
+    linear-gradient(currentColor, currentColor) 0 0 / 100% 2px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 5px / 100% 2px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 10px / 100% 2px no-repeat;
+  border-radius: 2px;
+  opacity: 0.92;
 }
 
 .header-breadcrumb-bar {
@@ -2147,7 +2165,7 @@ textarea:focus {
 
 @media (max-width: 1180px) {
   .brand-logo {
-    width: clamp(292px, 31vw, 376px);
+    width: clamp(308px, 32vw, 396px);
   }
 
   .nav-links {
@@ -2209,7 +2227,7 @@ textarea:focus {
 
   .nav-links {
     position: absolute;
-    top: 82px;
+    top: var(--nav-height);
     right: 16px;
     left: 16px;
     display: none;
@@ -2225,8 +2243,7 @@ textarea:focus {
   }
 
   .menu-toggle {
-    display: inline-grid;
-    place-items: center;
+    display: inline-flex;
   }
 }
 
@@ -2235,7 +2252,7 @@ textarea:focus {
     --card-padding: 26px;
     --card-gap: 18px;
     --card-radius: 22px;
-    --nav-height: 78px;
+    --nav-height: 88px;
     --breadcrumb-height: 34px;
   }
 
@@ -2532,12 +2549,13 @@ textarea:focus {
   }
 
   .nav-wrap {
-    min-height: 78px;
+    min-height: var(--nav-height);
     gap: 10px;
+    padding-block: 5px;
   }
 
   .nav-links {
-    top: 78px;
+    top: var(--nav-height);
     right: 16px;
     left: 16px;
     border-color: rgba(0, 84, 80, 0.10);
@@ -2681,9 +2699,9 @@ textarea:focus {
   }
 
   .brand-logo {
-    width: clamp(246px, 70vw, 312px);
-    max-width: calc(100vw - 112px);
-    height: 70px;
+    width: clamp(262px, 72vw, 330px);
+    max-width: calc(100vw - 102px);
+    height: 76px;
   }
 
   .cta-band {
