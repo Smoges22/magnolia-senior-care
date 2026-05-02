@@ -42,29 +42,31 @@
 
     mount.innerHTML = `
       <a class="skip-link" href="#main">Skip to content</a>
-      <div class="top-strip">
-        <div class="container top-strip-inner">
-          <span>RN-owned home-based care in Burien and Des Moines</span>
-          <span class="top-strip-links">
-            <a href="${site.brand.phoneHref}">${site.brand.phone}</a>
-            <a href="${site.brand.secondaryPhoneHref}">${site.brand.secondaryPhone}</a>
-            <a href="${site.brand.emailHref}">${site.brand.email}</a>
-          </span>
-        </div>
-      </div>
-      <header class="site-header">
-        <div class="container nav-wrap">
-          <a class="brand" href="${localHref("index.html")}" aria-label="${site.brand.name} home">
-            <img class="brand-logo" src="${localHref("assets/brand/logo/magnolia-logo-horizontal.svg")}" alt="${site.brand.name}">
-          </a>
-          <nav class="nav-links" id="site-nav" aria-label="Main navigation">${links}</nav>
-          <div class="nav-actions">
-            <a class="button secondary" href="${site.brand.phoneHref}">Call Now</a>
-            <a class="button" href="${localHref("contact.html")}">Schedule a Tour</a>
-            <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">Menu</button>
+      <div class="site-header-shell">
+        <div class="top-strip">
+          <div class="container top-strip-inner">
+            <span>RN-owned home-based care in Burien and Des Moines</span>
+            <span class="top-strip-links">
+              <a href="${site.brand.phoneHref}">${site.brand.phone}</a>
+              <a href="${site.brand.secondaryPhoneHref}">${site.brand.secondaryPhone}</a>
+              <a href="${site.brand.emailHref}">${site.brand.email}</a>
+            </span>
           </div>
         </div>
-      </header>
+        <header class="site-header">
+          <div class="container nav-wrap">
+            <a class="brand" href="${localHref("index.html")}" aria-label="${site.brand.name} home">
+              <img class="brand-logo" src="${localHref("assets/images/logo/magnolia-logo-header-display.png")}" alt="${site.brand.name}">
+            </a>
+            <nav class="nav-links" id="site-nav" aria-label="Main navigation">${links}</nav>
+            <div class="nav-actions">
+              <a class="button secondary" href="${site.brand.phoneHref}">Call Now</a>
+              <a class="button" href="${localHref("contact.html")}">Schedule a Tour</a>
+              <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">Menu</button>
+            </div>
+          </div>
+        </header>
+      </div>
       <div class="mobile-quickbar" aria-label="Quick contact actions">
         <a class="quickbar-secondary" href="${site.brand.phoneHref}">Call Now</a>
         <a class="quickbar-primary" href="${localHref("contact.html")}" aria-label="Schedule a Tour, book a private visit">

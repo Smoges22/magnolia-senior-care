@@ -203,6 +203,7 @@ window.AFHSite = {
     room: "assets/images/burien-real/burien-bedroom.jpg",
     garden: "assets/images/burien-real/burien-hallway.jpg",
     care: "assets/images/burien-real/burien-hallway.jpg",
+    sosena: "assets/images/team/sosena-mekuria.jpg",
     burienBedroom: "assets/images/burien-real/burien-bedroom.jpg",
     desMoinesLiving: "assets/images/des-moines-real/des-moines-living.jpg",
     desMoinesLiving2: "assets/images/des-moines-real/des-moines-living-2.jpg",
