@@ -3482,12 +3482,14 @@ textarea:focus {
 
   .hero-cinematic::before {
     background:
-      linear-gradient(180deg, rgba(0, 28, 26, 0.78) 0%, rgba(0, 48, 45, 0.62) 50%, rgba(0, 24, 22, 0.76) 100%),
-      linear-gradient(90deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.08));
+      linear-gradient(180deg, rgba(0, 28, 26, 0.72) 0%, rgba(0, 48, 45, 0.56) 50%, rgba(0, 24, 22, 0.72) 100%),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.05));
   }
 
   .hero-media img {
-    object-position: 62% center;
+    object-position: 52% 42%;
+    transform: scale(1);
+    animation: none;
   }
 
   .hero-cinematic .hero-copy {
@@ -3497,6 +3499,8 @@ textarea:focus {
     overflow: hidden;
     padding: 24px;
     border-radius: 24px;
+    background: linear-gradient(135deg, rgba(0, 84, 80, 0.72), rgba(0, 63, 60, 0.55));
+    box-shadow: 0 22px 58px rgba(0, 0, 0, 0.22);
   }
 
   .hero-cinematic h1 {
