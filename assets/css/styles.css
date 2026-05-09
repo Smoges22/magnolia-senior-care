@@ -1300,18 +1300,33 @@ h3 {
 
 .standard-icon {
   display: inline-grid;
-  width: 46px;
-  height: 46px;
+  width: 50px;
+  height: 50px;
   place-items: center;
   margin-bottom: 18px;
-  border: 1px solid rgba(47, 156, 170, 0.24);
-  border-radius: 16px;
-  background: linear-gradient(180deg, #ffffff, #f4faf9);
+  border: 1px solid rgba(0, 84, 80, 0.12);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 250, 249, 0.92));
   color: var(--teal-dark);
-  font-size: 12px;
-  font-weight: 950;
-  letter-spacing: 0.04em;
-  box-shadow: 0 12px 24px rgba(0, 84, 80, 0.07);
+  box-shadow: 0 12px 26px rgba(0, 84, 80, 0.065), 0 1px 0 rgba(255, 255, 255, 0.92) inset;
+}
+
+.standard-icon svg {
+  width: 25px;
+  height: 25px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.standard-card:hover .standard-icon,
+.standard-card:focus-within .standard-icon {
+  border-color: rgba(0, 84, 80, 0.18);
+  color: var(--teal-hover);
+  box-shadow: 0 16px 32px rgba(0, 84, 80, 0.09), 0 1px 0 rgba(255, 255, 255, 0.94) inset;
 }
 
 .standard-card h3 {
