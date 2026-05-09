@@ -69,8 +69,10 @@ window.AFHSite = {
         "Care conversations focus on comfort, dignity, medication support, family communication, and RN-led oversight."
       ],
       fit: ["South Seattle and Burien families", "Quiet routines", "Easy family visits", "Seahurst, Three Tree Point, Normandy Park, and Highline"],
-      image: "assets/images/burien-real/burien-dining-living.jpg",
+      image: "assets/images/premium-real/magnolia-exterior-daylight.png",
       gallery: [
+        "assets/images/premium-real/magnolia-exterior-twilight.png",
+        "assets/images/premium-real/magnolia-patio-evening.png",
         "assets/images/burien-real/burien-dining-living.jpg",
         "assets/images/burien-real/burien-bedroom.jpg",
         "assets/images/burien-real/burien-kitchen.jpg",
@@ -97,8 +99,11 @@ window.AFHSite = {
         "Care conversations focus on transition support, memory-aware routines, nutrition, and referral coordination."
       ],
       fit: ["Hospital or rehab transitions", "South King County families", "Memory-aware daily routines", "Des Moines, North Hill, Woodmont, and Highline"],
-      image: "assets/images/des-moines-real/des-moines-living.jpg",
+      image: "assets/images/premium-real/magnolia-open-living-kitchen.png",
       gallery: [
+        "assets/images/premium-real/magnolia-open-living-kitchen.png",
+        "assets/images/premium-real/magnolia-kitchen-premium.png",
+        "assets/images/premium-real/magnolia-bathroom-white-marble.png",
         "assets/images/des-moines-real/des-moines-front.jpg",
         "assets/images/des-moines-real/des-moines-living.jpg",
         "assets/images/des-moines-real/des-moines-common-area.jpg",
@@ -197,7 +202,16 @@ window.AFHSite = {
     ]
   },
   photos: {
-    hero: "assets/images/burien-real/burien-dining-living.jpg",
+    hero: "assets/images/premium-real/magnolia-exterior-twilight.png",
+    premiumExterior: "assets/images/premium-real/magnolia-exterior-twilight.png",
+    premiumExteriorDaylight: "assets/images/premium-real/magnolia-exterior-daylight.png",
+    premiumPatioEvening: "assets/images/premium-real/magnolia-patio-evening.png",
+    premiumBedroom: "assets/images/des-moines-real/des-moines-bedroom.jpg",
+    premiumCareConnection: "assets/images/premium-real/magnolia-caregiver-connection.png",
+    premiumKitchen: "assets/images/premium-real/magnolia-kitchen-premium.png",
+    premiumOpenLivingKitchen: "assets/images/premium-real/magnolia-open-living-kitchen.png",
+    premiumBathroomBlack: "assets/images/premium-real/magnolia-bathroom-black-marble.png",
+    premiumBathroomWhite: "assets/images/premium-real/magnolia-bathroom-white-marble.png",
     living: "assets/images/burien-real/burien-dining-living.jpg",
     dining: "assets/images/burien-real/burien-dining-living.jpg",
     room: "assets/images/burien-real/burien-bedroom.jpg",
