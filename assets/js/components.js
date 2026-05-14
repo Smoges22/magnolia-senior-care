@@ -7,7 +7,13 @@
   }
 
   function pathPrefix() {
-    return window.location.pathname.includes("/blog/") ? "../" : "";
+    const path = window.location.pathname.replace(/\\/g, "/");
+    if (path.includes("/resources/articles/")) return "../../../";
+    if (path.includes("/resources/") && !path.endsWith("/resources/") && !path.endsWith("/resources/index.html")) return "../../";
+    if (path.endsWith("/resources")) return "../";
+    if (path.includes("/resources/")) return "../";
+    if (path.includes("/blog/")) return "../";
+    return "";
   }
 
   function localHref(href) {
@@ -21,6 +27,7 @@
 
   function breadcrumbTrail() {
     const active = currentPage();
+    const path = window.location.pathname.replace(/\\/g, "/");
     const pageMap = {
       "about.html": [["Home", "index.html"], ["About"]],
       "services.html": [["Home", "index.html"], ["Services"]],
@@ -31,6 +38,21 @@
       "des-moines-adult-family-home.html": [["Home", "index.html"], ["Locations", "index.html#locations"], ["Des Moines"]],
       "afh-education-template.html": [["Home", "index.html"], ["AFH Education Blog"]]
     };
+    if (path.includes("/resources/") || path.endsWith("/resources")) {
+      const resources = window.MagnoliaResources;
+      const articleSlug = document.body?.dataset?.article;
+      const categorySlug = document.body?.dataset?.category;
+      if (articleSlug && resources?.articles?.[articleSlug]) {
+        const article = resources.articles[articleSlug];
+        const category = resources.categories.find((item) => item.slug === article.category);
+        return [["Home", "index.html"], ["Resources", "resources/index.html"], [category?.title || "Article", `resources/${article.category}/index.html`], [article.title]];
+      }
+      if (categorySlug && resources?.categories) {
+        const category = resources.categories.find((item) => item.slug === categorySlug);
+        return [["Home", "index.html"], ["Resources", "resources/index.html"], [category?.title || "Category"]];
+      }
+      return [["Home", "index.html"], ["Resources"]];
+    }
     return pageMap[active] || [];
   }
 
@@ -76,7 +98,9 @@
     const active = currentPage();
     const links = site.nav.map(([label, href]) => {
       const isLocationPage = ["burien-adult-family-home.html", "des-moines-adult-family-home.html"].includes(active);
-      const aria = href === active || (isLocationPage && href === "index.html#locations") ? " aria-current=\"page\"" : "";
+      const resourcePath = window.location.pathname.replace(/\\/g, "/");
+      const isResourcePage = resourcePath.includes("/resources/") || resourcePath.endsWith("/resources");
+      const aria = href === active || (isLocationPage && href === "index.html#locations") || (isResourcePage && href === "resources/index.html") ? " aria-current=\"page\"" : "";
       return `<a href="${localHref(href)}"${aria}>${label}</a>`;
     }).join("");
     const breadcrumbs = breadcrumbTrail();
@@ -194,7 +218,7 @@
               <div class="footer-links">
                 <a href="${localHref("burien-adult-family-home.html")}">${site.locations.burien.displayName}</a>
                 <a href="${localHref("des-moines-adult-family-home.html")}">${site.locations.highline.displayName}</a>
-                <a href="${localHref("blog/afh-education-template.html")}">AFH Education Blog</a>
+                <a href="${localHref("resources/index.html")}">Resource Center</a>
               </div>
             </div>
             <div class="footer-panel footer-contact-panel">
@@ -453,7 +477,7 @@
     });
     document.querySelectorAll("[data-photo]").forEach((node) => {
       const key = node.getAttribute("data-photo");
-      if (site.photos[key]) node.setAttribute("src", site.photos[key]);
+      if (site.photos[key]) node.setAttribute("src", localHref(site.photos[key]));
     });
   }
 
@@ -532,6 +556,21 @@
     });
   }
 
+  function renderCareGuide() {
+    if (document.querySelector(".care-guide-float")) return;
+    const node = document.createElement("aside");
+    node.className = "care-guide-float";
+    node.setAttribute("aria-label", "Magnolia Care Guide assistant placeholder");
+    node.innerHTML = `
+      <div>
+        <strong>Magnolia Care Guide</strong>
+        <span>Ask about pricing, room availability, tours, Medicaid/private pay, services, or common questions.</span>
+      </div>
+      <button type="button" aria-label="Ask Magnolia Care Guide a question">Ask a question</button>
+    `;
+    document.body.appendChild(node);
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     renderHeader();
     renderFooter();
@@ -542,5 +581,6 @@
     applyImageFallbacks();
     initLightbox();
     initScrollReveal();
+    renderCareGuide();
   });
 })();

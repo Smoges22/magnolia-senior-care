@@ -46,6 +46,7 @@ window.AFHSite = {
     ["Services", "services.html"],
     ["Locations", "index.html#locations"],
     ["Gallery", "rooms-photos.html"],
+    ["Resources", "resources/index.html"],
     ["Referrals", "referral-agents.html"],
     ["Contact", "contact.html"]
   ],
