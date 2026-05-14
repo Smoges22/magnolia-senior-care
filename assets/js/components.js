@@ -49,6 +49,26 @@
     return icons[icon] || '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 12a4.5 4.5 0 0 1 4.5-4.5h3v3h-3a1.5 1.5 0 0 0 0 3h3v3h-3A4.5 4.5 0 0 1 7.5 12Zm1.5 1.5h6v-3H9v3Zm0 3H6a4.5 4.5 0 0 1 0-9h3v3H6a1.5 1.5 0 0 0 0 3h3v3Z"/></svg>';
   }
 
+  function careIcon(title = "") {
+    const key = title.toLowerCase();
+    if (key.includes("rn")) {
+      return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 5.5 6v5.4c0 4.2 2.7 7.6 6.5 9.1 3.8-1.5 6.5-4.9 6.5-9.1V6L12 3.5Z"/><path d="m9.2 12.1 2 2 3.8-4.1"/></svg>';
+    }
+    if (key.includes("personal")) {
+      return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 12.4c-1.2-1.3-1.2-3.3 0-4.5a3 3 0 0 1 4.3 0l.5.5.5-.5a3 3 0 0 1 4.3 0c1.2 1.2 1.2 3.2 0 4.5L12 17.1l-4.8-4.7Z"/><path d="M4.8 19.2h14.4"/></svg>';
+    }
+    if (key.includes("medication")) {
+      return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 4.8h7.6v14.4H8.2z"/><path d="M10.4 8.8h3.2"/><path d="M12 7.2v3.2"/><path d="M10.5 15.3h3"/></svg>';
+    }
+    if (key.includes("dementia") || key.includes("memory")) {
+      return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.3 17.5c-2-1.2-3.1-3-3.1-5.2 0-3.4 2.8-6.1 6.4-6.1 3.9 0 7.2 3 7.2 6.8 0 2.7-1.5 4.8-3.9 5.8"/><path d="M9.2 10.6c.7-.8 1.6-1.2 2.8-1.2 1.6 0 2.8 1 2.8 2.4 0 1.3-.8 2.1-2 2.5v1.3"/><path d="M12.8 18.7h.1"/></svg>';
+    }
+    if (key.includes("setting") || key.includes("home")) {
+      return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 12.4 12 7l6.5 5.4"/><path d="M7.5 11.2v7.1h9v-7.1"/><path d="M10 18.3v-4.4h4v4.4"/></svg>';
+    }
+    return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6.7h9.2v6.2H8.1L5 15.6V6.7Z"/><path d="M10.1 14.8h5.8l3.1 2.5V8.5h-2.6"/><path d="M7.4 9.6h4.4"/></svg>';
+  }
+
   function renderHeader() {
     const mount = document.querySelector("[data-component='site-header']");
     if (!mount) return;
@@ -202,6 +222,7 @@
       mount.classList.add("service-grid");
       mount.innerHTML = site.services.map((item) => `
         <article class="card service-card location-choice-card">
+          <span class="service-icon" aria-hidden="true">${careIcon(item.title)}</span>
           <div class="eyebrow">${item.label || "Magnolia care"}</div>
           <h3>${item.title}</h3>
           <p>${item.text}</p>
@@ -226,6 +247,29 @@
         </figure>
       `).join("");
     });
+  }
+
+  function initScrollReveal() {
+    const targets = document.querySelectorAll(".section, .page-hero, .card, .process-step, .gallery-item, .comfort-image-panel, .image-panel, .interior-hero-card, .interior-hero-visual");
+    if (!targets.length) return;
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    targets.forEach((node) => node.classList.add("reveal-on-scroll"));
+
+    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+      targets.forEach((node) => node.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+
+    targets.forEach((node) => observer.observe(node));
   }
 
   function renderLocationCards() {
@@ -416,6 +460,10 @@
   function applyImageFallbacks() {
     document.querySelectorAll("img").forEach((img) => {
       img.loading = img.loading || "lazy";
+      if (img.closest(".hero-cinematic")) {
+        img.loading = "eager";
+        img.fetchPriority = "high";
+      }
 
       const useFallback = () => {
         if (img.dataset.fallbackApplied === "true") return;
@@ -493,5 +541,6 @@
     hydrateBrandText();
     applyImageFallbacks();
     initLightbox();
+    initScrollReveal();
   });
 })();

@@ -126,7 +126,7 @@ window.AFHSite = {
       label: "Daily support",
       title: "Personal Care",
       text: "Dignified support with bathing, dressing, grooming, mobility, toileting, meals, hydration, and daily comfort.",
-      bestFor: ["Residents needing ADL support", "Gentle help with routines", "Families seeking respectful hands-on care"]
+      bestFor: ["Residents needing daily personal care", "Gentle help with routines", "Families seeking respectful hands-on care"]
     },
     {
       label: "Care coordination",

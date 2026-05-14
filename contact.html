@@ -34,13 +34,25 @@
 <body>
   <div data-component="site-header"></div>
   <main id="main">
-    <section class="page-hero contact-hero">
-      <div class="container">
-        <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
-        <div class="eyebrow">Private tour inquiry</div>
-        <h1>Schedule a private tour or speak with Magnolia today</h1>
-        <p class="response-pill">Same-day or next-business-day response.</p>
-        <p class="page-lede">Get clear answers about care needs, availability, and which home may be the best fit &mdash; without pressure.</p>
+    <section class="page-hero interior-hero contact-hero">
+      <div class="container interior-hero-grid">
+        <div class="interior-hero-copy">
+          <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+          <div class="eyebrow">Private tour inquiry</div>
+          <h1>Schedule a private tour or speak with Magnolia today</h1>
+          <p class="response-pill">Same-day or next-business-day response.</p>
+          <p class="page-lede">Get clear answers about care needs, availability, and which home may be the best fit &mdash; without pressure.</p>
+          <div class="hero-actions">
+            <a class="button" href="#tour-request">Schedule a Tour</a>
+            <a class="button secondary" href="tel:+14252466220">Talk With Us First</a>
+          </div>
+        </div>
+        <aside class="interior-hero-card" aria-label="Contact next steps">
+          <div class="proof-card-label">What happens next</div>
+          <div class="interior-proof-row"><strong>1. Reach out</strong><span>Share location preference, care needs, and timing.</span></div>
+          <div class="interior-proof-row"><strong>2. Talk it through</strong><span>We help clarify fit, availability, and questions to ask.</span></div>
+          <div class="interior-proof-row"><strong>3. Tour privately</strong><span>Visit the right Magnolia home with time for real answers.</span></div>
+        </aside>
       </div>
     </section>
 
@@ -63,7 +75,7 @@
 
     <section class="section">
       <div class="container grid-2">
-        <form class="card info-card" data-inquiry-form>
+        <form id="tour-request" class="card info-card" data-inquiry-form>
           <div class="eyebrow">Start with a conversation</div>
           <h3>Tell us how to reach you</h3>
           <p>We respond quickly to help you understand availability and care fit.</p>
