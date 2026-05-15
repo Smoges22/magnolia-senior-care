@@ -5,6 +5,8 @@ const root = path.resolve(__dirname, "..");
 const resourceRoot = path.join(root, "resources");
 const htmlFiles = [];
 const issues = [];
+const titles = new Map();
+const descriptions = new Map();
 
 function walk(directory) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
@@ -24,6 +26,20 @@ for (const filePath of htmlFiles) {
   const relative = path.relative(root, filePath);
   for (const token of ["<title>", '<meta name="description"', 'rel="canonical"', "application/ld+json"]) {
     if (!html.includes(token)) issues.push(`${relative}: missing ${token}`);
+  }
+  const title = html.match(/<title>([^<]+)<\/title>/)?.[1];
+  const description = html.match(/<meta name="description" content="([^"]+)"/)?.[1];
+  if (title) {
+    if (titles.has(title)) issues.push(`${relative}: duplicate title with ${titles.get(title)}`);
+    titles.set(title, relative);
+  }
+  if (description) {
+    if (descriptions.has(description)) issues.push(`${relative}: duplicate meta description with ${descriptions.get(description)}`);
+    descriptions.set(description, relative);
+  }
+  if (relative.includes(`${path.sep}articles${path.sep}`)) {
+    if (!html.includes('"@type": "Article"')) issues.push(`${relative}: missing Article schema`);
+    if (!html.includes('"@type": "FAQPage"')) issues.push(`${relative}: missing FAQPage schema`);
   }
   const refs = Array.from(html.matchAll(/(?:href|src)="([^"]+)"/g))
     .map((match) => match[1])

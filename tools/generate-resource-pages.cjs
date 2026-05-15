@@ -103,7 +103,7 @@ writeFile("resources/index.html", shell({
 
 resources.categories.forEach((category) => {
   writeFile(`resources/${category.slug}/index.html`, shell({
-    title: `${category.title} | Magnolia Senior Care Resources`,
+    title: `${category.title} | Magnolia Resource Center`,
     description: category.description,
     canonical: `${domain}/resources/${category.slug}/`,
     prefix: "../../",

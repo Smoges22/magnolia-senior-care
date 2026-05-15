@@ -67,6 +67,46 @@
     `;
   }
 
+  function topicNav(currentSlug = "") {
+    return data.categories.map((category) => `
+      <a href="${categoryUrl(category)}"${category.slug === currentSlug ? ' aria-current="page"' : ""}>
+        ${category.title}
+      </a>
+    `).join("");
+  }
+
+  function renderParagraphs(content) {
+    const paragraphs = Array.isArray(content) ? content : [content];
+    return paragraphs.filter(Boolean).map((paragraph) => `<p>${paragraph}</p>`).join("");
+  }
+
+  function sectionHeading(section) {
+    return Array.isArray(section) ? section[0] : section.heading;
+  }
+
+  function renderArticleSection(section, index) {
+    if (Array.isArray(section)) {
+      return `
+        <section id="section-${index + 1}">
+          <h2>${section[0]}</h2>
+          ${renderParagraphs(section[1])}
+        </section>
+      `;
+    }
+    return `
+      <section id="section-${index + 1}">
+        <h2>${section.heading}</h2>
+        ${renderParagraphs(section.body)}
+        ${(section.subsections || []).map((item) => `
+          <div class="article-subsection">
+            <h3>${item.heading}</h3>
+            ${renderParagraphs(item.body)}
+          </div>
+        `).join("")}
+      </section>
+    `;
+  }
+
   function renderAssistant() {
     if (document.querySelector(".care-guide-float")) return;
     const node = document.createElement("aside");
@@ -89,10 +129,10 @@
     mount.innerHTML = `
       <section class="page-hero interior-hero resource-center-hero">
         <div class="container">
-          <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / Resources</div>
-          <div class="eyebrow">Magnolia Resource Center</div>
-          <h1>Guidance for Families Navigating Senior Care</h1>
-          <p class="page-lede">RN-led educational resources for Adult Family Homes, dementia care, Medicaid planning, hospital transitions, safety, and end-of-life support in Washington.</p>
+          <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / Resource Center</div>
+          <div class="eyebrow">Magnolia Senior Care education hub</div>
+          <h1>Resource Center</h1>
+          <p class="page-lede">RN-led guidance for families navigating Adult Family Homes, dementia care, Medicaid planning, hospital discharge, safety, hospice, and long-term care decisions in Washington.</p>
           <label class="resource-search-label" for="resource-search">Search resources</label>
           <input id="resource-search" class="resource-search" type="search" placeholder="Search senior care topics..." autocomplete="off">
           <div class="hero-proof-row resource-trust-row" aria-label="Resource Center trust signals">
@@ -106,38 +146,45 @@
 
       <section class="section">
         <div class="container">
-          <div class="section-head center">
-            <div class="eyebrow">Browse by topic</div>
-            <h2>Senior care education, organized around real family questions.</h2>
+          <div class="section-head">
+            <div class="eyebrow">Start here</div>
+            <h2>Not sure where to begin?</h2>
+            <p>Choose the question that feels closest to what your family is facing right now.</p>
           </div>
-          <div class="resource-category-grid" data-resource-filter-list>
-            ${data.categories.map((category) => `
-              <article class="card resource-category-card" data-resource-search-item>
-                ${icon(category.icon)}
-                <div class="eyebrow">${category.articleCount} articles</div>
-                <h3>${category.title}</h3>
-                <p>${category.description}</p>
-                <a class="text-action-link resource-card-action" href="${categoryUrl(category)}">Explore articles</a>
-              </article>
-            `).join("")}
+          <div class="resource-pathway-grid">
+            ${data.pathways.map((item, index) => {
+              const article = articleBySlug(item.article);
+              return `
+                <article class="card resource-pathway-card">
+                  <span class="resource-pathway-number" aria-hidden="true">${index + 1}</span>
+                  <h3>${item.title}</h3>
+                  <p>${item.text}</p>
+                  <a class="text-action-link resource-card-action" href="${articleUrl(article)}">Read guide: ${article.title}</a>
+                </article>
+              `;
+            }).join("")}
           </div>
         </div>
       </section>
 
       <section class="section soft">
         <div class="container">
-          <div class="section-head">
-            <div class="eyebrow">Start here</div>
-            <h2>Not sure where to begin?</h2>
+          <div class="section-head center">
+            <div class="eyebrow">Browse by topic</div>
+            <h2>Senior care education, organized around real family questions.</h2>
+            <p>Explore guidance by care need, planning stage, or family concern.</p>
           </div>
-          <div class="resource-pathway-grid">
-            ${data.pathways.map((item) => {
-              const article = articleBySlug(item.article);
+          <div class="resource-category-grid" data-resource-filter-list>
+            ${data.categories.map((category) => {
+              const count = articlesByCategory(category.slug).length;
+              const countLabel = count ? `${count} guide${count === 1 ? "" : "s"}` : "Guides coming soon";
               return `
-                <article class="card resource-pathway-card">
-                  <h3>${item.title}</h3>
-                  <p>${item.text}</p>
-                  <a class="text-action-link resource-card-action" href="${articleUrl(article)}">${article.title}</a>
+                <article class="card resource-category-card" data-resource-search-item>
+                  ${icon(category.icon)}
+                  <div class="eyebrow">${countLabel}</div>
+                  <h3>${category.title}</h3>
+                  <p>${category.description}</p>
+                  <a class="text-action-link resource-card-action" href="${categoryUrl(category)}">Explore guides</a>
                 </article>
               `;
             }).join("")}
@@ -149,10 +196,30 @@
         <div class="container">
           <div class="section-head center">
             <div class="eyebrow">Featured guides</div>
-            <h2>Clear, practical guides for confident care decisions.</h2>
+            <h2>Featured Guides for Families</h2>
+            <p>Cornerstone resources for comparing care options, planning transitions, and knowing what to ask next.</p>
           </div>
           <div class="resource-article-grid" data-resource-filter-list>
             ${featured.map(articleCard).join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="container">
+          <div class="resource-mission-card">
+            <div>
+              <div class="eyebrow">Why Magnolia created this Resource Center</div>
+              <h2>Calm guidance for decisions that rarely feel simple.</h2>
+              <p>Families often feel overwhelmed when comparing senior care options, understanding dementia needs, planning after a hospital stay, or navigating Medicaid and long-term care costs. Magnolia Senior Care created this Resource Center to provide calm, RN-led educational guidance for families in Burien, Des Moines, South King County, and throughout Washington.</p>
+            </div>
+            <ul class="resource-trust-list">
+              <li>RN-reviewed educational guidance</li>
+              <li>Adult Family Home expertise</li>
+              <li>Dementia and safety-focused care perspective</li>
+              <li>Washington-specific senior care information</li>
+              <li>Family-centered decision support</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -168,17 +235,18 @@
     const fallbackArticles = Object.values(data.articles).filter((article) => article.featured).slice(0, 4);
     const displayArticles = articles.length ? articles : fallbackArticles;
     const related = data.categories.filter((item) => item.slug !== category.slug).slice(0, 3);
+    const countLabel = articles.length ? `${articles.length} guide${articles.length === 1 ? "" : "s"}` : "Guides coming soon";
     mount.innerHTML = `
       <section class="page-hero interior-hero resources-hero">
         <div class="container interior-hero-grid">
           <div class="interior-hero-copy">
-            <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / <a href="${href("resources/index.html")}">Resources</a> / ${category.title}</div>
+            <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / <a href="${href("resources/index.html")}">Resource Center</a> / ${category.title}</div>
             <div class="eyebrow">Resource category</div>
             <h1>${category.title}</h1>
             <p class="page-lede">${category.description}</p>
           </div>
           <aside class="interior-hero-card">
-            <div class="proof-card-label">${category.articleCount} guides</div>
+            <div class="proof-card-label">${countLabel}</div>
             <div class="interior-proof-row"><strong>Start with clarity</strong><span>Plain-language education for families, POAs, and care partners.</span></div>
             <div class="interior-proof-row"><strong>RN-led lens</strong><span>Guidance shaped around safety, dignity, routines, and communication.</span></div>
           </aside>
@@ -189,7 +257,7 @@
         <div class="container">
           <div class="section-head">
             <div class="eyebrow">Start with these guides</div>
-            <h2>${articles.length ? `Helpful articles in ${category.title}` : "Start with these Magnolia guides"}</h2>
+            <h2>${articles.length ? `Helpful guides in ${category.title}` : "Start with these Magnolia guides"}</h2>
             ${articles.length ? "" : "<p>More topic-specific guides can be added here over time. These foundational resources are a helpful place to begin.</p>"}
           </div>
           <div class="resource-article-grid">
@@ -210,7 +278,7 @@
                 ${icon(item.icon)}
                 <h3>${item.title}</h3>
                 <p>${item.description}</p>
-                <a class="text-action-link resource-card-action" href="${categoryUrl(item)}">Explore articles</a>
+                <a class="text-action-link resource-card-action" href="${categoryUrl(item)}">Explore guides</a>
               </article>
             `).join("")}
           </div>
@@ -244,32 +312,36 @@
     mount.innerHTML = `
       <section class="page-hero interior-hero resources-hero">
         <div class="container">
-          <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / <a href="${href("resources/index.html")}">Resources</a> / <a href="${categoryUrl(category)}">${category.title}</a></div>
+          <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / <a href="${href("resources/index.html")}">Resource Center</a> / <a href="${categoryUrl(category)}">${category.title}</a></div>
           <div class="eyebrow">${category.title}</div>
           <h1>${article.title}</h1>
           <p class="page-lede">${article.excerpt}</p>
-          <p class="response-pill">${article.readTime} / Last updated ${article.lastUpdated}</p>
+          <div class="article-meta-row" aria-label="Article details">
+            <span>${category.title}</span>
+            <span>${article.readTime}</span>
+            <span>Reviewed by ${article.reviewedBy}</span>
+            <span>Last updated ${article.lastUpdated}</span>
+          </div>
         </div>
       </section>
 
       <section class="section">
         <div class="container article-layout resource-article-layout">
           <article class="article-body resource-article">
+            <nav class="article-topic-nav" aria-label="Explore related topics">
+              <strong>Explore related topics</strong>
+              <div>${topicNav(article.category)}</div>
+            </nav>
             <div class="key-takeaways">
               <div class="eyebrow">Key takeaways</div>
               <ul>${article.keyTakeaways.map((item) => `<li>${item}</li>`).join("")}</ul>
             </div>
             <nav class="toc-card" aria-label="Table of contents">
               <strong>In this guide</strong>
-              ${article.sections.map(([heading], index) => `<a href="#section-${index + 1}">${heading}</a>`).join("")}
+              ${article.sections.map((section, index) => `<a href="#section-${index + 1}">${sectionHeading(section)}</a>`).join("")}
               <a href="#faq">FAQ</a>
             </nav>
-            ${article.sections.map(([heading, body], index) => `
-              <section id="section-${index + 1}">
-                <h2>${heading}</h2>
-                <p>${body}</p>
-              </section>
-            `).join("")}
+            ${article.sections.map(renderArticleSection).join("")}
             <aside class="magnolia-insight">
               <div class="eyebrow">Magnolia insight</div>
               <p>${article.insight}</p>
@@ -287,11 +359,14 @@
             </section>
           </article>
           <aside class="sidebar card info-card resource-sidebar">
-            <div class="eyebrow">Related articles</div>
-            <h3>Keep learning</h3>
-            <p>Helpful next reads based on this topic.</p>
+            <div class="eyebrow">Related Guides</div>
+            <h3>Helpful next reads</h3>
+            <p>These guides connect naturally to what families usually ask next.</p>
             <div class="sidebar-link-list">
-              ${related.map((item) => `<a href="${articleUrl(item)}">${item.title}<span>${item.readTime}</span></a>`).join("")}
+              ${related.map((item) => {
+                const itemCategory = categoryBySlug(item.category);
+                return `<a href="${articleUrl(item)}">${item.title}<span>${itemCategory?.title || "Magnolia guide"} / ${item.readTime}</span></a>`;
+              }).join("")}
             </div>
             <a class="button" href="${href("contact.html")}">Schedule a Tour</a>
             <a class="button secondary" href="${site.brand.phoneHref}">Call Magnolia</a>

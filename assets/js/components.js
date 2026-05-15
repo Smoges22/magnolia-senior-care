@@ -36,7 +36,7 @@
       "contact.html": [["Home", "index.html"], ["Contact"]],
       "burien-adult-family-home.html": [["Home", "index.html"], ["Locations", "index.html#locations"], ["Burien"]],
       "des-moines-adult-family-home.html": [["Home", "index.html"], ["Locations", "index.html#locations"], ["Des Moines"]],
-      "afh-education-template.html": [["Home", "index.html"], ["AFH Education Blog"]]
+      "afh-education-template.html": [["Home", "index.html"], ["Resource Center"]]
     };
     if (path.includes("/resources/") || path.endsWith("/resources")) {
       const resources = window.MagnoliaResources;
@@ -45,13 +45,13 @@
       if (articleSlug && resources?.articles?.[articleSlug]) {
         const article = resources.articles[articleSlug];
         const category = resources.categories.find((item) => item.slug === article.category);
-        return [["Home", "index.html"], ["Resources", "resources/index.html"], [category?.title || "Article", `resources/${article.category}/index.html`], [article.title]];
+        return [["Home", "index.html"], ["Resource Center", "resources/index.html"], [category?.title || "Article", `resources/${article.category}/index.html`], [article.title]];
       }
       if (categorySlug && resources?.categories) {
         const category = resources.categories.find((item) => item.slug === categorySlug);
-        return [["Home", "index.html"], ["Resources", "resources/index.html"], [category?.title || "Category"]];
+        return [["Home", "index.html"], ["Resource Center", "resources/index.html"], [category?.title || "Category"]];
       }
-      return [["Home", "index.html"], ["Resources"]];
+      return [["Home", "index.html"], ["Resource Center"]];
     }
     return pageMap[active] || [];
   }

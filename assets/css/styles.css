@@ -2699,6 +2699,10 @@ textarea:focus {
   margin-top: 22px;
 }
 
+.resource-center-hero h1 {
+  max-width: 780px;
+}
+
 .resource-category-grid,
 .resource-article-grid,
 .resource-pathway-grid {
@@ -2788,6 +2792,18 @@ textarea:focus {
   margin-top: auto;
 }
 
+.resource-pathway-number {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(0, 84, 80, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 199, 118, 0.20);
+  color: var(--teal-dark);
+  font-weight: 950;
+}
+
 .resource-card-meta span {
   display: inline-flex;
   align-items: center;
@@ -2812,6 +2828,127 @@ textarea:focus {
 
 .resource-article-layout {
   align-items: start;
+}
+
+.resource-mission-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: clamp(24px, 5vw, 54px);
+  align-items: start;
+  padding: clamp(28px, 5vw, 52px);
+  border: 1px solid rgba(0, 84, 80, 0.12);
+  border-radius: var(--card-radius);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(47, 156, 170, 0.10), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(251, 248, 241, 0.90));
+  box-shadow: var(--card-shadow);
+}
+
+.resource-mission-card h2 {
+  max-width: 720px;
+}
+
+.resource-mission-card p {
+  max-width: 780px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+.resource-trust-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resource-trust-list li {
+  position: relative;
+  padding: 15px 16px 15px 42px;
+  border: 1px solid rgba(0, 84, 80, 0.10);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--teal-dark);
+  font-weight: 850;
+  box-shadow: 0 10px 24px rgba(0, 84, 80, 0.045);
+}
+
+.resource-trust-list li::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 18px;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--gold);
+  box-shadow: 0 0 0 5px rgba(255, 199, 118, 0.16);
+}
+
+.article-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.article-meta-row span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 8px 12px;
+  border: 1px solid rgba(0, 84, 80, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--teal-dark);
+  font-size: 13px;
+  font-weight: 820;
+  line-height: 1.25;
+  box-shadow: 0 10px 24px rgba(0, 84, 80, 0.045);
+}
+
+.article-topic-nav {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 28px;
+  padding: 20px;
+  border: 1px solid rgba(0, 84, 80, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 12px 28px rgba(0, 84, 80, 0.05);
+}
+
+.article-topic-nav strong {
+  color: var(--teal-dark);
+  font-size: 15px;
+}
+
+.article-topic-nav div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.article-topic-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 7px 10px;
+  border: 1px solid rgba(0, 84, 80, 0.10);
+  border-radius: 999px;
+  background: rgba(247, 243, 238, 0.74);
+  color: var(--teal-dark);
+  font-size: 13px;
+  font-weight: 820;
+  text-decoration: none;
+}
+
+.article-topic-nav a:hover,
+.article-topic-nav a:focus-visible,
+.article-topic-nav a[aria-current="page"] {
+  border-color: rgba(0, 84, 80, 0.24);
+  background: rgba(0, 84, 80, 0.07);
 }
 
 .key-takeaways,
@@ -2868,6 +3005,22 @@ textarea:focus {
 .resource-article h2 {
   margin-bottom: 12px;
   color: var(--teal-dark);
+}
+
+.article-subsection {
+  margin-top: 22px;
+}
+
+.article-subsection h3 {
+  margin: 0 0 8px;
+  color: var(--teal-dark);
+  font-family: var(--body-font);
+  font-size: clamp(1.22rem, 3vw, 1.55rem);
+  line-height: 1.22;
+}
+
+.article-subsection p + p {
+  margin-top: 12px;
 }
 
 .magnolia-insight,
@@ -3000,12 +3153,12 @@ textarea:focus {
 .care-guide-float {
   position: fixed;
   right: 22px;
-  bottom: 112px;
+  bottom: 28px;
   z-index: 80;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 14px;
-  width: min(420px, calc(100vw - 32px));
+  grid-template-columns: 1fr;
+  gap: 12px;
+  width: min(310px, calc(100vw - 32px));
   padding: 16px;
   border: 1px solid rgba(0, 84, 80, 0.14);
   border-radius: 22px;
@@ -3032,7 +3185,7 @@ textarea:focus {
 }
 
 .care-guide-float button {
-  align-self: center;
+  justify-self: start;
   min-height: 42px;
   padding: 10px 14px;
   border: 0;
@@ -3055,6 +3208,21 @@ textarea:focus {
 .sidebar {
   position: sticky;
   top: 100px;
+}
+
+.sidebar.card.info-card > .eyebrow {
+  margin-bottom: 14px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--teal-dark);
+  font-size: 12px;
+  letter-spacing: 0.11em;
+  box-shadow: 0 10px 22px rgba(0, 84, 80, 0.06);
+}
+
+.sidebar.card.info-card > .eyebrow::before {
+  background: var(--teal);
+  box-shadow: 0 0 0 4px rgba(47, 156, 170, 0.12);
 }
 
 .youtube-section {
@@ -4061,7 +4229,7 @@ textarea:focus {
 
   .site-footer {
     padding-top: 42px;
-    padding-bottom: calc(150px + env(safe-area-inset-bottom));
+    padding-bottom: calc(112px + env(safe-area-inset-bottom));
   }
 
   input,
@@ -4073,35 +4241,35 @@ textarea:focus {
   .map-card,
   .map-frame,
   .cta-band {
-    scroll-margin-bottom: calc(150px + env(safe-area-inset-bottom));
+    scroll-margin-bottom: calc(112px + env(safe-area-inset-bottom));
   }
 
   .mobile-quickbar {
     position: fixed;
-    right: max(12px, calc((100vw - 430px) / 2));
-    bottom: calc(10px + env(safe-area-inset-bottom));
-    left: max(12px, calc((100vw - 430px) / 2));
+    right: max(14px, calc((100vw - 408px) / 2));
+    bottom: calc(8px + env(safe-area-inset-bottom));
+    left: max(14px, calc((100vw - 408px) / 2));
     z-index: 60;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
     gap: 8px;
     align-items: center;
-    max-width: 430px;
-    padding: 6px;
+    max-width: 408px;
+    padding: 5px;
     border: 1px solid rgba(0, 84, 80, 0.08);
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.90);
-    box-shadow: 0 16px 34px rgba(0, 84, 80, 0.11), 0 0 0 1px rgba(255, 255, 255, 0.66) inset;
+    box-shadow: 0 12px 26px rgba(0, 84, 80, 0.10), 0 0 0 1px rgba(255, 255, 255, 0.66) inset;
     backdrop-filter: blur(22px) saturate(1.12);
     -webkit-backdrop-filter: blur(22px) saturate(1.12);
   }
 
   .mobile-quickbar a {
     display: grid;
-    min-height: 38px;
+    min-height: 34px;
     place-items: center;
     min-width: 0;
-    padding: 7px 8px;
+    padding: 6px 8px;
     border-radius: 999px;
     color: var(--teal-dark);
     font-size: 12px;
@@ -4117,11 +4285,11 @@ textarea:focus {
   }
 
   .mobile-quickbar .quickbar-primary {
-    min-height: 44px;
-    padding: 8px 12px;
+    min-height: 40px;
+    padding: 7px 11px;
     background: var(--teal-dark);
     color: var(--white);
-    box-shadow: 0 12px 24px rgba(0, 84, 80, 0.18), 0 0 16px rgba(0, 84, 80, 0.08);
+    box-shadow: 0 10px 20px rgba(0, 84, 80, 0.16), 0 0 12px rgba(0, 84, 80, 0.07);
   }
 
   .mobile-quickbar .quickbar-primary:hover,
@@ -4131,7 +4299,7 @@ textarea:focus {
   }
 
   .mobile-quickbar .quickbar-title {
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 950;
     line-height: 1.05;
   }
@@ -4504,6 +4672,10 @@ textarea:focus {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .resource-mission-card {
+    grid-template-columns: 1fr;
+  }
+
   .resource-sidebar {
     position: static;
   }
@@ -4516,6 +4688,12 @@ textarea:focus {
 }
 
 @media (max-width: 740px) {
+  .care-guide-float {
+    display: none;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 741px) {
   .care-guide-float {
     display: none;
   }
@@ -4548,6 +4726,29 @@ textarea:focus {
 
   .page-hero.resources-hero h1 {
     font-size: clamp(34px, 9.8vw, 44px);
+  }
+
+  .article-meta-row {
+    gap: 8px;
+  }
+
+  .article-meta-row span {
+    width: 100%;
+    justify-content: center;
+    min-height: 32px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .article-topic-nav,
+  .resource-mission-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .article-topic-nav div {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .key-takeaways,
