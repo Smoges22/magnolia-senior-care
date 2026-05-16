@@ -80,6 +80,28 @@
     return paragraphs.filter(Boolean).map((paragraph) => `<p>${paragraph}</p>`).join("");
   }
 
+  function textFromArticle(article) {
+    const category = categoryBySlug(article.category);
+    const sectionText = article.sections.map((section) => {
+      const body = Array.isArray(section.body) ? section.body.join(" ") : section.body;
+      const subsections = (section.subsections || []).map((item) => `${item.heading} ${item.body}`).join(" ");
+      return `${section.heading} ${body || ""} ${subsections}`;
+    }).join(" ");
+    const faqText = article.faq.map(([question, answer]) => `${question} ${answer}`).join(" ");
+    return [
+      article.title,
+      article.excerpt,
+      article.metaTitle,
+      article.metaDescription,
+      category?.title,
+      category?.description,
+      article.keyTakeaways.join(" "),
+      sectionText,
+      article.insight,
+      faqText
+    ].filter(Boolean).join(" ").toLowerCase();
+  }
+
   function sectionHeading(section) {
     return Array.isArray(section) ? section[0] : section.heading;
   }
@@ -111,13 +133,13 @@
     if (document.querySelector(".care-guide-float")) return;
     const node = document.createElement("aside");
     node.className = "care-guide-float";
-    node.setAttribute("aria-label", "Magnolia Care Guide assistant placeholder");
+    node.setAttribute("aria-label", "Magnolia Care Guide contact prompt");
     node.innerHTML = `
       <div>
         <strong>Magnolia Care Guide</strong>
         <span>Ask about pricing, room availability, tours, Medicaid/private pay, services, or common questions.</span>
       </div>
-      <button type="button" aria-label="Ask Magnolia Care Guide a question">Ask a question</button>
+      <a class="care-guide-button" href="${href("contact.html#tour-request")}" aria-label="Ask Magnolia a question through the contact form">Ask a question</a>
     `;
     document.body.appendChild(node);
   }
@@ -133,14 +155,29 @@
           <div class="eyebrow">Magnolia Senior Care education hub</div>
           <h1>Resource Center</h1>
           <p class="page-lede">RN-led guidance for families navigating Adult Family Homes, dementia care, Medicaid planning, hospital discharge, safety, hospice, and long-term care decisions in Washington.</p>
-          <label class="resource-search-label" for="resource-search">Search resources</label>
-          <input id="resource-search" class="resource-search" type="search" placeholder="Search senior care topics..." autocomplete="off">
+          <form class="resource-search-form" role="search" aria-label="Search Magnolia Resource Center">
+            <label class="resource-search-label" for="resource-search">Search resources</label>
+            <input id="resource-search" class="resource-search" type="search" placeholder="Search senior care topics..." autocomplete="off">
+            <button class="resource-search-button" type="submit">Search</button>
+          </form>
+          <p class="resource-search-hint">Try dementia, Medicaid, falls, hospital discharge, medication support, or caregiver burnout.</p>
           <div class="hero-proof-row resource-trust-row" aria-label="Resource Center trust signals">
             <span>RN-led guidance</span>
             <span>Washington-specific</span>
             <span>Family-friendly education</span>
             <span>Adult Family Home expertise</span>
           </div>
+        </div>
+      </section>
+
+      <section class="section resource-search-results-section" data-resource-search-results hidden>
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Search results</div>
+            <h2>Guides that match your question</h2>
+            <p id="resource-search-summary" aria-live="polite">Type a topic above to find related Magnolia guides.</p>
+          </div>
+          <div class="resource-article-grid" id="resource-search-results-list"></div>
         </div>
       </section>
 
@@ -416,12 +453,61 @@
   function initResourceSearch() {
     const input = document.querySelector("#resource-search");
     if (!input) return;
-    const items = Array.from(document.querySelectorAll("[data-resource-search-item], .resource-article-card"));
-    input.addEventListener("input", () => {
+    const form = document.querySelector(".resource-search-form");
+    const section = document.querySelector("[data-resource-search-results]");
+    const list = document.querySelector("#resource-search-results-list");
+    const summary = document.querySelector("#resource-search-summary");
+    const allArticles = Object.values(data.articles);
+    const allCategories = data.categories;
+
+    function categoryResultCard(category) {
+      const count = articlesByCategory(category.slug).length;
+      return `
+        <article class="card resource-category-card">
+          ${icon(category.icon)}
+          <div class="eyebrow">${count ? `${count} guide${count === 1 ? "" : "s"}` : "Topic"}</div>
+          <h3>${category.title}</h3>
+          <p>${category.description}</p>
+          <a class="text-action-link resource-card-action" href="${categoryUrl(category)}">Explore guides</a>
+        </article>
+      `;
+    }
+
+    function runSearch({ shouldScroll = false } = {}) {
       const query = input.value.trim().toLowerCase();
-      items.forEach((item) => {
-        item.hidden = query && !item.textContent.toLowerCase().includes(query);
-      });
+      if (!query) {
+        section.hidden = true;
+        list.innerHTML = "";
+        summary.textContent = "Type a topic above to find related Magnolia guides.";
+        return;
+      }
+
+      const matchingCategories = allCategories.filter((category) => (
+        `${category.title} ${category.description}`.toLowerCase().includes(query)
+      ));
+      const matchingArticles = allArticles.filter((article) => textFromArticle(article).includes(query));
+      const total = matchingCategories.length + matchingArticles.length;
+      section.hidden = false;
+      summary.textContent = total
+        ? `${total} result${total === 1 ? "" : "s"} for "${input.value.trim()}".`
+        : `No exact matches for "${input.value.trim()}". Try dementia, Medicaid, falls, medication, discharge, or caregiver burnout.`;
+      list.innerHTML = total
+        ? `${matchingCategories.map(categoryResultCard).join("")}${matchingArticles.map(articleCard).join("")}`
+        : `
+          <article class="card resource-no-results">
+            <div class="eyebrow">No exact match</div>
+            <h3>Need help finding the right topic?</h3>
+            <p>Magnolia can help you sort through care questions, availability, tours, Medicaid/private pay questions to ask, and next steps.</p>
+            <a class="button" href="${href("contact.html#tour-request")}">Ask Magnolia</a>
+          </article>
+        `;
+      if (shouldScroll) section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    input.addEventListener("input", () => runSearch());
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      runSearch({ shouldScroll: true });
     });
   }
 

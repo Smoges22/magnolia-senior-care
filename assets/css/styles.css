@@ -2675,9 +2675,17 @@ textarea:focus {
   white-space: nowrap;
 }
 
-.resource-search {
-  width: min(100%, 720px);
+.resource-search-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  width: min(100%, 780px);
   margin-top: 22px;
+}
+
+.resource-search {
+  width: 100%;
   padding: 18px 20px;
   border: 1px solid rgba(0, 84, 80, 0.16);
   border-radius: 18px;
@@ -2693,6 +2701,49 @@ textarea:focus {
   border-color: rgba(0, 84, 80, 0.42);
   box-shadow: 0 20px 44px rgba(0, 84, 80, 0.12), 0 0 0 4px rgba(47, 156, 170, 0.10);
   transform: translateY(-1px);
+}
+
+.resource-search-button,
+.care-guide-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--teal-dark);
+  color: #ffffff;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 14px 28px rgba(0, 84, 80, 0.16);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.resource-search-button:hover,
+.resource-search-button:focus-visible,
+.care-guide-button:hover,
+.care-guide-button:focus-visible {
+  background: var(--teal-hover);
+  box-shadow: 0 18px 34px rgba(0, 84, 80, 0.20);
+  transform: translateY(-1px);
+}
+
+.resource-search-hint {
+  max-width: 720px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.resource-search-results-section[hidden] {
+  display: none;
+}
+
+.resource-no-results {
+  grid-column: 1 / -1;
+  max-width: 720px;
 }
 
 .resource-trust-row {
@@ -3184,22 +3235,15 @@ textarea:focus {
   line-height: 1.45;
 }
 
-.care-guide-float button {
+.care-guide-button {
   justify-self: start;
   min-height: 42px;
   padding: 10px 14px;
-  border: 0;
-  border-radius: 999px;
-  background: var(--teal-dark);
-  color: #ffffff;
-  font-weight: 900;
-  cursor: pointer;
   box-shadow: 0 12px 24px rgba(0, 84, 80, 0.16);
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
-.care-guide-float button:hover,
-.care-guide-float button:focus-visible {
+.care-guide-button:hover,
+.care-guide-button:focus-visible {
   background: var(--teal-hover);
   box-shadow: 0 16px 30px rgba(0, 84, 80, 0.20);
   transform: translateY(-1px);
@@ -4718,6 +4762,16 @@ textarea:focus {
   .resource-search {
     padding: 16px;
     border-radius: 16px;
+  }
+
+  .resource-search-form {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .resource-search-button {
+    width: 100%;
+    min-height: 50px;
   }
 
   .page-hero.resources-hero {

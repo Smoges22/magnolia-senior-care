@@ -482,6 +482,423 @@ window.MagnoliaResources = {
         ["Can 24/7 care reduce hospital visits?", "No care setting can guarantee outcomes, but consistent supervision, medication routines, fall-risk awareness, and communication may help families respond earlier to concerns."],
         ["When should we call Magnolia?", "Call when you are seeing safety concerns, discharge pressure, memory changes, medication issues, caregiver burnout, or when you simply want to understand whether a Magnolia home may be a fit."]
       ]
+    },
+    "how-small-home-care-benefits-people-with-dementia": {
+      title: "How Small-Home Care Benefits People With Dementia",
+      slug: "how-small-home-care-benefits-people-with-dementia",
+      category: "dementia-memory-care",
+      excerpt: "A calm look at how a private home setting, familiar routines, and direct communication may support people living with dementia.",
+      readTime: "8 min read",
+      featured: false,
+      relatedArticles: ["early-signs-of-dementia-families-miss", "when-is-it-time-for-memory-care", "what-is-an-adult-family-home-washington"],
+      metaTitle: "Small-Home Dementia Care Benefits | Magnolia Senior Care",
+      metaDescription: "Learn how small-home dementia care in an Adult Family Home may support calm routines, familiar caregivers, safety awareness, and family communication.",
+      reviewedBy: "Sosena Mekuria, RN \u2014 Magnolia Senior Care",
+      lastUpdated: "2026-05-15",
+      keyTakeaways: [
+        "A private home setting may feel calmer for some people living with dementia.",
+        "Familiar routines, fewer transitions, and direct caregiver communication can support comfort and dignity.",
+        "Families should still ask each home how it approaches supervision, behaviors, medication routines, safety, and changing needs."
+      ],
+      sections: [
+        {
+          heading: "Why environment matters in dementia care",
+          body: [
+            "Dementia can make noise, transitions, unfamiliar faces, and rushed routines feel more stressful. Some people do better when the day feels predictable, the environment feels familiar, and the care team understands their patterns.",
+            "An Adult Family Home is not automatically the right fit for every person with dementia, but the private home setting can be helpful when a resident benefits from calm routines and closer daily familiarity."
+          ],
+          subsections: [
+            {
+              heading: "A calmer rhythm",
+              body: "Daily life in a residential care home can feel less like a facility schedule and more like a household rhythm: waking, meals, rest, hygiene, activities, visits, and evening routines supported with patience."
+            },
+            {
+              heading: "Known preferences",
+              body: "When caregivers notice how a resident communicates discomfort, what foods they prefer, when they become tired, and which routines help them feel safe, care can feel more personal."
+            }
+          ]
+        },
+        {
+          heading: "How consistency can support families",
+          body: "Families often worry that their loved one will be misunderstood, rushed, or treated like a task list. A home-based care model may allow for more direct communication about changes in appetite, sleep, mood, mobility, and medication routines.",
+          subsections: [
+            {
+              heading: "Direct communication",
+              body: "Families should ask who gives updates, how often communication happens, and how the home responds when there are changes in behavior, falls, medications, or medical appointments."
+            },
+            {
+              heading: "Care plans should stay flexible",
+              body: "Dementia needs can change. A good care conversation should include what the home can support now, what would require outside clinical involvement, and what might mean the resident needs a different level of care."
+            }
+          ]
+        },
+        {
+          heading: "Questions to ask before choosing dementia care",
+          body: "Families should compare care settings with both emotion and practicality. A beautiful home matters, but the care approach, safety awareness, communication, and fit matter even more.",
+          subsections: [
+            {
+              heading: "Ask about routines and supervision",
+              body: "Ask how the home supports bathing, dressing, meals, sleep disruption, wandering risk, agitation, medication routines, mobility, and family visits."
+            },
+            {
+              heading: "Ask what happens when needs increase",
+              body: "Families should understand when the home would involve physicians, hospice, therapists, family decision-makers, emergency care, or additional support."
+            }
+          ]
+        }
+      ],
+      insight: "Magnolia looks at dementia care through a daily-life lens: what helps this person feel calm, safe, respected, and understood today, while also watching carefully for changes that need communication or clinical follow-up.",
+      faq: [
+        ["Is small-home care always better for dementia?", "No. Some people benefit from a private home setting, while others need a different level of care. Families should compare supervision, safety, behaviors, medical needs, and provider experience."],
+        ["Can an Adult Family Home support dementia behaviors?", "Some Adult Family Homes may support dementia-related behaviors, depending on the resident's needs and the home's experience, staffing, environment, and care approach. Ask directly about fit."],
+        ["What should families ask on a dementia care tour?", "Ask about routines, supervision, wandering risk, falls, medication support, communication, meals, nighttime needs, and how the home responds if symptoms change."],
+        ["Does Magnolia diagnose dementia?", "No. Dementia diagnosis should come from a qualified clinician. Magnolia can discuss care needs, routines, safety concerns, and whether a Magnolia home may be a fit."]
+      ]
+    },
+    "when-is-it-time-for-memory-care": {
+      title: "When Is It Time for Memory Care?",
+      slug: "when-is-it-time-for-memory-care",
+      category: "dementia-memory-care",
+      excerpt: "A family-centered guide to recognizing when memory changes, safety concerns, and caregiver stress may point toward more structured support.",
+      readTime: "9 min read",
+      featured: false,
+      relatedArticles: ["early-signs-of-dementia-families-miss", "how-small-home-care-benefits-people-with-dementia", "how-to-know-when-24-7-care-is-time"],
+      metaTitle: "When Is It Time for Memory Care? | Magnolia Senior Care",
+      metaDescription: "Learn signs that memory care or structured dementia support may be needed, including safety changes, wandering, medications, hygiene, and caregiver burnout.",
+      reviewedBy: "Sosena Mekuria, RN \u2014 Magnolia Senior Care",
+      lastUpdated: "2026-05-15",
+      keyTakeaways: [
+        "Memory care may be worth discussing when safety, supervision, medications, hygiene, nutrition, or nighttime needs become difficult to manage.",
+        "Families should seek medical evaluation for new or worsening confusion, behavior changes, or safety concerns.",
+        "Planning early gives families more time to compare care options calmly instead of deciding during a crisis."
+      ],
+      sections: [
+        {
+          heading: "The question is often about safety, not just memory",
+          body: "Families may ask about memory care after repeated questions or forgetfulness, but the more urgent concerns are often safety and daily function. A loved one may still recognize family while struggling with medications, meals, hygiene, judgment, or nighttime routines.",
+          subsections: [
+            {
+              heading: "Daily living signs",
+              body: "Missed meals, spoiled food, poor hygiene, unpaid bills, medication mistakes, unsafe cooking, or wearing the same clothing repeatedly can suggest that more structure may be needed."
+            },
+            {
+              heading: "Safety signs",
+              body: "Falls, wandering, leaving doors unlocked, getting lost, driving concerns, repeated emergency calls, or confusion with appliances should be discussed with a physician and care team."
+            }
+          ]
+        },
+        {
+          heading: "Caregiver strain is part of the care picture",
+          body: "Families sometimes wait until they are exhausted before asking for help. But dementia care can become a 24-hour responsibility when a loved one is anxious at night, repeatedly calling, wandering, refusing hygiene, or needing constant redirection.",
+          subsections: [
+            {
+              heading: "Burnout can affect safety",
+              body: "When family caregivers are not sleeping, missing work, feeling constantly on alert, or arguing over care decisions, the care plan may need more support."
+            },
+            {
+              heading: "Support does not mean giving up",
+              body: "Choosing memory care support can protect the relationship. Family can return to being spouse, daughter, son, or trusted visitor instead of being the only exhausted caregiver."
+            }
+          ]
+        },
+        {
+          heading: "Compare the type of memory support needed",
+          body: "Memory care can mean different things depending on the setting. Some families compare home care, Adult Family Homes, assisted living memory care, skilled nursing, or hospice support depending on symptoms, safety, and medical needs.",
+          subsections: [
+            {
+              heading: "Questions to ask",
+              body: "Ask what supervision is available, how routines are supported, how behaviors are handled, how medications are managed, and what happens if the resident's needs increase."
+            },
+            {
+              heading: "Talk with medical professionals",
+              body: "Families should involve physicians or qualified clinicians when changes are new, worsening, or affecting safety. Some confusion can be related to infection, medications, dehydration, pain, sleep, or other treatable concerns."
+            }
+          ]
+        }
+      ],
+      insight: "At Magnolia, the memory care conversation is not about labels. It is about what the person needs each day to feel safe, calm, respected, and supported.",
+      faq: [
+        ["Is memory care the same as dementia care?", "The terms are often used together, but families should ask what services and supervision a specific setting actually provides."],
+        ["When should we call a doctor about memory changes?", "Call a physician or qualified clinician when confusion, behavior changes, falls, medication problems, wandering, or safety concerns are new, worsening, or affecting daily life."],
+        ["Can Magnolia support memory care needs?", "Magnolia can discuss the resident's current routines, safety needs, communication, mobility, medications, and whether a Magnolia home may be an appropriate fit."],
+        ["Should families wait until there is a crisis?", "Planning early can reduce pressure. Families can ask care-fit questions before a hospitalization, fall, or emergency forces a rushed decision."]
+      ]
+    },
+    "caregiver-burnout-signs-prevention-when-to-seek-help": {
+      title: "Caregiver Burnout: Signs, Prevention & When to Seek Help",
+      slug: "caregiver-burnout-signs-prevention-when-to-seek-help",
+      category: "family-support",
+      excerpt: "A compassionate guide for family caregivers noticing exhaustion, guilt, stress, conflict, or the sense that care is becoming too much to carry alone.",
+      readTime: "9 min read",
+      featured: false,
+      relatedArticles: ["how-to-know-when-24-7-care-is-time", "when-is-it-time-for-memory-care", "hospital-discharge-checklist-for-families"],
+      metaTitle: "Caregiver Burnout Signs and When to Seek Help | Magnolia",
+      metaDescription: "Learn signs of caregiver burnout, practical prevention steps, and when families may need more support, respite, home care, or Adult Family Home options.",
+      reviewedBy: "Sosena Mekuria, RN \u2014 Magnolia Senior Care",
+      lastUpdated: "2026-05-15",
+      keyTakeaways: [
+        "Caregiver burnout can affect sleep, health, patience, work, relationships, and care safety.",
+        "Feeling overwhelmed does not mean a family has failed; it may mean the care plan needs more support.",
+        "Families should seek urgent help if anyone's safety is at risk or the caregiver feels unable to continue safely."
+      ],
+      sections: [
+        {
+          heading: "Burnout can build quietly",
+          body: "Caregiver burnout often grows slowly. A family member starts helping with appointments, then medications, then bathing, meals, transfers, bills, nighttime calls, and emergencies. Over time, love and responsibility can become constant pressure.",
+          subsections: [
+            {
+              heading: "Emotional signs",
+              body: "Guilt, resentment, anxiety, irritability, sadness, numbness, or feeling trapped can be signs that caregiving is taking a serious toll."
+            },
+            {
+              heading: "Physical and practical signs",
+              body: "Poor sleep, missed medical appointments, headaches, work problems, constant fatigue, social withdrawal, or feeling like you are always on call are also important signals."
+            }
+          ]
+        },
+        {
+          heading: "Prevention starts with honest support",
+          body: "Families often wait too long to ask for help because they believe they should be able to manage. A healthier plan names what is sustainable, what is unsafe, and what support is needed before the caregiver reaches a breaking point.",
+          subsections: [
+            {
+              heading: "Make the invisible work visible",
+              body: "Write down every caregiving task: medication reminders, meals, bathing, laundry, transportation, overnight monitoring, bill management, appointments, and emotional support. This helps families see the real workload."
+            },
+            {
+              heading: "Share responsibility where possible",
+              body: "Ask relatives, friends, home care agencies, respite programs, physicians, social workers, care managers, or faith and community supports about practical help. Not every family has the same resources, but the caregiver should not have to pretend the burden is light."
+            }
+          ]
+        },
+        {
+          heading: "When to seek more care support",
+          body: "It may be time to compare care options when the caregiver cannot sleep, the loved one cannot be left alone safely, medications are being missed, falls or wandering are happening, or family conflict is making decisions harder.",
+          subsections: [
+            {
+              heading: "Crisis warning signs",
+              body: "Seek immediate help if there is unsafe behavior, threats, severe confusion, repeated falls, caregiver collapse, or any situation where the person cannot be safely cared for at home."
+            },
+            {
+              heading: "Care setting conversations",
+              body: "Adult Family Home care, home care, assisted living, memory care, respite, hospice, or skilled nursing may be discussed depending on needs. A physician, discharge planner, case manager, or qualified care professional can help families compare options."
+            }
+          ]
+        }
+      ],
+      insight: "Magnolia often hears from families who waited until they were exhausted. A care conversation can be gentle and practical: what is happening, what feels unsafe, and what kind of support would bring relief.",
+      faq: [
+        ["Is caregiver burnout normal?", "Caregiver stress is common, especially when needs increase over time. Burnout should still be taken seriously because it can affect health, relationships, and care safety."],
+        ["Does asking for help mean I failed?", "No. Asking for help can be an act of protection for both the caregiver and the person receiving care."],
+        ["What support options can families consider?", "Depending on needs, families may consider family help, respite, home care, Adult Family Home care, assisted living, memory care, hospice, or skilled nursing."],
+        ["When should a caregiver seek urgent help?", "Seek urgent help if anyone is unsafe, the caregiver feels unable to continue safely, there are repeated falls, severe confusion, wandering, or a medical emergency."]
+      ]
+    },
+    "medication-management-in-adult-family-home": {
+      title: "Medication Management in an Adult Family Home",
+      slug: "medication-management-in-adult-family-home",
+      category: "safety-wellness",
+      excerpt: "A clear guide to medication routines, communication, documentation, and family questions in a residential care home setting.",
+      readTime: "8 min read",
+      featured: false,
+      relatedArticles: ["what-is-an-adult-family-home-washington", "hospital-discharge-checklist-for-families", "how-to-know-when-24-7-care-is-time"],
+      metaTitle: "Medication Management in an Adult Family Home | Magnolia",
+      metaDescription: "Learn how medication routines may be supported in an Adult Family Home, what families should ask, and why communication after changes matters.",
+      reviewedBy: "Sosena Mekuria, RN \u2014 Magnolia Senior Care",
+      lastUpdated: "2026-05-15",
+      keyTakeaways: [
+        "Medication support should be organized, documented, and communicated clearly with families and healthcare providers.",
+        "Medication changes after hospital stays, appointments, or pharmacy updates should be handled carefully.",
+        "Families should ask each Adult Family Home how medications are stored, administered or assisted with, documented, refilled, and reviewed."
+      ],
+      sections: [
+        {
+          heading: "Why medication routines matter",
+          body: "Many seniors take multiple medications, and routines can become difficult after a hospitalization, new diagnosis, memory change, or change in mobility. Missed doses, duplicate doses, confusion about instructions, or delayed refills can create stress and safety concerns.",
+          subsections: [
+            {
+              heading: "A steadier daily rhythm",
+              body: "In an Adult Family Home, medication routines can be built into the day with meals, bedtime, appointments, and care tasks. Families should ask exactly how the home supports these routines."
+            },
+            {
+              heading: "Changes need communication",
+              body: "Medication changes should be communicated clearly among the prescriber, pharmacy, care home, family or POA, and resident when appropriate."
+            }
+          ]
+        },
+        {
+          heading: "Questions families should ask",
+          body: "Medication support can vary by setting, resident needs, and licensing rules. Families should not assume details. A direct conversation protects the resident and helps everyone understand expectations.",
+          subsections: [
+            {
+              heading: "Storage and documentation",
+              body: "Ask how medications are stored, how administration or assistance is documented, who reviews medication lists, and how controlled or high-risk medications are handled under applicable rules."
+            },
+            {
+              heading: "Refills and appointments",
+              body: "Ask who watches refill timing, who coordinates with the pharmacy, and how medication changes after appointments or discharge are added to the resident's routine."
+            }
+          ]
+        },
+        {
+          heading: "Medication support is part of the bigger care plan",
+          body: "Medication routines connect to meals, hydration, sleep, falls, confusion, blood pressure, pain, bowel routines, mood, and alertness. Families should report concerns and ask how changes will be watched.",
+          subsections: [
+            {
+              heading: "Watch for changes",
+              body: "Families and care teams should pay attention to new confusion, dizziness, sleepiness, appetite changes, falls, pain, or behavior changes and share concerns with qualified medical professionals."
+            },
+            {
+              heading: "Avoid changing medications without guidance",
+              body: "Residents and families should not stop, start, or change prescribed medications without direction from the prescribing clinician or qualified healthcare professional."
+            }
+          ]
+        }
+      ],
+      insight: "Magnolia's RN-led perspective helps medication conversations stay practical: what changed, who ordered it, how it is documented, what the family should know, and what needs follow-up.",
+      faq: [
+        ["Can an Adult Family Home manage medications?", "Adult Family Homes may support medication routines within applicable licensing rules and resident care needs. Families should ask each home how medication support is handled."],
+        ["What should families bring to a tour?", "Bring a current medication list, pharmacy information, recent discharge papers if available, allergies, diagnoses, and contact information for the prescribing clinicians."],
+        ["What if medication changes after a hospital stay?", "Ask the discharge team for written instructions and confirm how the new list will be communicated to the pharmacy, care home, physician, family, and POA."],
+        ["Can Magnolia give medication advice?", "Magnolia can discuss care routines and communication, but medication decisions should be made by qualified healthcare professionals."]
+      ]
+    },
+    "how-afhs-reduce-fall-risk-compared-to-living-alone": {
+      title: "How AFHs Reduce Fall Risk Compared to Living Alone",
+      slug: "how-afhs-reduce-fall-risk-compared-to-living-alone",
+      category: "safety-wellness",
+      excerpt: "A practical guide to how supervision, routines, mobility support, and environmental awareness may reduce fall risk compared with living alone.",
+      readTime: "8 min read",
+      featured: false,
+      relatedArticles: ["how-to-know-when-24-7-care-is-time", "medication-management-in-adult-family-home", "hospital-discharge-checklist-for-families"],
+      metaTitle: "How Adult Family Homes May Reduce Fall Risk | Magnolia",
+      metaDescription: "Learn how Adult Family Homes may help reduce fall risk through supervision, routines, mobility support, environmental safety, and communication.",
+      reviewedBy: "Sosena Mekuria, RN \u2014 Magnolia Senior Care",
+      lastUpdated: "2026-05-15",
+      keyTakeaways: [
+        "No care setting can eliminate fall risk, but supervision and safer routines may help reduce risk compared with living alone.",
+        "Falls can be connected to medications, weakness, vision, footwear, clutter, dehydration, infection, dizziness, or changing mobility.",
+        "Families should ask how a care home supports transfers, bathroom routines, nighttime safety, assistive devices, and communication after any fall."
+      ],
+      sections: [
+        {
+          heading: "Falls are often a pattern, not a single problem",
+          body: "A fall may look like an accident, but fall risk can build from several factors at once: weakness, poor balance, medication side effects, rushing to the bathroom, poor lighting, clutter, dehydration, infection, or confusion.",
+          subsections: [
+            {
+              heading: "Living alone can hide warning signs",
+              body: "When a person lives alone, families may not see near-falls, furniture walking, missed meals, dizziness, or changes in walking until a serious fall happens."
+            },
+            {
+              heading: "Observation helps",
+              body: "In a residential care setting, caregivers may notice changes in gait, transfers, alertness, appetite, toileting patterns, or nighttime wandering and communicate concerns earlier."
+            }
+          ]
+        },
+        {
+          heading: "How a home setting may support fall-risk awareness",
+          body: "Adult Family Homes may reduce certain risks by offering help with daily routines, safer transfers, bathroom support, medication routines, meals, hydration, and a more predictable environment.",
+          subsections: [
+            {
+              heading: "Bathroom and nighttime routines",
+              body: "Many falls happen around toileting or nighttime movement. Families should ask how the home supports call bells or monitoring, bathroom access, lighting, footwear, and assistance when needed."
+            },
+            {
+              heading: "Mobility support",
+              body: "Ask how staff support walkers, wheelchairs, gait belts if appropriate, transfers, therapy recommendations, and safe movement through shared spaces."
+            }
+          ]
+        },
+        {
+          heading: "Fall prevention should involve the care team",
+          body: "Families should talk with physicians, therapists, pharmacists, and care providers after falls or mobility changes. Some risks may be related to medications, blood pressure, infection, pain, vision, footwear, or equipment needs.",
+          subsections: [
+            {
+              heading: "After a fall",
+              body: "Ask what happened, whether there were injuries, whether medical evaluation is needed, what changed in the care plan, and how the family or POA will be updated."
+            },
+            {
+              heading: "No guarantees",
+              body: "Even strong fall-risk practices cannot prevent every fall. The goal is awareness, response, communication, and reducing avoidable hazards where possible."
+            }
+          ]
+        }
+      ],
+      insight: "Magnolia looks closely at routines that create risk: rushing, nighttime movement, bathroom access, medication changes, fatigue, and unfamiliar transitions. Calm routines can make a meaningful difference.",
+      faq: [
+        ["Can an Adult Family Home prevent all falls?", "No. No setting can guarantee that falls will not happen. A care home may help reduce certain risks through supervision, routines, safer spaces, and communication."],
+        ["What should families ask after a fall?", "Ask what happened, whether medical evaluation was needed, what injuries were found, what changes are being made, and how future concerns will be communicated."],
+        ["Are medications related to fall risk?", "Some medications or medication changes may contribute to dizziness, sleepiness, confusion, or balance concerns. Families should speak with qualified healthcare professionals about medication questions."],
+        ["When should fall risk lead to 24/7 care?", "Families may consider 24/7 care when falls repeat, the person cannot transfer safely, nighttime safety is poor, or living alone no longer feels realistic."]
+      ]
+    },
+    "what-to-do-hospital-says-parent-cant-go-home": {
+      title: "What to Do When the Hospital Says \"Your Parent Can't Go Home\"",
+      slug: "what-to-do-hospital-says-parent-cant-go-home",
+      category: "hospital-discharge-transitions",
+      excerpt: "A calm step-by-step guide for families facing urgent discharge pressure, new care needs, and the search for a safer next setting.",
+      readTime: "10 min read",
+      featured: false,
+      relatedArticles: ["hospital-discharge-checklist-for-families", "how-to-know-when-24-7-care-is-time", "does-medicaid-pay-for-adult-family-homes-washington"],
+      metaTitle: "When the Hospital Says Your Parent Can't Go Home | Magnolia",
+      metaDescription: "Learn what to ask when a hospital or rehab says a parent cannot safely return home, including discharge planning, documents, care needs, and placement options.",
+      reviewedBy: "Sosena Mekuria, RN \u2014 Magnolia Senior Care",
+      lastUpdated: "2026-05-15",
+      keyTakeaways: [
+        "Ask the hospital or rehab team to explain the specific reasons home is not considered safe right now.",
+        "Request written discharge instructions, medication lists, therapy notes, equipment needs, and follow-up requirements.",
+        "Families can compare care options more calmly when they know the timeline, care needs, supervision level, and decision-maker contacts."
+      ],
+      sections: [
+        {
+          heading: "First, ask what changed",
+          body: "Hearing that a parent cannot safely go home can feel frightening and sudden. Start by asking the hospital, rehab, discharge planner, or social worker to explain the specific concerns in plain language.",
+          subsections: [
+            {
+              heading: "Clarify the safety concern",
+              body: "Ask whether the concern is mobility, transfers, medications, confusion, wound care, oxygen, nutrition, toileting, fall risk, cognition, behavior, or lack of overnight supervision."
+            },
+            {
+              heading: "Ask what help is needed",
+              body: "Ask what support is needed today, how often it is needed, whether the person can be alone, and what equipment or follow-up care is required."
+            }
+          ]
+        },
+        {
+          heading: "Gather documents before calling care settings",
+          body: "Placement conversations move faster when families have accurate information. Ask for written materials before calling Adult Family Homes, assisted living, home care, skilled nursing, or other care options.",
+          subsections: [
+            {
+              heading: "Documents to request",
+              body: "Medication list, discharge summary, diagnoses, therapy notes, mobility status, diet orders, wound or skin instructions, equipment needs, follow-up appointments, and POA or responsible-party information can all help."
+            },
+            {
+              heading: "Create a simple care summary",
+              body: "Write down what happened, what changed, the expected discharge date, location preference, payment source if known, and the family's main worries."
+            }
+          ]
+        },
+        {
+          heading: "Compare safe next-step options",
+          body: "Depending on needs, options may include returning home with support, home health, private caregiving, Adult Family Home care, assisted living, memory care, skilled nursing, hospice, or another plan recommended by qualified professionals.",
+          subsections: [
+            {
+              heading: "Ask about Adult Family Home fit",
+              body: "When calling an Adult Family Home, ask whether the home can support the current care needs, medication routine, mobility, memory concerns, diet, bathroom access, family communication, and discharge timeline."
+            },
+            {
+              heading: "Ask who can help with planning",
+              body: "Families can ask the hospital social worker, discharge planner, case manager, physician, therapist, DSHS or HCS contacts when appropriate, or a qualified care manager for guidance."
+            }
+          ]
+        }
+      ],
+      insight: "When discharge pressure is high, Magnolia focuses on clarity: what care is needed, how soon, which location might fit, what documents are available, and who can make decisions.",
+      faq: [
+        ["Can the hospital force a family to choose the first available placement?", "Families should ask the discharge planner or social worker to explain the discharge process, timeline, and options. Specific rights or appeals questions should be discussed with the hospital and qualified advocates or professionals."],
+        ["What should I say when calling an Adult Family Home?", "Share the discharge timeline, care needs, medication routine, mobility status, memory concerns, location preference, payment source if known, and best family or POA contact."],
+        ["What if my parent wants to go home but the team says it is unsafe?", "Ask what specific risks they see, what support would be needed at home, and what alternatives may be appropriate. A physician, discharge planner, therapist, or care manager may help explain options."],
+        ["Can Magnolia respond to urgent discharge needs?", "Magnolia can discuss availability and care fit. A quick response is easier when families provide care details, documents, timeline, location preference, and decision-maker contacts."]
+      ]
     }
   }
 };
