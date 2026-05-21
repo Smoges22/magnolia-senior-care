@@ -2,7 +2,9 @@
   const site = window.AFHSite;
 
   function currentPage() {
-    const name = window.location.pathname.split("/").pop() || "index.html";
+    const path = window.location.pathname.replace(/\\/g, "/");
+    if (path.includes("/about/clinical-leadership/")) return "clinical-leadership";
+    const name = path.split("/").pop() || "index.html";
     return name;
   }
 
@@ -12,6 +14,7 @@
     if (path.includes("/resources/") && !path.endsWith("/resources/") && !path.endsWith("/resources/index.html")) return "../../";
     if (path.endsWith("/resources")) return "../";
     if (path.includes("/resources/")) return "../";
+    if (path.includes("/about/clinical-leadership/")) return "../../";
     if (path.includes("/blog/")) return "../";
     return "";
   }
@@ -30,6 +33,7 @@
     const path = window.location.pathname.replace(/\\/g, "/");
     const pageMap = {
       "about.html": [["Home", "index.html"], ["About"]],
+      "clinical-leadership": [["Home", "index.html"], ["About", "about.html"], ["Clinical Leadership"]],
       "services.html": [["Home", "index.html"], ["Services"]],
       "rooms-photos.html": [["Home", "index.html"], ["Gallery"]],
       "referral-agents.html": [["Home", "index.html"], ["Referrals"]],
@@ -184,8 +188,9 @@
       const isLocationPage = ["burien-adult-family-home.html", "des-moines-adult-family-home.html"].includes(active);
       const resourcePath = window.location.pathname.replace(/\\/g, "/");
       const isResourcePage = resourcePath.includes("/resources/") || resourcePath.endsWith("/resources");
+      const isAboutSubpage = active === "clinical-leadership" && href === "about.html";
       if (href === "resources/index.html") return resourceDropdownMarkup(isResourcePage);
-      const aria = href === active || (isLocationPage && href === "index.html#locations") || (isResourcePage && href === "resources/index.html") ? " aria-current=\"page\"" : "";
+      const aria = href === active || isAboutSubpage || (isLocationPage && href === "index.html#locations") || (isResourcePage && href === "resources/index.html") ? " aria-current=\"page\"" : "";
       return `<a href="${localHref(href)}"${aria}>${label}</a>`;
     }).join("");
     const breadcrumbs = breadcrumbTrail();

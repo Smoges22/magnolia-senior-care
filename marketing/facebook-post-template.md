@@ -4,7 +4,7 @@
 
 Magnolia Senior Care offers RN-owned home-based care in Burien and Des Moines.
 
-Led by Sosena Mekuria, RN Provider, Magnolia focuses on warm residential care, personal support, memory-aware routines, meals, medication support, and clear communication with families and care partners.
+Led by Sosena Mekuria, RN and AFH Provider, Magnolia focuses on warm residential care, personal support, memory-aware routines, meals, medication support, and clear communication with families and care partners.
 
 Call (425) 246-6220 to ask about availability or schedule a private tour.
 

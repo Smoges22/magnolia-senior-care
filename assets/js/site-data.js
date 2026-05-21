@@ -3,7 +3,7 @@ window.AFHSite = {
     name: "Magnolia Senior Care",
     legalName: "Magnolia Senior Care",
     shortName: "Magnolia",
-    founder: "Sosena Mekuria, RN Provider",
+    founder: "Sosena Mekuria, RN and AFH Provider",
     tagline: "RN-led home-based care in private, home-like settings serving Burien and Des Moines.",
     phone: "(425) 246-6220",
     secondaryPhone: "(206) 453-5082",
@@ -60,7 +60,6 @@ window.AFHSite = {
       address: "14613 12th Ave SW, Burien, WA 98166",
       street: "14613 12th Ave SW",
       page: "burien-adult-family-home.html",
-      legacySite: "https://www.magnoliaseniorlovingcare.com/home",
       position: "A calm, RN-led home setting for quiet routines, frequent family visits, and familiar Burien-area neighborhoods.",
       seoDescription: "Adult Family Home Burien WA care with RN-led oversight, memory-aware routines, accessible spaces, and family communication.",
       neighborhoods: ["Seahurst", "Three Tree Point", "Highline", "Sunnydale", "Normandy Park", "South Seattle"],
@@ -90,7 +89,6 @@ window.AFHSite = {
       address: "1206 S 244th St, Des Moines, WA 98198",
       street: "1206 S 244th St",
       page: "des-moines-adult-family-home.html",
-      legacySite: "https://www.magnoliaseniorcareofhighline.com/home",
       position: "A steady, supportive home for transitions, memory-aware routines, and Highline-area care coordination.",
       seoDescription: "Adult Family Home Des Moines WA care with RN-managed oversight, memory-aware routines, 24/7 support, personal care, and family updates.",
       neighborhoods: ["Highline", "North Hill", "Woodmont", "Marina District", "SeaTac", "Kent Valley"],
@@ -120,7 +118,7 @@ window.AFHSite = {
     {
       label: "Clinical oversight",
       title: "RN-Led Care Oversight",
-      text: "Magnolia is guided by Sosena Mekuria, RN Provider, bringing nursing perspective to observation, daily routines, and family communication.",
+      text: "Magnolia is guided by Sosena Mekuria, RN and AFH Provider, bringing nursing perspective to observation, daily routines, and family communication.",
       bestFor: ["Families who want RN involvement", "Care needs that require steady observation", "POAs who value direct updates"]
     },
     {

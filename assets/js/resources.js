@@ -51,6 +51,14 @@
     return href(`resources/${category.slug}/index.html`);
   }
 
+  function rnProfileUrl() {
+    return href("about/clinical-leadership/");
+  }
+
+  function reviewedByLinked() {
+    return `<a href="${rnProfileUrl()}">Sosena Mekuria, RN</a> &mdash; Magnolia Senior Care`;
+  }
+
   function contactCard(title = "Contact Magnolia for Current Pricing & Availability") {
     return `
       <article class="card resource-action-card">
@@ -123,36 +131,57 @@
     "hospital-discharge-checklist-for-families"
   ];
 
-  const guidedReadingPaths = [
+  const recommendedReadingPaths = [
     {
-      title: "Dementia Care Path",
-      text: "Start with signs, then compare memory care timing, small-home routines, and 24/7 support.",
+      title: "Dementia Care Journey",
+      text: "A calm path from early signs to safer routines, memory care timing, and 24/7 support.",
       steps: [
-        ["Early Signs of Dementia", "early-signs-of-dementia-families-miss"],
+        ["Early Signs of Dementia Families Often Miss", "early-signs-of-dementia-families-miss"],
         ["When Is It Time for Memory Care?", "when-is-it-time-for-memory-care"],
         ["How Small-Home Care Benefits People With Dementia", "how-small-home-care-benefits-people-with-dementia"],
+        ["Memory Care Routines That Reduce Anxiety", "memory-care-routines-that-reduce-anxiety"],
         ["How to Know When It's Time for 24/7 Care", "how-to-know-when-24-7-care-is-time"]
       ]
     },
     {
-      title: "Hospital Transition Path",
-      text: "Move from discharge instructions to safer supervision, placement questions, and fall-risk planning.",
+      title: "Hospital Transition Journey",
+      text: "Move from discharge pressure to safer supervision, placement questions, and fall-risk planning.",
       steps: [
-        ["Hospital Discharge Checklist", "hospital-discharge-checklist-for-families"],
+        ["Hospital Discharge Checklist for Families", "hospital-discharge-checklist-for-families"],
         ["When the Hospital Says Your Parent Can't Go Home", "what-to-do-hospital-says-parent-cant-go-home"],
-        ["Questions to Ask Before Discharge", "questions-to-ask-hospital-before-discharge"],
-        ["How AFHs Reduce Fall Risk", "how-afhs-reduce-fall-risk-compared-to-living-alone"]
+        ["Questions to Ask the Hospital Before Discharge", "questions-to-ask-hospital-before-discharge"],
+        ["How AFHs Reduce Fall Risk Compared to Living Alone", "how-afhs-reduce-fall-risk-compared-to-living-alone"]
       ]
     },
     {
-      title: "Cost & Medicaid Path",
-      text: "Learn the Medicaid basics, then confirm current Magnolia pricing and availability directly.",
+      title: "Medicaid & Planning Journey",
+      text: "Understand Medicaid basics, spend-down questions, private-pay planning, and current Magnolia pricing.",
       steps: [
-        ["Does Medicaid Pay for Adult Family Homes?", "does-medicaid-pay-for-adult-family-homes-washington"],
+        ["Does Medicaid Pay for Adult Family Homes in Washington?", "does-medicaid-pay-for-adult-family-homes-washington"],
         ["Medicaid & Financial Guidance", "medicaid-financial-guidance", "category"],
-        ["Contact Magnolia for Current Pricing & Availability", "contact.html#tour-request", "page"]
+        ["What Is Medicaid Spend-Down in Washington?", "what-is-medicaid-spend-down-washington"],
+        ["How Families Can Plan Ahead for Medicaid While in Private Pay", "how-families-can-plan-ahead-medicaid-private-pay"]
+      ]
+    },
+    {
+      title: "Choosing Care Journey",
+      text: "Compare small-home care, services, and tour questions before choosing an Adult Family Home.",
+      steps: [
+        ["What Is an Adult Family Home?", "what-is-an-adult-family-home-washington"],
+        ["AFH vs Assisted Living", "afh-vs-assisted-living-difference"],
+        ["What Services Do Adult Family Homes Provide?", "what-services-do-adult-family-homes-provide"],
+        ["How to Choose the Right Adult Family Home", "how-to-choose-the-right-adult-family-home"]
       ]
     }
+  ];
+
+  const downloadGuides = [
+    ["Hospital Discharge Checklist", "transition"],
+    ["Questions to Ask During an AFH Tour", "home"],
+    ["Dementia Safety Checklist", "memory"],
+    ["Medicaid Planning Checklist", "finance"],
+    ["Comparing Senior Care Options", "family"],
+    ["Signs It May Be Time for 24/7 Care", "shield"]
   ];
 
   function renderReadingPath(path) {
@@ -172,6 +201,56 @@
           }).join("")}
         </ol>
       </article>
+    `;
+  }
+
+  function renderDownloadCard([title, iconName]) {
+    return `
+      <article class="card download-guide-card">
+        ${icon(iconName)}
+        <div>
+          <div class="eyebrow">Family guide</div>
+          <h3>${title}</h3>
+          <p>Printable PDF guide planned for families, POAs, and care partners.</p>
+        </div>
+        <span class="download-status" aria-label="${title} coming soon">Coming Soon</span>
+      </article>
+    `;
+  }
+
+  function articleJourney(article) {
+    return recommendedReadingPaths.find((path) => path.steps.some(([, target, type]) => !type && target === article.slug));
+  }
+
+  function renderArticleJourney(article) {
+    const journey = articleJourney(article);
+    if (!journey) return "";
+    const currentIndex = journey.steps.findIndex(([, target, type]) => !type && target === article.slug);
+    const nextStep = journey.steps.slice(currentIndex + 1).find(([, , type]) => type !== "category");
+    const nextUrl = nextStep
+      ? (nextStep[2] === "page" ? href(nextStep[1]) : articleUrl(articleBySlug(nextStep[1])))
+      : href("contact.html#tour-request");
+    const nextLabel = nextStep ? nextStep[0] : "Talk with Magnolia about next steps";
+    return `
+      <aside class="article-guide-path">
+        <div class="eyebrow">Continue this guide path</div>
+        <h3>${journey.title}</h3>
+        <ol>
+          ${journey.steps.map(([label, target, type], index) => {
+            const isCurrent = index === currentIndex;
+            const url = type === "category"
+              ? categoryUrl(categoryBySlug(target))
+              : type === "page"
+                ? href(target)
+                : articleUrl(articleBySlug(target));
+            return `<li${isCurrent ? ' aria-current="step"' : ""}><a href="${url}">${label}</a></li>`;
+          }).join("")}
+        </ol>
+        <div class="recommended-next-step">
+          <span>Recommended next step</span>
+          <a class="text-action-link" href="${nextUrl}">${nextLabel}</a>
+        </div>
+      </aside>
     `;
   }
 
@@ -223,6 +302,14 @@
         links: [
           ["Read about fall risk", "how-afhs-reduce-fall-risk-compared-to-living-alone", "article"],
           ["Schedule a Tour", "contact.html#tour-request", "page"]
+        ]
+      },
+      "hospice-end-of-life": {
+        title: "What to do next",
+        body: "If hospice or comfort-focused care is part of the conversation, ask what support is needed, who coordinates care, and how family presence, dignity, and symptom concerns will be communicated.",
+        links: [
+          ["Contact Our Care Team", "contact.html", "page"],
+          ["Call Magnolia", site.brand.phoneHref, "page"]
         ]
       }
     };
@@ -337,7 +424,7 @@
           </div>
           <aside class="resource-hero-panel" aria-label="Magnolia Resource Center guidance">
             <div><strong>A calm home setting</strong><span>Education shaped around dignity, safety, and daily routines.</span></div>
-            <div><strong>RN-led guidance</strong><span>Reviewed with a clinical eye for family-friendly planning.</span></div>
+            <div><strong><a href="${rnProfileUrl()}">RN-led guidance</a></strong><span>Reviewed with a clinical eye for family-friendly planning.</span></div>
             <div><strong>Family-centered care</strong><span>Built for adult children, spouses, POAs, and care partners.</span></div>
           </aside>
         </div>
@@ -430,12 +517,51 @@
       <section class="section">
         <div class="container">
           <div class="section-head">
-            <div class="eyebrow">Guided Reading Paths</div>
+            <div class="eyebrow">Recommended Reading Paths</div>
             <h2>Follow a simple path when the decision feels big.</h2>
             <p>These short journeys connect the guides families usually need in order.</p>
           </div>
           <div class="reading-path-grid">
-            ${guidedReadingPaths.map(renderReadingPath).join("")}
+            ${recommendedReadingPaths.map(renderReadingPath).join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="container">
+          <div class="resource-visual-band">
+            <div>
+              <div class="eyebrow">Inside Magnolia</div>
+              <h2>Guidance rooted in real small-home care.</h2>
+              <p>Magnolia's Resource Center reflects the same philosophy families experience in the homes: calm spaces, direct communication, RN-led observation, and support that is personal enough to notice small changes.</p>
+            </div>
+            <div class="resource-photo-grid" aria-label="Magnolia care setting visuals">
+              <figure>
+                <img src="${href("assets/images/team/sosena-mekuria.jpg")}" alt="Sosena Mekuria, RN, Magnolia Senior Care">
+                <figcaption>RN-led guidance</figcaption>
+              </figure>
+              <figure>
+                <img src="${href("assets/images/premium-real/magnolia-open-living-kitchen.png")}" alt="Calm Magnolia small-home living and kitchen space">
+                <figcaption>A calm home setting</figcaption>
+              </figure>
+              <figure>
+                <img src="${href("assets/images/premium-real/magnolia-caregiver-connection.png")}" alt="Warm Magnolia care connection">
+                <figcaption>Family-centered care</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Downloadable Family Guides</div>
+            <h2>Printable checklists are being prepared for families.</h2>
+            <p>These future guides will make tours, discharge planning, dementia safety, and Medicaid questions easier to organize. For now, each topic is available as an RN-reviewed Resource Center guide.</p>
+          </div>
+          <div class="download-guide-grid">
+            ${downloadGuides.map(renderDownloadCard).join("")}
           </div>
         </div>
       </section>
@@ -450,7 +576,7 @@
               <p>This content is educational and does not replace medical, legal, or financial advice. Families should consult appropriate professionals for personal guidance.</p>
             </div>
             <ul class="resource-trust-list">
-              <li>RN-led perspective from Sosena Mekuria, RN</li>
+              <li><a href="${rnProfileUrl()}">RN-led perspective from Sosena Mekuria, RN</a></li>
               <li>Washington-specific Adult Family Home education</li>
               <li>Dementia, safety, and hospital-transition guidance</li>
               <li>Support for family decision-makers and POAs</li>
@@ -572,7 +698,7 @@
             <span><strong>Category</strong>${category.title}</span>
             <span><strong>Read time</strong>${article.readTime}</span>
             <span><strong>Last updated</strong>${article.lastUpdated}</span>
-            <span><strong>Reviewed by</strong>${article.reviewedBy}</span>
+            <span><strong>Reviewed by</strong>${reviewedByLinked()}</span>
           </div>
         </div>
       </section>
@@ -589,6 +715,7 @@
               <ul>${article.keyTakeaways.map((item) => `<li>${item}</li>`).join("")}</ul>
             </div>
             ${articleNextStep(article)}
+            ${renderArticleJourney(article)}
             <nav class="toc-card" aria-label="Table of contents">
               <strong>In this guide</strong>
               ${article.sections.map((section, index) => `<a href="#section-${index + 1}">${sectionHeading(section)}</a>`).join("")}
@@ -600,7 +727,7 @@
               <p>${article.insight}</p>
             </aside>
             <aside class="reviewed-block">
-              <strong>Reviewed by ${article.reviewedBy}</strong>
+              <strong>Reviewed by ${reviewedByLinked()}</strong>
               <span>RN-led educational review for family-friendly care planning.</span>
             </aside>
             <aside class="article-disclaimer">
@@ -648,19 +775,33 @@
   function renderHomepageResources() {
     const mount = document.querySelector("[data-home-resources]");
     if (!mount) return;
-    const featured = Object.values(data.articles).filter((article) => article.featured).slice(0, 4);
+    const featured = mostHelpfulSlugs.map(articleBySlug).filter(Boolean).slice(0, 3);
     mount.innerHTML = `
       <div class="container">
-        <div class="section-head center">
-          <div class="eyebrow">Resource Center</div>
-          <h2>Explore Our Senior Care Resource Center</h2>
-          <p>Helpful, RN-led guidance for families comparing care options, planning transitions, and making confident decisions.</p>
+        <div class="home-resource-feature">
+          <div>
+            <div class="section-head">
+              <div class="eyebrow">Resource Center</div>
+              <h2>Explore Our Senior Care Resource Center</h2>
+              <p>RN-reviewed guidance for families comparing Adult Family Homes, dementia support, hospital transitions, safety, and cost questions in Washington.</p>
+            </div>
+            <div class="home-resource-trust">
+              <span>Reviewed by RN</span>
+              <span>Washington-specific</span>
+              <span>Family-friendly</span>
+            </div>
+          </div>
+          <figure class="home-resource-photo">
+            <img src="${href("assets/images/premium-real/magnolia-caregiver-connection.png")}" alt="Warm Magnolia family-centered care connection">
+            <figcaption>Guidance shaped by small-home care, family communication, and RN-led observation.</figcaption>
+          </figure>
         </div>
-        <div class="resource-article-grid compact">
+        <div class="resource-article-grid compact home-resource-grid">
           ${featured.map(articleCard).join("")}
         </div>
         <div class="section-actions center-actions">
           <a class="button" href="${href("resources/index.html")}">Visit Resource Center</a>
+          <a class="button secondary" href="${href("about/clinical-leadership/")}">Meet Sosena Mekuria, RN</a>
         </div>
       </div>
     `;
@@ -693,7 +834,7 @@
       {
         id: "financial",
         terms: ["pay", "spenddown", "spend-down", "medicaid", "financial"],
-        articles: ["does-medicaid-pay-for-adult-family-homes-washington"],
+        articles: ["does-medicaid-pay-for-adult-family-homes-washington", "what-is-medicaid-spend-down-washington", "how-families-can-plan-ahead-medicaid-private-pay"],
         categories: ["medicaid-financial-guidance"]
       },
       {

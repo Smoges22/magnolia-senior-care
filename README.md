@@ -2,10 +2,9 @@
 
 This static website upgrades the two existing Magnolia Google Sites into one premium, SEO-ready Magnolia brand website.
 
-## Source Sites Used
+## Source Context
 
-- `https://www.magnoliaseniorlovingcare.com/home`
-- `https://www.magnoliaseniorcareofhighline.com/home`
+This project consolidates prior location-site content into one current Magnolia source of truth. Avoid publishing legacy website URLs in public-facing copy.
 
 ## Magnolia Locations
 

@@ -138,7 +138,8 @@ Object.values(resources.articles).forEach((article) => {
     reviewedBy: {
       "@type": "Person",
       name: "Sosena Mekuria",
-      jobTitle: "RN Provider"
+      jobTitle: "RN and Adult Family Home Provider",
+      url: `${domain}/about/clinical-leadership/`
     },
     mainEntityOfPage: `${domain}/resources/articles/${article.slug}/`
   };
@@ -170,6 +171,7 @@ Object.values(resources.articles).forEach((article) => {
 const sitemapUrls = [
   ["/", "1.0"],
   ["/about.html", "0.8"],
+  ["/about/clinical-leadership/", "0.78"],
   ["/services.html", "0.9"],
   ["/rooms-photos.html", "0.8"],
   ["/referral-agents.html", "0.9"],

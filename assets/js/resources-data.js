@@ -351,6 +351,144 @@ window.MagnoliaResources = {
         ["Why doesn't Magnolia list exact pricing online?", "Care needs, room availability, mobility support, dementia needs, medication support, supervision level, and service requirements can vary. Magnolia provides current pricing after learning more about the resident's needs. Families should contact Magnolia directly for current private-pay rates and availability."]
       ]
     },
+    "what-is-medicaid-spend-down-washington": {
+      title: "What Is Medicaid Spend-Down in Washington?",
+      slug: "what-is-medicaid-spend-down-washington",
+      category: "medicaid-financial-guidance",
+      excerpt: "A careful educational overview of spend-down concepts, Medicaid planning questions, and why families should confirm personal financial details with qualified Washington sources.",
+      readTime: "8 min read",
+      featured: false,
+      relatedArticles: ["does-medicaid-pay-for-adult-family-homes-washington", "how-families-can-plan-ahead-medicaid-private-pay", "what-is-an-adult-family-home-washington"],
+      metaTitle: "What Is Medicaid Spend-Down in Washington? | Magnolia",
+      metaDescription: "Learn general Medicaid spend-down concepts for Washington senior care planning, including why families should seek qualified financial or legal guidance and confirm current Magnolia pricing directly.",
+      reviewedBy: "Sosena Mekuria, RN — Magnolia Senior Care",
+      lastUpdated: "2026-05-20",
+      keyTakeaways: [
+        "Spend-down is a general term families may hear when assets or income are above Medicaid limits.",
+        "Rules can be complex and personal. Families should confirm details with Washington DSHS, HCS, an elder law attorney, or a qualified Medicaid planning professional.",
+        "Magnolia can discuss care fit and current private-pay rates, but does not provide legal or financial advice."
+      ],
+      sections: [
+        {
+          heading: "Spend-down is a planning topic, not a one-size answer",
+          body: "Families often hear the term spend-down when they are trying to understand Medicaid long-term care. In general, it may refer to how a person's income, assets, timing, and care costs interact with Medicaid eligibility rules. The details depend on the resident's situation and should be confirmed with qualified sources.",
+          subsections: [
+            {
+              heading: "Why families should be careful",
+              body: "Online summaries can be incomplete, outdated, or too general. Medicaid rules may involve income, assets, transfers, spouse protections, lookback rules, documentation, and timing."
+            },
+            {
+              heading: "Who can help",
+              body: "Families can contact Washington DSHS, Home and Community Services, a case manager, an elder law attorney, or a qualified Medicaid planning professional for guidance based on the resident's personal circumstances."
+            }
+          ]
+        },
+        {
+          heading: "Questions families can organize before asking for guidance",
+          body: "Before speaking with a qualified professional, families may want to gather basic information: current care needs, monthly income, asset categories, existing care costs, power of attorney documents, home ownership questions, and whether a spouse is still living at home.",
+          subsections: [
+            {
+              heading: "Care needs still matter",
+              body: "Financial eligibility is only one part of long-term care planning. Washington long-term care support may also involve care-need assessment, authorization, provider participation, and availability."
+            },
+            {
+              heading: "Connect payment planning to care fit",
+              body: "A payment plan is only useful if the care setting can support the resident safely. Families should also review Magnolia's guide to <a href=\"/resources/articles/does-medicaid-pay-for-adult-family-homes-washington/\">Medicaid and Adult Family Homes</a>."
+            }
+          ]
+        },
+        {
+          heading: "How Magnolia talks about pricing and availability",
+          body: "Pricing depends on care needs, room availability, assessment level, and service requirements. Please contact Magnolia directly for current private-pay rates and availability.",
+          subsections: [
+            {
+              heading: "Confirm current information directly",
+              body: "Because online senior-care listings may show outdated pricing or old business information, families should confirm current rates and availability directly with Magnolia Senior Care."
+            },
+            {
+              heading: "Educational only",
+              body: "This guide is educational and does not provide legal, financial, or Medicaid eligibility advice. Families should use qualified professionals for personal planning decisions."
+            }
+          ]
+        }
+      ],
+      insight: "Magnolia helps families separate two questions that often get tangled together: what care is needed, and how payment planning should be confirmed with qualified sources.",
+      faq: [
+        ["Does Magnolia provide Medicaid spend-down advice?", "No. Magnolia does not provide legal, financial, or Medicaid eligibility advice. Families should speak with Washington DSHS, HCS, a case manager, an elder law attorney, or qualified Medicaid planning professional."],
+        ["Does spend-down guarantee Medicaid approval?", "No. Medicaid eligibility and authorization depend on personal financial details, care needs, documentation, program rules, and official review."],
+        ["Should families wait to plan until money is almost gone?", "Families should seek qualified guidance early. Planning ahead may reduce rushed decisions and help families understand documentation, timing, and care options."],
+        ["How should families confirm Magnolia pricing?", "Pricing depends on care needs, room availability, assessment level, and service requirements. Families should contact Magnolia directly for current private-pay rates and availability."]
+      ]
+    },
+    "how-families-can-plan-ahead-medicaid-private-pay": {
+      title: "How Families Can Plan Ahead for Medicaid While in Private Pay",
+      slug: "how-families-can-plan-ahead-medicaid-private-pay",
+      category: "medicaid-financial-guidance",
+      excerpt: "A family-friendly planning guide for organizing care needs, documentation, payment questions, and professional guidance before a private-pay situation becomes urgent.",
+      readTime: "9 min read",
+      featured: false,
+      relatedArticles: ["does-medicaid-pay-for-adult-family-homes-washington", "what-is-medicaid-spend-down-washington", "how-to-choose-the-right-adult-family-home"],
+      metaTitle: "Planning Ahead for Medicaid While in Private Pay | Magnolia",
+      metaDescription: "Learn how families can organize Medicaid questions, private-pay planning, documentation, care needs, and professional guidance while avoiding fixed pricing assumptions.",
+      reviewedBy: "Sosena Mekuria, RN — Magnolia Senior Care",
+      lastUpdated: "2026-05-20",
+      keyTakeaways: [
+        "Families can plan ahead by organizing documents, care needs, decision-makers, and qualified Medicaid guidance early.",
+        "Private pay and Medicaid-related support are different pathways and should not be assumed to convert automatically.",
+        "Current Magnolia pricing and availability should be confirmed directly because care needs and room availability vary."
+      ],
+      sections: [
+        {
+          heading: "Start before the situation feels urgent",
+          body: "Families often begin Medicaid planning when private-pay funds are already a major concern. Earlier planning can help everyone understand documents, timelines, care needs, and who should be involved in decisions.",
+          subsections: [
+            {
+              heading: "Create a planning folder",
+              body: "Helpful items may include power of attorney documents, medication lists, diagnoses, care notes, hospital discharge papers, income and asset summaries, insurance cards, and names of key family decision-makers."
+            },
+            {
+              heading: "Ask qualified sources",
+              body: "Families should confirm Medicaid planning questions with Washington DSHS, Home and Community Services, a case manager, elder law attorney, or qualified Medicaid planning professional."
+            }
+          ]
+        },
+        {
+          heading: "Understand that care fit and payment fit are separate",
+          body: "A care home should be evaluated for safety, routines, communication, medication support, dementia awareness, and whether the home can meet the resident's needs. Payment planning should be discussed clearly, but it does not replace care-fit review.",
+          subsections: [
+            {
+              heading: "Questions to ask Magnolia",
+              body: "Ask about current room availability, care fit, service requirements, private-pay rates, and what information Magnolia needs to assess whether the home can safely support the resident."
+            },
+            {
+              heading: "Questions to ask professionals",
+              body: "Ask qualified Medicaid or legal professionals about timing, documentation, eligibility, spend-down concepts, authorization, and what families should avoid doing without guidance."
+            }
+          ]
+        },
+        {
+          heading: "Confirm rates and availability directly",
+          body: "Pricing depends on care needs, room availability, assessment level, and service requirements. Please contact Magnolia directly for current private-pay rates and availability.",
+          subsections: [
+            {
+              heading: "Why this matters",
+              body: "Because online senior-care listings may show outdated pricing or old business information, families should confirm current rates and availability directly with Magnolia Senior Care."
+            },
+            {
+              heading: "Keep the conversation current",
+              body: "Care needs, medications, mobility, dementia support, and room availability can change. Families should update Magnolia when the resident's needs or timing changes."
+            }
+          ]
+        }
+      ],
+      insight: "Magnolia encourages families to plan early and ask clear questions. When payment, care needs, and timing are discussed calmly, families can make better next-step decisions.",
+      faq: [
+        ["Can private pay automatically change to Medicaid?", "No. Medicaid-related support depends on eligibility, assessment, authorization, provider participation, availability, and official review. Families should confirm details with qualified sources."],
+        ["What documents should families organize?", "Families may organize POA documents, medication lists, diagnoses, discharge papers, care notes, income and asset summaries, insurance cards, and family contact information."],
+        ["Does Magnolia promise Medicaid placement?", "No. Magnolia cannot promise Medicaid approval, authorization, coverage, or placement. Families should contact Magnolia directly to discuss care fit and current availability."],
+        ["Why doesn't Magnolia list exact private-pay rates online?", "Care needs, room availability, mobility support, dementia needs, medication support, supervision level, and service requirements can vary. Magnolia provides current pricing after learning more about the resident's needs."]
+      ]
+    },
     "hospital-discharge-checklist-for-families": {
       title: "Hospital Discharge Checklist for Families",
       slug: "hospital-discharge-checklist-for-families",

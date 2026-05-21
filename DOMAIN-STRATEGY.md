@@ -33,10 +33,7 @@ Because of that, Magnolia should not position itself as a generic "Magnolia care
 
 ## Why One Umbrella Domain
 
-Magnolia currently has two separate location websites:
-
-- `magnoliaseniorlovingcare.com`
-- `magnoliaseniorcareofhighline.com`
+Magnolia previously used separate location websites.
 
 Those names are useful for location identity, but they split SEO authority, confuse referrals, and make the brand feel less polished. A single Magnolia brand domain is stronger because it:
 
@@ -62,18 +59,15 @@ Use short, clear, location-specific URLs:
 
 ## Redirect Plan For Existing Websites
 
-Keep the old domains and redirect them to the new umbrella site.
+Keep legacy location domains redirected to the new umbrella site.
 
-Recommended redirects:
+Recommended redirect targets:
 
-- `magnoliaseniorlovingcare.com/home` -> `magnoliaseniorcarewa.com/burien-adult-family-home.html`
-- `magnoliaseniorlovingcare.com/about` -> `magnoliaseniorcarewa.com/about.html`
-- `magnoliaseniorlovingcare.com/gallery` -> `magnoliaseniorcarewa.com/rooms-photos.html`
-- `magnoliaseniorlovingcare.com/contact` -> `magnoliaseniorcarewa.com/contact.html`
-- `magnoliaseniorcareofhighline.com/home` -> `magnoliaseniorcarewa.com/des-moines-adult-family-home.html`
-- `magnoliaseniorcareofhighline.com/about` -> `magnoliaseniorcarewa.com/about.html`
-- `magnoliaseniorcareofhighline.com/gallery` -> `magnoliaseniorcarewa.com/rooms-photos.html`
-- `magnoliaseniorcareofhighline.com/contact` -> `magnoliaseniorcarewa.com/contact.html`
+- Legacy Burien homepage -> `magnoliaseniorcarewa.com/burien-adult-family-home.html`
+- Legacy Des Moines homepage -> `magnoliaseniorcarewa.com/des-moines-adult-family-home.html`
+- Legacy about pages -> `magnoliaseniorcarewa.com/about.html`
+- Legacy gallery pages -> `magnoliaseniorcarewa.com/rooms-photos.html`
+- Legacy contact pages -> `magnoliaseniorcarewa.com/contact.html`
 
 Use permanent `301` redirects where hosting allows it.
 

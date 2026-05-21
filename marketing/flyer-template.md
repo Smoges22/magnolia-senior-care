@@ -8,7 +8,7 @@ RN-Owned Adult Family Home Care in Burien and Des Moines
 
 Magnolia Senior Care provides warm home-based care through two South King County homes: Magnolia Senior Loving Care LLC in Burien and Magnolia Senior Care of Highline LLC in Des Moines.
 
-Led by Sosena Mekuria, RN Provider, Magnolia brings more than a decade of healthcare experience to daily care, family communication, and calm guidance during an important decision.
+Led by Sosena Mekuria, RN and AFH Provider, Magnolia brings more than a decade of healthcare experience to daily care, family communication, and calm guidance during an important decision.
 
 ## Care Highlights
 

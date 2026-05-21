@@ -157,38 +157,15 @@ DNS can take a few minutes to 48 hours to fully propagate.
 
 ## 5. Redirect Old Domains To Correct Location Pages
 
-Old websites:
+Legacy location domains should use permanent redirects into the current Magnolia source-of-truth website.
 
-- `magnoliaseniorlovingcare.com`
-- `magnoliaseniorcareofhighline.com`
+Recommended redirect targets:
 
-Recommended redirects:
-
-```text
-https://www.magnoliaseniorlovingcare.com/home
--> https://magnoliaseniorcarewa.com/burien-adult-family-home.html
-
-https://www.magnoliaseniorlovingcare.com/about
--> https://magnoliaseniorcarewa.com/about.html
-
-https://www.magnoliaseniorlovingcare.com/gallery
--> https://magnoliaseniorcarewa.com/rooms-photos.html
-
-https://www.magnoliaseniorlovingcare.com/contact
--> https://magnoliaseniorcarewa.com/contact.html
-
-https://www.magnoliaseniorcareofhighline.com/home
--> https://magnoliaseniorcarewa.com/des-moines-adult-family-home.html
-
-https://www.magnoliaseniorcareofhighline.com/about
--> https://magnoliaseniorcarewa.com/about.html
-
-https://www.magnoliaseniorcareofhighline.com/gallery
--> https://magnoliaseniorcarewa.com/rooms-photos.html
-
-https://www.magnoliaseniorcareofhighline.com/contact
--> https://magnoliaseniorcarewa.com/contact.html
-```
+- Legacy Burien homepage -> `https://magnoliaseniorcarewa.com/burien-adult-family-home.html`
+- Legacy Des Moines homepage -> `https://magnoliaseniorcarewa.com/des-moines-adult-family-home.html`
+- Legacy about pages -> `https://magnoliaseniorcarewa.com/about.html`
+- Legacy gallery pages -> `https://magnoliaseniorcarewa.com/rooms-photos.html`
+- Legacy contact pages -> `https://magnoliaseniorcarewa.com/contact.html`
 
 Use `301` permanent redirects if the old domain host supports them.
 
@@ -198,8 +175,8 @@ If the old sites are still on Google Sites:
 2. Check whether the domain registrar supports URL forwarding.
 3. Forward each old domain or path to the correct new page.
 4. If path-level redirects are not available, redirect:
-   - `magnoliaseniorlovingcare.com` to the Burien page
-   - `magnoliaseniorcareofhighline.com` to the Des Moines page
+   - the legacy Burien domain to the Burien page
+   - the legacy Des Moines domain to the Des Moines page
 5. Leave redirects active for at least 12 months.
 
 ## 6. Verify After Launch

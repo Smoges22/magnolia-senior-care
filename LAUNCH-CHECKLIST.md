@@ -18,10 +18,7 @@ Use this checklist before publishing the Magnolia Senior Care multi-location web
 
 ## 2. Redirect Plan From Old Domains
 
-Existing websites:
-
-- `https://www.magnoliaseniorlovingcare.com/home`
-- `https://www.magnoliaseniorcareofhighline.com/home`
+Legacy location websites should redirect into the new Magnolia umbrella site without being promoted in public-facing content.
 
 Recommended redirects:
 
