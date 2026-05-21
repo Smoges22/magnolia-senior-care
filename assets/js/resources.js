@@ -123,6 +123,51 @@
     "hospice-end-of-life": "Learn gentle guidance for comfort, dignity, hospice, and family support."
   };
 
+  const categoryVisuals = {
+    "understanding-adult-family-homes": {
+      image: "assets/images/premium-real/magnolia-open-living-kitchen.png",
+      label: "Small-home support",
+      title: "A real home setting makes comparison easier.",
+      text: "Families can picture daily routines, meals, rooms, supervision, and communication more clearly when education is connected to a real Adult Family Home environment."
+    },
+    "dementia-memory-care": {
+      image: "assets/images/premium-real/magnolia-caregiver-connection.png",
+      label: "Dementia-aware routines",
+      title: "Calm guidance for memory changes.",
+      text: "Dementia questions often begin with worry. Magnolia keeps the focus on safety, familiar routines, communication, and when more support may be needed."
+    },
+    "medicaid-financial-guidance": {
+      image: "assets/images/premium-real/magnolia-kitchen-premium.png",
+      label: "Planning clarity",
+      title: "Cost questions deserve careful, current answers.",
+      text: "Financial guidance stays educational and practical. Current Magnolia pricing and availability should always be confirmed directly with the care team."
+    },
+    "hospital-discharge-transitions": {
+      image: "assets/images/des-moines-real/des-moines-living.jpg",
+      label: "Transition support",
+      title: "A calmer next step after hospital or rehab.",
+      text: "Discharge decisions can move quickly. These guides help families organize care needs, medications, mobility, equipment, and supervision questions."
+    },
+    "safety-wellness": {
+      image: "assets/images/burien-real/burien-hallway.jpg",
+      label: "Safety-first care",
+      title: "Safety is built into ordinary routines.",
+      text: "Fall risk, nutrition, medication support, hydration, and mobility are easier to understand when families can connect guidance to daily life."
+    },
+    "family-support": {
+      image: "assets/images/premium-real/magnolia-patio-evening.png",
+      label: "Family decision support",
+      title: "Families need calm language during hard conversations.",
+      text: "These guides are written for adult children, spouses, POAs, and care partners who are trying to make decisions with compassion and clarity."
+    },
+    "hospice-end-of-life": {
+      image: "assets/images/premium-real/magnolia-patio-evening.png",
+      label: "Comfort and dignity",
+      title: "Comfort-focused care should feel gentle and coordinated.",
+      text: "Hospice and end-of-life planning is handled with educational language around dignity, family presence, communication, and outside care-team coordination."
+    }
+  };
+
   const mostHelpfulSlugs = [
     "what-is-an-adult-family-home-washington",
     "early-signs-of-dementia-families-miss",
@@ -135,6 +180,7 @@
     {
       title: "Dementia Care Journey",
       text: "A calm path from early signs to safer routines, memory care timing, and 24/7 support.",
+      moment: "Start here if your family is noticing changes but is not sure what they mean.",
       steps: [
         ["Early Signs of Dementia Families Often Miss", "early-signs-of-dementia-families-miss"],
         ["When Is It Time for Memory Care?", "when-is-it-time-for-memory-care"],
@@ -146,6 +192,7 @@
     {
       title: "Hospital Transition Journey",
       text: "Move from discharge pressure to safer supervision, placement questions, and fall-risk planning.",
+      moment: "Use this when a hospital or rehab timeline is forcing decisions quickly.",
       steps: [
         ["Hospital Discharge Checklist for Families", "hospital-discharge-checklist-for-families"],
         ["When the Hospital Says Your Parent Can't Go Home", "what-to-do-hospital-says-parent-cant-go-home"],
@@ -156,6 +203,7 @@
     {
       title: "Medicaid & Planning Journey",
       text: "Understand Medicaid basics, spend-down questions, private-pay planning, and current Magnolia pricing.",
+      moment: "Use this to separate general education from Magnolia-specific pricing conversations.",
       steps: [
         ["Does Medicaid Pay for Adult Family Homes in Washington?", "does-medicaid-pay-for-adult-family-homes-washington"],
         ["Medicaid & Financial Guidance", "medicaid-financial-guidance", "category"],
@@ -166,6 +214,7 @@
     {
       title: "Choosing Care Journey",
       text: "Compare small-home care, services, and tour questions before choosing an Adult Family Home.",
+      moment: "Start here when your family is comparing care settings for the first time.",
       steps: [
         ["What Is an Adult Family Home?", "what-is-an-adult-family-home-washington"],
         ["AFH vs Assisted Living", "afh-vs-assisted-living-difference"],
@@ -185,11 +234,16 @@
   ];
 
   function renderReadingPath(path) {
+    const firstStep = path.steps[0];
+    const firstUrl = firstStep[2] === "category"
+      ? categoryUrl(categoryBySlug(firstStep[1]))
+      : articleUrl(articleBySlug(firstStep[1]));
     return `
       <article class="card reading-path-card">
         <div class="eyebrow">Guided path</div>
         <h3>${path.title}</h3>
         <p>${path.text}</p>
+        <p class="reading-path-moment">${path.moment}</p>
         <ol>
           ${path.steps.map(([label, target, type]) => {
             const url = type === "category"
@@ -200,6 +254,10 @@
             return `<li><a href="${url}">${label}</a></li>`;
           }).join("")}
         </ol>
+        <div class="reading-path-footer">
+          <span>Recommended next step</span>
+          <a class="text-action-link" href="${firstUrl}">Continue this guide path</a>
+        </div>
       </article>
     `;
   }
@@ -211,10 +269,53 @@
         <div>
           <div class="eyebrow">Family guide</div>
           <h3>${title}</h3>
-          <p>Printable PDF guide planned for families, POAs, and care partners.</p>
+          <p>Printable PDF guide planned for families, POAs, discharge planners, and care partners.</p>
         </div>
-        <span class="download-status" aria-label="${title} coming soon">Coming Soon</span>
+        <div class="download-card-footer">
+          <span class="download-status" aria-label="${title} coming soon">Coming Soon</span>
+          <a class="text-action-link" href="${href("contact.html")}">Ask Magnolia for help</a>
+        </div>
       </article>
+    `;
+  }
+
+  function careVisual(category) {
+    return categoryVisuals[category?.slug] || categoryVisuals["understanding-adult-family-homes"];
+  }
+
+  function renderCategoryCareVisual(category) {
+    const visual = careVisual(category);
+    return `
+      <figure class="category-care-visual">
+        <img src="${href(visual.image)}" alt="${visual.title}">
+        <figcaption>
+          <span>${visual.label}</span>
+          <strong>${visual.title}</strong>
+          <em>${visual.text}</em>
+        </figcaption>
+      </figure>
+    `;
+  }
+
+  function renderArticleTrustPanel(article) {
+    const category = categoryBySlug(article.category);
+    const visual = careVisual(category);
+    return `
+      <aside class="article-trust-panel">
+        <figure>
+          <img src="${href(visual.image)}" alt="${visual.label} at Magnolia Senior Care">
+        </figure>
+        <div>
+          <div class="eyebrow">Magnolia care lens</div>
+          <h2>${visual.title}</h2>
+          <p>${visual.text}</p>
+          <ul>
+            <li>Reviewed through an RN-led, family-centered perspective.</li>
+            <li>Written for Washington families comparing Adult Family Home care.</li>
+            <li>Educational only, with next steps kept calm and practical.</li>
+          </ul>
+        </div>
+      </aside>
     `;
   }
 
@@ -519,7 +620,7 @@
           <div class="section-head">
             <div class="eyebrow">Recommended Reading Paths</div>
             <h2>Follow a simple path when the decision feels big.</h2>
-            <p>These short journeys connect the guides families usually need in order.</p>
+            <p>These short journeys connect the guides families usually need in order, from first concern to the next practical conversation.</p>
           </div>
           <div class="reading-path-grid">
             ${recommendedReadingPaths.map(renderReadingPath).join("")}
@@ -558,7 +659,7 @@
           <div class="section-head">
             <div class="eyebrow">Downloadable Family Guides</div>
             <h2>Printable checklists are being prepared for families.</h2>
-            <p>These future guides will make tours, discharge planning, dementia safety, and Medicaid questions easier to organize. For now, each topic is available as an RN-reviewed Resource Center guide.</p>
+            <p>These future PDFs will support families, discharge planners, referral partners, and POAs. Until they are published, Magnolia can walk families through the same questions by phone or during a tour.</p>
           </div>
           <div class="download-guide-grid">
             ${downloadGuides.map(renderDownloadCard).join("")}
@@ -624,9 +725,9 @@
             <p class="page-lede">${category.description}</p>
           </div>
           <aside class="interior-hero-card">
+            ${renderCategoryCareVisual(category)}
             <div class="proof-card-label">${countLabel}</div>
             <div class="interior-proof-row"><strong>Start with clarity</strong><span>Plain-language education for families, POAs, and care partners.</span></div>
-            <div class="interior-proof-row"><strong>RN-led lens</strong><span>Guidance shaped around safety, dignity, routines, and communication.</span></div>
           </aside>
         </div>
       </section>
@@ -714,6 +815,7 @@
               <div class="eyebrow">Key takeaways</div>
               <ul>${article.keyTakeaways.map((item) => `<li>${item}</li>`).join("")}</ul>
             </div>
+            ${renderArticleTrustPanel(article)}
             ${articleNextStep(article)}
             ${renderArticleJourney(article)}
             <nav class="toc-card" aria-label="Table of contents">
