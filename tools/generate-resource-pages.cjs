@@ -9,7 +9,8 @@ vm.runInNewContext(dataCode, sandbox);
 
 const resources = sandbox.window.MagnoliaResources;
 const domain = "https://www.magnoliaseniorcarewa.com";
-const socialImage = `${domain}/assets/brand/social/magnolia-social-card.png`;
+const resourceSocialImage = `${domain}/assets/brand/social/magnolia-og-resource-center.jpg`;
+const resourceSocialAlt = "Magnolia Senior Care Resource Center RN-reviewed family guidance";
 const verificationMeta = `
   <meta name="google-site-verification" content="REPLACE_WITH_GOOGLE_VERIFICATION_CODE">
   <meta name="msvalidate.01" content="A4C93E344DC69C9B3DC87EA8DA78D6A1" />`;
@@ -72,11 +73,17 @@ ${verificationMeta}
   <meta property="og:description" content="${safeDescription}">
   <meta property="og:type" content="${ogType}">
   <meta property="og:url" content="${canonical}">
-  <meta property="og:image" content="${socialImage}">
+  <meta property="og:site_name" content="Magnolia Senior Care WA">
+  <meta property="og:image" content="${resourceSocialImage}">
+  <meta property="og:image:secure_url" content="${resourceSocialImage}">
+  <meta property="og:image:alt" content="${resourceSocialAlt}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${safeTitle}">
   <meta name="twitter:description" content="${safeDescription}">
-  <meta name="twitter:image" content="${socialImage}">
+  <meta name="twitter:image" content="${resourceSocialImage}">
+  <meta name="twitter:image:alt" content="${resourceSocialAlt}">
   <link rel="icon" href="${prefix}assets/brand/favicon/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="${prefix}assets/brand/favicon/apple-touch-icon.png">
   <link rel="manifest" href="${prefix}assets/brand/favicon/site.webmanifest">

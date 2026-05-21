@@ -289,6 +289,14 @@
     if (!mount) return;
     const youtubeUrl = site.brand.youtubeUrl || "#";
     const facebookUrl = site.brand.facebookUrl || site.brand.socialLinks.find((profile) => profile.label === "Facebook")?.href || "#";
+    const trustItems = [
+      ["RN-Led Care", "Clinical awareness guides daily routines."],
+      ["Licensed Adult Family Homes", "Small-home care in Burien and Des Moines."],
+      ["Dementia-Aware Support", "Calm structure for memory and safety needs."],
+      ["Family-Centered Communication", "Clear updates for families and care partners."],
+      ["Hospital Transition Guidance", "Support after hospital or rehab changes."],
+      ["South King County Care", "Local guidance for Washington families."]
+    ];
 
     mount.innerHTML = `
       <section class="youtube-section" aria-label="Magnolia Senior Care YouTube">
@@ -313,29 +321,32 @@
           </div>
         </div>
       </section>
+      <section class="footer-trust-band" aria-labelledby="footer-trust-title">
+        <div class="container trust-band-inner">
+          <div class="trust-band-copy">
+            <div class="eyebrow">Magnolia care philosophy</div>
+            <h2 id="footer-trust-title">Why Families Choose Magnolia</h2>
+            <p>RN-led, small-home senior care for families who want clear communication, calm routines, and thoughtful support in South King County.</p>
+          </div>
+          <div class="trust-band-list" aria-label="Magnolia trust signals">
+            ${trustItems.map(([title, text]) => `
+              <article class="trust-band-item">
+                <span class="trust-band-icon" aria-hidden="true">${careIcon(title)}</span>
+                <div>
+                  <h3>${title}</h3>
+                  <p>${text}</p>
+                </div>
+              </article>
+            `).join("")}
+          </div>
+        </div>
+      </section>
       <footer class="site-footer" id="site-footer">
         <div class="container">
-          <div class="footer-cta">
-            <div>
-              <div class="eyebrow">Start with a conversation</div>
-              <h2>Find the right Magnolia home for your loved one.</h2>
-              <p>Pricing depends on care needs, room availability, assessment level, and service requirements. Please contact Magnolia directly for current private-pay rates and availability.</p>
-              <p class="cta-microcopy">No pressure. Just clear answers for your family.</p>
-            </div>
-            <div class="footer-cta-actions">
-              <a class="button" href="${localHref("contact.html")}">Schedule a Private Tour</a>
-              <a class="button secondary" href="${site.brand.phoneHref}">Speak With Us First</a>
-            </div>
-          </div>
           <div class="footer-grid">
             <div class="footer-brand">
               <img class="footer-logo" src="${localHref("assets/images/logo/magnolia-logo-footer-transparent.png")}" alt="${site.brand.name}">
               <p>${site.brand.tagline}</p>
-              <div class="footer-proof">
-                <span>RN-led</span>
-                <span>Licensed AFH</span>
-                <span>South King County</span>
-              </div>
               <div class="social-icons" aria-label="Magnolia social media">
                 ${site.brand.socialLinks.map((profile) => `<a class="social-icon social-${profile.label.toLowerCase()}" href="${profile.href}" target="${profile.href === "#" ? "_self" : "_blank"}" rel="noopener" aria-label="${profile.label}">${socialIcon(profile.label)}</a>`).join("")}
               </div>
@@ -347,7 +358,7 @@
               </div>
             </div>
             <div class="footer-panel">
-              <h3>Website Trust</h3>
+              <h3>Legal</h3>
               <div class="footer-links">
                 <a href="${localHref("privacy-policy/")}">Privacy Policy</a>
                 <a href="${localHref("terms-of-use/")}">Terms of Use</a>
@@ -356,7 +367,7 @@
               </div>
             </div>
             <div class="footer-panel">
-              <h3>Local Care</h3>
+              <h3>Locations</h3>
               <div class="footer-links">
                 <a href="${localHref("burien-adult-family-home.html")}">${site.locations.burien.displayName}</a>
                 <a href="${localHref("des-moines-adult-family-home.html")}">${site.locations.highline.displayName}</a>
