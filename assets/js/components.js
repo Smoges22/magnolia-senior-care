@@ -91,6 +91,90 @@
     return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6.7h9.2v6.2H8.1L5 15.6V6.7Z"/><path d="M10.1 14.8h5.8l3.1 2.5V8.5h-2.6"/><path d="M7.4 9.6h4.4"/></svg>';
   }
 
+  function resourceMenuItems() {
+    return [
+      {
+        label: "Start Here",
+        href: "resources/index.html",
+        description: "Guided paths for families"
+      },
+      {
+        label: "Understanding Adult Family Homes",
+        href: "resources/understanding-adult-family-homes/index.html",
+        slug: "understanding-adult-family-homes"
+      },
+      {
+        label: "Dementia & Memory Care",
+        href: "resources/dementia-memory-care/index.html",
+        slug: "dementia-memory-care"
+      },
+      {
+        label: "Medicaid & Financial Guidance",
+        href: "resources/medicaid-financial-guidance/index.html",
+        slug: "medicaid-financial-guidance"
+      },
+      {
+        label: "Hospital Discharge & Transitions",
+        href: "resources/hospital-discharge-transitions/index.html",
+        slug: "hospital-discharge-transitions"
+      },
+      {
+        label: "Safety & Wellness",
+        href: "resources/safety-wellness/index.html",
+        slug: "safety-wellness"
+      },
+      {
+        label: "Family Support",
+        href: "resources/family-support/index.html",
+        slug: "family-support"
+      },
+      {
+        label: "Hospice & End-of-Life Support",
+        href: "resources/hospice-end-of-life/index.html",
+        slug: "hospice-end-of-life"
+      }
+    ];
+  }
+
+  function resourceActiveSlug() {
+    const path = window.location.pathname.replace(/\\/g, "/");
+    const resources = window.MagnoliaResources;
+    if (!(path.includes("/resources/") || path.endsWith("/resources"))) return "";
+    const bodyCategory = document.body?.dataset?.category;
+    if (bodyCategory) return bodyCategory;
+    const articleSlug = document.body?.dataset?.article;
+    if (articleSlug && resources?.articles?.[articleSlug]) return resources.articles[articleSlug].category;
+    const menuItem = resourceMenuItems().find((item) => item.slug && path.includes(`/resources/${item.slug}/`));
+    return menuItem?.slug || "start";
+  }
+
+  function resourceDropdownMarkup(isResourcePage) {
+    const activeSlug = resourceActiveSlug();
+    const menuId = "resource-center-menu";
+    const active = isResourcePage ? ' aria-current="page"' : "";
+    const items = resourceMenuItems().map((item) => {
+      const isActive = activeSlug === (item.slug || "start");
+      return `
+        <a href="${localHref(item.href)}"${isActive ? ' aria-current="page"' : ""}>
+          <span>${item.label}</span>
+          ${item.description ? `<small>${item.description}</small>` : ""}
+        </a>
+      `;
+    }).join("");
+
+    return `
+      <div class="nav-dropdown${isResourcePage ? " active" : ""}" data-resource-dropdown>
+        <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-controls="${menuId}"${active}>
+          <span>Resource Center</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5.8 7.6 4.2 4.2 4.2-4.2"/></svg>
+        </button>
+        <div class="resource-submenu" id="${menuId}">
+          ${items}
+        </div>
+      </div>
+    `;
+  }
+
   function renderHeader() {
     const mount = document.querySelector("[data-component='site-header']");
     if (!mount) return;
@@ -100,6 +184,7 @@
       const isLocationPage = ["burien-adult-family-home.html", "des-moines-adult-family-home.html"].includes(active);
       const resourcePath = window.location.pathname.replace(/\\/g, "/");
       const isResourcePage = resourcePath.includes("/resources/") || resourcePath.endsWith("/resources");
+      if (href === "resources/index.html") return resourceDropdownMarkup(isResourcePage);
       const aria = href === active || (isLocationPage && href === "index.html#locations") || (isResourcePage && href === "resources/index.html") ? " aria-current=\"page\"" : "";
       return `<a href="${localHref(href)}"${aria}>${label}</a>`;
     }).join("");
@@ -145,9 +230,43 @@
 
     const toggle = mount.querySelector(".menu-toggle");
     const nav = mount.querySelector("#site-nav");
+    const dropdown = mount.querySelector("[data-resource-dropdown]");
+    const dropdownTrigger = dropdown?.querySelector(".nav-dropdown-trigger");
+    let dropdownWasOpenOnPointerDown = false;
+
+    const setDropdownOpen = (isOpen) => {
+      if (!dropdown || !dropdownTrigger) return;
+      dropdown.classList.toggle("is-open", isOpen);
+      dropdownTrigger.setAttribute("aria-expanded", String(isOpen));
+    };
+
     toggle.addEventListener("click", () => {
       const isOpen = nav.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(isOpen));
+      if (!isOpen) setDropdownOpen(false);
+    });
+
+    dropdownTrigger?.addEventListener("pointerdown", () => {
+      dropdownWasOpenOnPointerDown = dropdown?.classList.contains("is-open") || false;
+    });
+
+    dropdownTrigger?.addEventListener("click", (event) => {
+      const openedBeforeClick = event.detail ? dropdownWasOpenOnPointerDown : dropdown?.classList.contains("is-open");
+      setDropdownOpen(!openedBeforeClick);
+    });
+
+    dropdown?.addEventListener("mouseenter", () => setDropdownOpen(true));
+    dropdown?.addEventListener("mouseleave", () => setDropdownOpen(false));
+    dropdown?.addEventListener("focusin", () => setDropdownOpen(true));
+    dropdown?.addEventListener("focusout", () => {
+      window.setTimeout(() => {
+        if (!dropdown.contains(document.activeElement)) setDropdownOpen(false);
+      }, 0);
+    });
+    dropdown?.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      setDropdownOpen(false);
+      dropdownTrigger?.focus();
     });
   }
 
@@ -186,7 +305,7 @@
             <div>
               <div class="eyebrow">Start with a conversation</div>
               <h2>Find the right Magnolia home for your loved one.</h2>
-              <p>Schedule a private tour or speak with us first so we can help you understand care fit, availability, and next steps.</p>
+              <p>Pricing depends on care needs, room availability, assessment level, and service requirements. Please contact Magnolia directly for current private-pay rates and availability.</p>
               <p class="cta-microcopy">No pressure. Just clear answers for your family.</p>
             </div>
             <div class="footer-cta-actions">
@@ -233,7 +352,7 @@
             </div>
           </div>
           <div class="footer-bottom">
-            &copy; <span data-year></span> ${site.brand.legalName}. Information on this website is not medical advice. Availability and services should be confirmed directly.
+            &copy; <span data-year></span> ${site.brand.legalName}. Information on this website is not medical advice. Current rates, availability, and services should be confirmed directly.
             <span class="footer-credit"><a href="https://www.afhdesignsbysam.com/" target="_blank" rel="noopener">Web Designs By Sam</a></span>
           </div>
         </div>
@@ -556,21 +675,6 @@
     });
   }
 
-  function renderCareGuide() {
-    if (document.querySelector(".care-guide-float")) return;
-    const node = document.createElement("aside");
-    node.className = "care-guide-float";
-    node.setAttribute("aria-label", "Magnolia Care Guide assistant placeholder");
-    node.innerHTML = `
-      <div>
-        <strong>Magnolia Care Guide</strong>
-        <span>Ask about pricing, room availability, tours, Medicaid/private pay, services, or common questions.</span>
-      </div>
-      <button type="button" aria-label="Ask Magnolia Care Guide a question">Ask a question</button>
-    `;
-    document.body.appendChild(node);
-  }
-
   document.addEventListener("DOMContentLoaded", () => {
     renderHeader();
     renderFooter();
@@ -581,6 +685,5 @@
     applyImageFallbacks();
     initLightbox();
     initScrollReveal();
-    renderCareGuide();
   });
 })();

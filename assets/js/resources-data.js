@@ -16,7 +16,7 @@ window.MagnoliaResources = {
       slug: "medicaid-financial-guidance",
       title: "Medicaid & Financial Guidance",
       icon: "finance",
-      description: "Washington-specific education on Medicaid, private pay, spend-down, long-term care costs, and planning ahead for senior care."
+      description: "Washington-specific education on Medicaid, private pay, spend-down, and long-term care planning. Pricing depends on care needs, room availability, assessment level, and service requirements."
     },
     {
       slug: "hospital-discharge-transitions",
@@ -45,24 +45,24 @@ window.MagnoliaResources = {
   ],
   pathways: [
     {
-      title: "New to Adult Family Homes?",
-      text: "Learn what Adult Family Homes are, who they serve, and how they compare to assisted living or nursing homes.",
-      article: "what-is-an-adult-family-home-washington"
-    },
-    {
-      title: "Concerned About Dementia?",
-      text: "Understand early signs, care options, safety, routines, and when more support may be needed.",
+      title: "I'm worried about dementia",
+      text: "Learn early signs, care options, routines, and when more support may be needed.",
       article: "early-signs-of-dementia-families-miss"
     },
     {
-      title: "Planning After a Hospital Stay?",
-      text: "Use discharge checklists and transition guidance to understand next steps after hospitalization or rehab.",
-      article: "hospital-discharge-checklist-for-families"
+      title: "My parent may need more care",
+      text: "Understand signs that 24/7 supervision or residential care may be safer.",
+      article: "how-to-know-when-24-7-care-is-time"
     },
     {
-      title: "Worried About Cost or Medicaid?",
-      text: "Learn how private pay, Medicaid, spend-down, and long-term care planning may work in Washington.",
+      title: "I'm confused about Medicaid or cost",
+      text: "Learn the general difference between private pay and Medicaid, then contact Magnolia for current rates and availability.",
       article: "does-medicaid-pay-for-adult-family-homes-washington"
+    },
+    {
+      title: "We're planning after a hospital stay",
+      text: "Use discharge checklists and transition guidance to plan safer next steps.",
+      article: "hospital-discharge-checklist-for-families"
     }
   ],
   articles: {
@@ -280,23 +280,23 @@ window.MagnoliaResources = {
       title: "Does Medicaid Pay for Adult Family Homes in Washington?",
       slug: "does-medicaid-pay-for-adult-family-homes-washington",
       category: "medicaid-financial-guidance",
-      excerpt: "A careful educational overview of Washington Medicaid, long-term care planning, private pay, and who families should contact for personal guidance.",
+      excerpt: "A careful educational overview of Washington Medicaid, private pay, long-term care planning, and why current Magnolia rates and availability should be confirmed directly.",
       readTime: "10 min read",
       featured: true,
       relatedArticles: ["what-is-an-adult-family-home-washington", "afh-vs-assisted-living-difference", "hospital-discharge-checklist-for-families"],
       metaTitle: "Does Medicaid Pay for Adult Family Homes in Washington? | Magnolia",
-      metaDescription: "Educational overview of Medicaid and Adult Family Homes in Washington, including private pay, eligibility questions, HCS, DSHS, and planning resources.",
+      metaDescription: "Educational overview of Medicaid and Adult Family Homes in Washington, including private pay, eligibility questions, HCS, DSHS, and why families should confirm Magnolia pricing directly.",
       reviewedBy: "Sosena Mekuria, RN — Magnolia Senior Care",
       lastUpdated: "2026-05-14",
       keyTakeaways: [
-        "Medicaid long-term care support in Washington depends on financial eligibility, care needs, assessment, and provider participation.",
+        "Medicaid long-term care support in Washington depends on financial eligibility, care needs, assessment, authorization, and provider participation.",
         "Families should confirm details with Washington DSHS, Home and Community Services, a case manager, or an elder law or Medicaid planning professional.",
-        "Payment source should be discussed early with any Adult Family Home because availability and accepted payment arrangements can vary."
+        "Pricing depends on care needs, room availability, assessment level, and service requirements. Please contact Magnolia directly for current private-pay rates and availability."
       ],
       sections: [
         {
           heading: "Start with careful language",
-          body: "Families often ask, \"Will Medicaid pay for an Adult Family Home?\" The safest answer is: it depends. Washington Medicaid long-term care programs have eligibility rules, assessment requirements, provider participation details, and approval steps that should be confirmed through official or qualified sources.",
+          body: "Families often ask, \"Will Medicaid pay for an Adult Family Home?\" The safest answer is: it depends. Washington Medicaid long-term care programs have eligibility rules, assessment requirements, authorization steps, provider participation details, and approval steps that should be confirmed through official or qualified sources.",
           subsections: [
             {
               heading: "What families should not assume",
@@ -310,7 +310,7 @@ window.MagnoliaResources = {
         },
         {
           heading: "How Washington long-term care eligibility is generally reviewed",
-          body: "Washington long-term care Medicaid support generally involves both financial and care-need review. Families may need to provide personal information, income and asset details, medical or care documentation, and information about daily support needs.",
+          body: "Washington long-term care Medicaid support generally involves both financial and care-need review. Private pay is arranged directly with the care home, while Medicaid-related support depends on eligibility, assessment, authorization, and provider participation. Families may need to provide personal information, income and asset details, medical or care documentation, and information about daily support needs.",
           subsections: [
             {
               heading: "Financial eligibility",
@@ -324,11 +324,11 @@ window.MagnoliaResources = {
         },
         {
           heading: "Questions to ask an Adult Family Home",
-          body: "Before touring or making a plan, families should ask direct payment questions in a respectful and practical way. Clear payment conversations protect both the resident and the home.",
+          body: "Before touring or making a plan, families should ask direct payment questions in a respectful and practical way. Clear payment conversations protect both the resident and the home. Pricing depends on care needs, room availability, assessment level, and service requirements. Please contact Magnolia directly for current private-pay rates and availability.",
           subsections: [
             {
               heading: "Payment-source questions",
-              body: "Ask what payment sources are accepted, what is included in the rate, whether deposits or private-pay periods apply, what happens if needs change, and whether the home currently has availability for the resident's care needs."
+              body: "Ask what payment sources are currently available, what services are included, what happens if needs change, and whether the home currently has availability for the resident's care needs. Because online senior-care listings may show outdated pricing or old business information, families should confirm current rates and availability directly with Magnolia Senior Care."
             },
             {
               heading: "Care-fit questions",
@@ -337,12 +337,13 @@ window.MagnoliaResources = {
           ]
         }
       ],
-      insight: "Magnolia can discuss care fit, availability, and accepted payment arrangements for the home. Medicaid eligibility and legal or financial planning should be confirmed with Washington DSHS, HCS, or qualified professionals.",
+      insight: "Magnolia can discuss care fit, room availability, assessment level, service requirements, and current private-pay rates. Medicaid eligibility and legal or financial planning should be confirmed with Washington DSHS, HCS, or qualified professionals.",
       faq: [
         ["Can Magnolia guarantee Medicaid coverage?", "No. Magnolia cannot guarantee Medicaid eligibility, authorization, or coverage. Families should confirm personal details with Washington DSHS, HCS, a case manager, or qualified legal or financial professionals."],
-        ["Does every Adult Family Home accept Medicaid?", "No. Payment arrangements vary by home, availability, resident needs, and provider participation. Ask each home directly."],
+        ["Does every Adult Family Home accept Medicaid?", "No. Payment arrangements vary by home, availability, resident needs, authorization, and provider participation. Do not assume Medicaid acceptance or a guaranteed payment arrangement. Ask each home directly."],
         ["Who should families contact for Medicaid questions in Washington?", "Families can contact Washington DSHS, Home and Community Services, a case manager, an elder law attorney, or another qualified Medicaid planning professional."],
-        ["Should families discuss payment before touring?", "Yes. It is helpful to discuss location preference, care needs, timeline, and payment source early so everyone can be clear about fit and next steps."]
+        ["Should families discuss payment before touring?", "Yes. Pricing depends on care needs, room availability, assessment level, and service requirements. Please contact Magnolia directly for current private-pay rates and availability. Because online senior-care listings may show outdated pricing or old business information, families should confirm current rates and availability directly with Magnolia Senior Care."],
+        ["Why doesn't Magnolia list exact pricing online?", "Care needs, room availability, mobility support, dementia needs, medication support, supervision level, and service requirements can vary. Magnolia provides current pricing after learning more about the resident's needs. Families should contact Magnolia directly for current private-pay rates and availability."]
       ]
     },
     "hospital-discharge-checklist-for-families": {
