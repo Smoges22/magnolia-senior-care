@@ -89,6 +89,162 @@
     `;
   }
 
+  function priorityArticleCard(article, modifier = "") {
+    const category = categoryBySlug(article.category);
+    return `
+      <article class="card resource-priority-card${modifier ? ` ${modifier}` : ""}">
+        <div class="eyebrow">${category?.title || "Magnolia guide"}</div>
+        <h3>${article.title}</h3>
+        <p>${article.excerpt}</p>
+        <div class="resource-card-meta">
+          <span>${article.readTime}</span>
+          <span>Reviewed by RN</span>
+        </div>
+        <a class="text-action-link resource-card-action" href="${articleUrl(article)}">Read guide</a>
+      </article>
+    `;
+  }
+
+  const categorySummaries = {
+    "understanding-adult-family-homes": "Learn how Adult Family Homes work and what to compare before choosing care.",
+    "dementia-memory-care": "Plan calmer routines, supervision, and safer support for memory changes.",
+    "medicaid-financial-guidance": "Understand private pay, Medicaid basics, and how to confirm current pricing.",
+    "hospital-discharge-transitions": "Prepare for safer next steps after hospital or rehab discharge.",
+    "safety-wellness": "Review fall risk, medication, nutrition, and wellness guidance.",
+    "family-support": "Support family decisions, caregiver stress, and difficult conversations.",
+    "hospice-end-of-life": "Learn gentle guidance for comfort, dignity, hospice, and family support."
+  };
+
+  const mostHelpfulSlugs = [
+    "what-is-an-adult-family-home-washington",
+    "early-signs-of-dementia-families-miss",
+    "how-to-know-when-24-7-care-is-time",
+    "does-medicaid-pay-for-adult-family-homes-washington",
+    "hospital-discharge-checklist-for-families"
+  ];
+
+  const guidedReadingPaths = [
+    {
+      title: "Dementia Care Path",
+      text: "Start with signs, then compare memory care timing, small-home routines, and 24/7 support.",
+      steps: [
+        ["Early Signs of Dementia", "early-signs-of-dementia-families-miss"],
+        ["When Is It Time for Memory Care?", "when-is-it-time-for-memory-care"],
+        ["How Small-Home Care Benefits People With Dementia", "how-small-home-care-benefits-people-with-dementia"],
+        ["How to Know When It's Time for 24/7 Care", "how-to-know-when-24-7-care-is-time"]
+      ]
+    },
+    {
+      title: "Hospital Transition Path",
+      text: "Move from discharge instructions to safer supervision, placement questions, and fall-risk planning.",
+      steps: [
+        ["Hospital Discharge Checklist", "hospital-discharge-checklist-for-families"],
+        ["When the Hospital Says Your Parent Can't Go Home", "what-to-do-hospital-says-parent-cant-go-home"],
+        ["Questions to Ask Before Discharge", "questions-to-ask-hospital-before-discharge"],
+        ["How AFHs Reduce Fall Risk", "how-afhs-reduce-fall-risk-compared-to-living-alone"]
+      ]
+    },
+    {
+      title: "Cost & Medicaid Path",
+      text: "Learn the Medicaid basics, then confirm current Magnolia pricing and availability directly.",
+      steps: [
+        ["Does Medicaid Pay for Adult Family Homes?", "does-medicaid-pay-for-adult-family-homes-washington"],
+        ["Medicaid & Financial Guidance", "medicaid-financial-guidance", "category"],
+        ["Contact Magnolia for Current Pricing & Availability", "contact.html#tour-request", "page"]
+      ]
+    }
+  ];
+
+  function renderReadingPath(path) {
+    return `
+      <article class="card reading-path-card">
+        <div class="eyebrow">Guided path</div>
+        <h3>${path.title}</h3>
+        <p>${path.text}</p>
+        <ol>
+          ${path.steps.map(([label, target, type]) => {
+            const url = type === "category"
+              ? categoryUrl(categoryBySlug(target))
+              : type === "page"
+                ? href(target)
+                : articleUrl(articleBySlug(target));
+            return `<li><a href="${url}">${label}</a></li>`;
+          }).join("")}
+        </ol>
+      </article>
+    `;
+  }
+
+  function articleNextStep(article) {
+    const fallback = {
+      title: "What to do next",
+      body: "Use this guide to write down your family's questions, then talk with Magnolia when you are ready to compare care fit, availability, and next steps.",
+      links: [
+        ["Schedule a Tour", "contact.html#tour-request", "page"],
+        ["Call Magnolia", site.brand.phoneHref, "page"]
+      ]
+    };
+    const byCategory = {
+      "dementia-memory-care": {
+        title: "What to do next",
+        body: "Write down recent memory, safety, sleep, eating, wandering, or medication changes. If supervision is becoming hard to manage, compare dementia support and 24/7 care options before a crisis.",
+        links: [
+          ["Read about 24/7 care", "how-to-know-when-24-7-care-is-time", "article"],
+          ["Contact Magnolia", "contact.html#tour-request", "page"]
+        ]
+      },
+      "medicaid-financial-guidance": {
+        title: "What to do next",
+        body: "Use this as education only. Medicaid eligibility, authorization, and private-pay planning should be confirmed with qualified sources. Contact Magnolia directly for current private-pay rates and room availability.",
+        links: [
+          ["Contact Magnolia for pricing", "contact.html#tour-request", "page"],
+          ["Explore financial guidance", "medicaid-financial-guidance", "category"]
+        ]
+      },
+      "hospital-discharge-transitions": {
+        title: "What to do next",
+        body: "Ask the hospital for written care needs, medication lists, mobility instructions, equipment needs, and follow-up appointments before comparing discharge destinations.",
+        links: [
+          ["Use the discharge checklist", "hospital-discharge-checklist-for-families", "article"],
+          ["Talk with Magnolia", "contact.html", "page"]
+        ]
+      },
+      "family-support": {
+        title: "What to do next",
+        body: "Name the decision, write down safety concerns, and decide who needs to be involved. Families often feel calmer when the next conversation has a clear purpose.",
+        links: [
+          ["Review 24/7 care signs", "how-to-know-when-24-7-care-is-time", "article"],
+          ["Contact Our Care Team", "contact.html", "page"]
+        ]
+      },
+      "safety-wellness": {
+        title: "What to do next",
+        body: "Track the pattern: falls, medication changes, appetite, hydration, sleep, confusion, or mobility. Share concerns with healthcare professionals and compare whether more supervision is needed.",
+        links: [
+          ["Read about fall risk", "how-afhs-reduce-fall-risk-compared-to-living-alone", "article"],
+          ["Schedule a Tour", "contact.html#tour-request", "page"]
+        ]
+      }
+    };
+    const content = byCategory[article.category] || fallback;
+    return `
+      <aside class="article-next-step">
+        <div class="eyebrow">${content.title}</div>
+        <p>${content.body}</p>
+        <div>
+          ${content.links.map(([label, target, type]) => {
+            const url = type === "article"
+              ? articleUrl(articleBySlug(target))
+              : type === "category"
+                ? categoryUrl(categoryBySlug(target))
+                : href(target);
+            return `<a class="text-action-link" href="${url}">${label}</a>`;
+          }).join("")}
+        </div>
+      </aside>
+    `;
+  }
+
   function topicNav(currentSlug = "") {
     return data.categories.map((category) => `
       <a href="${categoryUrl(category)}"${category.slug === currentSlug ? ' aria-current="page"' : ""}>
@@ -154,26 +310,36 @@
   function renderResourceCenter() {
     const mount = document.querySelector("[data-resource-center]");
     if (!mount) return;
-    const featured = Object.values(data.articles).filter((article) => article.featured).slice(0, 6);
+    const mostHelpful = mostHelpfulSlugs.map(articleBySlug).filter(Boolean);
+    const featured = Object.values(data.articles)
+      .filter((article) => !mostHelpfulSlugs.includes(article.slug))
+      .slice(0, 6);
     mount.innerHTML = `
       <section class="page-hero interior-hero resource-center-hero">
-        <div class="container">
-          <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / Resource Center</div>
-          <div class="eyebrow">Magnolia Senior Care education hub</div>
-          <h1>Resource Center</h1>
-          <p class="page-lede">Calm, RN-led guidance for Washington families comparing Adult Family Homes, dementia support, Medicaid questions, hospital transitions, and safer next steps.</p>
-          <div class="hero-proof-row resource-trust-row" aria-label="Resource Center trust signals">
-            <span>RN-led guidance</span>
-            <span>Washington-specific</span>
-            <span>Family-friendly education</span>
-            <span>Adult Family Home expertise</span>
+        <div class="container resource-hero-grid">
+          <div>
+            <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / Resource Center</div>
+            <div class="eyebrow">Magnolia Senior Care education hub</div>
+            <h1>Resource Center</h1>
+            <p class="page-lede">Clear, RN-led guidance for Washington families who are trying to understand Adult Family Homes, dementia care, hospital discharge, safety, Medicaid questions, and what to do next.</p>
+            <div class="hero-proof-row resource-trust-row" aria-label="Resource Center trust signals">
+              <span>Reviewed by RN</span>
+              <span>Washington-specific</span>
+              <span>Family decision support</span>
+              <span>Small-home care expertise</span>
+            </div>
+            <form class="resource-search-form" role="search" aria-label="Search Magnolia Resource Center">
+              <label class="resource-search-label" for="resource-search">Search resources</label>
+              <input id="resource-search" class="resource-search" type="search" placeholder="Optional: search a topic or question" autocomplete="off">
+              <button class="resource-search-button" type="submit">Search</button>
+            </form>
+            <p class="resource-search-hint">Most families start with the guided cards below. Search is here if you already know what you need.</p>
           </div>
-          <form class="resource-search-form" role="search" aria-label="Search Magnolia Resource Center">
-            <label class="resource-search-label" for="resource-search">Search resources</label>
-            <input id="resource-search" class="resource-search" type="search" placeholder="Optional: search a topic or question" autocomplete="off">
-            <button class="resource-search-button" type="submit">Search</button>
-          </form>
-          <p class="resource-search-hint">Search is here if you need it. Most families start with the guided topics below.</p>
+          <aside class="resource-hero-panel" aria-label="Magnolia Resource Center guidance">
+            <div><strong>A calm home setting</strong><span>Education shaped around dignity, safety, and daily routines.</span></div>
+            <div><strong>RN-led guidance</strong><span>Reviewed with a clinical eye for family-friendly planning.</span></div>
+            <div><strong>Family-centered care</strong><span>Built for adult children, spouses, POAs, and care partners.</span></div>
+          </aside>
         </div>
       </section>
 
@@ -191,7 +357,6 @@
       <section class="section">
         <div class="container">
           <div class="section-head">
-            <div class="eyebrow">Guided paths</div>
             <h2>Start Here</h2>
             <p>Choose the situation that best matches what your family is facing.</p>
           </div>
@@ -211,20 +376,33 @@
         </div>
       </section>
 
-      <section class="section soft">
+      <section class="section soft resource-most-helpful-section">
         <div class="container">
-          <div class="section-head center">
-            <div class="eyebrow">Featured Guides</div>
-            <h2>Cornerstone guides for families</h2>
-            <p>Start with these core resources for comparing care options, planning transitions, and knowing what to ask next.</p>
+          <div class="section-head">
+            <div class="eyebrow">Most Helpful for Families</div>
+            <h2>Start with the guides families use most.</h2>
+            <p>These are the clearest starting points for understanding care options, safety, dementia concerns, cost questions, and discharge planning.</p>
           </div>
-          <div class="resource-article-grid" data-resource-filter-list>
-            ${featured.map(articleCard).join("")}
+          <div class="resource-priority-grid">
+            ${mostHelpful.map((article, index) => priorityArticleCard(article, index === 0 ? "featured" : "")).join("")}
           </div>
         </div>
       </section>
 
       <section class="section">
+        <div class="container">
+          <div class="section-head center compact-head">
+            <div class="eyebrow">Featured Guides</div>
+            <h2>Supporting guides for the next question.</h2>
+            <p>Use these when you are ready to go one layer deeper.</p>
+          </div>
+          <div class="resource-article-grid supporting-guides-grid" data-resource-filter-list>
+            ${featured.map(articleCard).join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft">
         <div class="container">
           <div class="section-head center">
             <div class="eyebrow">Browse by Topic</div>
@@ -240,11 +418,24 @@
                   ${icon(category.icon)}
                   <div class="eyebrow">${countLabel}</div>
                   <h3>${category.title}</h3>
-                  <p>${category.description}</p>
-                  <a class="text-action-link resource-card-action" href="${categoryUrl(category)}">Explore topic</a>
+                  <p>${categorySummaries[category.slug] || category.description}</p>
+                  <a class="text-action-link resource-card-action" href="${categoryUrl(category)}">Explore guides</a>
                 </article>
               `;
             }).join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Guided Reading Paths</div>
+            <h2>Follow a simple path when the decision feels big.</h2>
+            <p>These short journeys connect the guides families usually need in order.</p>
+          </div>
+          <div class="reading-path-grid">
+            ${guidedReadingPaths.map(renderReadingPath).join("")}
           </div>
         </div>
       </section>
@@ -255,14 +446,15 @@
             <div>
               <div class="eyebrow">Why Magnolia created this Resource Center</div>
               <h2>Calm guidance for decisions that rarely feel simple.</h2>
-              <p>Families often arrive here during a stressful turning point. Magnolia created this Resource Center to make senior care decisions feel more understandable, grounded, and human.</p>
+              <p>Families often arrive here during a stressful turning point. Magnolia created this Resource Center to make senior care decisions feel more understandable, grounded, and human, with an RN-led perspective shaped by Adult Family Home care, dementia support, safety, and hospital transitions in Washington.</p>
+              <p>This content is educational and does not replace medical, legal, or financial advice. Families should consult appropriate professionals for personal guidance.</p>
             </div>
             <ul class="resource-trust-list">
-              <li>RN-reviewed educational guidance</li>
-              <li>Adult Family Home expertise</li>
-              <li>Dementia and safety-focused care perspective</li>
-              <li>Washington-specific senior care information</li>
-              <li>Family-centered decision support</li>
+              <li>RN-led perspective from Sosena Mekuria, RN</li>
+              <li>Washington-specific Adult Family Home education</li>
+              <li>Dementia, safety, and hospital-transition guidance</li>
+              <li>Support for family decision-makers and POAs</li>
+              <li>Warm, educational guidance without pressure</li>
             </ul>
           </div>
         </div>
@@ -377,10 +569,10 @@
           <h1>${article.title}</h1>
           <p class="page-lede">${article.excerpt}</p>
           <div class="article-meta-row" aria-label="Article details">
-            <span>${category.title}</span>
-            <span>${article.readTime}</span>
-            <span>Reviewed by ${article.reviewedBy}</span>
-            <span>Last updated ${article.lastUpdated}</span>
+            <span><strong>Category</strong>${category.title}</span>
+            <span><strong>Read time</strong>${article.readTime}</span>
+            <span><strong>Last updated</strong>${article.lastUpdated}</span>
+            <span><strong>Reviewed by</strong>${article.reviewedBy}</span>
           </div>
         </div>
       </section>
@@ -396,6 +588,7 @@
               <div class="eyebrow">Key takeaways</div>
               <ul>${article.keyTakeaways.map((item) => `<li>${item}</li>`).join("")}</ul>
             </div>
+            ${articleNextStep(article)}
             <nav class="toc-card" aria-label="Table of contents">
               <strong>In this guide</strong>
               ${article.sections.map((section, index) => `<a href="#section-${index + 1}">${sectionHeading(section)}</a>`).join("")}
@@ -419,9 +612,9 @@
             </section>
           </article>
           <aside class="sidebar card info-card resource-sidebar">
-            <div class="eyebrow">Related Guides</div>
+            <div class="eyebrow">Continue learning</div>
             <h3>Helpful next reads</h3>
-            <p>These guides connect naturally to what families usually ask next.</p>
+            <p>These guides connect naturally to the next decision families usually face.</p>
             <div class="sidebar-link-list">
               ${related.map((item) => {
                 const itemCategory = categoryBySlug(item.category);
@@ -439,7 +632,7 @@
           <div class="grid-2">
             <div><div class="eyebrow">Talk with Magnolia</div><h2>Have questions about care options?</h2></div>
             <div>
-              <p>Pricing depends on care needs, room availability, assessment level, and service requirements. Please contact Magnolia directly for current private-pay rates and availability.</p>
+              <p>If your family is trying to understand care fit, timing, availability, or next steps, Magnolia can talk through the situation calmly. Pricing depends on care needs, room availability, assessment level, and service requirements.</p>
               <div class="hero-actions">
                 <a class="button" href="${href("contact.html")}">Schedule a Tour</a>
                 <a class="button secondary" href="${site.brand.phoneHref}">Call Magnolia</a>
@@ -504,21 +697,27 @@
         categories: ["medicaid-financial-guidance"]
       },
       {
+        id: "afh",
+        terms: ["afh", "adult family home", "choose", "choosing", "tour", "license", "licensing", "services", "staffing"],
+        articles: ["how-to-choose-the-right-adult-family-home", "what-services-do-adult-family-homes-provide", "what-is-an-adult-family-home-washington"],
+        categories: ["understanding-adult-family-homes"]
+      },
+      {
         id: "dementia",
-        terms: ["dementia", "memory", "alzheimer", "alzheimers", "alzheimer's"],
-        articles: ["early-signs-of-dementia-families-miss", "how-small-home-care-benefits-people-with-dementia", "when-is-it-time-for-memory-care"],
+        terms: ["dementia", "memory", "alzheimer", "alzheimers", "alzheimer's", "anxiety", "wandering", "routine", "routines"],
+        articles: ["can-people-with-dementia-live-in-an-afh", "memory-care-routines-that-reduce-anxiety", "early-signs-of-dementia-families-miss", "how-small-home-care-benefits-people-with-dementia"],
         categories: ["dementia-memory-care"]
       },
       {
         id: "hospital",
-        terms: ["hospital", "discharge", "rehab", "transition", "transitions"],
-        articles: ["hospital-discharge-checklist-for-families", "what-to-do-hospital-says-parent-cant-go-home"],
+        terms: ["hospital", "discharge", "rehab", "transition", "transitions", "diagnosis", "equipment"],
+        articles: ["questions-to-ask-hospital-before-discharge", "hospital-discharge-checklist-for-families", "what-to-do-hospital-says-parent-cant-go-home"],
         categories: ["hospital-discharge-transitions"]
       },
       {
         id: "safety",
-        terms: ["fall", "falls", "safety", "safe", "medication"],
-        articles: ["how-afhs-reduce-fall-risk-compared-to-living-alone", "medication-management-in-adult-family-home"],
+        terms: ["fall", "falls", "safety", "safe", "medication", "nutrition", "meals", "hydration", "swallowing", "protein"],
+        articles: ["senior-nutrition-what-older-adults-really-need", "how-afhs-reduce-fall-risk-compared-to-living-alone", "medication-management-in-adult-family-home"],
         categories: ["safety-wellness"]
       },
       {
@@ -530,7 +729,7 @@
       {
         id: "tour",
         terms: ["room", "rooms", "available", "tour", "visit", "openings"],
-        articles: ["what-is-an-adult-family-home-washington"],
+        articles: ["how-to-choose-the-right-adult-family-home", "what-is-an-adult-family-home-washington"],
         categories: ["understanding-adult-family-homes"],
         includeContact: true
       }
@@ -634,7 +833,14 @@
       const matchingCategories = allCategories.filter((category) => (
         normalize(`${category.title} ${category.description}`).includes(query)
       ));
-      const matchingArticles = allArticles.filter((article) => textFromArticle(article).includes(query));
+      const articleSearchScore = (article) => {
+        if (normalize(article.title).includes(query)) return 0;
+        if (normalize(`${article.excerpt} ${article.metaTitle} ${article.metaDescription}`).includes(query)) return 1;
+        return 2;
+      };
+      const matchingArticles = allArticles
+        .filter((article) => textFromArticle(article).includes(query))
+        .sort((a, b) => articleSearchScore(a) - articleSearchScore(b));
       const total = matchingCategories.length + matchingArticles.length;
       section.hidden = false;
 

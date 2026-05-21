@@ -2759,9 +2759,48 @@ textarea:focus {
   max-width: 980px;
 }
 
+.resource-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+  gap: clamp(24px, 5vw, 58px);
+  align-items: center;
+}
+
 .resources-hero .breadcrumb,
 .resource-center-hero .breadcrumb {
   margin-bottom: 18px;
+}
+
+.resource-hero-panel {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid rgba(0, 84, 80, 0.12);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 199, 118, 0.24), transparent 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 243, 238, 0.86));
+  box-shadow: 0 22px 54px rgba(0, 84, 80, 0.12);
+}
+
+.resource-hero-panel div {
+  display: grid;
+  gap: 4px;
+  padding: 15px;
+  border: 1px solid rgba(0, 84, 80, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.resource-hero-panel strong {
+  color: var(--teal-dark);
+  font-size: 15px;
+}
+
+.resource-hero-panel span {
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.5;
 }
 
 .resource-search-label {
@@ -2852,7 +2891,9 @@ textarea:focus {
 
 .resource-category-grid,
 .resource-article-grid,
-.resource-pathway-grid {
+.resource-pathway-grid,
+.resource-priority-grid,
+.reading-path-grid {
   display: grid;
   gap: var(--card-gap);
 }
@@ -2871,12 +2912,22 @@ textarea:focus {
 }
 
 .resource-pathway-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.resource-priority-grid {
+  grid-template-columns: 1.15fr repeat(2, minmax(0, 1fr));
+}
+
+.reading-path-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .resource-category-card,
 .resource-article-card,
 .resource-pathway-card,
+.resource-priority-card,
+.reading-path-card,
 .resource-action-card {
   display: flex;
   flex-direction: column;
@@ -2892,6 +2943,8 @@ textarea:focus {
 .resource-category-card::after,
 .resource-article-card::after,
 .resource-pathway-card::after,
+.resource-priority-card::after,
+.reading-path-card::after,
 .resource-action-card::after {
   content: "";
   position: absolute;
@@ -2926,9 +2979,110 @@ textarea:focus {
 .resource-category-card h3,
 .resource-article-card h3,
 .resource-pathway-card h3,
+.resource-priority-card h3,
+.reading-path-card h3,
 .resource-action-card h3 {
   margin-bottom: 0;
   color: var(--teal-dark);
+}
+
+.resource-pathway-card {
+  gap: 12px;
+  padding: 24px;
+}
+
+.resource-pathway-card p,
+.resource-category-card p {
+  font-size: 15px;
+  line-height: 1.58;
+}
+
+.resource-priority-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding: var(--card-padding);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(47, 156, 170, 0.10), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 243, 238, 0.86));
+}
+
+.resource-priority-card.featured {
+  grid-row: span 2;
+  padding: clamp(28px, 4vw, 38px);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 199, 118, 0.24), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(244, 250, 249, 0.92));
+}
+
+.resource-priority-card.featured h3 {
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  line-height: 1.15;
+}
+
+.supporting-guides-grid .resource-article-card {
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 84, 80, 0.04);
+}
+
+.compact-head {
+  margin-bottom: 26px;
+}
+
+.reading-path-card {
+  padding: 24px;
+}
+
+.reading-path-card ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: reading-step;
+}
+
+.reading-path-card li {
+  counter-increment: reading-step;
+}
+
+.reading-path-card li a {
+  position: relative;
+  display: block;
+  padding: 12px 12px 12px 42px;
+  border: 1px solid rgba(0, 84, 80, 0.10);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--teal-dark);
+  font-size: 14px;
+  font-weight: 850;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.reading-path-card li a::before {
+  content: counter(reading-step);
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(255, 199, 118, 0.22);
+  color: var(--teal-dark);
+  font-size: 12px;
+  font-weight: 950;
+  transform: translateY(-50%);
+}
+
+.reading-path-card li a:hover,
+.reading-path-card li a:focus-visible {
+  border-color: rgba(0, 84, 80, 0.22);
+  background: rgba(0, 84, 80, 0.055);
 }
 
 .resource-action-card {
@@ -2959,6 +3113,29 @@ textarea:focus {
   background: rgba(255, 199, 118, 0.20);
   color: var(--teal-dark);
   font-weight: 950;
+}
+
+.article-next-step {
+  display: grid;
+  gap: 14px;
+  margin: 0 0 30px;
+  padding: 24px;
+  border: 1px solid rgba(0, 84, 80, 0.12);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(0, 84, 80, 0.065), rgba(255, 199, 118, 0.14)),
+    #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 84, 80, 0.055);
+}
+
+.article-next-step p {
+  margin: 0;
+}
+
+.article-next-step div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .resource-card-meta span {
@@ -3053,6 +3230,7 @@ textarea:focus {
 .article-meta-row span {
   display: inline-flex;
   align-items: center;
+  gap: 5px;
   min-height: 34px;
   padding: 8px 12px;
   border: 1px solid rgba(0, 84, 80, 0.12);
@@ -3063,6 +3241,13 @@ textarea:focus {
   font-weight: 820;
   line-height: 1.25;
   box-shadow: 0 10px 24px rgba(0, 84, 80, 0.045);
+}
+
+.article-meta-row span strong {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .article-topic-nav {
@@ -4828,12 +5013,27 @@ textarea:focus {
 }
 
 @media (max-width: 980px) {
+  .resource-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-hero-panel {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .resource-category-grid,
   .resource-category-grid.compact,
   .resource-article-grid,
   .resource-article-grid.compact,
-  .resource-pathway-grid {
+  .resource-pathway-grid,
+  .resource-priority-grid,
+  .reading-path-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .resource-priority-card.featured {
+    grid-row: auto;
+    grid-column: 1 / -1;
   }
 
   .resource-mission-card {
@@ -4847,23 +5047,72 @@ textarea:focus {
 }
 
 @media (max-width: 640px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .section-head {
+    margin-bottom: 26px;
+  }
+
+  .resource-center-hero {
+    padding-bottom: 38px;
+  }
+
+  .resource-hero-grid {
+    gap: 20px;
+  }
+
+  .resource-hero-panel {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .resource-hero-panel div {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .resource-hero-panel span {
+    font-size: 13px;
+  }
+
   .resource-category-grid,
   .resource-category-grid.compact,
   .resource-article-grid,
   .resource-article-grid.compact,
-  .resource-pathway-grid {
+  .resource-pathway-grid,
+  .resource-priority-grid,
+  .reading-path-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .resource-category-card,
   .resource-article-card,
-  .resource-pathway-card {
-    gap: 14px;
-    padding: 24px;
+  .resource-pathway-card,
+  .resource-priority-card,
+  .reading-path-card {
+    gap: 12px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .resource-priority-card.featured {
+    padding: 22px;
+  }
+
+  .resource-pathway-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
   }
 
   .resource-search {
-    padding: 16px;
+    min-height: 44px;
+    padding: 13px 14px;
     border-radius: 16px;
   }
 
@@ -4874,11 +5123,11 @@ textarea:focus {
 
   .resource-search-button {
     width: 100%;
-    min-height: 50px;
+    min-height: 44px;
   }
 
   .page-hero.resources-hero {
-    padding: 42px 0 50px;
+    padding: 34px 0 40px;
   }
 
   .page-hero.resources-hero h1 {
@@ -4891,10 +5140,10 @@ textarea:focus {
 
   .article-meta-row span {
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 32px;
     font-size: 12px;
-    text-align: center;
+    text-align: left;
   }
 
   .article-topic-nav,
@@ -4911,6 +5160,7 @@ textarea:focus {
   .key-takeaways,
   .toc-card,
   .magnolia-insight,
+  .article-next-step,
   .reviewed-block,
   .resource-article .article-disclaimer,
   .faq-section details {
@@ -4918,7 +5168,7 @@ textarea:focus {
   }
 
   .resource-article {
-    padding: 22px;
+    padding: 20px;
   }
 
   .resource-article h2,

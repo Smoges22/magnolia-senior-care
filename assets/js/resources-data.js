@@ -45,18 +45,23 @@ window.MagnoliaResources = {
   ],
   pathways: [
     {
+      title: "I'm new to Adult Family Homes",
+      text: "Understand what an AFH is and how this small-home care model works in Washington.",
+      article: "what-is-an-adult-family-home-washington"
+    },
+    {
       title: "I'm worried about dementia",
-      text: "Learn early signs, care options, routines, and when more support may be needed.",
+      text: "Learn early signs, safer routines, and when more support may be needed.",
       article: "early-signs-of-dementia-families-miss"
     },
     {
-      title: "My parent may need more care",
+      title: "My parent may need 24/7 care",
       text: "Understand signs that 24/7 supervision or residential care may be safer.",
       article: "how-to-know-when-24-7-care-is-time"
     },
     {
       title: "I'm confused about Medicaid or cost",
-      text: "Learn the general difference between private pay and Medicaid, then contact Magnolia for current rates and availability.",
+      text: "Learn the general difference between private pay and Medicaid in Washington.",
       article: "does-medicaid-pay-for-adult-family-homes-washington"
     },
     {
@@ -830,6 +835,519 @@ window.MagnoliaResources = {
         ["What should families ask after a fall?", "Ask what happened, whether medical evaluation was needed, what injuries were found, what changes are being made, and how future concerns will be communicated."],
         ["Are medications related to fall risk?", "Some medications or medication changes may contribute to dizziness, sleepiness, confusion, or balance concerns. Families should speak with qualified healthcare professionals about medication questions."],
         ["When should fall risk lead to 24/7 care?", "Families may consider 24/7 care when falls repeat, the person cannot transfer safely, nighttime safety is poor, or living alone no longer feels realistic."]
+      ]
+    },
+    "how-to-choose-the-right-adult-family-home": {
+      title: "How to Choose the Right Adult Family Home",
+      slug: "how-to-choose-the-right-adult-family-home",
+      category: "understanding-adult-family-homes",
+      excerpt: "A practical, tour-friendly checklist for Washington families comparing Adult Family Homes, safety, staffing, RN oversight, dementia experience, and communication.",
+      readTime: "11 min read",
+      featured: false,
+      relatedArticles: ["what-is-an-adult-family-home-washington", "afh-vs-assisted-living-difference", "what-services-do-adult-family-homes-provide"],
+      metaTitle: "How to Choose the Right Adult Family Home | Magnolia Senior Care",
+      metaDescription: "Use this calm checklist to compare Adult Family Homes in Washington, including licensing, staffing, safety, dementia care, RN oversight, rooms, communication, and tour questions.",
+      reviewedBy: "Sosena Mekuria, RN — Magnolia Senior Care",
+      lastUpdated: "2026-05-20",
+      keyTakeaways: [
+        "Choosing an Adult Family Home is about care fit, safety, communication, licensing, environment, and trust.",
+        "Families should compare staffing, RN involvement, dementia experience, medication routines, fall-risk awareness, and how the home communicates with family or POA.",
+        "A strong tour should feel transparent, unrushed, and specific to your loved one's needs."
+      ],
+      sections: [
+        {
+          heading: "Start with care fit, not just availability",
+          body: [
+            "When families are under pressure, it is easy to ask only, \"Do you have a room?\" Availability matters, but the more important question is whether the home can safely support the resident's current needs and likely near-term changes.",
+            "Before calling or touring, write down the resident's diagnoses, mobility needs, medication routine, fall history, dementia concerns, diet needs, sleep pattern, behaviors, and who should receive updates. This helps each home answer honestly."
+          ],
+          subsections: [
+            {
+              heading: "Questions to ask first",
+              body: "Ask what care needs the home commonly supports, whether staff can help with transfers, toileting, bathing, medication routines, meals, dementia-related supervision, and how the home decides whether a resident is a good fit."
+            },
+            {
+              heading: "Helpful internal next step",
+              body: "If you are still comparing care models, read Magnolia's guide to <a href=\"/resources/articles/afh-vs-assisted-living-difference/\">AFH vs assisted living</a> and the overview of <a href=\"/resources/articles/what-services-do-adult-family-homes-provide/\">what services Adult Family Homes provide</a>."
+            }
+          ]
+        },
+        {
+          heading: "What to compare during a tour",
+          body: [
+            "Use the tour like a calm checklist. Look at the environment, listen to how questions are answered, and notice whether the conversation becomes specific to your loved one rather than staying generic.",
+            "Tour checklist: licensing information, provider experience, staffing patterns, awake or on-call overnight support, RN oversight, medication process, fall-risk routines, dementia experience, emergency planning, visiting expectations, room setup, bathroom access, meals, communication, hospice coordination, and current availability."
+          ],
+          subsections: [
+            {
+              heading: "Staffing and RN oversight",
+              body: "Ask who provides hands-on care, who supervises the care plan, how concerns are escalated, and when an RN is involved. RN-led oversight can be especially helpful when medications, skin concerns, mobility changes, nutrition, or dementia symptoms require careful observation."
+            },
+            {
+              heading: "Rooms and daily environment",
+              body: "Notice whether the room feels calm, clean, and easy to navigate. Ask about private rooms, shared spaces, natural light, noise levels, bathroom access, call systems or monitoring, meal routines, visiting, and how residents spend a typical day."
+            }
+          ]
+        },
+        {
+          heading: "Ask Washington-specific AFH questions",
+          body: "Adult Family Homes in Washington are licensed residential care settings, but each home is still different. Families should ask direct questions about licensing, inspections, specialty training when relevant, staff coverage, and whether the home can support the resident's needs under its current care model.",
+          subsections: [
+            {
+              heading: "Licensing and transparency",
+              body: "Ask how the home is licensed, who owns or operates it, who is present day to day, how many residents live there, and where families can review public information. A trustworthy provider should welcome practical questions."
+            },
+            {
+              heading: "Dementia experience",
+              body: "If memory loss is part of the picture, ask about routines, redirection, wandering concerns, sleep changes, meal support, communication, and when the home would recommend a different level of care. Magnolia's guide to <a href=\"/resources/articles/can-people-with-dementia-live-in-an-afh/\">dementia care in an AFH</a> can help families prepare."
+            }
+          ]
+        },
+        {
+          heading: "Red flags families should not ignore",
+          body: [
+            "A tour does not need to feel perfect, but it should feel honest. Pay attention if answers are vague, pressure is high, the home avoids care-specific questions, residents appear unattended, or communication feels dismissive.",
+            "Red flags may include unclear staffing, no practical discussion of medication routines, little awareness of fall risk, poor infection-control practices, rushed tours, unwillingness to discuss dementia supervision, or promises that sound too absolute."
+          ],
+          subsections: [
+            {
+              heading: "Communication matters",
+              body: "Ask who updates the family, how often, and how urgent changes are handled. Good care depends on clear communication before problems become crises."
+            },
+            {
+              heading: "Pricing and availability",
+              body: "Pricing depends on care needs, room availability, assessment level, and service requirements. Please contact Magnolia directly for current private-pay rates and availability."
+            }
+          ]
+        }
+      ],
+      insight: "Magnolia encourages families to bring real details to a tour: medications, mobility, dementia concerns, recent falls, discharge notes, and family priorities. The best choice usually becomes clearer when the conversation moves from brochure language to everyday care.",
+      faq: [
+        ["What should I ask when touring an Adult Family Home?", "Ask about licensing, staffing, RN oversight, medication routines, fall-risk awareness, dementia experience, meals, room setup, communication, hospice coordination, and what would happen if care needs increase."],
+        ["How do I know if an Adult Family Home is a good fit?", "A good fit depends on whether the home can support the resident's care needs safely, communicate clearly, provide a calm environment, and explain its approach without pressure or vague promises."],
+        ["Should I bring medical information to a tour?", "Yes. A medication list, diagnoses, mobility details, hospital discharge notes, diet instructions, and family or POA contact information can help the home discuss care fit more accurately."],
+        ["Can Magnolia guarantee placement?", "No. Placement depends on care fit, assessment details, room availability, and whether Magnolia can safely meet the resident's needs. Families should contact Magnolia directly to discuss current options."]
+      ]
+    },
+    "what-services-do-adult-family-homes-provide": {
+      title: "What Services Do Adult Family Homes Provide?",
+      slug: "what-services-do-adult-family-homes-provide",
+      category: "understanding-adult-family-homes",
+      excerpt: "A clear overview of common Adult Family Home services, including personal care, medication routines, meals, dementia support, mobility help, supervision, and care coordination.",
+      readTime: "9 min read",
+      featured: false,
+      relatedArticles: ["what-is-an-adult-family-home-washington", "how-to-choose-the-right-adult-family-home", "medication-management-in-adult-family-home"],
+      metaTitle: "What Services Do Adult Family Homes Provide? | Magnolia",
+      metaDescription: "Learn common services in Adult Family Homes, including personal care, meals, medication support, dementia routines, mobility help, supervision, and coordination with providers.",
+      reviewedBy: "Sosena Mekuria, RN — Magnolia Senior Care",
+      lastUpdated: "2026-05-20",
+      keyTakeaways: [
+        "Adult Family Home services vary by resident needs, assessment, licensing, staffing, and individualized care plans.",
+        "Common supports may include personal care, meals, medication routines, mobility assistance, supervision, dementia-aware routines, and coordination with outside providers.",
+        "Families should ask each home what it can safely provide for the resident's current and changing needs."
+      ],
+      sections: [
+        {
+          heading: "Services are built around the resident's care plan",
+          body: "Adult Family Homes are residential care homes, not one-size-fits-all programs. Services vary by resident needs, provider capability, assessment level, licensing, staffing, and the care plan created for the person.",
+          subsections: [
+            {
+              heading: "Personal care",
+              body: "Many residents need help with bathing, dressing, grooming, toileting, continence routines, oral care, skin awareness, and getting ready for the day or night. Families should ask how privacy and dignity are protected during hands-on care."
+            },
+            {
+              heading: "Supervision and daily rhythm",
+              body: "Supervision may include support with meals, safety checks, mobility, routines, cueing, hydration, rest, activities, and noticing changes. For families comparing options, Magnolia's <a href=\"/resources/articles/what-is-an-adult-family-home-washington/\">Washington AFH guide</a> explains how the model works."
+            }
+          ]
+        },
+        {
+          heading: "Medication, meals, and mobility support",
+          body: [
+            "Medication support is one of the most important topics to discuss. Ask how medications are stored, administered or supported, documented, refilled, changed, and communicated to families or prescribing providers.",
+            "Meals, hydration, and mobility support also matter. Older adults may need consistent meal timing, texture awareness, appetite monitoring, transfer help, walker or wheelchair support, and fall-risk observation."
+          ],
+          subsections: [
+            {
+              heading: "Medication management",
+              body: "Families can review Magnolia's guide to <a href=\"/resources/articles/medication-management-in-adult-family-home/\">medication management in an Adult Family Home</a> for questions about pharmacy coordination, medication changes, and family communication."
+            },
+            {
+              heading: "Meals and nutrition",
+              body: "Ask about home-cooked meals, snacks, hydration, special diets, swallowing concerns, appetite changes, and how the home communicates nutrition concerns to family or clinicians."
+            }
+          ]
+        },
+        {
+          heading: "Dementia support and care coordination",
+          body: "Some Adult Family Homes may support residents with dementia or memory changes through familiar routines, cueing, calm spaces, supervision, and caregiver consistency. Families should ask about experience and limits rather than assuming every home is the right match.",
+          subsections: [
+            {
+              heading: "Coordination with professionals",
+              body: "Depending on the resident's needs, an Adult Family Home may coordinate with physicians, pharmacies, home health, hospice, therapists, case managers, and family decision-makers."
+            },
+            {
+              heading: "Activities and connection",
+              body: "Activities do not have to be elaborate to be meaningful. Familiar music, conversation, simple movement, meals together, outdoor time, and personal routines can support dignity and orientation."
+            }
+          ]
+        },
+        {
+          heading: "Questions families should ask",
+          body: "Ask what services are included, what services require outside providers, how care-plan changes are handled, how the family is notified, and what needs may be beyond the home's scope. This is especially important after a hospitalization, fall, dementia change, or medication change.",
+          subsections: [
+            {
+              heading: "Compare the service list to the real need",
+              body: "A service list is only helpful if it matches the resident's day-to-day reality. Bring notes about transfers, bathing, toileting, wandering, sleep, appetite, medication timing, behavior changes, and family concerns."
+            },
+            {
+              heading: "Pricing and availability",
+              body: "Pricing depends on care needs, room availability, assessment level, and service requirements. Please contact Magnolia directly for current private-pay rates and availability."
+            }
+          ]
+        }
+      ],
+      insight: "Magnolia looks at services through an RN-led lens: what the resident needs each day, what could change, what needs monitoring, and how family communication should work.",
+      faq: [
+        ["Do all Adult Family Homes provide the same services?", "No. Services vary by resident needs, care plan, licensing, staffing, provider experience, and what the home can safely support."],
+        ["Can Adult Family Homes help with medications?", "Many Adult Family Homes support medication routines, but families should ask each home how medications are handled, documented, refilled, changed, and communicated."],
+        ["Do Adult Family Homes provide dementia care?", "Some may support residents with dementia or memory changes. Families should ask about routines, supervision, safety, caregiver experience, and when another care setting may be more appropriate."],
+        ["Can Adult Family Homes coordinate with hospice?", "Some Adult Family Homes coordinate with hospice or outside providers when appropriate. Families should ask how coordination, communication, and comfort-focused care are handled."]
+      ]
+    },
+    "can-people-with-dementia-live-in-an-afh": {
+      title: "Can People With Dementia Live in an AFH?",
+      slug: "can-people-with-dementia-live-in-an-afh",
+      category: "dementia-memory-care",
+      excerpt: "A calm guide to when an Adult Family Home may support dementia care, what families should ask, and when another memory-care setting may be more appropriate.",
+      readTime: "9 min read",
+      featured: false,
+      relatedArticles: ["early-signs-of-dementia-families-miss", "how-small-home-care-benefits-people-with-dementia", "how-to-know-when-24-7-care-is-time"],
+      metaTitle: "Can People With Dementia Live in an Adult Family Home? | Magnolia",
+      metaDescription: "Learn when an Adult Family Home may support dementia care, including routines, supervision, wandering concerns, RN involvement, safety, and when memory care may be needed.",
+      reviewedBy: "Sosena Mekuria, RN — Magnolia Senior Care",
+      lastUpdated: "2026-05-20",
+      keyTakeaways: [
+        "Many people with dementia may live in Adult Family Homes when the home can safely support their needs.",
+        "The right fit depends on supervision, routines, safety, wandering risk, communication, medication needs, mobility, and caregiver experience.",
+        "Families should avoid assuming any setting can manage every dementia-related need or behavior."
+      ],
+      sections: [
+        {
+          heading: "Yes, some AFHs support dementia care",
+          body: "Many Adult Family Homes support residents with dementia or memory changes. The smaller setting, familiar caregivers, and consistent routines may help some residents feel less overwhelmed than they might in a larger environment.",
+          subsections: [
+            {
+              heading: "Fit still matters",
+              body: "Dementia care is not just a label. Families should ask whether the home can support the person's current memory, mobility, medication, sleep, nutrition, toileting, and supervision needs."
+            },
+            {
+              heading: "Start with medical guidance",
+              body: "Only qualified clinicians diagnose dementia. If symptoms are changing, families should speak with a physician and review Magnolia's guide to <a href=\"/resources/articles/early-signs-of-dementia-families-miss/\">early signs families often miss</a>."
+            }
+          ]
+        },
+        {
+          heading: "Safety, supervision, and wandering concerns",
+          body: "For dementia care, safety questions should be specific. Ask how the home handles exit-seeking, wandering risk, nighttime confusion, falls, medication refusal, agitation, sleep disruption, and changes in eating or hydration.",
+          subsections: [
+            {
+              heading: "Avoid promises",
+              body: "No care setting can promise that dementia symptoms, falls, wandering, or behaviors will never happen. The goal is thoughtful routines, observation, communication, and appropriate response."
+            },
+            {
+              heading: "RN involvement",
+              body: "RN-led oversight may help families understand medication changes, skin concerns, nutrition changes, infection concerns, falls, and patterns that should be discussed with healthcare professionals."
+            }
+          ]
+        },
+        {
+          heading: "Why smaller environments may help some residents",
+          body: "Some people with memory loss do better with fewer transitions, lower noise, familiar faces, predictable meals, and calm daily structure. A residential care home may offer that kind of rhythm when the resident's needs fit the home.",
+          subsections: [
+            {
+              heading: "Communication style matters",
+              body: "Ask how caregivers approach confusion, repeated questions, resistance to care, frustration, and changes in routine. The answer should sound practical, respectful, and individualized."
+            },
+            {
+              heading: "Routines matter",
+              body: "Families can also read <a href=\"/resources/articles/memory-care-routines-that-reduce-anxiety/\">memory care routines that reduce anxiety</a> for ideas about meals, sleep, transitions, and lower-stimulation support."
+            }
+          ]
+        },
+        {
+          heading: "When memory care may be more appropriate",
+          body: "A dedicated memory care community, skilled nursing setting, hospital evaluation, or another care plan may be more appropriate when needs exceed what a home can safely support. Examples may include high elopement risk, complex medical needs, severe unsafe behaviors, or a need for a different staffing model.",
+          subsections: [
+            {
+              heading: "Ask what would change the plan",
+              body: "During a tour, ask what changes would require reassessment, outside support, a higher level of care, or a different setting. Honest answers are a sign of responsible care planning."
+            },
+            {
+              heading: "Connect to 24/7 care planning",
+              body: "If the family is unsure whether supervision is needed around the clock, Magnolia's guide on <a href=\"/resources/articles/how-to-know-when-24-7-care-is-time/\">when it is time for 24/7 care</a> may help organize the conversation."
+            }
+          ]
+        }
+      ],
+      insight: "Magnolia approaches dementia care by looking at daily patterns: what causes distress, what calms the person, what safety risks are present, and whether the home can support those needs with dignity.",
+      faq: [
+        ["Can every Adult Family Home care for dementia?", "No. Some Adult Family Homes may support dementia care, but each home has different experience, staffing, environment, and care limits. Families should ask specific questions."],
+        ["Can an AFH stop wandering or dementia behaviors?", "No setting can guarantee that wandering, confusion, or behaviors will not occur. Families should ask how the home observes, redirects, communicates, and responds to safety concerns."],
+        ["What questions should I ask about dementia care?", "Ask about routines, supervision, wandering risk, nighttime safety, medication routines, caregiver experience, communication, meals, hydration, mobility, and when the home would recommend another level of care."],
+        ["When is memory care better than an AFH?", "Memory care or another setting may be more appropriate when supervision needs, elopement risk, behaviors, or medical complexity exceed what an Adult Family Home can safely support."]
+      ]
+    },
+    "memory-care-routines-that-reduce-anxiety": {
+      title: "Memory Care Routines That Reduce Anxiety",
+      slug: "memory-care-routines-that-reduce-anxiety",
+      category: "dementia-memory-care",
+      excerpt: "Gentle, practical routines that may help reduce dementia-related anxiety through predictability, familiar caregivers, calmer spaces, and smoother transitions.",
+      readTime: "8 min read",
+      featured: false,
+      relatedArticles: ["early-signs-of-dementia-families-miss", "can-people-with-dementia-live-in-an-afh", "how-small-home-care-benefits-people-with-dementia"],
+      metaTitle: "Memory Care Routines That Reduce Anxiety | Magnolia Senior Care",
+      metaDescription: "Learn how predictable routines, calm environments, familiar caregivers, meal timing, sleep consistency, and communication may support people living with dementia.",
+      reviewedBy: "Sosena Mekuria, RN — Magnolia Senior Care",
+      lastUpdated: "2026-05-20",
+      keyTakeaways: [
+        "Predictable routines may help some people with dementia feel safer and less overwhelmed.",
+        "Meals, sleep, transitions, familiar caregivers, lower stimulation, and communication style can all affect anxiety.",
+        "Families should seek medical guidance when anxiety, agitation, sleep changes, or behavior changes are new or worsening."
+      ],
+      sections: [
+        {
+          heading: "Predictability can feel calming",
+          body: "For a person living with dementia, too much change can feel confusing or threatening. A consistent daily rhythm may help the person know what to expect, even when memory is changing.",
+          subsections: [
+            {
+              heading: "Simple routines matter",
+              body: "Wake-up time, meals, bathing, rest, familiar activities, medication timing, and bedtime can be organized in a way that feels steady rather than rushed."
+            },
+            {
+              heading: "Caregiver familiarity",
+              body: "Familiar caregivers may notice subtle changes in appetite, mood, sleep, discomfort, confusion, or mobility. This can support earlier communication with family and clinicians."
+            }
+          ]
+        },
+        {
+          heading: "Lower stimulation and smoother transitions",
+          body: "Noise, clutter, unfamiliar visitors, rushed instructions, and sudden transitions may increase anxiety for some people with dementia. A calmer environment can make daily care feel less overwhelming.",
+          subsections: [
+            {
+              heading: "Transitions need extra care",
+              body: "Moving from one activity to another, leaving the house, bathing, changing clothes, or going to appointments may require slower pacing, clear cues, and reassurance."
+            },
+            {
+              heading: "Communication style",
+              body: "Short sentences, eye contact, calm tone, choices that are not overwhelming, and validation can be more helpful than arguing or correcting every detail."
+            }
+          ]
+        },
+        {
+          heading: "Meals, hydration, and sleep consistency",
+          body: "Hunger, dehydration, fatigue, pain, constipation, infection, or medication side effects can appear as confusion or agitation. Families should involve healthcare professionals when changes are new, sudden, or concerning.",
+          subsections: [
+            {
+              heading: "Meal timing",
+              body: "Consistent meals and snacks can support energy and routine. Some people with dementia need cueing, adaptive utensils, softer textures, or quiet mealtimes."
+            },
+            {
+              heading: "Sleep routines",
+              body: "Daytime activity, light exposure, evening calm, toileting routines, and reduced nighttime disruption may support better rest. Sleep changes should be discussed with qualified clinicians."
+            }
+          ]
+        },
+        {
+          heading: "What families can do at home",
+          body: [
+            "At-home checklist: keep daily timing consistent, reduce clutter, label important spaces, simplify choices, use familiar music, prepare clothing in order, keep hydration visible, avoid rushing, and write down patterns that increase or reduce anxiety.",
+            "Families can also compare whether the current home environment still supports safety. If supervision, medication routines, meals, or wandering concerns are becoming hard to manage, read Magnolia's guide to <a href=\"/resources/articles/how-to-know-when-24-7-care-is-time/\">24/7 care planning</a>."
+          ],
+          subsections: [
+            {
+              heading: "When to ask for help",
+              body: "Seek medical guidance when anxiety, agitation, hallucinations, falls, sleep changes, appetite changes, or confusion are sudden, worsening, or affecting safety."
+            },
+            {
+              heading: "How AFHs may support routine",
+              body: "An Adult Family Home may offer a smaller, more predictable setting when the resident's needs fit the home. Magnolia's guide to <a href=\"/resources/articles/can-people-with-dementia-live-in-an-afh/\">dementia care in an AFH</a> explains what families should ask."
+            }
+          ]
+        }
+      ],
+      insight: "Magnolia often looks for the pattern beneath the behavior: time of day, hunger, fatigue, pain, overstimulation, unfamiliar transitions, or medication changes. The routine is part of the care plan.",
+      faq: [
+        ["Can routines cure dementia anxiety?", "No. Routines do not cure dementia or guarantee behavior changes. They may help some people feel safer and less overwhelmed as part of a broader care plan."],
+        ["What routines help most?", "Consistent meals, hydration, sleep, bathing, medication timing, familiar caregivers, calm communication, and lower stimulation may help some residents."],
+        ["When should families call a doctor?", "Families should seek medical guidance when anxiety, agitation, confusion, falls, sleep changes, or appetite changes are new, sudden, worsening, or affecting safety."],
+        ["Can an Adult Family Home support these routines?", "Some Adult Family Homes may support dementia-aware routines in a smaller residential setting. Families should ask each home about experience, supervision, safety, and care limits."]
+      ]
+    },
+    "questions-to-ask-hospital-before-discharge": {
+      title: "Questions to Ask the Hospital Before Discharge",
+      slug: "questions-to-ask-hospital-before-discharge",
+      category: "hospital-discharge-transitions",
+      excerpt: "A discharge-planning checklist for families to clarify diagnosis, medications, mobility, wound care, dementia concerns, equipment, follow-up, and supervision needs.",
+      readTime: "10 min read",
+      featured: false,
+      relatedArticles: ["hospital-discharge-checklist-for-families", "what-to-do-hospital-says-parent-cant-go-home", "how-afhs-reduce-fall-risk-compared-to-living-alone"],
+      metaTitle: "Questions to Ask the Hospital Before Discharge | Magnolia",
+      metaDescription: "Use this family checklist to ask the hospital about diagnosis, medications, mobility, fall risk, wound care, dementia concerns, equipment, follow-up, and discharge planning.",
+      reviewedBy: "Sosena Mekuria, RN — Magnolia Senior Care",
+      lastUpdated: "2026-05-20",
+      keyTakeaways: [
+        "Before discharge, families should ask what changed, what care is needed, and whether the person can safely be alone.",
+        "Medication lists, mobility instructions, wound care orders, equipment needs, follow-up appointments, and supervision guidance should be clear before leaving.",
+        "Good discharge questions can reduce confusion when comparing home care, Adult Family Homes, rehab, hospice, or other next-step options."
+      ],
+      sections: [
+        {
+          heading: "Start with the diagnosis and what changed",
+          body: "Families often receive a lot of information quickly. Ask the hospital team to explain the diagnosis, what changed from baseline, what still needs monitoring, and what symptoms should trigger a call or return visit.",
+          subsections: [
+            {
+              heading: "Checklist questions",
+              body: "What is the main diagnosis? What changed during the stay? What problems are resolved, improving, or still active? What warning signs should we watch for? Who do we call after discharge?"
+            },
+            {
+              heading: "Bring the answer into care planning",
+              body: "If the hospital says returning home is unsafe, Magnolia's guide on <a href=\"/resources/articles/what-to-do-hospital-says-parent-cant-go-home/\">what to do when a parent cannot go home</a> can help families organize next steps."
+            }
+          ]
+        },
+        {
+          heading: "Ask about medications and follow-up care",
+          body: "Medication confusion is common after hospitalization. Ask for a current medication list and make sure old medications, new medications, changed doses, and stopped medications are clearly explained.",
+          subsections: [
+            {
+              heading: "Medication checklist",
+              body: "Ask what changed, why it changed, when each medication should be taken, what side effects to watch for, whether refills are needed, and which pharmacy will receive prescriptions."
+            },
+            {
+              heading: "Follow-up checklist",
+              body: "Ask about primary care, specialist visits, therapy, labs, wound checks, home health, hospice, equipment vendors, and who is responsible for scheduling each item."
+            }
+          ]
+        },
+        {
+          heading: "Clarify mobility, fall risk, and equipment needs",
+          body: "A person may look better in the hospital than they function at home. Ask physical therapy, occupational therapy, nursing, or the discharge planner to explain mobility limits in practical terms.",
+          subsections: [
+            {
+              heading: "Mobility checklist",
+              body: "Can the person transfer alone? Walk alone? Use stairs? Toilet safely? Shower safely? Get out of bed at night? Use a walker, wheelchair, gait belt, shower chair, hospital bed, or bedside commode?"
+            },
+            {
+              heading: "Fall-risk checklist",
+              body: "Ask what fall risks were observed, whether supervision is needed, what equipment is recommended, and how family should respond after a fall. Magnolia's <a href=\"/resources/articles/how-afhs-reduce-fall-risk-compared-to-living-alone/\">fall-risk guide</a> may help families compare care settings."
+            }
+          ]
+        },
+        {
+          heading: "Ask about wound care, dementia, and discharge destination",
+          body: "Families should clarify any wound care, skin care, diet, swallowing, toileting, oxygen, infection precautions, dementia concerns, or behavior changes before discharge.",
+          subsections: [
+            {
+              heading: "Care needs checklist",
+              body: "Ask whether wounds require dressing changes, whether swallowing or diet instructions changed, whether confusion or dementia symptoms were observed, and whether the person needs 24/7 supervision."
+            },
+            {
+              heading: "Discharge destination checklist",
+              body: "Ask whether home is realistic, what support would be needed, and whether home health, private caregivers, Adult Family Home care, assisted living, skilled nursing, memory care, hospice, or another plan should be considered."
+            }
+          ]
+        }
+      ],
+      insight: "Magnolia encourages families to ask hospital teams for practical details: what help is needed at 2 p.m., at 2 a.m., in the bathroom, at meals, with medications, and after a fall.",
+      faq: [
+        ["What documents should we request before discharge?", "Ask for the discharge summary, current medication list, diagnosis list, therapy notes, diet instructions, wound care orders, equipment recommendations, follow-up appointments, and contact information."],
+        ["What should we ask about supervision?", "Ask whether the person can safely be alone, transfer alone, toilet alone, take medications independently, prepare meals, respond to emergencies, and sleep safely overnight."],
+        ["Who helps decide where someone should go after discharge?", "The hospital physician, nurses, therapists, social worker, discharge planner, family or POA, and sometimes outside care professionals may all be involved. Legal or rights questions should be directed to qualified professionals."],
+        ["Can Magnolia help with discharge planning?", "Magnolia can discuss care fit, availability, and what information is helpful when comparing Adult Family Home options. Families should contact Magnolia directly with discharge details."]
+      ]
+    },
+    "senior-nutrition-what-older-adults-really-need": {
+      title: "Senior Nutrition: What Older Adults Really Need",
+      slug: "senior-nutrition-what-older-adults-really-need",
+      category: "safety-wellness",
+      excerpt: "RN-reviewed guidance on hydration, protein, appetite changes, swallowing concerns, meal consistency, medication interactions, and nutrition support for older adults.",
+      readTime: "9 min read",
+      featured: false,
+      relatedArticles: ["medication-management-in-adult-family-home", "how-afhs-reduce-fall-risk-compared-to-living-alone", "memory-care-routines-that-reduce-anxiety"],
+      metaTitle: "Senior Nutrition: What Older Adults Really Need | Magnolia",
+      metaDescription: "Learn practical senior nutrition considerations, including hydration, protein, appetite changes, swallowing concerns, medication interactions, dementia eating challenges, and home-cooked meals.",
+      reviewedBy: "Sosena Mekuria, RN — Magnolia Senior Care",
+      lastUpdated: "2026-05-20",
+      keyTakeaways: [
+        "Older adults may need steady hydration, protein, consistent meals, and attention to appetite, swallowing, medication, and dementia-related eating changes.",
+        "Nutrition concerns should be discussed with qualified healthcare professionals, especially when weight loss, choking, dehydration, or medication issues appear.",
+        "In a care setting, nutrition support depends on the resident's needs, care plan, physician guidance, and daily observation."
+      ],
+      sections: [
+        {
+          heading: "Nutrition is more than calories",
+          body: "For older adults, nutrition is closely connected to strength, skin health, medication tolerance, hydration, mood, fall risk, and recovery after illness or hospitalization. Small changes in appetite or fluid intake can matter.",
+          subsections: [
+            {
+              heading: "Hydration",
+              body: "Dehydration may contribute to weakness, dizziness, confusion, constipation, urinary issues, and fall risk. Families should ask how fluids are offered and how changes are noticed."
+            },
+            {
+              heading: "Protein and strength",
+              body: "Protein needs vary, but many older adults benefit from steady protein intake to support strength, healing, and energy. Specific nutrition plans should come from qualified clinicians or dietitians."
+            }
+          ]
+        },
+        {
+          heading: "Appetite changes, swallowing, and consistency",
+          body: "Appetite can change because of illness, pain, depression, dementia, dental problems, medication side effects, constipation, loneliness, or changes in taste and smell. Swallowing concerns should always be taken seriously.",
+          subsections: [
+            {
+              heading: "Swallowing concerns",
+              body: "Coughing during meals, wet voice, choking, pocketing food, weight loss, or repeated respiratory concerns should be discussed with healthcare professionals. Diet texture or swallowing recommendations should come from qualified clinicians."
+            },
+            {
+              heading: "Meal consistency",
+              body: "Consistent meal timing, familiar foods, calm dining spaces, and patient cueing can help some older adults eat better, especially when memory loss or anxiety is present."
+            }
+          ]
+        },
+        {
+          heading: "Medication interactions and RN awareness",
+          body: "Some medications affect appetite, taste, hydration, blood pressure, alertness, digestion, or swallowing. Food timing may also matter for certain medications. Families should ask pharmacists, physicians, or nurses when they have questions.",
+          subsections: [
+            {
+              heading: "Medication questions",
+              body: "Magnolia's guide to <a href=\"/resources/articles/medication-management-in-adult-family-home/\">medication management in an Adult Family Home</a> explains why documentation, pharmacy coordination, and communication are important."
+            },
+            {
+              heading: "Observation matters",
+              body: "RN awareness can help identify patterns such as poor intake, weight changes, dehydration signs, medication side effects, skin concerns, or changes after illness."
+            }
+          ]
+        },
+        {
+          heading: "Dementia eating challenges and home-cooked meals",
+          body: "People living with dementia may forget meals, lose interest in food, become distracted, resist help, prefer familiar foods, or need cueing. A calmer dining environment and consistent routines may help some residents.",
+          subsections: [
+            {
+              heading: "What families can ask",
+              body: "Ask how meals are prepared, how preferences are honored, whether snacks are offered, how hydration is encouraged, and how changes in appetite or weight are communicated."
+            },
+            {
+              heading: "Safety connection",
+              body: "Nutrition connects to fall risk, medication safety, wound healing, and dementia routines. For related guidance, read Magnolia's articles on <a href=\"/resources/articles/how-afhs-reduce-fall-risk-compared-to-living-alone/\">fall-risk awareness</a> and <a href=\"/resources/articles/memory-care-routines-that-reduce-anxiety/\">memory care routines</a>."
+            }
+          ]
+        }
+      ],
+      insight: "Magnolia pays attention to the quiet nutrition details families may not see every day: how much someone drinks, whether meals are skipped, whether swallowing looks safe, and whether appetite changes after medication or illness.",
+      faq: [
+        ["What nutrition concerns should families watch for?", "Watch for weight loss, poor appetite, dehydration signs, coughing during meals, choking, pocketing food, confusion, weakness, constipation, and changes after medication or illness."],
+        ["Can Magnolia create a medical diet plan?", "Magnolia can follow appropriate care-plan and clinician guidance, but medical nutrition plans should come from qualified healthcare professionals."],
+        ["Why is hydration important for seniors?", "Hydration can affect strength, alertness, constipation, urinary health, dizziness, and fall risk. Families should ask how hydration is encouraged and monitored."],
+        ["How does dementia affect eating?", "Dementia may affect appetite, attention, food recognition, swallowing safety, meal timing, and willingness to accept help. Calm routines and familiar foods may support some residents."]
       ]
     },
     "what-to-do-hospital-says-parent-cant-go-home": {
