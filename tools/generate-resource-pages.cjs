@@ -8,8 +8,11 @@ const sandbox = { window: {} };
 vm.runInNewContext(dataCode, sandbox);
 
 const resources = sandbox.window.MagnoliaResources;
-const domain = "https://magnoliaseniorcarewa.com";
+const domain = "https://www.magnoliaseniorcarewa.com";
 const socialImage = `${domain}/assets/brand/social/magnolia-social-card.png`;
+const verificationMeta = `
+  <meta name="google-site-verification" content="REPLACE_WITH_GOOGLE_VERIFICATION_CODE">
+  <meta name="msvalidate.01" content="A4C93E344DC69C9B3DC87EA8DA78D6A1" />`;
 
 function escapeHtml(value = "") {
   return String(value)
@@ -29,6 +32,29 @@ function writeFile(relativePath, html) {
   fs.writeFileSync(filePath, html.trimStart(), "utf8");
 }
 
+function crawlFallback(prefix) {
+  const categoryLinks = resources.categories
+    .map((category) => `      <li><a href="${prefix}resources/${category.slug}/">${escapeHtml(category.title)}</a></li>`)
+    .join("\n");
+  const articleLinks = Object.values(resources.articles)
+    .map((article) => `      <li><a href="${prefix}resources/articles/${article.slug}/">${escapeHtml(article.title)}</a></li>`)
+    .join("\n");
+  return `
+  <noscript>
+    <nav class="seo-crawl-links" aria-label="Resource Center crawl links">
+      <h2>Magnolia Resource Center topics</h2>
+      <ul>
+        <li><a href="${prefix}resources/">Resource Center home</a></li>
+${categoryLinks}
+      </ul>
+      <h2>Magnolia Resource Center articles</h2>
+      <ul>
+${articleLinks}
+      </ul>
+    </nav>
+  </noscript>`;
+}
+
 function shell({ title, description, canonical, prefix, bodyAttrs = "", main, schema, schemas, ogType = "website" }) {
   const safeTitle = escapeHtml(title);
   const safeDescription = escapeHtml(description);
@@ -40,6 +66,7 @@ function shell({ title, description, canonical, prefix, bodyAttrs = "", main, sc
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${safeTitle}</title>
   <meta name="description" content="${safeDescription}">
+${verificationMeta}
   <link rel="canonical" href="${canonical}">
   <meta property="og:title" content="${safeTitle}">
   <meta property="og:description" content="${safeDescription}">
@@ -63,6 +90,7 @@ ${jsonLd(item)}
 <body${bodyAttrs ? ` ${bodyAttrs}` : ""}>
   <div data-component="site-header"></div>
   ${main}
+${crawlFallback(prefix)}
   <div data-component="site-footer"></div>
   <script src="${prefix}assets/js/site-data.js"></script>
   <script src="${prefix}assets/js/resources-data.js"></script>
@@ -180,8 +208,7 @@ const sitemapUrls = [
   ["/des-moines-adult-family-home.html", "0.95"],
   ["/resources/", "0.85"],
   ...resources.categories.map((category) => [`/resources/${category.slug}/`, "0.75"]),
-  ...Object.values(resources.articles).map((article) => [`/resources/articles/${article.slug}/`, "0.72"]),
-  ["/blog/afh-education-template.html", "0.7"]
+  ...Object.values(resources.articles).map((article) => [`/resources/articles/${article.slug}/`, "0.72"])
 ];
 
 writeFile("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>

@@ -48,14 +48,14 @@ Those names are useful for location identity, but they split SEO authority, conf
 
 Use short, clear, location-specific URLs:
 
-- Homepage: `https://magnoliaseniorcarewa.com/`
-- Burien location: `https://magnoliaseniorcarewa.com/burien-adult-family-home.html`
-- Des Moines location: `https://magnoliaseniorcarewa.com/des-moines-adult-family-home.html`
-- Services: `https://magnoliaseniorcarewa.com/services.html`
-- Gallery: `https://magnoliaseniorcarewa.com/rooms-photos.html`
-- Referral agents: `https://magnoliaseniorcarewa.com/referral-agents.html`
-- Contact: `https://magnoliaseniorcarewa.com/contact.html`
-- Blog: `https://magnoliaseniorcarewa.com/blog/afh-education-template.html`
+- Homepage: `https://www.magnoliaseniorcarewa.com/`
+- Burien location: `https://www.magnoliaseniorcarewa.com/burien-adult-family-home.html`
+- Des Moines location: `https://www.magnoliaseniorcarewa.com/des-moines-adult-family-home.html`
+- Services: `https://www.magnoliaseniorcarewa.com/services.html`
+- Gallery: `https://www.magnoliaseniorcarewa.com/rooms-photos.html`
+- Referral agents: `https://www.magnoliaseniorcarewa.com/referral-agents.html`
+- Contact: `https://www.magnoliaseniorcarewa.com/contact.html`
+- Blog: `https://www.magnoliaseniorcarewa.com/blog/afh-education-template.html`
 
 ## Redirect Plan For Existing Websites
 

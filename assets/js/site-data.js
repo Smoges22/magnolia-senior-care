@@ -11,7 +11,7 @@ window.AFHSite = {
     secondaryPhoneHref: "tel:+12064535082",
     email: "sosena.mekuria@gmail.com",
     emailHref: "mailto:sosena.mekuria@gmail.com",
-    domain: "https://magnoliaseniorcarewa.com",
+    domain: "https://www.magnoliaseniorcarewa.com",
     facebookUrl: "https://www.facebook.com/share/1aK52PAZtm/?mibextid=wwXIfr",
     youtubeUrl: "https://youtu.be/1EtG_E0lbFo?si=85rpIYFJc8ICPIrE",
     youtubeEmbedUrl: "https://www.youtube.com/embed/1EtG_E0lbFo",

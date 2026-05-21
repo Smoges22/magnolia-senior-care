@@ -96,7 +96,7 @@ www.magnoliaseniorcarewa.com
 Recommended primary:
 
 ```text
-https://magnoliaseniorcarewa.com
+https://www.magnoliaseniorcarewa.com
 ```
 
 6. Redirect `www` to the apex/root domain:
@@ -161,11 +161,11 @@ Legacy location domains should use permanent redirects into the current Magnolia
 
 Recommended redirect targets:
 
-- Legacy Burien homepage -> `https://magnoliaseniorcarewa.com/burien-adult-family-home.html`
-- Legacy Des Moines homepage -> `https://magnoliaseniorcarewa.com/des-moines-adult-family-home.html`
-- Legacy about pages -> `https://magnoliaseniorcarewa.com/about.html`
-- Legacy gallery pages -> `https://magnoliaseniorcarewa.com/rooms-photos.html`
-- Legacy contact pages -> `https://magnoliaseniorcarewa.com/contact.html`
+- Legacy Burien homepage -> `https://www.magnoliaseniorcarewa.com/burien-adult-family-home.html`
+- Legacy Des Moines homepage -> `https://www.magnoliaseniorcarewa.com/des-moines-adult-family-home.html`
+- Legacy about pages -> `https://www.magnoliaseniorcarewa.com/about.html`
+- Legacy gallery pages -> `https://www.magnoliaseniorcarewa.com/rooms-photos.html`
+- Legacy contact pages -> `https://www.magnoliaseniorcarewa.com/contact.html`
 
 Use `301` permanent redirects if the old domain host supports them.
 
@@ -186,7 +186,7 @@ If the old sites are still on Google Sites:
 Open:
 
 ```text
-https://magnoliaseniorcarewa.com
+https://www.magnoliaseniorcarewa.com
 https://www.magnoliaseniorcarewa.com
 ```
 
@@ -202,7 +202,7 @@ Confirm:
 Open:
 
 ```text
-https://magnoliaseniorcarewa.com/sitemap.xml
+https://www.magnoliaseniorcarewa.com/sitemap.xml
 ```
 
 Confirm it includes:
@@ -224,7 +224,7 @@ Submit sitemap in Google Search Console.
 Open:
 
 ```text
-https://magnoliaseniorcarewa.com/robots.txt
+https://www.magnoliaseniorcarewa.com/robots.txt
 ```
 
 Confirm it contains:
@@ -233,7 +233,7 @@ Confirm it contains:
 User-agent: *
 Allow: /
 
-Sitemap: https://magnoliaseniorcarewa.com/sitemap.xml
+Sitemap: https://www.magnoliaseniorcarewa.com/sitemap.xml
 ```
 
 ### Canonical URLs
@@ -241,7 +241,7 @@ Sitemap: https://magnoliaseniorcarewa.com/sitemap.xml
 View page source for every major page and confirm canonical URLs use:
 
 ```text
-https://magnoliaseniorcarewa.com/
+https://www.magnoliaseniorcarewa.com/
 ```
 
 Check:
@@ -293,7 +293,7 @@ magnoliaseniorcarewa.com
 3. Submit:
 
 ```text
-https://magnoliaseniorcarewa.com/sitemap.xml
+https://www.magnoliaseniorcarewa.com/sitemap.xml
 ```
 
 4. Set up Google Analytics 4.

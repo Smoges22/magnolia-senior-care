@@ -9,7 +9,7 @@ Use this checklist before publishing the Magnolia Senior Care multi-location web
 - [ ] Do not use `magnoliaseniorcare.com`; it is already used by a Mississippi nursing home.
 - [ ] Confirm whether old Google Sites domains will remain owned for redirects.
 - [ ] Choose final canonical website URL format:
-  - [ ] `https://magnoliaseniorcarewa.com/`
+  - [ ] `https://www.magnoliaseniorcarewa.com/`
   - [ ] or `https://www.magnoliaseniorcarewa.com/`
 - [ ] Update canonical URLs across every HTML page.
 - [ ] Update `sitemap.xml`.
