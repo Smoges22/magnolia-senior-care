@@ -206,6 +206,10 @@ const sitemapUrls = [
   ["/contact.html", "0.9"],
   ["/burien-adult-family-home.html", "0.95"],
   ["/des-moines-adult-family-home.html", "0.95"],
+  ["/privacy-policy/", "0.35"],
+  ["/terms-of-use/", "0.35"],
+  ["/disclaimer/", "0.35"],
+  ["/accessibility/", "0.35"],
   ["/resources/", "0.85"],
   ...resources.categories.map((category) => [`/resources/${category.slug}/`, "0.75"]),
   ...Object.values(resources.articles).map((article) => [`/resources/articles/${article.slug}/`, "0.72"])

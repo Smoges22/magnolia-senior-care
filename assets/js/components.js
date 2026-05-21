@@ -4,6 +4,10 @@
   function currentPage() {
     const path = window.location.pathname.replace(/\\/g, "/");
     if (path.includes("/about/clinical-leadership/")) return "clinical-leadership";
+    if (path.includes("/privacy-policy/")) return "privacy-policy";
+    if (path.includes("/terms-of-use/")) return "terms-of-use";
+    if (path.includes("/disclaimer/")) return "disclaimer";
+    if (path.includes("/accessibility/")) return "accessibility";
     const name = path.split("/").pop() || "index.html";
     return name;
   }
@@ -15,6 +19,7 @@
     if (path.endsWith("/resources")) return "../";
     if (path.includes("/resources/")) return "../";
     if (path.includes("/about/clinical-leadership/")) return "../../";
+    if (path.includes("/privacy-policy/") || path.includes("/terms-of-use/") || path.includes("/disclaimer/") || path.includes("/accessibility/")) return "../";
     if (path.includes("/blog/")) return "../";
     return "";
   }
@@ -38,6 +43,10 @@
       "rooms-photos.html": [["Home", "index.html"], ["Gallery"]],
       "referral-agents.html": [["Home", "index.html"], ["Referrals"]],
       "contact.html": [["Home", "index.html"], ["Contact"]],
+      "privacy-policy": [["Home", "index.html"], ["Privacy Policy"]],
+      "terms-of-use": [["Home", "index.html"], ["Terms of Use"]],
+      "disclaimer": [["Home", "index.html"], ["Educational Disclaimer"]],
+      "accessibility": [["Home", "index.html"], ["Accessibility"]],
       "burien-adult-family-home.html": [["Home", "index.html"], ["Locations", "index.html#locations"], ["Burien"]],
       "des-moines-adult-family-home.html": [["Home", "index.html"], ["Locations", "index.html#locations"], ["Des Moines"]],
       "afh-education-template.html": [["Home", "index.html"], ["Resource Center"]]
@@ -335,6 +344,15 @@
               <h3>Explore</h3>
               <div class="footer-links">
                 ${site.nav.map(([label, href]) => `<a href="${localHref(href)}">${label}</a>`).join("")}
+              </div>
+            </div>
+            <div class="footer-panel">
+              <h3>Website Trust</h3>
+              <div class="footer-links">
+                <a href="${localHref("privacy-policy/")}">Privacy Policy</a>
+                <a href="${localHref("terms-of-use/")}">Terms of Use</a>
+                <a href="${localHref("disclaimer/")}">Disclaimer</a>
+                <a href="${localHref("accessibility/")}">Accessibility</a>
               </div>
             </div>
             <div class="footer-panel">
