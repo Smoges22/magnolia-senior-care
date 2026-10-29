@@ -1,6 +1,6 @@
 (function () {
   const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwrZJmjKgrnWIdrtWiAOK4Dl62Py27tgxL4w3mJKl8WJZATbUP2Od9Mg3_kfkyNzZX3/exec";
-  const SUCCESS_MESSAGE = "Thank you. We’ll contact you shortly to discuss next steps.";
+  const SUCCESS_MESSAGE = "Thank you. We'll contact you shortly to discuss next steps.";
   const ERROR_MESSAGE = "Something went wrong while sending your request. Please call Magnolia or try again.";
 
   function initInquiryForm() {
@@ -9,6 +9,17 @@
 
     const status = form.querySelector("[data-form-status]");
     const submitButton = form.querySelector("button[type='submit']");
+    const subject = new URLSearchParams(window.location.search).get("subject") || "";
+    const inquiryType = form.querySelector("[name='inquiry_type']");
+    const interest = form.querySelector("[name='interest']");
+
+    if (/referral inquiry/i.test(subject)) {
+      if (inquiryType) inquiryType.value = "Referral Inquiry";
+      if (interest) interest.value = "For referral partners";
+    } else if (/free (senior care )?consultation/i.test(subject)) {
+      if (inquiryType) inquiryType.value = "Free Senior Care Consultation";
+      if (interest) interest.value = "Free senior care consultation";
+    }
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -27,6 +38,8 @@
         phone: String(data.get("phone") || "").trim(),
         email: String(data.get("email") || "").trim(),
         role: String(data.get("role") || "").trim(),
+        inquiryType: String(data.get("inquiry_type") || "").trim(),
+        subject: subject || String(data.get("inquiry_type") || "").trim(),
         primaryInterest: String(data.get("interest") || "").trim(),
         preferredLocation: String(data.get("location") || "").trim(),
         preferredTiming: String(data.get("timing") || "").trim(),
