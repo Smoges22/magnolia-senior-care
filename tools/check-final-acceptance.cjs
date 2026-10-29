@@ -13,7 +13,7 @@ const output = process.env.MAGNOLIA_FINAL_QA_DIR || path.join(root, "qa", "final
 const base = process.env.MAGNOLIA_BASE_URL || "http://127.0.0.1:3017";
 const domain = "https://www.magnoliaseniorcarewa.com";
 const portrait = "assets/images/team/sosena-mekuria-rn.webp";
-const socialImage = "assets/brand/social/sosena-mekuria-rn-og.jpg";
+const socialImage = "assets/images/team/sosena-mekuria-rn-og.jpg";
 const report = { checks: [], resourceContent: [], portraits: [], screenshots: [], errors: [] };
 const record = (name, ok, detail) => report.checks.push({ name, status: ok ? "PASS" : "FAIL", detail });
 const git = (...args) => execFileSync("git", args, { cwd: root, encoding: "utf8" });
