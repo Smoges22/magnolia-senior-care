@@ -179,7 +179,7 @@
   const recommendedReadingPaths = [
     {
       title: "Professional Referral Center",
-      text: "A clear referral pathway for hospital teams, hospice partners, social workers, placement coordinators, and families working with care professionals.",
+      text: "A clear referral pathway for hospital teams, healthcare providers, social workers, placement coordinators, and families working with care professionals.",
       moment: "Use this when a professional partner or family needs a direct path to Magnolia for care-fit and availability questions.",
       steps: [
         ["Professional Referral Center", "resources/referral-center/index.html", "page"],
@@ -565,7 +565,7 @@
             <div>
               <div class="eyebrow">For professionals and families</div>
               <h3>Professional Referral Center</h3>
-              <p>A clear referral pathway for hospital discharge planners, social workers, hospice teams, home health agencies, placement partners, and families coordinating urgent care decisions.</p>
+              <p>A clear referral pathway for hospital discharge planners, social workers, rehabilitation and home health teams, placement partners, and families coordinating urgent care decisions.</p>
             </div>
             <div class="section-actions">
               <a class="button" href="${href("resources/referral-center/index.html")}">Open Referral Center</a>
