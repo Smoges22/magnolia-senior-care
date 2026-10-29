@@ -1,0 +1,7 @@
+# Source-only files that should not be served on the public site.
+*.md
+qa/
+tools/
+docs/
+.gitignore
+blog/

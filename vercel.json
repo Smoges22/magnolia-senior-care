@@ -2,5 +2,60 @@
   "framework": null,
   "buildCommand": null,
   "installCommand": null,
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/contact", "destination": "/contact.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/favicon.ico",
+      "destination": "/assets/brand/favicon/magnolia-logo-icon.png",
+      "permanent": true
+    },
+    {
+      "source": "/apple-touch-icon.png",
+      "destination": "/assets/brand/favicon/magnolia-logo-icon.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/brand/favicon/favicon.ico",
+      "destination": "/assets/brand/favicon/magnolia-logo-icon.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/brand/favicon/apple-touch-icon.png",
+      "destination": "/assets/brand/favicon/magnolia-logo-icon.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/brand/favicon/magnolia-icon-16.png",
+      "destination": "/assets/brand/favicon/magnolia-logo-icon.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/brand/favicon/magnolia-icon-32.png",
+      "destination": "/assets/brand/favicon/magnolia-logo-icon.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/brand/favicon/magnolia-icon-48.png",
+      "destination": "/assets/brand/favicon/magnolia-logo-icon.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/brand/favicon/magnolia-icon-180.png",
+      "destination": "/assets/brand/favicon/magnolia-logo-icon.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/brand/favicon/magnolia-icon-192.png",
+      "destination": "/assets/brand/favicon/magnolia-logo-icon.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/brand/favicon/magnolia-icon-512.png",
+      "destination": "/assets/brand/favicon/magnolia-logo-icon.png",
+      "permanent": true
+    }
+  ]
 }

@@ -47,8 +47,15 @@ for (const filePath of htmlFiles) {
   for (const ref of refs) {
     const clean = ref.split("#")[0].split("?")[0];
     if (!clean) continue;
-    const target = path.resolve(path.dirname(filePath), clean);
-    if (!fs.existsSync(target)) issues.push(`${relative}: missing ${ref}`);
+    const target = clean.startsWith("/")
+      ? path.join(root, clean.slice(1))
+      : path.resolve(path.dirname(filePath), clean);
+    const candidates = [
+      target,
+      `${target}.html`,
+      path.join(target, "index.html")
+    ];
+    if (!candidates.some((candidate) => fs.existsSync(candidate))) issues.push(`${relative}: missing ${ref}`);
   }
 }
 

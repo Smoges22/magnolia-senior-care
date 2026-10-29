@@ -14,7 +14,7 @@
   }
 
   function href(path) {
-    if (/^(https?:|mailto:|tel:|#)/.test(path)) return path;
+    if (/^(https?:|mailto:|tel:|#|\/)/.test(path)) return path;
     return `${pathPrefix()}${path}`;
   }
 
@@ -178,6 +178,17 @@
 
   const recommendedReadingPaths = [
     {
+      title: "Professional Referral Center",
+      text: "A clear referral pathway for hospital teams, healthcare providers, social workers, placement coordinators, and families working with care professionals.",
+      moment: "Use this when a professional partner or family needs a direct path to Magnolia for care-fit and availability questions.",
+      steps: [
+        ["Professional Referral Center", "resources/referral-center/index.html", "page"],
+        ["Hospital Discharge Checklist for Families", "hospital-discharge-checklist-for-families"],
+        ["Questions to Ask the Hospital Before Discharge", "questions-to-ask-hospital-before-discharge"],
+        ["Contact Magnolia", "/contact?subject=Referral%20Inquiry#tour-request", "page"]
+      ]
+    },
+    {
       title: "Dementia Care Journey",
       text: "A calm path from early signs to safer routines, memory care timing, and 24/7 support.",
       moment: "Start here if your family is noticing changes but is not sure what they mean.",
@@ -237,7 +248,9 @@
     const firstStep = path.steps[0];
     const firstUrl = firstStep[2] === "category"
       ? categoryUrl(categoryBySlug(firstStep[1]))
-      : articleUrl(articleBySlug(firstStep[1]));
+      : firstStep[2] === "page"
+        ? href(firstStep[1])
+        : articleUrl(articleBySlug(firstStep[1]));
     return `
       <article class="card reading-path-card">
         <div class="eyebrow">Guided path</div>
@@ -548,6 +561,17 @@
             <h2>Start Here</h2>
             <p>Choose the situation that best matches what your family is facing.</p>
           </div>
+          <article class="card resource-referral-card">
+            <div>
+              <div class="eyebrow">For professionals and families</div>
+              <h3>Professional Referral Center</h3>
+              <p>A clear referral pathway for hospital discharge planners, social workers, rehabilitation and home health teams, placement partners, and families coordinating urgent care decisions.</p>
+            </div>
+            <div class="section-actions">
+              <a class="button" href="${href("resources/referral-center/index.html")}">Open Referral Center</a>
+              <a class="button secondary" href="${href("/contact?subject=Referral%20Inquiry#tour-request")}">Submit Referral Inquiry</a>
+            </div>
+          </article>
           <div class="resource-pathway-grid">
             ${data.pathways.map((item, index) => {
               const article = articleBySlug(item.article);
@@ -638,7 +662,7 @@
             </div>
             <div class="resource-photo-grid" aria-label="Magnolia care setting visuals">
               <figure>
-                <img src="${href("assets/images/team/sosena-mekuria.jpg")}" alt="Sosena Mekuria, RN, Magnolia Senior Care">
+                <img class="sosena-portrait" src="${href(site.photos.sosena)}" width="1200" height="962" loading="lazy" decoding="async" alt="Sosena Mekuria, RN, wearing Magnolia Senior Care scrubs">
                 <figcaption>RN-led guidance</figcaption>
               </figure>
               <figure>

@@ -84,8 +84,8 @@ ${verificationMeta}
   <meta name="twitter:description" content="${safeDescription}">
   <meta name="twitter:image" content="${resourceSocialImage}">
   <meta name="twitter:image:alt" content="${resourceSocialAlt}">
-  <link rel="icon" href="${prefix}assets/brand/favicon/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="${prefix}assets/brand/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="${prefix}assets/brand/favicon/magnolia-logo-icon.png">
+  <link rel="apple-touch-icon" href="${prefix}assets/brand/favicon/magnolia-logo-icon.png">
   <link rel="manifest" href="${prefix}assets/brand/favicon/site.webmanifest">
   <link rel="stylesheet" href="${prefix}assets/css/styles.css">
 ${schemaList.map((item) => `
@@ -123,12 +123,27 @@ function collectionSchema(name, description, url) {
   };
 }
 
+function fallbackMain(attributes, title, description) {
+  return `  <main id="main" ${attributes}>
+    <section class="section">
+      <div class="container">
+        <h1>${escapeHtml(title)}</h1>
+        <p class="page-lede">${escapeHtml(description)}</p>
+      </div>
+    </section>
+  </main>`;
+}
+
 writeFile("resources/index.html", shell({
   title: "Senior Care Resource Center | Magnolia Senior Care WA",
   description: "RN-led resources for Washington Adult Family Homes, dementia care, Medicaid planning, hospital transitions, safety, family support, and hospice education.",
   canonical: `${domain}/resources/`,
   prefix: "../",
-  main: '  <main id="main" data-resource-center></main>',
+  main: fallbackMain(
+    "data-resource-center",
+    "Magnolia Senior Care Resource Center",
+    "RN-led resources for families comparing Adult Family Homes, dementia support, hospital transitions, safety, hospice, and senior care decisions in Washington."
+  ),
   schema: collectionSchema(
     "Magnolia Senior Care Resource Center",
     "RN-led educational resources for families navigating Adult Family Homes and senior care in Washington.",
@@ -143,7 +158,7 @@ resources.categories.forEach((category) => {
     canonical: `${domain}/resources/${category.slug}/`,
     prefix: "../../",
     bodyAttrs: `data-category="${category.slug}"`,
-    main: `  <main id="main" data-resource-category="${category.slug}"></main>`,
+    main: fallbackMain(`data-resource-category="${category.slug}"`, category.title, category.description),
     schema: collectionSchema(
       `${category.title} | Magnolia Senior Care`,
       category.description,
@@ -173,7 +188,7 @@ Object.values(resources.articles).forEach((article) => {
     reviewedBy: {
       "@type": "Person",
       name: "Sosena Mekuria",
-      jobTitle: "RN and Adult Family Home Provider",
+      jobTitle: "Registered Nurse | RN Owner & Operator — Burien | RN Manager — Des Moines",
       url: `${domain}/about/clinical-leadership/`
     },
     mainEntityOfPage: `${domain}/resources/articles/${article.slug}/`
@@ -197,7 +212,7 @@ Object.values(resources.articles).forEach((article) => {
     canonical: `${domain}/resources/articles/${article.slug}/`,
     prefix: "../../../",
     bodyAttrs: `data-article="${article.slug}"`,
-    main: `  <main id="main" data-resource-article="${article.slug}"></main>`,
+    main: fallbackMain(`data-resource-article="${article.slug}"`, article.title, article.metaDescription),
     schemas: [articleSchema, faqSchema],
     ogType: "article"
   }));
@@ -207,7 +222,12 @@ const sitemapUrls = [
   ["/", "1.0"],
   ["/about.html", "0.8"],
   ["/about/clinical-leadership/", "0.78"],
+  ["/free-senior-care-consultation/", "0.85"],
   ["/services.html", "0.9"],
+  ["/services/memory-dementia-support/", "0.8"],
+  ["/services/personal-care-assistance/", "0.8"],
+  ["/services/medication-support/", "0.8"],
+  ["/services/fall-risk-safety/", "0.8"],
   ["/rooms-photos.html", "0.8"],
   ["/referral-agents.html", "0.9"],
   ["/contact.html", "0.9"],
@@ -218,6 +238,7 @@ const sitemapUrls = [
   ["/disclaimer/", "0.35"],
   ["/accessibility/", "0.35"],
   ["/resources/", "0.85"],
+  ["/resources/referral-center/", "0.82"],
   ...resources.categories.map((category) => [`/resources/${category.slug}/`, "0.75"]),
   ...Object.values(resources.articles).map((article) => [`/resources/articles/${article.slug}/`, "0.72"])
 ];

@@ -3,8 +3,9 @@ window.AFHSite = {
     name: "Magnolia Senior Care",
     legalName: "Magnolia Senior Care",
     shortName: "Magnolia",
-    founder: "Sosena Mekuria, RN and AFH Provider",
-    tagline: "RN-led home-based care in private, home-like settings serving Burien and Des Moines.",
+    founder: "Sosena Mekuria, RN",
+    founderTitle: "Registered Nurse | RN Owner & Operator — Burien | RN Manager — Des Moines",
+    tagline: "RN-Led Clinical Excellence + Family-Centered Care in private, home-like settings serving Burien and Des Moines.",
     phone: "(425) 246-6220",
     secondaryPhone: "(206) 453-5082",
     phoneHref: "tel:+14252466220",
@@ -47,8 +48,14 @@ window.AFHSite = {
     ["Locations", "index.html#locations"],
     ["Gallery", "rooms-photos.html"],
     ["Resource Center", "resources/index.html"],
-    ["Referrals", "referral-agents.html"],
+    ["Referrals", "resources/referral-center/index.html"],
     ["Contact", "contact.html"]
+  ],
+  serviceGuides: [
+    ["Memory & Dementia Support", "services/memory-dementia-support/index.html"],
+    ["Personal Care Assistance", "services/personal-care-assistance/index.html"],
+    ["Medication Support & RN Delegation", "services/medication-support/index.html"],
+    ["Fall-Risk Reduction & Safety", "services/fall-risk-safety/index.html"]
   ],
   locations: {
     burien: {
@@ -60,8 +67,8 @@ window.AFHSite = {
       address: "14613 12th Ave SW, Burien, WA 98166",
       street: "14613 12th Ave SW",
       page: "burien-adult-family-home.html",
-      position: "A calm, RN-led home setting for quiet routines, frequent family visits, and familiar Burien-area neighborhoods.",
-      seoDescription: "Adult Family Home Burien WA care with RN-led oversight, memory-aware routines, accessible spaces, and family communication.",
+      position: "A calm, RN-Owned & Operated home setting for quiet routines, frequent family visits, and familiar Burien-area neighborhoods.",
+      seoDescription: "Adult Family Home Burien WA care, RN-Owned & Operated, with memory-aware routines, accessible spaces, and family communication.",
       neighborhoods: ["Seahurst", "Three Tree Point", "Highline", "Sunnydale", "Normandy Park", "South Seattle"],
       details: [
         "A calm Burien home setting for families who want close daily attention.",
@@ -90,7 +97,7 @@ window.AFHSite = {
       street: "1206 S 244th St",
       page: "des-moines-adult-family-home.html",
       position: "A steady, supportive home for transitions, memory-aware routines, and Highline-area care coordination.",
-      seoDescription: "Adult Family Home Des Moines WA care with RN-managed oversight, memory-aware routines, 24/7 support, personal care, and family updates.",
+      seoDescription: "Adult Family Home Des Moines WA care with RN-Managed oversight, memory-aware routines, 24/7 caregiver support, personal care, and family updates.",
       neighborhoods: ["Highline", "North Hill", "Woodmont", "Marina District", "SeaTac", "Kent Valley"],
       details: [
         "Helpful for families comparing care near Des Moines, Highline, SeaTac, and South King County.",
@@ -118,7 +125,7 @@ window.AFHSite = {
     {
       label: "Clinical oversight",
       title: "RN-Led Care Oversight",
-      text: "Magnolia is guided by Sosena Mekuria, RN and AFH Provider, bringing nursing perspective to observation, daily routines, and family communication.",
+      text: "Magnolia is guided by Sosena Mekuria, RN, bringing nursing perspective to observation, daily routines, and family communication.",
       bestFor: ["Families who want RN involvement", "Care needs that require steady observation", "POAs who value direct updates"]
     },
     {
@@ -216,7 +223,7 @@ window.AFHSite = {
     room: "assets/images/burien-real/burien-bedroom.jpg",
     garden: "assets/images/burien-real/burien-hallway.jpg",
     care: "assets/images/burien-real/burien-hallway.jpg",
-    sosena: "assets/images/team/sosena-mekuria.jpg",
+    sosena: "assets/images/team/sosena-mekuria-rn.webp",
     burienBedroom: "assets/images/burien-real/burien-bedroom.jpg",
     desMoinesLiving: "assets/images/des-moines-real/des-moines-living.jpg",
     desMoinesLiving2: "assets/images/des-moines-real/des-moines-living-2.jpg",
@@ -236,7 +243,7 @@ window.AFHSite = {
     "Adult Family Home Burien WA",
     "Adult Family Home Des Moines WA",
     "Dementia Care AFH",
-    "RN-owned Adult Family Home",
+    "RN-led Adult Family Home",
     "memory care Adult Family Home",
     "24/7 senior care South King County",
     "Magnolia Senior Loving Care",

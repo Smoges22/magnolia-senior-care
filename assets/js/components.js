@@ -4,12 +4,13 @@
   function currentPage() {
     const path = window.location.pathname.replace(/\\/g, "/");
     if (path.includes("/about/clinical-leadership/")) return "clinical-leadership";
+    if (path.includes("/services/")) return "service-guide";
     if (path.includes("/privacy-policy/")) return "privacy-policy";
     if (path.includes("/terms-of-use/")) return "terms-of-use";
     if (path.includes("/disclaimer/")) return "disclaimer";
     if (path.includes("/accessibility/")) return "accessibility";
     const name = path.split("/").pop() || "index.html";
-    return name;
+    return name.includes(".") ? name : `${name}.html`;
   }
 
   function pathPrefix() {
@@ -18,19 +19,79 @@
     if (path.includes("/resources/") && !path.endsWith("/resources/") && !path.endsWith("/resources/index.html")) return "../../";
     if (path.endsWith("/resources")) return "../";
     if (path.includes("/resources/")) return "../";
-    if (path.includes("/about/clinical-leadership/")) return "../../";
+    if (path.includes("/about/clinical-leadership/") || path.includes("/services/")) return "../../";
     if (path.includes("/privacy-policy/") || path.includes("/terms-of-use/") || path.includes("/disclaimer/") || path.includes("/accessibility/")) return "../";
-    if (path.includes("/blog/")) return "../";
+    if (path.includes("/blog/") || path.includes("/free-senior-care-consultation/")) return "../";
     return "";
   }
 
   function localHref(href) {
-    if (/^(https?:|mailto:|tel:|#)/.test(href)) return href;
+    if (/^(https?:|mailto:|tel:|#|\/)/.test(href)) return href;
     return `${pathPrefix()}${href}`;
   }
 
   function mapHref(address) {
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+  }
+
+  function isCurrentLink(href) {
+    const normalize = (path) => path.replace(/\/index\.html$/, "/").replace(/\.html$/, "").replace(/\/$/, "");
+    const url = new URL(localHref(href), window.location.href);
+    return !url.hash && normalize(url.pathname) === normalize(window.location.pathname);
+  }
+
+  function navigationIcon(name) {
+    // Lucide menu and x icons; license in assets/icons/LUCIDE-LICENSE.txt.
+    const paths = name === "menu" ? '<path d="M4 5h16M4 12h16M4 19h16"/>' : '<path d="m18 6-12 12M6 6l12 12"/>';
+    return `<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
+  }
+
+  function mobileNavigationMarkup() {
+    const link = (label, href) => `<a href="${localHref(href)}"${isCurrentLink(href) ? ' aria-current="page"' : ""}>${label}</a>`;
+    const locationActive = Object.values(site.locations).some((location) => isCurrentLink(location.page));
+    const serviceActive = currentPage() === "service-guide" || currentPage() === "services.html";
+    return `
+      <dialog class="mobile-menu" id="mobile-menu" aria-label="Magnolia navigation">
+        <div class="mobile-menu-header">
+          <a href="${localHref("index.html")}" aria-label="${site.brand.name} home">
+            <img src="${localHref("assets/images/logo/magnolia-logo-header-transparent.png")}" alt="${site.brand.name}">
+          </a>
+          <button class="menu-close" type="button" aria-label="Close menu" title="Close menu" autofocus>${navigationIcon("close")}</button>
+        </div>
+        <div class="mobile-menu-content">
+          <nav class="mobile-menu-links" aria-label="Mobile main navigation">
+            ${link("Home", "index.html")}
+            <details class="mobile-nav-group"${locationActive ? " open" : ""}>
+              <summary${locationActive ? ' class="active"' : ""}>Our Homes</summary>
+              <div class="mobile-submenu">
+                ${Object.values(site.locations).map((location) => link(`${location.city}, ${location.state}`, location.page)).join("")}
+              </div>
+            </details>
+            <details class="mobile-nav-group"${serviceActive ? " open" : ""}>
+              <summary${serviceActive ? ' class="active"' : ""}>Care &amp; Services</summary>
+              <div class="mobile-submenu">
+                ${link("All Care &amp; Services", "services.html")}
+                ${site.serviceGuides.map(([label, href]) => link(label, href)).join("")}
+              </div>
+            </details>
+            ${link("About Magnolia", "about.html")}
+            ${link("Gallery", "rooms-photos.html")}
+            <details class="mobile-nav-group"${resourceActiveSlug() ? " open" : ""}>
+              <summary${resourceActiveSlug() ? ' class="active"' : ""}>Resources</summary>
+              <div class="mobile-submenu">
+                ${resourceMenuItems().map((item) => link(item.label === "Start Here" ? "Resource Center" : item.label, item.href)).join("")}
+              </div>
+            </details>
+            ${link("Contact", "contact.html")}
+          </nav>
+          <div class="mobile-menu-contact">
+            <a class="button" href="${localHref("free-senior-care-consultation/index.html")}">Schedule a Free Consultation</a>
+            <a class="mobile-menu-phone" href="${site.brand.phoneHref}">Call ${site.brand.phone}</a>
+            <p>Burien &amp; Des Moines, WA</p>
+          </div>
+        </div>
+      </dialog>
+    `;
   }
 
   function breadcrumbTrail() {
@@ -40,8 +101,10 @@
       "about.html": [["Home", "index.html"], ["About"]],
       "clinical-leadership": [["Home", "index.html"], ["About", "about.html"], ["Clinical Leadership"]],
       "services.html": [["Home", "index.html"], ["Services"]],
+      "service-guide": [["Home", "index.html"], ["Services", "services.html"], [document.querySelector("[data-service-name]")?.dataset.serviceName || "Service"]],
       "rooms-photos.html": [["Home", "index.html"], ["Gallery"]],
       "referral-agents.html": [["Home", "index.html"], ["Referrals"]],
+      "referral-center": [["Home", "index.html"], ["Resource Center", "resources/index.html"], ["Referral Center"]],
       "contact.html": [["Home", "index.html"], ["Contact"]],
       "privacy-policy": [["Home", "index.html"], ["Privacy Policy"]],
       "terms-of-use": [["Home", "index.html"], ["Terms of Use"]],
@@ -53,6 +116,9 @@
     };
     if (path.includes("/resources/") || path.endsWith("/resources")) {
       const resources = window.MagnoliaResources;
+      if (path.includes("/resources/referral-center/")) {
+        return pageMap["referral-center"];
+      }
       const articleSlug = document.body?.dataset?.article;
       const categorySlug = document.body?.dataset?.category;
       if (articleSlug && resources?.articles?.[articleSlug]) {
@@ -112,6 +178,11 @@
         description: "Guided paths for families"
       },
       {
+        label: "Professional Referral Center",
+        href: "resources/referral-center/index.html",
+        slug: "referral-center"
+      },
+      {
         label: "Understanding Adult Family Homes",
         href: "resources/understanding-adult-family-homes/index.html",
         slug: "understanding-adult-family-homes"
@@ -162,11 +233,9 @@
   }
 
   function resourceDropdownMarkup(isResourcePage) {
-    const activeSlug = resourceActiveSlug();
     const menuId = "resource-center-menu";
-    const active = isResourcePage ? ' aria-current="page"' : "";
     const items = resourceMenuItems().map((item) => {
-      const isActive = activeSlug === (item.slug || "start");
+      const isActive = isCurrentLink(item.href);
       return `
         <a href="${localHref(item.href)}"${isActive ? ' aria-current="page"' : ""}>
           <span>${item.label}</span>
@@ -177,7 +246,7 @@
 
     return `
       <div class="nav-dropdown${isResourcePage ? " active" : ""}" data-resource-dropdown>
-        <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-controls="${menuId}"${active}>
+        <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-controls="${menuId}">
           <span>Resource Center</span>
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5.8 7.6 4.2 4.2 4.2-4.2"/></svg>
         </button>
@@ -194,13 +263,14 @@
 
     const active = currentPage();
     const links = site.nav.map(([label, href]) => {
-      const isLocationPage = ["burien-adult-family-home.html", "des-moines-adult-family-home.html"].includes(active);
       const resourcePath = window.location.pathname.replace(/\\/g, "/");
       const isResourcePage = resourcePath.includes("/resources/") || resourcePath.endsWith("/resources");
-      const isAboutSubpage = active === "clinical-leadership" && href === "about.html";
       if (href === "resources/index.html") return resourceDropdownMarkup(isResourcePage);
-      const aria = href === active || isAboutSubpage || (isLocationPage && href === "index.html#locations") || (isResourcePage && href === "resources/index.html") ? " aria-current=\"page\"" : "";
-      return `<a href="${localHref(href)}"${aria}>${label}</a>`;
+      const sectionActive = (active === "clinical-leadership" && href === "about.html") ||
+        (active === "service-guide" && href === "services.html") ||
+        (["burien-adult-family-home.html", "des-moines-adult-family-home.html"].includes(active) && href === "index.html#locations");
+      const aria = isCurrentLink(href) ? ' aria-current="page"' : "";
+      return `<a href="${localHref(href)}"${sectionActive ? ' class="is-section-active"' : ""}${aria}>${label}</a>`;
     }).join("");
     const breadcrumbs = breadcrumbTrail();
     const breadcrumbMarkup = breadcrumbs.length ? `
@@ -225,25 +295,30 @@
             <nav class="nav-links" id="site-nav" aria-label="Main navigation">${links}</nav>
             <div class="nav-actions">
               <a class="button secondary" href="${site.brand.phoneHref}">Speak With Us First</a>
-              <a class="button" href="${localHref("contact.html")}">Schedule a Private Tour</a>
-              <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">Menu</button>
+              <a class="button" href="${localHref("free-senior-care-consultation/index.html")}">Free Consultation</a>
+              <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-haspopup="dialog" aria-expanded="false" aria-label="Open menu" title="Open menu">${navigationIcon("menu")}</button>
             </div>
           </div>
         </header>
         ${breadcrumbMarkup}
       </div>
+      ${mobileNavigationMarkup()}
       <div class="mobile-quickbar" aria-label="Quick contact actions">
         <a class="quickbar-secondary" href="${site.brand.phoneHref}">Call Now</a>
-        <a class="quickbar-primary" href="${localHref("contact.html")}" aria-label="Schedule a Tour">
-          <span class="quickbar-title">Schedule a Tour</span>
-          <span class="quickbar-subtitle">Private visit</span>
+        <a class="quickbar-primary" href="/contact?subject=Free%20Senior%20Care%20Consultation#tour-request" aria-label="Request a free senior care consultation">
+          <span class="quickbar-title">Free Consultation</span>
+          <span class="quickbar-subtitle">No obligation</span>
         </a>
-        <a class="quickbar-link" href="${localHref("referral-agents.html")}">Referrals</a>
+        <a class="quickbar-link" href="${localHref("resources/referral-center/index.html")}">Referrals</a>
       </div>
     `;
 
     const toggle = mount.querySelector(".menu-toggle");
-    const nav = mount.querySelector("#site-nav");
+    const menu = mount.querySelector("#mobile-menu");
+    const mobileViewport = window.matchMedia("(max-width: 980px)");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let scrollPosition = 0;
+    let closeTimer;
     const dropdown = mount.querySelector("[data-resource-dropdown]");
     const dropdownTrigger = dropdown?.querySelector(".nav-dropdown-trigger");
     let dropdownWasOpenOnPointerDown = false;
@@ -254,10 +329,85 @@
       dropdownTrigger.setAttribute("aria-expanded", String(isOpen));
     };
 
+    const restorePage = () => {
+      if (!document.body.classList.contains("mobile-menu-open")) return;
+      window.clearTimeout(closeTimer);
+      menu.classList.remove("is-visible");
+      document.body.classList.remove("mobile-menu-open");
+      document.body.style.removeProperty("--menu-scroll-top");
+      window.scrollTo({ top: scrollPosition, behavior: "instant" });
+      toggle.setAttribute("aria-expanded", "false");
+      const focusTarget = mobileViewport.matches ? toggle : mount.querySelector(".brand");
+      focusTarget.focus({ preventScroll: true });
+    };
+    const closeMenu = (immediate = false) => {
+      if (!menu.open) return;
+      window.clearTimeout(closeTimer);
+      menu.classList.remove("is-visible");
+      const finish = () => {
+        menu.close();
+        restorePage();
+      };
+      if (immediate || reducedMotion.matches) finish();
+      else closeTimer = window.setTimeout(finish, 180);
+    };
+
     toggle.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
-      if (!isOpen) setDropdownOpen(false);
+      if (!mobileViewport.matches || menu.open) return;
+      scrollPosition = window.scrollY;
+      document.body.style.setProperty("--menu-scroll-top", `-${scrollPosition}px`);
+      document.body.classList.add("mobile-menu-open");
+      setDropdownOpen(false);
+      menu.showModal();
+      toggle.setAttribute("aria-expanded", "true");
+      window.requestAnimationFrame(() => {
+        if (menu.open) menu.classList.add("is-visible");
+      });
+    });
+    menu.querySelector(".menu-close").addEventListener("click", () => closeMenu());
+    menu.addEventListener("cancel", (event) => {
+      event.preventDefault();
+      closeMenu();
+    });
+    menu.addEventListener("click", (event) => {
+      const bounds = menu.getBoundingClientRect();
+      const outside = event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
+      if (event.target === menu && outside) closeMenu();
+      // Unlock before navigation so same-page anchors and browser history retain their scroll positions.
+      if (event.target.closest("a[href]")) closeMenu(true);
+    });
+    menu.addEventListener("keydown", (event) => {
+      if (event.key !== "Tab") return;
+      const targets = [...menu.querySelectorAll("a[href], button, summary")].filter((node) => node.getClientRects().length);
+      const first = targets[0];
+      const last = targets[targets.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+    menu.addEventListener("close", () => {
+      if (!menu.open) restorePage();
+    });
+    mobileViewport.addEventListener("change", () => closeMenu(true));
+
+    document.querySelector("[data-inquiry-form]")?.addEventListener("focusin", (event) => {
+      const control = event.target;
+      if (!control.matches("input, select, textarea, button")) return;
+      // Native textarea focus can leave the field behind the fixed contact bar.
+      window.requestAnimationFrame(() => {
+        if (document.activeElement !== control) return;
+        const bounds = control.getBoundingClientRect();
+        const headerBottom = mount.querySelector(".site-header-shell").getBoundingClientRect().bottom;
+        const quickbar = mount.querySelector(".mobile-quickbar");
+        const bottom = quickbar.getClientRects().length ? quickbar.getBoundingClientRect().top : window.innerHeight;
+        if (bounds.top < headerBottom + 12 || bounds.bottom > bottom - 12) {
+          control.scrollIntoView({ block: "center", behavior: "instant" });
+        }
+      });
     });
 
     dropdownTrigger?.addEventListener("pointerdown", () => {
@@ -279,8 +429,8 @@
     });
     dropdown?.addEventListener("keydown", (event) => {
       if (event.key !== "Escape") return;
-      setDropdownOpen(false);
       dropdownTrigger?.focus();
+      setDropdownOpen(false);
     });
   }
 
@@ -292,10 +442,7 @@
     const trustItems = [
       ["RN-Led Care", "Clinical awareness guides daily routines."],
       ["Licensed Adult Family Homes", "Small-home care in Burien and Des Moines."],
-      ["Dementia-Aware Support", "Calm structure for memory and safety needs."],
-      ["Family-Centered Communication", "Clear updates for families and care partners."],
-      ["Hospital Transition Guidance", "Support after hospital or rehab changes."],
-      ["South King County Care", "Local guidance for Washington families."]
+      ["Family-Centered Communication", "Clear updates for families and care partners."]
     ];
 
     mount.innerHTML = `
@@ -345,53 +492,71 @@
         <div class="container">
           <div class="footer-grid">
             <div class="footer-brand">
-              <img class="footer-logo" src="${localHref("assets/images/logo/magnolia-logo-footer-transparent.png")}" alt="${site.brand.name}">
+              <a class="footer-brand-link" href="${localHref("index.html")}" aria-label="${site.brand.name} home"><img class="footer-logo" src="${localHref("assets/images/logo/magnolia-logo-footer-transparent.png")}" alt="${site.brand.name}" loading="lazy"></a>
               <p>${site.brand.tagline}</p>
               <div class="social-icons" aria-label="Magnolia social media">
-                ${site.brand.socialLinks.map((profile) => `<a class="social-icon social-${profile.label.toLowerCase()}" href="${profile.href}" target="${profile.href === "#" ? "_self" : "_blank"}" rel="noopener" aria-label="${profile.label}">${socialIcon(profile.label)}</a>`).join("")}
+                ${site.brand.socialLinks.filter((profile) => /^https?:/.test(profile.href)).map((profile) => `<a class="social-icon social-${profile.label.toLowerCase()}" href="${profile.href}" target="_blank" rel="noopener" aria-label="${profile.label}">${socialIcon(profile.label)}</a>`).join("")}
               </div>
             </div>
-            <div class="footer-panel">
-              <h3>Explore</h3>
-              <div class="footer-links">
-                ${site.nav.map(([label, href]) => `<a href="${localHref(href)}">${label}</a>`).join("")}
+            <div class="footer-panel footer-homes">
+              <h3>Our Homes</h3>
+              <div class="footer-location-list">
+                ${Object.values(site.locations).map((location) => `
+                  <div class="footer-location">
+                    <a class="footer-location-title" href="${localHref(location.page)}">${location.city}, ${location.state}</a>
+                    <span>${location.name}</span>
+                    <address><a href="${mapHref(location.address)}" target="_blank" rel="noopener">${location.street}<br>${location.city}, ${location.state} ${location.zip}</a></address>
+                  </div>
+                `).join("")}
               </div>
             </div>
-            <div class="footer-panel">
-              <h3>Legal</h3>
+            <details class="footer-panel footer-resources" open>
+              <summary><h3>Care &amp; Resources</h3></summary>
               <div class="footer-links">
-                <a href="${localHref("privacy-policy/")}">Privacy Policy</a>
-                <a href="${localHref("terms-of-use/")}">Terms of Use</a>
-                <a href="${localHref("disclaimer/")}">Disclaimer</a>
-                <a href="${localHref("accessibility/")}">Accessibility</a>
-              </div>
-            </div>
-            <div class="footer-panel">
-              <h3>Locations</h3>
-              <div class="footer-links">
-                <a href="${localHref("burien-adult-family-home.html")}">${site.locations.burien.displayName}</a>
-                <a href="${localHref("des-moines-adult-family-home.html")}">${site.locations.highline.displayName}</a>
+                <a href="${localHref("services.html")}">All Care &amp; Services</a>
+                ${site.serviceGuides.map(([label, href]) => `<a href="${localHref(href)}">${label.replace(/&/g, "&amp;")}</a>`).join("")}
+                <a href="${localHref("free-senior-care-consultation/index.html")}">Free Senior Care Consultation</a>
                 <a href="${localHref("resources/index.html")}">Resource Center</a>
+                <a href="${localHref("resources/referral-center/index.html")}">Referral Center</a>
+                <a href="${localHref("about.html")}">About Magnolia</a>
+                <a href="${localHref("rooms-photos.html")}">Gallery</a>
               </div>
-            </div>
+            </details>
             <div class="footer-panel footer-contact-panel">
-              <h3>Contact</h3>
+              <h3>Connect</h3>
+              <a class="button footer-tour" href="${localHref("free-senior-care-consultation/index.html")}">Schedule a Free Consultation</a>
               <div class="footer-links">
+                <a href="${localHref("contact.html")}">Contact Us</a>
                 <a href="${site.brand.phoneHref}">${site.brand.phone}</a>
                 <a href="${site.brand.secondaryPhoneHref}">${site.brand.secondaryPhone}</a>
                 <a href="${site.brand.emailHref}">${site.brand.email}</a>
-                <a href="${mapHref(site.locations.burien.address)}" target="_blank" rel="noopener">${site.locations.burien.address}</a>
-                <a href="${mapHref(site.locations.highline.address)}" target="_blank" rel="noopener">${site.locations.highline.address}</a>
               </div>
             </div>
           </div>
           <div class="footer-bottom">
-            &copy; <span data-year></span> ${site.brand.legalName}. Information on this website is not medical advice. Current rates, availability, and services should be confirmed directly.
+            <div class="footer-legal-row">
+              <span>&copy; <span data-year></span> ${site.brand.legalName} WA</span>
+              <nav class="footer-legal-links" aria-label="Legal">
+                <a href="${localHref("privacy-policy/")}">Privacy Policy</a>
+                <a href="${localHref("terms-of-use/")}">Terms of Use</a>
+                <a href="${localHref("accessibility/")}">Accessibility</a>
+                <a href="${localHref("disclaimer/")}">Disclaimer</a>
+              </nav>
+            </div>
+            <p>Information on this website is not medical advice. Current rates, availability, and services should be confirmed directly.</p>
             <span class="footer-credit"><a href="https://www.afhdesignsbysam.com/" target="_blank" rel="noopener">Web Designs By Sam</a></span>
           </div>
         </div>
       </footer>
     `;
+    const resources = mount.querySelector(".footer-resources");
+    const mobileFooter = window.matchMedia("(max-width: 720px)");
+    const syncFooter = () => {
+      resources.open = !mobileFooter.matches;
+      resources.querySelector("summary").tabIndex = mobileFooter.matches ? 0 : -1;
+    };
+    mobileFooter.addEventListener("change", syncFooter);
+    syncFooter();
   }
 
   function renderCards() {
@@ -431,7 +596,6 @@
     if (!targets.length) return;
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    targets.forEach((node) => node.classList.add("reveal-on-scroll"));
 
     if (prefersReducedMotion || !("IntersectionObserver" in window)) {
       targets.forEach((node) => node.classList.add("is-visible"));
@@ -446,7 +610,14 @@
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
 
-    targets.forEach((node) => observer.observe(node));
+    targets.forEach((node) => {
+      if (node.getBoundingClientRect().top < window.innerHeight * 0.92) {
+        node.classList.add("is-visible");
+        return;
+      }
+      node.classList.add("reveal-on-scroll");
+      observer.observe(node);
+    });
   }
 
   function renderLocationCards() {
