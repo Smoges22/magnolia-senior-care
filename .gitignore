@@ -1,0 +1,48 @@
+# This repository is public. Keep internal material in the private
+# "Magnolia File System -2026/Website Internal Docs" folder instead.
+
+# Internal documents and reports
+docs/compliance/
+docs/drafts/
+docs/internal/
+*-REPORT.md
+*-AUDIT.md
+
+# Operations paperwork (disclosures, rosters, contracts, financials).
+# Add a "!path/to/file.pdf" exception for any document meant to be public.
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.csv
+
+# QA output and screenshots
+qa/
+playwright-report/
+test-results/
+
+# Archives, backups, and temporary files
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.bak
+*.orig
+*.tmp
+*~
+
+# Local environment and tooling
+.env
+.env.*
+!.env.example
+.vercel/
+node_modules/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
