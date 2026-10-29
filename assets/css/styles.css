@@ -3176,6 +3176,16 @@ textarea:focus {
   font-weight: 800;
 }
 
+.form-status[data-state="failure"],
+.form-status[data-state="unknown"] {
+  color: #8a1f1f;
+}
+
+.form-status a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .article-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
