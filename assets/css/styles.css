@@ -3176,6 +3176,18 @@ textarea:focus {
   font-weight: 800;
 }
 
+.magnolia-insight + .article-next-step {
+  margin-top: 24px;
+}
+
+.form-extra {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .form-status[data-state="failure"],
 .form-status[data-state="unknown"] {
   color: #8a1f1f;
