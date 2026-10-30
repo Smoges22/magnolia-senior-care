@@ -13,19 +13,20 @@ window.AFHSite = {
     email: "sosena.mekuria@gmail.com",
     emailHref: "mailto:sosena.mekuria@gmail.com",
     domain: "https://www.magnoliaseniorcarewa.com",
-    facebookUrl: "https://www.facebook.com/share/1aK52PAZtm/?mibextid=wwXIfr",
-    youtubeUrl: "https://youtu.be/1EtG_E0lbFo?si=85rpIYFJc8ICPIrE",
+    facebookUrl: "https://www.facebook.com/people/Magnolia-Senior-Loving-Care-LLC/61563443708465/",
+    youtubeUrl: "https://www.youtube.com/@MagnoliaSeniorHomes",
+    youtubeVideoUrl: "https://www.youtube.com/watch?v=1EtG_E0lbFo",
     youtubeEmbedUrl: "https://www.youtube.com/embed/1EtG_E0lbFo",
     socialLinks: [
       {
         label: "Facebook",
         name: "Magnolia Senior Loving Care",
-        href: "https://www.facebook.com/share/1aK52PAZtm/?mibextid=wwXIfr"
+        href: "https://www.facebook.com/people/Magnolia-Senior-Loving-Care-LLC/61563443708465/"
       },
       {
         label: "YouTube",
-        name: "Magnolia Senior Care video",
-        href: "https://youtu.be/1EtG_E0lbFo?si=85rpIYFJc8ICPIrE"
+        name: "Magnolia Senior Care on YouTube",
+        href: "https://www.youtube.com/@MagnoliaSeniorHomes"
       },
       {
         label: "Instagram",
@@ -76,10 +77,10 @@ window.AFHSite = {
         "Care conversations focus on comfort, dignity, medication support, family communication, and RN-led oversight."
       ],
       fit: ["South Seattle and Burien families", "Quiet routines", "Easy family visits", "Seahurst, Three Tree Point, Normandy Park, and Highline"],
-      image: "assets/images/premium-real/magnolia-exterior-daylight.png",
+      image: "assets/images/premium-real/magnolia-exterior-daylight.webp",
       gallery: [
-        "assets/images/premium-real/magnolia-exterior-twilight.png",
-        "assets/images/premium-real/magnolia-patio-evening.png",
+        "assets/images/premium-real/magnolia-exterior-twilight.webp",
+        "assets/images/premium-real/magnolia-patio-evening.webp",
         "assets/images/burien-real/burien-dining-living.jpg",
         "assets/images/burien-real/burien-bedroom.jpg",
         "assets/images/burien-real/burien-kitchen.jpg",
@@ -105,11 +106,11 @@ window.AFHSite = {
         "Care conversations focus on transition support, memory-aware routines, nutrition, and referral coordination."
       ],
       fit: ["Hospital or rehab transitions", "South King County families", "Memory-aware daily routines", "Des Moines, North Hill, Woodmont, and Highline"],
-      image: "assets/images/premium-real/magnolia-open-living-kitchen.png",
+      image: "assets/images/premium-real/magnolia-open-living-kitchen.webp",
       gallery: [
-        "assets/images/premium-real/magnolia-open-living-kitchen.png",
-        "assets/images/premium-real/magnolia-kitchen-premium.png",
-        "assets/images/premium-real/magnolia-bathroom-white-marble.png",
+        "assets/images/premium-real/magnolia-open-living-kitchen.webp",
+        "assets/images/premium-real/magnolia-kitchen-premium.webp",
+        "assets/images/premium-real/magnolia-bathroom-white-marble.webp",
         "assets/images/des-moines-real/des-moines-front.jpg",
         "assets/images/des-moines-real/des-moines-living.jpg",
         "assets/images/des-moines-real/des-moines-common-area.jpg",
@@ -208,16 +209,16 @@ window.AFHSite = {
     ]
   },
   photos: {
-    hero: "assets/images/premium-real/magnolia-exterior-twilight.png",
-    premiumExterior: "assets/images/premium-real/magnolia-exterior-twilight.png",
-    premiumExteriorDaylight: "assets/images/premium-real/magnolia-exterior-daylight.png",
-    premiumPatioEvening: "assets/images/premium-real/magnolia-patio-evening.png",
+    hero: "assets/images/premium-real/magnolia-exterior-twilight.webp",
+    premiumExterior: "assets/images/premium-real/magnolia-exterior-twilight.webp",
+    premiumExteriorDaylight: "assets/images/premium-real/magnolia-exterior-daylight.webp",
+    premiumPatioEvening: "assets/images/premium-real/magnolia-patio-evening.webp",
     premiumBedroom: "assets/images/des-moines-real/des-moines-bedroom.jpg",
-    premiumCareConnection: "assets/images/premium-real/magnolia-caregiver-connection.png",
-    premiumKitchen: "assets/images/premium-real/magnolia-kitchen-premium.png",
-    premiumOpenLivingKitchen: "assets/images/premium-real/magnolia-open-living-kitchen.png",
-    premiumBathroomBlack: "assets/images/premium-real/magnolia-bathroom-black-marble.png",
-    premiumBathroomWhite: "assets/images/premium-real/magnolia-bathroom-white-marble.png",
+    premiumCareConnection: "assets/images/premium-real/magnolia-caregiver-connection.webp",
+    premiumKitchen: "assets/images/premium-real/magnolia-kitchen-premium.webp",
+    premiumOpenLivingKitchen: "assets/images/premium-real/magnolia-open-living-kitchen.webp",
+    premiumBathroomBlack: "assets/images/premium-real/magnolia-bathroom-black-marble.webp",
+    premiumBathroomWhite: "assets/images/premium-real/magnolia-bathroom-white-marble.webp",
     living: "assets/images/burien-real/burien-dining-living.jpg",
     dining: "assets/images/burien-real/burien-dining-living.jpg",
     room: "assets/images/burien-real/burien-bedroom.jpg",

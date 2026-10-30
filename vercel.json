@@ -4,7 +4,10 @@
   "installCommand": null,
   "outputDirectory": ".",
   "rewrites": [
-    { "source": "/contact", "destination": "/contact.html" }
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    }
   ],
   "redirects": [
     {
@@ -55,6 +58,11 @@
     {
       "source": "/assets/brand/favicon/magnolia-icon-512.png",
       "destination": "/assets/brand/favicon/magnolia-logo-icon.png",
+      "permanent": true
+    },
+    {
+      "source": "/blog/afh-education-template.html",
+      "destination": "/resources/articles/how-to-choose-the-right-adult-family-home/",
       "permanent": true
     }
   ]

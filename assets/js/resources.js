@@ -51,6 +51,10 @@
     return href(`resources/${category.slug}/index.html`);
   }
 
+  function consultationUrl() {
+    return href("free-senior-care-consultation/");
+  }
+
   function rnProfileUrl() {
     return href("about/clinical-leadership/");
   }
@@ -125,19 +129,19 @@
 
   const categoryVisuals = {
     "understanding-adult-family-homes": {
-      image: "assets/images/premium-real/magnolia-open-living-kitchen.png",
+      image: "assets/images/premium-real/magnolia-open-living-kitchen.webp",
       label: "Small-home support",
       title: "A real home setting makes comparison easier.",
       text: "Families can picture daily routines, meals, rooms, supervision, and communication more clearly when education is connected to a real Adult Family Home environment."
     },
     "dementia-memory-care": {
-      image: "assets/images/premium-real/magnolia-caregiver-connection.png",
+      image: "assets/images/premium-real/magnolia-caregiver-connection.webp",
       label: "Dementia-aware routines",
       title: "Calm guidance for memory changes.",
       text: "Dementia questions often begin with worry. Magnolia keeps the focus on safety, familiar routines, communication, and when more support may be needed."
     },
     "medicaid-financial-guidance": {
-      image: "assets/images/premium-real/magnolia-kitchen-premium.png",
+      image: "assets/images/premium-real/magnolia-kitchen-premium.webp",
       label: "Planning clarity",
       title: "Cost questions deserve careful, current answers.",
       text: "Financial guidance stays educational and practical. Current Magnolia pricing and availability should always be confirmed directly with the care team."
@@ -155,13 +159,13 @@
       text: "Fall risk, nutrition, medication support, hydration, and mobility are easier to understand when families can connect guidance to daily life."
     },
     "family-support": {
-      image: "assets/images/premium-real/magnolia-patio-evening.png",
+      image: "assets/images/premium-real/magnolia-patio-evening.webp",
       label: "Family decision support",
       title: "Families need calm language during hard conversations.",
       text: "These guides are written for adult children, spouses, POAs, and care partners who are trying to make decisions with compassion and clarity."
     },
     "hospice-end-of-life": {
-      image: "assets/images/premium-real/magnolia-patio-evening.png",
+      image: "assets/images/premium-real/magnolia-patio-evening.webp",
       label: "Comfort and dignity",
       title: "Comfort-focused care should feel gentle and coordinated.",
       text: "Hospice and end-of-life planning is handled with educational language around dignity, family presence, communication, and outside care-team coordination."
@@ -300,7 +304,7 @@
     const visual = careVisual(category);
     return `
       <figure class="category-care-visual">
-        <img src="${href(visual.image)}" alt="${visual.title}">
+        <img loading="lazy" src="${href(visual.image)}" alt="${visual.title}">
         <figcaption>
           <span>${visual.label}</span>
           <strong>${visual.title}</strong>
@@ -316,7 +320,7 @@
     return `
       <aside class="article-trust-panel">
         <figure>
-          <img src="${href(visual.image)}" alt="${visual.label} at Magnolia Senior Care">
+          <img loading="lazy" src="${href(visual.image)}" alt="${visual.label} at Magnolia Senior Care">
         </figure>
         <div>
           <div class="eyebrow">Magnolia care lens</div>
@@ -454,6 +458,20 @@
     `).join("");
   }
 
+  function renderArticleHomes() {
+    return `
+      <aside class="article-next-step">
+        <div class="eyebrow">Magnolia homes in South King County</div>
+        <p>If your family is comparing care options nearby, you can read about each Magnolia home or talk through your situation in a free senior care consultation.</p>
+        <div>
+          <a class="text-action-link" href="${href("burien-adult-family-home.html")}">Burien Adult Family Home (RN-Owned &amp; Operated)</a>
+          <a class="text-action-link" href="${href("des-moines-adult-family-home.html")}">Des Moines Adult Family Home (RN-Managed)</a>
+          <a class="text-action-link" href="${consultationUrl()}">Free Senior Care Consultation</a>
+        </div>
+      </aside>
+    `;
+  }
+
   function renderParagraphs(content) {
     const paragraphs = Array.isArray(content) ? content : [content];
     return paragraphs.filter(Boolean).map((paragraph) => `<p>${paragraph}</p>`).join("");
@@ -510,7 +528,7 @@
 
   function renderResourceCenter() {
     const mount = document.querySelector("[data-resource-center]");
-    if (!mount) return;
+    if (!mount || mount.dataset.prerendered) return;
     const mostHelpful = mostHelpfulSlugs.map(articleBySlug).filter(Boolean);
     const featured = Object.values(data.articles)
       .filter((article) => !mostHelpfulSlugs.includes(article.slug))
@@ -519,7 +537,6 @@
       <section class="page-hero interior-hero resource-center-hero">
         <div class="container resource-hero-grid">
           <div>
-            <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / Resource Center</div>
             <div class="eyebrow">Magnolia Senior Care education hub</div>
             <h1>Resource Center</h1>
             <p class="page-lede">Clear, RN-led guidance for Washington families who are trying to understand Adult Family Homes, dementia care, hospital discharge, safety, Medicaid questions, and what to do next.</p>
@@ -666,11 +683,11 @@
                 <figcaption>RN-led guidance</figcaption>
               </figure>
               <figure>
-                <img src="${href("assets/images/premium-real/magnolia-open-living-kitchen.png")}" alt="Calm Magnolia small-home living and kitchen space">
+                <img loading="lazy" src="${href("assets/images/premium-real/magnolia-open-living-kitchen.webp")}" alt="Calm Magnolia small-home living and kitchen space">
                 <figcaption>A calm home setting</figcaption>
               </figure>
               <figure>
-                <img src="${href("assets/images/premium-real/magnolia-caregiver-connection.png")}" alt="Warm Magnolia care connection">
+                <img loading="lazy" src="${href("assets/images/premium-real/magnolia-caregiver-connection.webp")}" alt="Warm Magnolia care connection">
                 <figcaption>Family-centered care</figcaption>
               </figure>
             </div>
@@ -731,7 +748,7 @@
 
   function renderCategoryPage() {
     const mount = document.querySelector("[data-resource-category]");
-    if (!mount) return;
+    if (!mount || mount.dataset.prerendered) return;
     const category = categoryBySlug(mount.dataset.resourceCategory);
     if (!category) return;
     const articles = articlesByCategory(category.slug);
@@ -743,7 +760,6 @@
       <section class="page-hero interior-hero resources-hero">
         <div class="container interior-hero-grid">
           <div class="interior-hero-copy">
-            <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / <a href="${href("resources/index.html")}">Resource Center</a> / ${category.title}</div>
             <div class="eyebrow">Resource category</div>
             <h1>${category.title}</h1>
             <p class="page-lede">${category.description}</p>
@@ -795,8 +811,9 @@
             <div>
               <p>Magnolia can help you understand care fit, availability, location options, and what to ask next.</p>
               <div class="hero-actions">
-                <a class="button" href="${href("contact.html")}">Schedule a Tour</a>
+                <a class="button" href="${consultationUrl()}">Free Senior Care Consultation</a>
                 <a class="button secondary" href="${site.brand.phoneHref}">Call Magnolia</a>
+                <a class="text-action-link" href="${href("contact.html#tour-request")}">Schedule a Tour</a>
               </div>
             </div>
           </div>
@@ -807,7 +824,7 @@
 
   function renderArticlePage() {
     const mount = document.querySelector("[data-resource-article]");
-    if (!mount) return;
+    if (!mount || mount.dataset.prerendered) return;
     const article = articleBySlug(mount.dataset.resourceArticle);
     if (!article) return;
     const category = categoryBySlug(article.category);
@@ -815,7 +832,6 @@
     mount.innerHTML = `
       <section class="page-hero interior-hero resources-hero">
         <div class="container">
-          <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / <a href="${href("resources/index.html")}">Resource Center</a> / <a href="${categoryUrl(category)}">${category.title}</a></div>
           <div class="eyebrow">${category.title}</div>
           <h1>${article.title}</h1>
           <p class="page-lede">${article.excerpt}</p>
@@ -852,6 +868,7 @@
               <div class="eyebrow">Magnolia insight</div>
               <p>${article.insight}</p>
             </aside>
+            ${renderArticleHomes()}
             <aside class="reviewed-block">
               <strong>Reviewed by ${reviewedByLinked()}</strong>
               <span>RN-led educational review for family-friendly care planning.</span>
@@ -874,7 +891,7 @@
                 return `<a href="${articleUrl(item)}">${item.title}<span>${itemCategory?.title || "Magnolia guide"} / ${item.readTime}</span></a>`;
               }).join("")}
             </div>
-            <a class="button" href="${href("contact.html")}">Schedule a Tour</a>
+            <a class="button" href="${consultationUrl()}">Free Senior Care Consultation</a>
             <a class="button secondary" href="${site.brand.phoneHref}">Call Magnolia</a>
           </aside>
         </div>
@@ -887,9 +904,9 @@
             <div>
               <p>If your family is trying to understand care fit, timing, availability, or next steps, Magnolia can talk through the situation calmly. Pricing depends on care needs, room availability, assessment level, and service requirements.</p>
               <div class="hero-actions">
-                <a class="button" href="${href("contact.html")}">Schedule a Tour</a>
+                <a class="button" href="${consultationUrl()}">Free Senior Care Consultation</a>
                 <a class="button secondary" href="${site.brand.phoneHref}">Call Magnolia</a>
-                <a class="text-action-link" href="${href("contact.html")}">Contact Our Care Team</a>
+                <a class="text-action-link" href="${href("contact.html#tour-request")}">Schedule a Tour</a>
               </div>
             </div>
           </div>
@@ -918,7 +935,7 @@
             </div>
           </div>
           <figure class="home-resource-photo">
-            <img src="${href("assets/images/premium-real/magnolia-caregiver-connection.png")}" alt="Warm Magnolia family-centered care connection">
+            <img loading="lazy" src="${href("assets/images/premium-real/magnolia-caregiver-connection.webp")}" alt="Warm Magnolia family-centered care connection">
             <figcaption>Guidance shaped by small-home care, family communication, and RN-led observation.</figcaption>
           </figure>
         </div>

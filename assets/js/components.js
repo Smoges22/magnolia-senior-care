@@ -454,7 +454,7 @@
               <h2>See life at Magnolia</h2>
               <p>Visit our video channel for updates, tours, and a closer look at the home environment.</p>
             </div>
-            <a class="youtube-video-link" href="${youtubeUrl}" target="_blank" rel="noopener" aria-label="Watch Magnolia Senior Care video on YouTube">
+            <a class="youtube-video-link" href="${site.brand.youtubeVideoUrl}" target="_blank" rel="noopener" aria-label="Watch Magnolia Senior Care video on YouTube">
               <div class="youtube-play youtube-play-red" aria-hidden="true">${socialIcon("YouTube")}</div>
               <div>
                 <h3>Watch the Magnolia video</h3>
@@ -801,13 +801,14 @@
     });
     document.querySelectorAll("[data-photo]").forEach((node) => {
       const key = node.getAttribute("data-photo");
+      if (node.tagName === "IMG" && !node.closest(".hero-cinematic")) node.loading = "lazy";
       if (site.photos[key]) node.setAttribute("src", localHref(site.photos[key]));
     });
   }
 
   function applyImageFallbacks() {
     document.querySelectorAll("img").forEach((img) => {
-      img.loading = img.loading || "lazy";
+      if (!img.hasAttribute("loading")) img.loading = "lazy";
       if (img.closest(".hero-cinematic")) {
         img.loading = "eager";
         img.fetchPriority = "high";

@@ -4,15 +4,17 @@ const vm = require("vm");
 
 const root = path.resolve(__dirname, "..");
 const dataCode = fs.readFileSync(path.join(root, "assets", "js", "resources-data.js"), "utf8");
+const siteCode = fs.readFileSync(path.join(root, "assets", "js", "site-data.js"), "utf8");
+const renderCode = fs.readFileSync(path.join(root, "assets", "js", "resources.js"), "utf8");
 const sandbox = { window: {} };
 vm.runInNewContext(dataCode, sandbox);
+vm.runInNewContext(siteCode, sandbox);
 
 const resources = sandbox.window.MagnoliaResources;
 const domain = "https://www.magnoliaseniorcarewa.com";
 const resourceSocialImage = `${domain}/assets/brand/social/magnolia-og-resource-center.jpg`;
 const resourceSocialAlt = "Magnolia Senior Care Resource Center RN-reviewed family guidance";
 const verificationMeta = `
-  <meta name="google-site-verification" content="REPLACE_WITH_GOOGLE_VERIFICATION_CODE">
   <meta name="msvalidate.01" content="A4C93E344DC69C9B3DC87EA8DA78D6A1" />`;
 
 function escapeHtml(value = "") {
@@ -123,15 +125,21 @@ function collectionSchema(name, description, url) {
   };
 }
 
-function fallbackMain(attributes, title, description) {
-  return `  <main id="main" ${attributes}>
-    <section class="section">
-      <div class="container">
-        <h1>${escapeHtml(title)}</h1>
-        <p class="page-lede">${escapeHtml(description)}</p>
-      </div>
-    </section>
-  </main>`;
+// Runs the same render code the browser uses, so crawlers that skip JavaScript get the full page.
+function renderedMain(attribute, datasetKey, value, pathname) {
+  const mount = { dataset: datasetKey ? { [datasetKey]: value } : {}, innerHTML: "" };
+  const listeners = [];
+  vm.runInNewContext(renderCode, {
+    window: { ...sandbox.window, location: { pathname } },
+    document: {
+      querySelector: (selector) => (selector === `[${attribute}]` ? mount : null),
+      addEventListener: (type, listener) => listeners.push(listener)
+    }
+  });
+  listeners.forEach((listener) => listener());
+  if (!mount.innerHTML) throw new Error(`Nothing rendered for ${pathname}`);
+  const attributes = datasetKey ? `${attribute}="${value}"` : attribute;
+  return `  <main id="main" ${attributes} data-prerendered="true">${mount.innerHTML}</main>`;
 }
 
 writeFile("resources/index.html", shell({
@@ -139,11 +147,7 @@ writeFile("resources/index.html", shell({
   description: "RN-led resources for Washington Adult Family Homes, dementia care, Medicaid planning, hospital transitions, safety, family support, and hospice education.",
   canonical: `${domain}/resources/`,
   prefix: "../",
-  main: fallbackMain(
-    "data-resource-center",
-    "Magnolia Senior Care Resource Center",
-    "RN-led resources for families comparing Adult Family Homes, dementia support, hospital transitions, safety, hospice, and senior care decisions in Washington."
-  ),
+  main: renderedMain("data-resource-center", null, null, "/resources/index.html"),
   schema: collectionSchema(
     "Magnolia Senior Care Resource Center",
     "RN-led educational resources for families navigating Adult Family Homes and senior care in Washington.",
@@ -158,7 +162,7 @@ resources.categories.forEach((category) => {
     canonical: `${domain}/resources/${category.slug}/`,
     prefix: "../../",
     bodyAttrs: `data-category="${category.slug}"`,
-    main: fallbackMain(`data-resource-category="${category.slug}"`, category.title, category.description),
+    main: renderedMain("data-resource-category", "resourceCategory", category.slug, `/resources/${category.slug}/index.html`),
     schema: collectionSchema(
       `${category.title} | Magnolia Senior Care`,
       category.description,
@@ -212,7 +216,7 @@ Object.values(resources.articles).forEach((article) => {
     canonical: `${domain}/resources/articles/${article.slug}/`,
     prefix: "../../../",
     bodyAttrs: `data-article="${article.slug}"`,
-    main: fallbackMain(`data-resource-article="${article.slug}"`, article.title, article.metaDescription),
+    main: renderedMain("data-resource-article", "resourceArticle", article.slug, `/resources/articles/${article.slug}/index.html`),
     schemas: [articleSchema, faqSchema],
     ogType: "article"
   }));

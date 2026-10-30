@@ -48,6 +48,23 @@
     return "unknown";
   }
 
+  // Only the page path and the referring site are sent, never query strings or form values.
+  function visitSource() {
+    const channel = new URLSearchParams(window.location.search).get("utm_source");
+    let referrer = null;
+    try {
+      referrer = document.referrer ? new URL(document.referrer) : null;
+    } catch (error) {
+      referrer = null;
+    }
+    const internal = referrer && referrer.hostname === window.location.hostname;
+
+    return {
+      sourcePage: internal ? referrer.pathname : window.location.pathname,
+      sourceChannel: (channel || (referrer && !internal ? referrer.hostname : "direct")).slice(0, 80)
+    };
+  }
+
   function showStatus(status, outcome) {
     const site = window.AFHSite && window.AFHSite.brand;
     const phone = (site && site.phone) || "(425) 246-6220";
@@ -75,6 +92,7 @@
     const subject = new URLSearchParams(window.location.search).get("subject") || "";
     const inquiryType = form.querySelector("[name='inquiry_type']");
     const interest = form.querySelector("[name='interest']");
+    const openedAt = Date.now();
     let sending = false;
 
     if (/referral inquiry/i.test(subject)) {
@@ -109,7 +127,10 @@
         primaryInterest: String(data.get("interest") || "").trim(),
         preferredLocation: String(data.get("location") || "").trim(),
         preferredTiming: String(data.get("timing") || "").trim(),
-        message: String(data.get("message") || "").trim()
+        message: String(data.get("message") || "").trim(),
+        contactReference: String(data.get("contact_reference") || ""),
+        elapsedMs: Date.now() - openedAt,
+        ...visitSource()
       };
 
       sending = true;
