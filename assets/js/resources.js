@@ -537,7 +537,6 @@
       <section class="page-hero interior-hero resource-center-hero">
         <div class="container resource-hero-grid">
           <div>
-            <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / Resource Center</div>
             <div class="eyebrow">Magnolia Senior Care education hub</div>
             <h1>Resource Center</h1>
             <p class="page-lede">Clear, RN-led guidance for Washington families who are trying to understand Adult Family Homes, dementia care, hospital discharge, safety, Medicaid questions, and what to do next.</p>
@@ -761,7 +760,6 @@
       <section class="page-hero interior-hero resources-hero">
         <div class="container interior-hero-grid">
           <div class="interior-hero-copy">
-            <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / <a href="${href("resources/index.html")}">Resource Center</a> / ${category.title}</div>
             <div class="eyebrow">Resource category</div>
             <h1>${category.title}</h1>
             <p class="page-lede">${category.description}</p>
@@ -834,7 +832,6 @@
     mount.innerHTML = `
       <section class="page-hero interior-hero resources-hero">
         <div class="container">
-          <div class="breadcrumb"><a href="${href("index.html")}">Home</a> / <a href="${href("resources/index.html")}">Resource Center</a> / <a href="${categoryUrl(category)}">${category.title}</a></div>
           <div class="eyebrow">${category.title}</div>
           <h1>${article.title}</h1>
           <p class="page-lede">${article.excerpt}</p>
