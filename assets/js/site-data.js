@@ -43,14 +43,11 @@ window.AFHSite = {
     experience: "10+ years of RN-led senior care experience"
   },
   nav: [
-    ["Home", "index.html"],
-    ["About", "about.html"],
-    ["Services", "services.html"],
-    ["Locations", "index.html#locations"],
-    ["Gallery", "rooms-photos.html"],
+    ["Our Homes", "index.html#locations"],
+    ["Care", "services.html"],
+    ["RN Leadership", "about/clinical-leadership/"],
     ["Resource Center", "resources/index.html"],
-    ["Referrals", "resources/referral-center/index.html"],
-    ["Contact", "contact.html"]
+    ["Referrals", "resources/referral-center/index.html"]
   ],
   serviceGuides: [
     ["Memory & Dementia Support", "services/memory-dementia-support/index.html"],

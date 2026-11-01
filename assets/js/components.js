@@ -294,7 +294,7 @@
             </a>
             <nav class="nav-links" id="site-nav" aria-label="Main navigation">${links}</nav>
             <div class="nav-actions">
-              <a class="button secondary" href="${site.brand.phoneHref}">Speak With Us First</a>
+              <a class="nav-phone" href="${site.brand.phoneHref}">${site.brand.phone}</a>
               <a class="button" href="${localHref("free-senior-care-consultation/index.html")}">Free Consultation</a>
               <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-haspopup="dialog" aria-expanded="false" aria-label="Open menu" title="Open menu">${navigationIcon("menu")}</button>
             </div>
@@ -439,13 +439,7 @@
     if (!mount) return;
     const youtubeUrl = site.brand.youtubeUrl || "#";
     const facebookUrl = site.brand.facebookUrl || site.brand.socialLinks.find((profile) => profile.label === "Facebook")?.href || "#";
-    const trustItems = [
-      ["RN-Led Care", "Clinical awareness guides daily routines."],
-      ["Licensed Adult Family Homes", "Small-home care in Burien and Des Moines."],
-      ["Family-Centered Communication", "Clear updates for families and care partners."]
-    ];
-
-    mount.innerHTML = `
+    const youtubeSection = currentPage() !== "rooms-photos.html" ? "" : `
       <section class="youtube-section" aria-label="Magnolia Senior Care YouTube">
         <div class="container">
           <div class="youtube-card">
@@ -468,31 +462,15 @@
           </div>
         </div>
       </section>
-      <section class="footer-trust-band" aria-labelledby="footer-trust-title">
-        <div class="container trust-band-inner">
-          <div class="trust-band-copy">
-            <div class="eyebrow">Magnolia care philosophy</div>
-            <h2 id="footer-trust-title">Why Families Choose Magnolia</h2>
-            <p>RN-led, small-home senior care for families who want clear communication, calm routines, and thoughtful support in South King County.</p>
-          </div>
-          <div class="trust-band-list" aria-label="Magnolia trust signals">
-            ${trustItems.map(([title, text]) => `
-              <article class="trust-band-item">
-                <span class="trust-band-icon" aria-hidden="true">${careIcon(title)}</span>
-                <div>
-                  <h3>${title}</h3>
-                  <p>${text}</p>
-                </div>
-              </article>
-            `).join("")}
-          </div>
-        </div>
-      </section>
+    `;
+
+    mount.innerHTML = `
+      ${youtubeSection}
       <footer class="site-footer" id="site-footer">
         <div class="container">
           <div class="footer-grid">
             <div class="footer-brand">
-              <a class="footer-brand-link" href="${localHref("index.html")}" aria-label="${site.brand.name} home"><img class="footer-logo" src="${localHref("assets/images/logo/magnolia-logo-footer-transparent.png")}" alt="${site.brand.name}" loading="lazy"></a>
+              <a class="footer-brand-link" href="${localHref("index.html")}" aria-label="${site.brand.name} home"><span class="footer-wordmark">${site.brand.name}</span></a>
               <p>${site.brand.tagline}</p>
               <div class="social-icons" aria-label="Magnolia social media">
                 ${site.brand.socialLinks.filter((profile) => /^https?:/.test(profile.href)).map((profile) => `<a class="social-icon social-${profile.label.toLowerCase()}" href="${profile.href}" target="_blank" rel="noopener" aria-label="${profile.label}">${socialIcon(profile.label)}</a>`).join("")}
