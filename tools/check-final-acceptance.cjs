@@ -199,7 +199,7 @@ async function run() {
     await referralLink.click();
     await page.waitForURL(/contact\?subject=Referral%20Inquiry#tour-request$/);
     record("Referral CTA resolves locally with context", await page.locator("#inquiry-type").inputValue() === "Referral Inquiry", "Clicked link only; no form submission");
-    record("Preserved direct contact destinations", await page.locator('.footer-contact-panel a[href="tel:+14252466220"]').count() === 1 && await page.locator('.footer-contact-panel a[href="tel:+12064535082"]').count() === 1 && await page.locator('.footer-contact-panel a[href="mailto:sosena.mekuria@gmail.com"]').count() === 1, "Inspected href values, no call or email opened");
+    record("Approved direct contact destinations", await page.locator('.footer-contact-panel a[href="tel:+14252466220"]').count() === 1 && await page.locator('.footer-contact-panel a[href^="tel:"]').count() === 1 && await page.locator('.footer-contact-panel a[href="mailto:sosena.mekuria@gmail.com"]').count() === 1, "Inspected href values, no call or email opened");
     await position(".footer-contact-panel");
     await page.locator(".footer-tour").focus();
     await page.keyboard.press("Tab");

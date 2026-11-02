@@ -17,7 +17,6 @@ This project consolidates prior location-site content into one current Magnolia 
 ## Shared Contact
 
 - Phone: `(425) 246-6220`
-- Secondary phone: `(206) 453-5082`
 - Email: `sosena.mekuria@gmail.com`
 
 ## Positioning

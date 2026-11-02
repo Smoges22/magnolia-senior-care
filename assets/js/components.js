@@ -528,7 +528,6 @@
               <div class="footer-links">
                 <a href="${localHref("contact.html")}">Contact Us</a>
                 <a href="${site.brand.phoneHref}">${site.brand.phone}</a>
-                <a href="${site.brand.secondaryPhoneHref}">${site.brand.secondaryPhone}</a>
                 <a href="${site.brand.emailHref}">${site.brand.email}</a>
               </div>
             </div>
