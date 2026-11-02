@@ -58,8 +58,7 @@ For each Magnolia location:
 
 - [ ] Confirm exact business name.
 - [ ] Confirm address.
-- [ ] Confirm primary phone: `(425) 246-6220`.
-- [ ] Confirm secondary phone: `(206) 453-5082`, if used.
+- [ ] Confirm contact phone: `(425) 246-6220`.
 - [ ] Add website URL to the correct location page.
 - [ ] Update business category to Adult Family Home / assisted living-related category where available.
 - [ ] Add business description using RN-owned / RN-managed care message.

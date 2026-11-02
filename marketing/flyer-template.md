@@ -31,5 +31,4 @@ Magnolia Senior Care of Highline LLC
 
 Call (425) 246-6220 to schedule a private tour or talk through care needs.
 
-Secondary phone: (206) 453-5082  
 Email: sosena.mekuria@gmail.com

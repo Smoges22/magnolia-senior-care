@@ -31,5 +31,4 @@ Magnolia Senior Care is led by Sosena Mekuria, RN and AFH Provider, and offers t
 ## Contact
 
 Phone: (425) 246-6220  
-Secondary: (206) 453-5082  
 Email: sosena.mekuria@gmail.com
